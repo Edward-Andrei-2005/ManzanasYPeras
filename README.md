@@ -29,4 +29,5 @@ Se deberá entregar un archivo `.zip` a través de Aula Virtual que contenga:
 
 ---
 
-**Nota**: Organizar el repositorio siguiendo las convenciones para facilitar la revisión y asegurar una correcta presentación.
+![image](https://github.com/user-attachments/assets/5a5b7ee7-455e-42f2-adb5-cd7541547f55)
+
