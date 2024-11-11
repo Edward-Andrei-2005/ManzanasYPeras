@@ -4,6 +4,6 @@
  */
 package apoocalipsis;
 
-public class Provisión {
+public class Provision {
     
 }
