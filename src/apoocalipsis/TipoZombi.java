@@ -4,6 +4,6 @@
  */
 package apoocalipsis;
 
-public enum TiposZombis {
+public enum TipoZombi {
     CAMINANTE, CORREDOR, ABOMINACION;
 }
