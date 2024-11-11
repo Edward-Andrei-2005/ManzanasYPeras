@@ -4,6 +4,9 @@
  */
 package apoocalipsis;
 
+import java.util.Arrays;
+import java.util.Objects;
+
 public class Superviviente {
     // Atributos
     private String nombre;
@@ -46,6 +49,24 @@ public class Superviviente {
     
     // El Superviviente puede optar por no realizar ninguna acción.
     public void noHacerNada() {
+    
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null) return false;
+        if (getClass() != o.getClass()) return false;
         
+        final Superviviente s = (Superviviente) o;
+        
+        if (this.estado != s.estado) return false;
+        if (this.contZombisKO != s.contZombisKO) return false;
+        if (this.heridas != s.heridas) return false;
+        if (!Objects.equals(this.nombre, s.nombre)) return false;
+        if (!Objects.equals(this.manoIzq, s.manoIzq)) return false;
+        if (!Objects.equals(this.manoDer, s.manoDer)) return false;
+        
+        return Arrays.deepEquals(this.inventario, s.inventario);
     }
 }
