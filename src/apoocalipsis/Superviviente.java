@@ -19,6 +19,7 @@ public class Superviviente {
     
     private static final int TAM = 5; // Tamaño máximo de Equipo [0..5]
     private Equipo inventario[];
+    private int siguiente;
     
     // Constructores
     public Superviviente(String n) {
@@ -43,8 +44,20 @@ public class Superviviente {
     }
     
     // Cambiar un arma activa de entre las armas que lleva en su inventario.
-    public void elegirArma(boolean izq) {
-        
+    public boolean elegirArma(Arma arma, boolean izq) {
+        if (arma != null && inventario != null) {
+            for (int i = 0; i < siguiente; i++) {
+                if (arma.equals(inventario[i])) {
+                    if (izq == true) {
+                        manoIzq = arma;
+                    } else {
+                        manoDer = arma;
+                    }
+                    return true;
+                }
+            }
+        }
+        return false;
     }
     
     // El Superviviente puede optar por no realizar ninguna acción.
