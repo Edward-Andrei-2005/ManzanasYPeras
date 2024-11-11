@@ -1,4 +1,3 @@
-
 package apoocalipsis;
 
 public class Casilla {
