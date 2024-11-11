@@ -4,8 +4,6 @@
  */
 package apoocalipsis;
 
-import java.util.ArrayList;
-
 public class Superviviente {
     // Atributos
     private String nombre;
@@ -21,9 +19,11 @@ public class Superviviente {
     
     // Constructores
     public Superviviente(String n) {
-        nombre = n;
-        estado = true;
-        inventario = new Equipo[TAM];
+        if (n != null) {
+            nombre = n;
+            estado = true;
+            inventario = new Equipo[TAM];
+        }
     }
     
     // Métodos
