@@ -5,5 +5,7 @@
 package apoocalipsis;
 
 public class Casilla {
-    
+    // Atributos
+    private int x;
+    private int y;
 }
