@@ -4,10 +4,6 @@
  */
 package apoocalipsis;
 
-/**
- *
- * @author a.chikou.2023
- */
 public class Provisión {
     
 }
