@@ -72,7 +72,8 @@ public abstract class Zombi {
                     }
                     break;
             }
-                    
+        } else {
+            identificador = -1; //Si algún parámetro es incorrecto ponemos el id en -1
         }
     }
 }
