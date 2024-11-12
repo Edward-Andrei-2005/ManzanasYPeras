@@ -29,7 +29,7 @@ Se deberá entregar un archivo `.zip` a través de Aula Virtual que contenga:
 
 ---
 
-
+A – POO – Zombi Calipsis © 12/11/2024 by Anass Chikou, Edward Andrei, Manuel ALos is licensed under CC BY-NC-ND 4.0 
 
 ![image](https://github.com/user-attachments/assets/9986e91a-f38b-40fc-aee6-98fbeedab92f)
 
