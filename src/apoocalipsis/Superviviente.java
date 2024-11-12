@@ -31,7 +31,7 @@ public class Superviviente {
     /* Buscar equipo en la casilla actual. Se obtiene, de forma aleatoria, una instancia de
     equipo. No se puede buscar dos veces en la misma casilla. */
     public Equipo buscar() {
-        
+        return null;
     }
     
     // // Usar un arma equipada para atacar zombis en una casilla específica.
