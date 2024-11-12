@@ -30,7 +30,8 @@ Se deberá entregar un archivo `.zip` a través de Aula Virtual que contenga:
 
 ---
 
-![image](https://github.com/user-attachments/assets/9986e91a-f38b-40fc-aee6-98fbeedab92f)
+![image](https://github.com/user-attachments/assets/9be1ca84-8d74-4352-ad23-fd16526dd94a)
+
 
 
 
