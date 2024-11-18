@@ -27,7 +27,7 @@ Se deberá entregar un archivo `.zip` a través de Aula Virtual que contenga:
 - Un archivo `.jar` ejecutable de la aplicación.
 - Archivos binarios y de texto con datos de la aplicación. **Requisito mínimo**: 3 jugadores y 5 partidas con diferentes resultados.
 - Archivo `leeme.txt` con indicaciones útiles para el equipo docente sobre la ejecución de la práctica y nombres de los autores.
-
+- Vídeo pruebas.mp4 (o enlace a Youtube/similar) donde se detallen las pruebas realizadas sobre todas las funcionalidades del juego haciendo una partida completa y visualización de datos de las estadísticas y partidas
 ---
 
 ![image](https://github.com/user-attachments/assets/9be1ca84-8d74-4352-ad23-fd16526dd94a)
