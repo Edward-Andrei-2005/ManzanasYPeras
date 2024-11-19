@@ -35,8 +35,13 @@ Comprueba cuantas veces se ha superado el número de exito del arma. `arma1.valo
 Devuelve el entero
 
 resolverAtaque(). Se pasa la casilla destino, el numero de exitos y el arma.
+
 Se recorre la lista de entidades de la casilla. Por cada zombi se comprueba si el arma lo puede matar. Si puede, lo mata y resta un éxito.
+
 Se sigue recorriendo hasta que se encuentre otro zombi que se pueda matar y se repite el proceso.
+
 Si se llega al final de la lista y exitos>0. Significa que hay zombis que no podemos matar.
+
 Si no se llega al final pero exitos=0. Todavía pueden quedar zombis por matar pero no tenemos más exitos.
+
 En cualquiera de los dos casos se termina el ataque.
