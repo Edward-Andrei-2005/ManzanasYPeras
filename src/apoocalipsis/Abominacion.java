@@ -1,8 +1,12 @@
 package apoocalipsis;
 
 public abstract class Abominacion extends Zombi {
+    //Atributos
+    private static final int AGUANTE = 3;
+    private static final int ACTIVACIONES = 1;
+    
     //Constructores
-    public Abominacion(int aguante, int activaciones) {
-        super(aguante, activaciones);
+    public Abominacion() {
+        super(AGUANTE, ACTIVACIONES);
     }
 }
