@@ -17,13 +17,4 @@ public abstract class Zombi {
             identificador = -1;
         }
     }
-    
-    //Métodos
-    public void setAguante(int aguante) {
-        this.aguante = aguante;
-    }
-
-    public void setActivaciones(int activaciones) {
-        this.activaciones = activaciones;
-    }
 }
