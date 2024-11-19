@@ -17,4 +17,25 @@ public abstract class Zombi {
             identificador = -1;
         }
     }
+
+    // Métodos
+    public boolean activar() {
+        return true;
+    }
+    
+    public boolean reaccionar() {
+        return true;
+    }
+    
+    public boolean activarse() {
+        return true;
+    }
+    
+    public boolean moverse() {
+        return true;
+    }
+    
+    public boolean atacar() {
+        return true;
+    }
 }
