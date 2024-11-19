@@ -61,6 +61,18 @@ public class Superviviente {
     
     }
 
+    public boolean activarse() {
+        return true;
+    }
+    
+    public boolean moverse() {
+        return true;
+    }
+    
+    public boolean atacar() {
+        return true;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
