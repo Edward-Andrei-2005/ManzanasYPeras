@@ -16,4 +16,8 @@ public class Provision extends Equipo {
         valorEnergetico = (int) (Math.random() * (KCAL_MAX-KCAL_MIN)) + KCAL_MIN;
         caducidad = (int) (Math.random() * (CADUCIDAD_MAX-CADUCIDAD_MIN)) + CADUCIDAD_MIN;
     }
+    
+    public String getNombre() { return nombre; }
+    public int getValorEnergetico() { return valorEnergetico; }
+    public int getCaducidad() { return caducidad; }
 }
