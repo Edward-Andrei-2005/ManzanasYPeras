@@ -1,6 +1,6 @@
 package apoocalipsis;
 
-public class Arma {
+public class Arma extends Equipo {
     private String nombre;
     private int potencia;
     private int alcance;
@@ -31,6 +31,10 @@ public class Arma {
     }
     
     public String getNombre() {return nombre; }
+    public int getPotencia() { return potencia; }
+    public int getAlcance() { return alcance; }
+    public int getNumeroDeDados() { return numeroDeDados; }
+    public int getValorDeExito() { return valorDeExito; }
     
     @Override
     public boolean equals(Object o) {
