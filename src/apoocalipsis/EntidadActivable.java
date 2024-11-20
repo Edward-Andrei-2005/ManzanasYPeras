@@ -1,7 +1,7 @@
 package apoocalipsis;
 
-public interface EntidadActivable {
-    public boolean activarse();
-    public boolean moverse();
-    public boolean atacar();
+public abstract class EntidadActivable {
+    public abstract boolean activarse();
+    public abstract boolean moverse();
+    public abstract boolean atacar();
 }
