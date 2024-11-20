@@ -3,7 +3,7 @@ package apoocalipsis;
 import java.util.Arrays;
 import java.util.Objects;
 
-public class Superviviente {
+public class Superviviente extends EntidadActivable {
     // Atributos
     private String nombre;
     private boolean estado; // vivo = true, eliminado = false
