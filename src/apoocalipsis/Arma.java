@@ -36,6 +36,15 @@ public class Arma extends Equipo {
     public int getNumeroDeDados() { return numeroDeDados; }
     public int getValorDeExito() { return valorDeExito; }
     
+    // Dada una distancia dice si un arma puede atacar a un objetivo que esté a esa distancia
+    public boolean puedeAtacar(int distancia) {
+        return alcance >= distancia;
+    }
+    
+    public int tirarDado() {
+        return VALORES_DADO[(int) (Math.random() * VALORES_DADO.length)];
+    }
+    
     @Override
     public boolean equals(Object o) {
         if (o == null) return false;
@@ -45,3 +54,4 @@ public class Arma extends Equipo {
         return nombre.equals(aux.getNombre());
     }
 }
+
