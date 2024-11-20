@@ -27,12 +27,26 @@ public class Superviviente {
     }
     
     // Métodos
+
+    public String getNombre() {
+        return nombre;
+    }
+    
     
     /* Buscar equipo en la casilla actual. Se obtiene, de forma aleatoria, una instancia de
     equipo. No se puede buscar dos veces en la misma casilla. */
     public Equipo buscar() {
         return null;
     }
+
+    public Arma getManoDer() {
+        return manoDer;
+    }
+
+    public Arma getManoIzq() {
+        return manoIzq;
+    }
+    
     
     // // Usar un arma equipada para atacar zombis en una casilla específica.
     public void atacarArma(Arma arma, Casilla casilla) {
@@ -81,13 +95,7 @@ public class Superviviente {
         
         final Superviviente s = (Superviviente) o;
         
-        if (this.estado != s.estado) return false;
-        if (this.contZombisKO != s.contZombisKO) return false;
-        if (this.heridas != s.heridas) return false;
-        if (!Objects.equals(this.nombre, s.nombre)) return false;
-        if (!Objects.equals(this.manoIzq, s.manoIzq)) return false;
-        if (!Objects.equals(this.manoDer, s.manoDer)) return false;
-        
-        return Arrays.deepEquals(this.inventario, s.inventario);
+        return nombre.equals(s.getNombre());
     }
 }
+
