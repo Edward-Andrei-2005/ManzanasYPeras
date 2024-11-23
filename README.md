@@ -30,5 +30,6 @@ Se deberá entregar un archivo `.zip` a través de Aula Virtual que contenga:
 - Vídeo pruebas.mp4 (o enlace a Youtube/similar) donde se detallen las pruebas realizadas sobre todas las funcionalidades del juego haciendo una partida completa y visualización de datos de las estadísticas y partidas
 ---
 
-![image](https://github.com/user-attachments/assets/f1cd3b20-ac94-43e7-ac7d-71fe6fcf483a)
+![image](https://github.com/user-attachments/assets/ec123dd9-8b2a-4c78-99c8-229e8c4ecf0c)
+
 
