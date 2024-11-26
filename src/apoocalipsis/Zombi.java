@@ -38,4 +38,8 @@ public abstract class Zombi extends EntidadActivable {
     public boolean atacar() {
         return true;
     }
+    
+    public boolean esMatable(Arma a) {
+        return a.getPotencia() >= aguante;
+    }
 }
