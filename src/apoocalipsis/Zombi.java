@@ -1,6 +1,6 @@
 package apoocalipsis;
 
-public abstract class Zombi {
+public abstract class Zombi extends EntidadActivable{
     //Atributos
     private static int contador = 1;
     private int identificador;
