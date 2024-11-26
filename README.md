@@ -31,6 +31,7 @@ Se deberá entregar un archivo `.zip` a través de Aula Virtual que contenga:
 ---
 
 
-![UML+Apocalipsis](https://github.com/user-attachments/assets/900ef629-38bb-436b-851f-d7c31e103146)
+![image](https://github.com/user-attachments/assets/9020fb86-572e-4b5b-bc79-938b7fb44524)
+
 
 
