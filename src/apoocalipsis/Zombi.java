@@ -41,8 +41,8 @@ public abstract class Zombi extends EntidadActivable {
     
     public boolean esMatable(Arma a) {
         // Verifica si el zombi es de tipo CaminanteBerserker, CorredorBerserker o AbominacionBerserker
-        if((this instanceof CaminanteBerserker) || (this instanceof CorredorBerserker
-                || this instanceof AbominacionBerserker)) {
+        if((this instanceof CaminanteBerserker) || (this instanceof CorredorBerserker)
+                || (this instanceof AbominacionBerserker)) {
             /*Si es un zombi Berserker, debe cumplir dos condiciones:
             1. El arma debe tener suficiente potencia para eliminar al zombi (potencia >= aguante)
             2. El arma debe ser cuerpo a cuerpo (alcance == 0), ya que los zombis Berserker son inmunes a ataques a distancia.*/
