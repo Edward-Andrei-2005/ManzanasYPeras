@@ -7,13 +7,12 @@ public class Superviviente extends EntidadActivable {
     // Atributos
     private String nombre;
     private boolean estado; // vivo = true, eliminado = false
-    private static final int accionesPorTurno = 3;
+    private int accionesPorTurno;
     private int contZombisKO;
     private int heridas; // Un Superviviente es eliminado al recibir 2 heridas o mordeduras.
-    private Arma manoIzq;
-    private Arma manoDer;
+    private Arma manoIzq, manoDer;
     
-    private static final int TAM = 5; // Tamaño máximo de Equipo [0..5]
+    private static final int TAM_EQUIPO = 5; // Tamaño máximo de Equipo [0..5]
     private Equipo inventario[];
     private int siguiente;
     
@@ -22,23 +21,15 @@ public class Superviviente extends EntidadActivable {
         if (n != null) {
             nombre = n;
             estado = true;
-            inventario = new Equipo[TAM];
+            inventario = new Equipo[TAM_EQUIPO];
         }
     }
     
     // Métodos
-
     public String getNombre() {
         return nombre;
     }
     
-    
-    /* Buscar equipo en la casilla actual. Se obtiene, de forma aleatoria, una instancia de
-    equipo. No se puede buscar dos veces en la misma casilla. */
-    public Equipo buscar() {
-        return null;
-    }
-
     public Arma getManoDer() {
         return manoDer;
     }
@@ -47,10 +38,24 @@ public class Superviviente extends EntidadActivable {
         return manoIzq;
     }
     
+    public boolean eliminarEquipo() {
+        if (siguiente == 0) return false;
+        else {
+            if (inventario[0].equals(manoIzq)) {
+                manoIzq = null;
+            } else if (inventario[0].equals(manoDer)) {
+                manoDer = null;
+            }
+            
+            inventario[0] = inventario[--siguiente];
+            return true;
+        }
+    }
     
-    // // Usar un arma equipada para atacar zombis en una casilla específica.
-    public void atacarArma(Arma arma, Casilla casilla) {
-        
+    public boolean agregarEquipo(Equipo eq) {
+        if (siguiente == TAM_EQUIPO) eliminarEquipo();
+        inventario[siguiente++] = eq;
+        return true;
     }
     
     // Cambiar un arma activa de entre las armas que lleva en su inventario.
@@ -58,32 +63,29 @@ public class Superviviente extends EntidadActivable {
         if (arma != null && inventario != null) {
             for (int i = 0; i < siguiente; i++) {
                 if (arma.equals(inventario[i])) {
-                    if (izq == true) {
+                    if (izq == true && !manoDer.equals(manoIzq)) {
                         manoIzq = arma;
-                    } else {
+                        return true;
+                    } else if (izq == false && !manoIzq.equals(manoDer)) {
                         manoDer = arma;
+                        return true;
                     }
-                    return true;
                 }
             }
         }
         return false;
     }
     
+    public boolean inventarioLleno() {
+        return inventario.length == TAM_EQUIPO;
+    }
+    
     // El Superviviente puede optar por no realizar ninguna acción.
     public void noHacerNada() {
-    
+        accionesPorTurno--;
     }
 
     public boolean activarse() {
-        return true;
-    }
-    
-    public boolean moverse() {
-        return true;
-    }
-    
-    public boolean atacar() {
         return true;
     }
 
