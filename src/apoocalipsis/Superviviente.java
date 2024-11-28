@@ -88,6 +88,8 @@ public class Superviviente extends EntidadActivable {
     public boolean activarse() {
         return true;
     }
+    
+    public boolean estaMuerto() { return !estado; }
 
     @Override
     public boolean equals(Object o) {
@@ -100,4 +102,3 @@ public class Superviviente extends EntidadActivable {
         return nombre.equals(s.getNombre());
     }
 }
-
