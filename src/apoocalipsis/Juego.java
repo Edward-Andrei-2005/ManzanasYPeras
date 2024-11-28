@@ -6,10 +6,108 @@ public class Juego {
 
     private static final int TAM_X = 10; // Tamaño del tablero en el eje X
     private static final int TAM_Y = 10; // Tamaño del tablero en el eje Y
+    
+    private static final Casilla CASILLA_INICIO = new Casilla(1, 1);
+    private static final Casilla CASILLA_FIN = new Casilla(10, 10);
+    
+    private static final int NUM_ZOMBIS_NUEVOS_POR_TURNO = 2;
 
     public Juego() {
         dimension = new Casilla[TAM_X][TAM_Y]; // Inicializa el tablero con casillas vacías
+        for (int i=0; i<TAM_X; i++) {
+            for (int j=0; j<TAM_Y; j++) {
+                dimension[i][j] = new Casilla(i+1, j+1);
+            }
+        }
         turno = true;
+    }
+    
+    // Metodo que gestiona todo el ciclo de una partida
+    public boolean hacerPartida(String [] listaNombres) {
+        asignarSupervivientesPosicionInicial(listaNombres);
+        
+        do {
+            turnoSupervivientes(listaNombres);
+            turnoZombis();
+            generarNuevosZombis();
+        } while (!hayAlgunSupervivienteMuerto() && !hanGanadoSupervivientes());
+    }
+    
+    private boolean turnoSupervivientes(String [] listaS) {
+        
+    }
+    
+    private boolean turnoZombis() {
+        
+    }
+    
+    private boolean generarNuevosZombis() {
+        for (int i=0; i<NUM_ZOMBIS_NUEVOS_POR_TURNO; i++) {
+            // Genera una posicion aleatoria para un zombi que cumpla
+            // que no este en una casilla adyacente a un superviviente
+            boolean valido = true;
+            int x,y;
+            do {
+                valido = true;
+                x = (int) (Math.random() * TAM_X) + 1;
+                y = (int) (Math.random() * TAM_Y) + 1;
+                
+                // Comprobamos si hay algun superviviente en alguna de las adyacentes
+                int x1 = x + 1;
+                int y1 = y;
+                if (dimension[x1][y1].hayAlgunSuperviviente()) valido = false;
+                x1 = x;
+                y1 = y + 1;
+                if (dimension[x1][y1].hayAlgunSuperviviente()) valido = false;
+                x1 = x - 1;
+                y1 = y;
+                if (dimension[x1][y1].hayAlgunSuperviviente()) valido = false;
+                x1 = x;
+                y1 = y - 1;
+                if (dimension[x1][y1].hayAlgunSuperviviente()) valido = false;
+            } while (!valido);
+            
+            dimension[x][y].anadirEntidad(new Zombi());  // HACER CONTRUCTOR DE ZOMBI Y Q ESTE GESIONE LAS PROBABILIDADES DE APARICION
+        }
+        
+        return true;
+    }
+    
+    
+    private boolean asignarSupervivientesPosicionInicial(String [] listaS) {
+        for (int i=0; i<listaS.length-1; i++) {
+            for (int j=i+1; j<listaS.length; j++) {
+                if (listaS[i].equals(listaS[j])) return false;
+            }
+        }
+        
+        int x = CASILLA_INICIO.getX()-1;
+        int y = CASILLA_INICIO.getY()-1;
+        
+        for (int i=0; i<listaS.length; i++) {
+            dimension[x][y].anadirEntidad(new Superviviente(listaS[i]));
+        }
+        
+        return true;
+    }
+    
+    private boolean hayAlgunSupervivienteMuerto() {
+        for (int i=0; i<TAM_X; i++) {
+            for (int j=0; j<TAM_Y; j++) {
+                if (dimension[i][j].hayAlgunSupervivienteMuerto()) return true;
+            }
+        }
+        return false;
+    }
+    
+    private boolean hanGanadoSupervivientes() {
+        for (int i=0; i<TAM_X; i++) {
+            for (int j=0; j<TAM_Y; j++) {
+                if (!dimension[i][j].equals(CASILLA_FIN) &&
+                        dimension[i][j].hayAlgunSuperviviente())   return false;
+            }
+        }
+        return true;
     }
 
     public boolean moverse(Casilla destino, EntidadActivable e) {
@@ -92,6 +190,4 @@ public class Juego {
         // Elimina los zombis en la casilla objetivo si el número de éxitos es suficiente
         return destino.eliminarZombis(a, exitos);
     }
-    
-    
 }
