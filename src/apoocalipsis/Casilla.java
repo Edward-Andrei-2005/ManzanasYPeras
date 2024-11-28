@@ -6,6 +6,7 @@ public class Casilla {
     private int x; // Coordenada x de la casilla
     private int y; // Coordenada y de la casilla
     private ArrayList<EntidadActivable> listaEntidades; // Lista de entidades activables dentro de la casilla
+    private boolean quedaEquipo; // true = se puede buscar, false = no se puede buscar
     
     // Constructores
     public Casilla(int x, int y) {
@@ -84,8 +85,29 @@ public class Casilla {
         return listaEntidades.contains(e); // Devuelve true si la lista contiene a la entidad, false en caso contrario
     }
     
-    // Calcula la distancia entre esta casilla y otra casilla dada usando la fórmula de la distancia euclidiana
+    // Calcula la distancia entre esta casilla y otra casilla dada usando la fórmula de pitágoras
     public int distancia(Casilla c) {
         return (int) Math.sqrt(Math.pow(x - c.getX(), 2) + Math.pow(y - c.getY(), 2)); // Devuelve la distancia como entero
+    }
+    
+    /* Buscar equipo en la casilla actual. Se obtiene, de forma aleatoria, una instancia de
+    equipo. No se puede buscar dos veces en la misma casilla. */
+    public boolean buscarEquipo(Superviviente s) {
+        if (!quedaEquipo || !this.estaEntidad(s)) return false;
+        
+        int i = listaEntidades.indexOf(s);
+        Superviviente superviviente = (Superviviente) listaEntidades.get(i);
+        
+        if (superviviente.inventarioLleno()) superviviente.eliminarEquipo();
+        
+        if ((int) (Math.random() * 2) == 1) { // si aleatoriamente se elige Arma
+            superviviente.agregarEquipo(new Arma());
+        } else { // si aleatoriamente se elige Provision
+            superviviente.agregarEquipo(new Provision());
+        }
+        
+        quedaEquipo = false;
+        
+        return true;
     }
 }
