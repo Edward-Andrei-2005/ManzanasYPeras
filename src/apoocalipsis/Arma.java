@@ -10,7 +10,7 @@ public class Arma extends Equipo {
     private static final int[] VALORES_POTENCIA = {1, 2, 3};
     private static final int MAX_ALCANCE = 5;
     private static final int[] VALORES_DADO = {1, 2, 3, 4, 5, 6};
-    private static final String[] NOMBRES_MELEE = {"Cuchillo", "Maza", "Espada"};
+    private static final String[] NOMBRES_MELEE = {"Cuchillo", "Maza", "Espada", "Daga"};
     private static final String[] NOMBRES_DISTANCIA = {"Arco", "Piedra"};
     private static final int NUM_DADOS = 3;
     
@@ -45,6 +45,7 @@ public class Arma extends Equipo {
         return VALORES_DADO[(int) (Math.random() * VALORES_DADO.length)];
     }
     
+    // HAY QUE AÑADIR UN ID
     @Override
     public boolean equals(Object o) {
         if (o == null) return false;
