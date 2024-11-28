@@ -14,6 +14,7 @@ public class Casilla {
             this.x = x; // Inicializa el valor de x
             this.y = y; // Inicializa el valor de y
             listaEntidades = new ArrayList<>(); // Inicializa la lista de entidades como una lista vacía
+            quedaEquipo = true;
         }
     }
 
@@ -110,4 +111,32 @@ public class Casilla {
         
         return true;
     }
+    
+    public boolean hayAlgunSupervivienteMuerto() {
+        boolean v = false;
+        for (EntidadActivable e : listaEntidades) {
+            if (e instanceof Superviviente){
+                v = ((Superviviente) e).estaMuerto();
+            } 
+        }
+        return v;
+    }
+    
+    public boolean hayAlgunSuperviviente() {
+        boolean v = false;
+        for (EntidadActivable e : listaEntidades) {
+            if (e instanceof Superviviente) v = true; 
+        }
+        return v;
+    }
+    
+    @Override
+    public boolean equals(Object o) {
+        if (o == null) return false;
+        if (this == o) return true;
+        if (getClass() != o.getClass()) return false;
+        Casilla aux = (Casilla) o;
+        return x == aux.getX() && y == aux.getY();
+    }
 }
+
