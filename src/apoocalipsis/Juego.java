@@ -1,7 +1,7 @@
 package apoocalipsis;
 
 public class Juego {
-    private boolean turno; // Control del turno actual del juego
+    private boolean turno; // true = turno del superviviente, false = turno del zombi
     private Casilla[][] dimension; // Representación del tablero del juego como matriz de casillas
 
     private static final int TAM_X = 10; // Tamaño del tablero en el eje X
@@ -9,6 +9,7 @@ public class Juego {
 
     public Juego() {
         dimension = new Casilla[TAM_X][TAM_Y]; // Inicializa el tablero con casillas vacías
+        turno = true;
     }
 
     public boolean moverse(Casilla destino, EntidadActivable e) {
@@ -91,4 +92,6 @@ public class Juego {
         // Elimina los zombis en la casilla objetivo si el número de éxitos es suficiente
         return destino.eliminarZombis(a, exitos);
     }
+    
+    
 }
