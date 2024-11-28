@@ -31,14 +31,6 @@ public abstract class Zombi extends EntidadActivable {
         return true;
     }
     
-    public boolean moverse() {
-        return true;
-    }
-    
-    public boolean atacar() {
-        return true;
-    }
-    
     public boolean esMatable(Arma a) {
         // Verifica si el zombi es de tipo CaminanteBerserker, CorredorBerserker o AbominacionBerserker
         if((this instanceof CaminanteBerserker) || (this instanceof CorredorBerserker)
