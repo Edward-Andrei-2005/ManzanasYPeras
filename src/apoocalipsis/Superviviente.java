@@ -7,7 +7,6 @@ public class Superviviente extends EntidadActivable {
     // Atributos
     private String nombre;
     private boolean estado; // vivo = true, eliminado = false
-    private int accionesPorTurno;
     private int contZombisKO;
     private int heridas; // Un Superviviente es eliminado al recibir 2 heridas o mordeduras.
     private Arma manoIzq, manoDer;
@@ -37,6 +36,23 @@ public class Superviviente extends EntidadActivable {
     public Arma getManoIzq() {
         return manoIzq;
     }
+
+    public Equipo[] getInventario() {
+        return inventario;
+    }
+    
+    public Arma getArma(int id) {
+        if(inventario.length == 0) {
+            return null;
+        } else {
+            for(int i=0; i<inventario.length; i++) {
+                if((inventario[i] instanceof Arma) && (((Arma) inventario[i]).getId() == id)) {
+                    return (Arma) inventario[i];
+                }
+            }
+        }
+        return null;
+    }
     
     public boolean eliminarEquipo() {
         if (siguiente == 0) return false;
@@ -51,6 +67,20 @@ public class Superviviente extends EntidadActivable {
             return true;
         }
     }
+    
+    public boolean estaArmaEnInventario(int id) {
+        if(inventario.length == 0) {
+            return false;
+        } else {
+            for(int i=0; i<inventario.length; i++) {
+                if((inventario[i] instanceof Arma) && (((Arma) inventario[i]).getId() == id)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    
     
     public boolean agregarEquipo(Equipo eq) {
         if (siguiente == TAM_EQUIPO) eliminarEquipo();
@@ -79,11 +109,7 @@ public class Superviviente extends EntidadActivable {
     public boolean inventarioLleno() {
         return inventario.length == TAM_EQUIPO;
     }
-    
-    // El Superviviente puede optar por no realizar ninguna acción.
-    public void noHacerNada() {
-        accionesPorTurno--;
-    }
+
 
     public boolean activarse() {
         return true;
