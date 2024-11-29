@@ -130,6 +130,21 @@ public class Casilla {
         return v;
     }
     
+    
+    public boolean hayAlgunSuperviviente(String nombre) {
+        for(EntidadActivable e: listaEntidades) {
+            if ((e instanceof Superviviente) && (((Superviviente) e).getNombre().equals(nombre))) return true;
+        }
+        return false;
+    }
+    
+    public Superviviente getSuperviviente(String nombre) {
+        for (EntidadActivable e : listaEntidades) {
+            if ((e instanceof Superviviente) && (((Superviviente) e).getNombre().equals(nombre))) return (Superviviente) e;
+        }
+        return null;
+    }
+    
     @Override
     public boolean equals(Object o) {
         if (o == null) return false;
