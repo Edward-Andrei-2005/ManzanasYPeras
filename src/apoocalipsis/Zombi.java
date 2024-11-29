@@ -6,7 +6,7 @@ public abstract class Zombi extends EntidadActivable {
     private int identificador;
     private int aguante, activaciones;
     private String reaccionAnteAtaques;
-    
+
     //Constructores
     public Zombi (int aguante, int activaciones) {
         if((aguante>=1) && (aguante<=3) && (activaciones>=1) && (activaciones<=2)) {
@@ -17,6 +17,7 @@ public abstract class Zombi extends EntidadActivable {
             identificador = -1;
         }
     }
+    
 
     // Métodos
     public boolean activar() {
@@ -45,3 +46,4 @@ public abstract class Zombi extends EntidadActivable {
         }
     }
 }
+
