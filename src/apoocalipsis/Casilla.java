@@ -59,7 +59,7 @@ public class Casilla {
         
         eliminarEntidad(zombisAEliminar); 
         
-        return zombisAEliminar.size() != 0;
+        return !zombisAEliminar.isEmpty();
     }
     
     public boolean esAdyacente(Casilla c) {
@@ -139,4 +139,3 @@ public class Casilla {
         return x == aux.getX() && y == aux.getY();
     }
 }
-
