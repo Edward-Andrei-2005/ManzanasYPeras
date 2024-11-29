@@ -1,6 +1,7 @@
 package apoocalipsis;
 
 public class Arma extends Equipo {
+    private static int id;
     private String nombre;
     private int potencia;
     private int alcance;
@@ -28,13 +29,15 @@ public class Arma extends Equipo {
         potencia = VALORES_POTENCIA[(int) (Math.random() * VALORES_POTENCIA.length)];
         numeroDeDados = (int) (Math.random() * NUM_DADOS) + 1;
         valorDeExito = VALORES_DADO[(int) (Math.random() * VALORES_DADO.length)];
+        ++id;
     }
     
-    public String getNombre() {return nombre; }
+    public String getNombre() { return nombre; }
     public int getPotencia() { return potencia; }
     public int getAlcance() { return alcance; }
     public int getNumeroDeDados() { return numeroDeDados; }
     public int getValorDeExito() { return valorDeExito; }
+    public int getId() { return id; }
     
     // Dada una distancia dice si un arma puede atacar a un objetivo que esté a esa distancia
     public boolean estaDentroDelRango(int distancia) {
@@ -52,6 +55,6 @@ public class Arma extends Equipo {
         if (this == o) return true;
         if (getClass() != o.getClass()) return false;
         Arma aux = (Arma) o;
-        return nombre.equals(aux.getNombre());
+        return id == aux.id;
     }
 }
