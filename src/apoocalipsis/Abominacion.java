@@ -1,6 +1,6 @@
 package apoocalipsis;
 
-public abstract class Abominacion extends Zombi {
+public class Abominacion extends Zombi {
     //Atributos
     private static final int AGUANTE = 3;
     private static final int ACTIVACIONES = 1;
