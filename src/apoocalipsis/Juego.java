@@ -67,9 +67,38 @@ public class Juego {
                 if (dimension[x1][y1].hayAlgunSuperviviente()) valido = false;
             } while (!valido);
             
-            dimension[x][y].anadirEntidad(new Zombi());  // HACER CONTRUCTOR DE ZOMBI Y Q ESTE GESIONE LAS PROBABILIDADES DE APARICION
+            int numero = (int) (Math.random() * 9);
+            
+            switch(numero) {
+                case 0:
+                    dimension[x][y].anadirEntidad(new Abominacion());
+                    break;
+                case 1:
+                    dimension[x][y].anadirEntidad(new AbominacionBerserker());
+                    break;
+                case 2:
+                    dimension[x][y].anadirEntidad(new AbominacionToxico());
+                    break;
+                case 3:
+                    dimension[x][y].anadirEntidad(new Caminante());
+                    break;
+                case 4:
+                    dimension[x][y].anadirEntidad(new CaminanteBerserker());
+                    break;
+                case 5:
+                    dimension[x][y].anadirEntidad(new CaminanteToxico());
+                    break;
+                case 6:
+                    dimension[x][y].anadirEntidad(new Corredor());
+                    break;
+                case 7:
+                    dimension[x][y].anadirEntidad(new CorredorBerserker());
+                    break;
+                case 8:
+                    dimension[x][y].anadirEntidad(new CorredorToxico());
+                    break;
+            }
         }
-        
         return true;
     }
     
