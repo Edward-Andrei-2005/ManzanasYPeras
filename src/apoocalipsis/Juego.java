@@ -1,4 +1,6 @@
 package apoocalipsis;
+import apoocalipsis.Arma;
+import java.util.Scanner;
 
 public class Juego {
     private boolean turno; // true = turno del superviviente, false = turno del zombi
@@ -7,16 +9,18 @@ public class Juego {
     private static final int TAM_X = 10; // Tamaño del tablero en el eje X
     private static final int TAM_Y = 10; // Tamaño del tablero en el eje Y
     
-    private static final Casilla CASILLA_INICIO = new Casilla(1, 1);
-    private static final Casilla CASILLA_FIN = new Casilla(10, 10);
+    private static final Casilla CASILLA_INICIO = new Casilla(0, 0);
+    private static final Casilla CASILLA_FIN = new Casilla(9, 9);
     
     private static final int NUM_ZOMBIS_NUEVOS_POR_TURNO = 2;
+    private static final int TURNOS_SUPERVIVIENTES = 3;
+    
 
     public Juego() {
         dimension = new Casilla[TAM_X][TAM_Y]; // Inicializa el tablero con casillas vacías
         for (int i=0; i<TAM_X; i++) {
             for (int j=0; j<TAM_Y; j++) {
-                dimension[i][j] = new Casilla(i+1, j+1);
+                dimension[i][j] = new Casilla(i, j);
             }
         }
         turno = true;
@@ -31,14 +35,134 @@ public class Juego {
             turnoZombis();
             generarNuevosZombis();
         } while (!hayAlgunSupervivienteMuerto() && !hanGanadoSupervivientes());
+        return true;
     }
     
     private boolean turnoSupervivientes(String [] listaS) {
-        
+        for(int λ=0; λ<listaS.length; λ++) {
+            for(int φ=0; φ<TAM_X; φ++) {
+                for(int Ψ=0; Ψ<TAM_Y ; Ψ++) {
+                    if(dimension[φ][Ψ].hayAlgunSuperviviente(listaS[λ])) {
+                        for(int ϑ=0; ϑ<TURNOS_SUPERVIVIENTES; ϑ++) {
+                            ejecutarAccionesSupervivientes(dimension[φ][Ψ].getSuperviviente(listaS[λ]));
+                        }
+                    }
+                }
+            }
+        }
+        return true;
     }
+
+    public void ejecutarAccionesSupervivientes(Superviviente s) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Acciones disponibles para el Superviviente:");
+        System.out.println("1. No hacer nada");
+        System.out.println("2. Moverse");
+        System.out.println("3. Atacar");
+        System.out.println("4. Buscar equipo");
+        System.out.println("5. Cambiar arma");
+        System.out.print("Selecciona la acción que deseas realizar (1-5): ");
+
+        int opcion = scanner.nextInt();
+
+        switch (opcion) {
+            case 1: // No hacer nada
+                break;
+            case 2: // Moverser
+                int xDestino, yDestino;
+                do {
+                    System.out.print("Introduce la coordenada X de la casilla destino (0-10): ");
+                    xDestino = scanner.nextInt();
+                    System.out.print("Introduce la coordenada Y de la casilla destino (0-10): ");
+                    yDestino = scanner.nextInt();
+
+                    if (xDestino < 0 || xDestino >= TAM_X || yDestino < 0 || yDestino >= TAM_Y) {
+                        System.out.println("Coordenadas fuera del rango permitido. Intenta de nuevo.");
+                    }
+                } while (xDestino < 0 || xDestino >= TAM_X || yDestino < 0 || yDestino >= TAM_Y);
+
+                moverse(new Casilla(xDestino, yDestino), s);
+                break;
+
+            case 3: // Atacar
+
+                System.out.println("Iniciando ataque...");
+
+                // Pedir si usará el arma izquierda o derecha
+                System.out.print("¿Usar el arma izquierda? (true para izquierda, false para derecha): ");
+                boolean izq = scanner.nextBoolean();
+
+                // Pedir las coordenadas de la casilla objetivo
+                int xObjetivo, yObjetivo;
+                do {
+                    System.out.print("Introduce la coordenada X de la casilla objetivo (0-10): ");
+                    xObjetivo = scanner.nextInt();
+                    System.out.print("Introduce la coordenada Y de la casilla objetivo (0-10): ");
+                    yObjetivo = scanner.nextInt();
+
+                    if (xObjetivo < 0 || xObjetivo >= TAM_X || yObjetivo < 0 || yObjetivo >= TAM_Y) {
+                        System.out.println("Coordenadas fuera del rango permitido. Intenta de nuevo.");
+                    }
+                } while (xObjetivo < 0 || xObjetivo >= TAM_X || yObjetivo < 0 || yObjetivo >= TAM_Y);
+
+                // Llamar al método generarAtaque
+                generarAtaque(s, izq, new Casilla(xObjetivo, yObjetivo));
+                break;
+                
+            case 4: // Buscar equipo
+                Casilla c = buscarCasillaOrigen(s);
+                c.buscarEquipo(s);
+                break;
+
+            case 5: // Cambiar arma
+                // Mostrar todas las armas que tiene el superviviente
+                System.out.println("Armas disponibles:");
+
+                // Recorremos el inventario y mostramos las armas
+                for (int i = 0; i < s.getInventario().length; i++) {
+                    if (s.getInventario()[i] instanceof Arma) {
+                        System.out.println(i + ": " + ((Arma) s.getInventario()[i]).getNombre());
+                        System.out.println(i + ": " + ((Arma) s.getInventario()[i]).getId());
+                    }
+                }
+
+                // Pedir al jugador que elija el arma
+                Scanner aux = new Scanner(System.in);
+                System.out.println("Selecciona la ID del arma que deseas equipar:");
+                int id = aux.nextInt();
+
+                // Verificar que el id es válido
+                
+                if (s.estaArmaEnInventario(id)) {
+                    Arma arma = s.getArma(id);
+                    // Preguntar si se quiere equipar en la mano izquierda o derecha
+                    System.out.println("¿Quieres equipar el arma en la mano izquierda o derecha? (I/D):");
+                    char mano = aux.next().toUpperCase().charAt(0);
+
+                    if (mano == 'I') {
+                        // Ejecutamos el método elegirArma pasando el arma y la mano elegida
+                        s.elegirArma(arma, true);
+                    } else {
+                        s.elegirArma(arma, false);
+                    }
+                } else {
+                    System.out.println("Índice no válido. Asegúrate de elegir un arma en el inventario.");
+                }
+                break;
+                
+            default:
+                System.out.println("Opción no válida. Intenta nuevamente.");
+                ejecutarAccionesSupervivientes(s); // Repetir si la opción es inválida
+                break;
+        }
+    }
+
     
     private boolean turnoZombis() {
-        
+        //activacionesZombies()
+        //zombiMuerdeSuperviviente()
+        //zombiMueveHaciaSuperviviente()
+        return false;
     }
     
     private boolean generarNuevosZombis() {
@@ -171,6 +295,7 @@ public class Juego {
         return resolverAtaque(a, objetivo, exitos); // Resuelve el ataque eliminando enemigos si aplica
     }
 
+    
     private Arma elegirArma(Superviviente s, boolean izq) {
         // Busca el arma en todas las casillas del tablero
         for (int i = 0; i < TAM_X; i++) {
