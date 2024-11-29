@@ -1,7 +1,7 @@
 # Cosas a Mirar
 
 ## 1. Equals de Arma
-- [ ] Ahora se distinguen por el id, revisar si hemos utilizado el equals en otra función y modificarlo (PENDIENTE).
+- [x] Ahora se distinguen por el id, revisar si hemos utilizado el equals en otra función y modificarlo (PENDIENTE).
 
 
 # PRÁCTICA GRUPAL 2024/2025 – A – POO – Calipsis Zombi
