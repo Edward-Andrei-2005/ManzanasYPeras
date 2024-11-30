@@ -1,5 +1,6 @@
 package apoocalipsis;
 import apoocalipsis.Arma;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Juego {
@@ -12,9 +13,12 @@ public class Juego {
     private static final Casilla CASILLA_INICIO = new Casilla(0, 0);
     private static final Casilla CASILLA_FIN = new Casilla(9, 9);
     
-    private static final int NUM_ZOMBIS_NUEVOS_POR_TURNO = 2;
+    private static final int NUM_ZOMBIS_INICIO = 3;
+    private static final int NUM_ZOMBIS_NUEVOS_POR_TURNO = 1;
     private static final int TURNOS_SUPERVIVIENTES = 3;
     
+    private static final int PROBABILIDAD_CAMINANTE = 6; // 60%
+    private static final int PROBABILIDAD_CORREDOR = 9; // 30%
 
     public Juego() {
         dimension = new Casilla[TAM_X][TAM_Y]; // Inicializa el tablero con casillas vacías
@@ -29,11 +33,13 @@ public class Juego {
     // Metodo que gestiona todo el ciclo de una partida
     public boolean hacerPartida(String [] listaNombres) {
         asignarSupervivientesPosicionInicial(listaNombres);
+        generarZombisInicio();
         
         do {
             turnoSupervivientes(listaNombres);
             turnoZombis();
-            generarNuevosZombis();
+            // reiniciarActivaciones();
+            generarNuevoZombi();
         } while (!hayAlgunSupervivienteMuerto() && !hanGanadoSupervivientes());
         return true;
     }
@@ -42,7 +48,8 @@ public class Juego {
         for(int λ=0; λ<listaS.length; λ++) {
             for(int φ=0; φ<TAM_X; φ++) {
                 for(int Ψ=0; Ψ<TAM_Y ; Ψ++) {
-                    if(dimension[φ][Ψ].hayAlgunSuperviviente(listaS[λ])) {
+                    if(dimension[φ][Ψ].estaSuperviviente(listaS[λ]) 
+                            && dimension[φ][Ψ].getSuperviviente(listaS[λ]).estaVivo()) {
                         for(int ϑ=0; ϑ<TURNOS_SUPERVIVIENTES; ϑ++) {
                             ejecutarAccionesSupervivientes(dimension[φ][Ψ].getSuperviviente(listaS[λ]));
                         }
@@ -52,8 +59,102 @@ public class Juego {
         }
         return true;
     }
+    
+    public boolean turnoZombis() {
+        for (int i = 0; i < TAM_X; i++) {
+            for (int j = 0; j < TAM_Y; j++) {
+                if (dimension[i][j].hayAlgunZombi()) {
+                    for (EntidadActivable e : dimension[i][j].getListaEntidades()) {
+                        if (e instanceof Zombi && ((Zombi) e).getActivaciones() > 0) {
+                            // Separar supervivientes en heridos y sanos
+                            ArrayList<Superviviente> supervivientesHeridos = new ArrayList<>();
+                            ArrayList<Superviviente> supervivientesSanos = new ArrayList<>();
 
-    public void ejecutarAccionesSupervivientes(Superviviente s) {
+                            // Me separa los supervivientes sanos y heridos
+                            for (EntidadActivable e2 : dimension[i][j].getListaEntidades()) {
+                                if (e2 instanceof Superviviente && ((Superviviente) e2).estaVivo()) {
+                                    if (((Superviviente) e2).estaHerido()) {
+                                        supervivientesHeridos.add((Superviviente) e2);
+                                    } else {
+                                        supervivientesSanos.add((Superviviente) e2);
+                                    }
+                                }
+                            }
+
+                            // Atacar supervivientes, dando prioridad a los heridos
+                            if (!supervivientesHeridos.isEmpty()) {
+                                Superviviente herido = supervivientesHeridos.get(0); // Tomar el primer herido
+                                herido.recibirAtaque();
+                                ((Zombi) e).quitarActivacionesZombi();
+                            } else if (!supervivientesSanos.isEmpty()) {
+                                Superviviente sano = supervivientesSanos.get(0); // Tomar el primer sano
+                                sano.recibirAtaque();
+                                ((Zombi) e).quitarActivacionesZombi();
+                            } else { // No hay Supervivientes vivos
+                                moverseZombi((Zombi) e, obtenerCasillaSupervivienteMasCercano((Zombi) e)); // Si no hay supervivientes, el zombi puede moverse
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return false;
+    }
+    
+    private Casilla obtenerCasillaSupervivienteMasCercano(Zombi z) {
+        Casilla origen = buscarCasillaOrigen(z); // Encuentra la casilla actual del zombi
+        Casilla destino = null;
+        int distanciaMinima = TAM_X; // El tamaño más grande que acepta el tablero
+
+        // Buscar la casilla más cercana con un superviviente
+        for (int i = 0; i < TAM_X; i++) {
+            for (int j = 0; j < TAM_Y; j++) {
+                if (dimension[i][j].hayAlgunSuperviviente()) {
+                    int distancia = dimension[i][j].distancia(origen);
+                    if (distancia < distanciaMinima) {
+                        distanciaMinima = distancia;
+                        destino = dimension[i][j]; // La casilla ojetivo será la casilla actual
+                    }
+                }
+            }
+        }
+        
+        return destino;
+    }
+    
+    private void moverseZombi(Zombi zombi, Casilla objetivo) {
+        // Obtener la posición actual del zombi
+        int xActual = buscarCasillaOrigen(zombi).getX();
+        int yActual = buscarCasillaOrigen(zombi).getY();
+
+        // Coordenadas de la casilla objetivo
+        int xObjetivo = objetivo.getX();
+        int yObjetivo = objetivo.getY();
+
+        // Máximo de movimientos del zombi (1 casilla por activación)
+        int activacionesZombi = zombi.getActivaciones();
+
+        // Mientras el zombi tenga movimientos y no haya llegado al objetivo
+        while (activacionesZombi > 0 && (xActual != xObjetivo || yActual != yObjetivo)) {
+            // Decidir en qué dirección moverse en X
+            if (xActual < xObjetivo) {
+                xActual++; // Mover hacia la derecha
+            } else if (xActual > xObjetivo) {
+                xActual--; // Mover hacia la izquierda
+            } else if (yActual < yObjetivo) {
+                yActual++; // Mover hacia abajo
+            } else if (yActual > yObjetivo) {
+                yActual--; // Mover hacia arriba
+            }
+            activacionesZombi--;
+        }
+
+        // Actualizar la posición del zombi
+        moverse(new Casilla(xActual, yActual), zombi);
+    }
+
+    // ejecutarAccionesSupervivientes solo se ejecutará si el superviviente está vivo, no hay que hacer distinciones
+    private void ejecutarAccionesSupervivientes(Superviviente s) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Acciones disponibles para el Superviviente:");
         System.out.println("1. No hacer nada");
@@ -68,7 +169,7 @@ public class Juego {
         switch (opcion) {
             case 1: // No hacer nada
                 break;
-            case 2: // Moverser
+            case 2: // Moverse
                 int xDestino, yDestino;
                 do {
                     System.out.print("Introduce la coordenada X de la casilla destino (0-10): ");
@@ -156,17 +257,9 @@ public class Juego {
                 break;
         }
     }
-
     
-    private boolean turnoZombis() {
-        //activacionesZombies()
-        //zombiMuerdeSuperviviente()
-        //zombiMueveHaciaSuperviviente()
-        return false;
-    }
-    
-    private boolean generarNuevosZombis() {
-        for (int i=0; i<NUM_ZOMBIS_NUEVOS_POR_TURNO; i++) {
+    private boolean generarNuevoZombi() {
+        for (int i = 0; i < NUM_ZOMBIS_NUEVOS_POR_TURNO; i++) {
             // Genera una posicion aleatoria para un zombi que cumpla
             // que no este en una casilla adyacente a un superviviente
             boolean valido = true;
@@ -175,57 +268,72 @@ public class Juego {
                 valido = true;
                 x = (int) (Math.random() * TAM_X) + 1;
                 y = (int) (Math.random() * TAM_Y) + 1;
-                
+
                 // Comprobamos si hay algun superviviente en alguna de las adyacentes
                 int x1 = x + 1;
                 int y1 = y;
-                if (dimension[x1][y1].hayAlgunSuperviviente()) valido = false;
+                if (dimension[x1][y1].hayAlgunSupervivienteVivo()) valido = false;
                 x1 = x;
                 y1 = y + 1;
-                if (dimension[x1][y1].hayAlgunSuperviviente()) valido = false;
+                if (dimension[x1][y1].hayAlgunSupervivienteVivo()) valido = false;
                 x1 = x - 1;
                 y1 = y;
-                if (dimension[x1][y1].hayAlgunSuperviviente()) valido = false;
+                if (dimension[x1][y1].hayAlgunSupervivienteVivo()) valido = false;
                 x1 = x;
                 y1 = y - 1;
-                if (dimension[x1][y1].hayAlgunSuperviviente()) valido = false;
+                if (dimension[x1][y1].hayAlgunSupervivienteVivo()) valido = false;
             } while (!valido);
-            
-            int numero = (int) (Math.random() * 9);
-            
-            switch(numero) {
-                case 0:
-                    dimension[x][y].anadirEntidad(new Abominacion());
-                    break;
-                case 1:
-                    dimension[x][y].anadirEntidad(new AbominacionBerserker());
-                    break;
-                case 2:
-                    dimension[x][y].anadirEntidad(new AbominacionToxico());
-                    break;
-                case 3:
-                    dimension[x][y].anadirEntidad(new Caminante());
-                    break;
-                case 4:
-                    dimension[x][y].anadirEntidad(new CaminanteBerserker());
-                    break;
-                case 5:
-                    dimension[x][y].anadirEntidad(new CaminanteToxico());
-                    break;
-                case 6:
-                    dimension[x][y].anadirEntidad(new Corredor());
-                    break;
-                case 7:
-                    dimension[x][y].anadirEntidad(new CorredorBerserker());
-                    break;
-                case 8:
-                    dimension[x][y].anadirEntidad(new CorredorToxico());
-                    break;
+
+            int numero = (int) (Math.random() * 10); // Genera un número entre 0 y 9
+
+            // CAMINANTE (0-5), CORREDOR (6-8), ABOMINACIÓN (9)
+            if (numero < PROBABILIDAD_CAMINANTE) { // 60% de probabilidad
+                switch ((int) (Math.random() * 3)) { // Me genera un número entre 0 y 2
+                    case 0:
+                        dimension[x][y].anadirEntidad(new Caminante());
+                        break;
+                    case 1:
+                        dimension[x][y].anadirEntidad(new CaminanteBerserker());
+                        break;
+                    case 2:
+                        dimension[x][y].anadirEntidad(new CaminanteToxico());
+                        break;
+                }
+            } else if (numero >= PROBABILIDAD_CAMINANTE && numero < PROBABILIDAD_CORREDOR) { // 30% de probabilidad
+                switch ((int) (Math.random() * 3)) { // Me genera un número entre 0 y 2
+                    case 0:
+                        dimension[x][y].anadirEntidad(new Corredor());
+                        break;
+                    case 1:
+                        dimension[x][y].anadirEntidad(new CorredorBerserker());
+                        break;
+                    case 2:
+                        dimension[x][y].anadirEntidad(new CorredorToxico());
+                        break;
+                }
+            } else { // 10% de probabilidad
+                switch ((int) (Math.random() * 3)) { // Me genera un número entre 0 y 2
+                    case 0:
+                        dimension[x][y].anadirEntidad(new Abominacion());
+                        break;
+                    case 1:
+                        dimension[x][y].anadirEntidad(new AbominacionBerserker());
+                        break;
+                    case 2:
+                        dimension[x][y].anadirEntidad(new AbominacionToxico());
+                        break;
+                }
             }
         }
         return true;
     }
     
+    private boolean generarZombisInicio() {
+        for (int i = 0; i < NUM_ZOMBIS_INICIO; i++) {
+            generarNuevoZombi();
+        }
+        return true;
+    }
     
     private boolean asignarSupervivientesPosicionInicial(String [] listaS) {
         for (int i=0; i<listaS.length-1; i++) {
@@ -256,13 +364,14 @@ public class Juego {
     private boolean hanGanadoSupervivientes() {
         for (int i=0; i<TAM_X; i++) {
             for (int j=0; j<TAM_Y; j++) {
-                if (!dimension[i][j].equals(CASILLA_FIN) &&
-                        dimension[i][j].hayAlgunSuperviviente())   return false;
+                if (!dimension[i][j].equals(CASILLA_FIN) && dimension[i][j].hayAlgunSuperviviente()
+                        && dimension[i][j].noTieneProvisionSuperviviente()) return false;
             }
         }
         return true;
     }
 
+    // Este método solo funciona cuando la casilla está adyacente
     public boolean moverse(Casilla destino, EntidadActivable e) {
         Casilla origen = buscarCasillaOrigen(e); // Encuentra la casilla actual de la entidad
 
@@ -289,10 +398,10 @@ public class Juego {
             System.err.println("Arma fuera de rango");
             return false;
         }
-
+        
         int exitos = evaluarExito(lanzarDados(a), a); // Calcula los éxitos del ataque basados en los dados
-
-        return resolverAtaque(a, objetivo, exitos); // Resuelve el ataque eliminando enemigos si aplica
+        
+        return resolverAtaque(a, objetivo, exitos, s); // Resuelve el ataque eliminando enemigos si aplica
     }
 
     
@@ -340,8 +449,8 @@ public class Juego {
         return contador; // Devuelve el número de éxitos
     }
 
-    private boolean resolverAtaque(Arma a, Casilla destino, int exitos) {
+    private boolean resolverAtaque(Arma a, Casilla destino, int exitos, Superviviente s) {
         // Elimina los zombis en la casilla objetivo si el número de éxitos es suficiente
-        return destino.eliminarZombis(a, exitos);
+        return destino.eliminarZombis(a, exitos, s);
     }
 }
