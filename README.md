@@ -1,7 +1,7 @@
 # Cosas a Mirar
 
 - [x] Arma ahora se distinguen por el id, revisar si hemos utilizado el equals en otra función y modificarlo.
-- [ ] Modificar función hanGanadoSupervivientes y poner otra condición donde se vea si todos los supervivientes tienen una provisión en su inventario.
+- [x] Modificar función hanGanadoSupervivientes y poner otra condición donde se vea si todos los supervivientes tienen una provisión en su inventario.
 - [x] Añadir +1 contador de zombis matados de superviviente en la función resolver ataque.
 
 # PRÁCTICA GRUPAL 2024/2025 – A – POO – Calipsis Zombi
