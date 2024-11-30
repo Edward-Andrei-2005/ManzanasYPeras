@@ -1,7 +1,6 @@
 # Cosas a Mirar
 
-## 1. Equals de Arma
-- [ ] Ahora se distinguen por el id, revisar si hemos utilizado el equals en otra función y modificarlo.
+- [ ] Arma ahora se distinguen por el id, revisar si hemos utilizado el equals en otra función y modificarlo.
 - [ ] Modificar función hanGanadoSupervivientes y poner otra condición donde se vea si todos los supervivientes tienen una provisión en su inventario.
 - [ ] Añadir +1 contador de zombis matados de superviviente en la función resolver ataque.
 
