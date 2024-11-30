@@ -17,7 +17,7 @@
 
 ## 3. **Ataque Zombi**
   - Comprobamos en todo el tablero si cada casilla tiene Zombi:
-    - Si tiene zombi comprobamos si tiene superviviente. En caso de que lo tenga, lo herimos (de haber varios supervivientes se prioriza atacar a los ya heridos) y si no lo tiene nos movemos hacia el más cercano. Si hay más zombis ejecutamos esto para cada uno.
+    - Si tiene zombi comprobamos si tiene superviviente. En caso de que lo tenga, lo herimos (¿de haber varios supervivientes se prioriza atacar a los ya heridos?) y si no lo tiene nos movemos hacia el más cercano. Si hay más zombis ejecutamos esto para cada uno.
     - Si no hay zombi pasamos a la siguiente casilla.
 
 
