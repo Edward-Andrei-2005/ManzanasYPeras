@@ -1,6 +1,6 @@
 # Cosas a Mirar
 
-- [ ] Arma ahora se distinguen por el id, revisar si hemos utilizado el equals en otra función y modificarlo.
+- [x] Arma ahora se distinguen por el id, revisar si hemos utilizado el equals en otra función y modificarlo.
 - [ ] Modificar función hanGanadoSupervivientes y poner otra condición donde se vea si todos los supervivientes tienen una provisión en su inventario.
 - [ ] Añadir +1 contador de zombis matados de superviviente en la función resolver ataque.
 
