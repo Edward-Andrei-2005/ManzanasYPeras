@@ -6,15 +6,15 @@
 - [ ] Modificar cuando un Superviviente mata un Zombi. Si éste es tóxico, inflinge daño en esa casilla. Pág2.
 - [ ] ¿Es necesario distinguir el tipo de Zombi que ataca? Atacan todos igual, ¿no?
 
-## Cosas Hechas
+# Cosas Hechas
 
-### 1. **Provisión**
+## 1. **Provisión**
    - Cuando se gane una ronda, comprobar si todos los supervivientes tienen provisiones, si no las tienen no se gana la ronda.
 
-### 2. **Turnos**
+## 2. **Turnos**
    - Al inicio de la partida se generan 3 zombis, y en cada turno se añade uno más.
 
-### 3. **Ataque Zombi**
+## 3. **Ataque Zombi**
   - Comprobamos en todo el tablero si cada casilla tiene Zombi:
     - Si tiene zombi comprobamos si tiene superviviente. En caso de que lo tenga, lo herimos (de haber varios supervivientes se prioriza atacar a los ya heridos) y si no lo tiene nos movemos hacia el más cercano. Si hay más zombis ejecutamos esto para cada uno.
     - Si no hay zombi pasamos a la siguiente casilla.
