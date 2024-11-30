@@ -35,8 +35,6 @@ Se deberá entregar un archivo `.zip` a través de Aula Virtual que contenga:
 - Archivo `leeme.txt` con indicaciones útiles para el equipo docente sobre la ejecución de la práctica y nombres de los autores.
 - Vídeo pruebas.mp4 (o enlace a Youtube/similar) donde se detallen las pruebas realizadas sobre todas las funcionalidades del juego haciendo una partida completa y visualización de datos de las estadísticas y partidas
 ---
-![image](https://github.com/user-attachments/assets/74106fb1-02a1-4576-893e-f2c381da1b44)
-
 
 ![image](https://github.com/user-attachments/assets/9c7ca389-599c-40af-a1cf-5866c6699682)
 
