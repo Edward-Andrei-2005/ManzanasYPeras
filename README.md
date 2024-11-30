@@ -6,6 +6,20 @@
 - [ ] Modificar cuando un Superviviente mata un Zombi. Si éste es tóxico, inflinge daño en esa casilla. Pág2.
 - [ ] ¿Es necesario distinguir el tipo de Zombi que ataca? Atacan todos igual, ¿no?
 
+## Cosas Hechas
+
+### 1. **Provisión**
+   - Cuando se gane una ronda, comprobar si todos los supervivientes tienen provisiones, si no las tienen no se gana la ronda.
+
+### 2. **Turnos**
+   - Al inicio de la partida se generan 3 zombis, y en cada turno se añade uno más.
+
+### 3. **Ataque Zombi**
+  - Comprobamos en todo el tablero si cada casilla tiene Zombi:
+    - Si tiene zombi comprobamos si tiene superviviente. En caso de que lo tenga, lo herimos (de haber varios supervivientes se prioriza atacar a los ya heridos) y si no lo tiene nos movemos hacia el más cercano. Si hay más zombis ejecutamos esto para cada uno.
+    - Si no hay zombi pasamos a la siguiente casilla.
+
+
 # PRÁCTICA GRUPAL 2024/2025 – A – POO – Calipsis Zombi
 <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/Edward-Andrei-2005/ManzanasYPeras">A – POO – Calipsis Zombi</a> by <span property="cc:attributionName">Anass Chikou, Edward Andrei, Manuel Alos</span> is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-ND 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nd.svg?ref=chooser-v1" alt=""></a></p>
 
