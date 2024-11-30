@@ -40,6 +40,27 @@ public class Superviviente extends EntidadActivable {
     public Equipo[] getInventario() {
         return inventario;
     }
+
+    public int getHeridas() {
+        return heridas;
+    }
+    
+    public void setEstado(boolean estado) {
+        this.estado = estado;
+    }
+
+    // Sumar tamaño a la lista de zombis eliminados
+    public void sumarZombisKO(int tam) {
+        if (contZombisKO >= 0) this.contZombisKO += tam;
+    }
+    
+    // Comprueba si el superviviente tiene provisión
+    public boolean tieneProvision() {
+        for (int i = 0; i < inventario.length; i++) {
+            if (inventario[i] instanceof Provision) return true;
+        }
+        return false;
+    }
     
     public Arma getArma(int id) {
         if(inventario.length == 0) {
@@ -81,7 +102,6 @@ public class Superviviente extends EntidadActivable {
         return false;
     }
     
-    
     public boolean agregarEquipo(Equipo eq) {
         if (siguiente == TAM_EQUIPO) eliminarEquipo();
         inventario[siguiente++] = eq;
@@ -109,13 +129,27 @@ public class Superviviente extends EntidadActivable {
     public boolean inventarioLleno() {
         return inventario.length == TAM_EQUIPO;
     }
-
-
-    public boolean activarse() {
-        return true;
+    
+    public boolean estaVivo() {
+        return estado == true;
     }
     
-    public boolean estaMuerto() { return !estado; }
+    public boolean estaMuerto() {
+        return !estaVivo();
+    }
+    
+    public boolean estaHerido() {
+        return heridas > 0;
+    }
+    
+    // Aplica los ataques de Zombi a Superviviente
+    public void recibirAtaque() { // se hace con boolean??
+        if (heridas == 0) heridas++;
+        else {
+            ++heridas;
+            setEstado(false);
+        }
+    }
 
     @Override
     public boolean equals(Object o) {
