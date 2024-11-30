@@ -25,6 +25,10 @@ public class Casilla {
     public int getY() {
         return y; // Devuelve el valor de la coordenada y
     }
+
+    public ArrayList<EntidadActivable> getListaEntidades() {
+        return listaEntidades;
+    }
     
     // Busca el arma del superviviente en función de la mano seleccionada (izquierda o derecha)
     // Devuelve null si el superviviente no está en la casilla
@@ -43,7 +47,7 @@ public class Casilla {
     }
     
     // Devuelve una lista de zombis eliminables usando un arma dada y un número de éxitos disponible
-    public boolean eliminarZombis(Arma a, int exitos) {
+    public boolean eliminarZombis(Arma a, int exitos, Superviviente s) {
         ArrayList<EntidadActivable> zombisAEliminar = new ArrayList<>(); // Lista para almacenar los zombis eliminables
         
         for (EntidadActivable e : listaEntidades) { // Itera por las entidades de la casilla
@@ -57,7 +61,10 @@ public class Casilla {
             }
         }
         
-        eliminarEntidad(zombisAEliminar); 
+        eliminarEntidad(zombisAEliminar);
+        
+        // Actualizamos la lista de zombis eliminados por el superviviente
+        s.sumarZombisKO(zombisAEliminar.size());
         
         return !zombisAEliminar.isEmpty();
     }
@@ -113,27 +120,48 @@ public class Casilla {
     }
     
     public boolean hayAlgunSupervivienteMuerto() {
-        boolean v = false;
         for (EntidadActivable e : listaEntidades) {
-            if (e instanceof Superviviente){
-                v = ((Superviviente) e).estaMuerto();
-            } 
+            if (e instanceof Superviviente && ((Superviviente) e).estaMuerto()) {
+                return true;
+            }
         }
-        return v;
+        return false;
+    }
+    
+    public boolean hayAlgunSupervivienteVivo() {
+        for (EntidadActivable e : listaEntidades) {
+            if (e instanceof Superviviente && ((Superviviente) e).estaVivo()) {
+                return true;
+            }
+        }
+        return false;
     }
     
     public boolean hayAlgunSuperviviente() {
-        boolean v = false;
         for (EntidadActivable e : listaEntidades) {
-            if (e instanceof Superviviente) v = true; 
+            if (e instanceof Superviviente) return true; 
         }
-        return v;
+        return false;
     }
     
+    public boolean hayAlgunZombi() {
+        for (EntidadActivable e : listaEntidades) {
+            if (e instanceof Zombi) return true; 
+        }
+        return false;
+    }
     
-    public boolean hayAlgunSuperviviente(String nombre) {
+    public boolean estaSuperviviente(String nombre) {
         for(EntidadActivable e: listaEntidades) {
             if ((e instanceof Superviviente) && (((Superviviente) e).getNombre().equals(nombre))) return true;
+        }
+        return false;
+    }
+    
+    public boolean estaSupervivienteVivo(String nombre) {
+        for(EntidadActivable e: listaEntidades) {
+            if ((e instanceof Superviviente) && (((Superviviente) e).getNombre().equals(nombre)) 
+                    && ((Superviviente) e).estaVivo()) return true;
         }
         return false;
     }
@@ -143,6 +171,14 @@ public class Casilla {
             if ((e instanceof Superviviente) && (((Superviviente) e).getNombre().equals(nombre))) return (Superviviente) e;
         }
         return null;
+    }
+    
+    // Devuelve false si hay algún superviviente que no tenga provisión
+    public boolean noTieneProvisionSuperviviente() {
+        for (EntidadActivable e: listaEntidades) {
+            if (e instanceof Superviviente && !(((Superviviente) e).tieneProvision())) return false;
+        }
+        return true;
     }
     
     @Override
