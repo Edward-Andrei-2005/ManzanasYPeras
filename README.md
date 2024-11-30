@@ -6,6 +6,7 @@
 - [ ] Modificar cuando un Superviviente mata un Zombi. Si éste es tóxico, inflinge daño en esa casilla. Pág2.
 - [ ] ¿Es necesario distinguir el tipo de Zombi que ataca? Atacan todos igual, ¿no?
 - [ ] Revisar TODAS las funciones en las que intervengan los supervivientes. Modificar a que las usen solo los supervivientes vivos.
+- [ ] Hacer reaccionarAtaqueZombie, atributo o método?
 
 # Cosas Hechas
 
