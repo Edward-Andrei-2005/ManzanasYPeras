@@ -8,6 +8,7 @@
 - [ ] Revisar TODAS las funciones en las que intervengan los supervivientes. Modificar a que las usen solo los supervivientes vivos.
 - [ ] Hacer reaccionarAtaqueZombie, atributo o método?
 - [ ] Hacer que si hay zombis en la casilla de origen, cuesta tantas acciones extra como zombis acompañen al superviviente.
+- [ ] Cuando el Superviviente mate a un Caminante Tóxico le deje una herida.
 
 # Cosas Hechas
 
