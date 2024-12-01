@@ -6,6 +6,8 @@ public class APOOCalipsis {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Juego miJuego = new Juego();
+        String [] nombres = {"Edward", "Anass", "Manuel", "Uno", "dos"};
+        miJuego.hacerPartida(nombres);
     }
 }
