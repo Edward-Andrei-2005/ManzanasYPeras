@@ -55,6 +55,12 @@ public class Casilla {
                 break;
             } else if (e instanceof Zombi) { // Verifica si la entidad es un Zombi
                 if (((Zombi) e).esMatable(a)) { // Comprueba si el zombi puede ser eliminado con el arma
+                    // Si el zombi a matar es toxico se hiere a todos los supervivientes de una casilla
+                    if (((Zombi) e) instanceof CaminanteToxico ||
+                            ((Zombi) e) instanceof AbominacionToxico ||
+                            ((Zombi) e) instanceof CorredorToxico) {
+                        herirSupervivientes();
+                    }
                     zombisAEliminar.add(e); // Añade el zombi a la lista de eliminables
                     exitos--;
                 }
@@ -67,6 +73,13 @@ public class Casilla {
         s.sumarZombisKO(zombisAEliminar.size());
         
         return !zombisAEliminar.isEmpty();
+    }
+    
+    private boolean herirSupervivientes() {
+        for (EntidadActivable e : listaEntidades) {
+            if (e instanceof Superviviente) ((Superviviente) e).recibirAtaque();
+        }
+        return true;
     }
     
     public boolean esAdyacente(Casilla c) {
@@ -179,6 +192,14 @@ public class Casilla {
             if (e instanceof Superviviente && !(((Superviviente) e).tieneProvision())) return false;
         }
         return true;
+    }
+    
+    public int numeroZombis() {
+        int num = 0;
+        for (EntidadActivable e : listaEntidades) {
+            if (e instanceof Zombi) num++;
+        }
+        return num;
     }
     
     @Override
