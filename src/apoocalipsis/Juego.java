@@ -404,7 +404,9 @@ public class Juego {
         return false; // Movimiento inválido
     }
     
-    public boolean movimientoSuperviviente()
+    public boolean movimientoSuperviviente() {
+        return true;
+    }
 
     public boolean generarAtaque(Superviviente s, boolean izq, Casilla objetivo) {
         Arma a;
