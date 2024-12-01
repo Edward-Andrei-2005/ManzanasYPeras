@@ -159,7 +159,7 @@ public class Juego {
         int turnos = NUM_TURNOS_SUPERVIVIENTES;
         while (turnos > 0) {
             Scanner scanner = new Scanner(System.in);
-            System.out.println("Acciones disponibles para el Superviviente:");
+            System.out.println("Acciones disponibles para el Superviviente " + s.getNombre() + ":");
             System.out.println("1. No hacer nada");
             System.out.println("2. Moverse");
             System.out.println("3. Atacar");
@@ -188,6 +188,7 @@ public class Juego {
                     
                     Casilla origen = buscarCasillaOrigen(s);
 
+                    // Si no tiene suficiente numero de acciones en su turno para moverse, no se ejecuta el metodo moverse()
                     if (origen.numeroZombis() + 1 > turnos) {
                         System.out.println("Mi loco tu no te escapas");
                         break;
@@ -287,22 +288,32 @@ public class Juego {
             int x,y;
             do {
                 valido = true;
-                x = (int) (Math.random() * TAM_X) + 1;
-                y = (int) (Math.random() * TAM_Y) + 1;
+                x = (int) (Math.random() * TAM_X);
+                y = (int) (Math.random() * TAM_Y);
 
-                // Comprobamos si hay algun superviviente en alguna de las adyacentes
-                int x1 = x + 1;
-                int y1 = y;
-                if (dimension[x1][y1].hayAlgunSupervivienteVivo()) valido = false;
-                x1 = x;
-                y1 = y + 1;
-                if (dimension[x1][y1].hayAlgunSupervivienteVivo()) valido = false;
-                x1 = x - 1;
-                y1 = y;
-                if (dimension[x1][y1].hayAlgunSupervivienteVivo()) valido = false;
-                x1 = x;
-                y1 = y - 1;
-                if (dimension[x1][y1].hayAlgunSupervivienteVivo()) valido = false;
+                // Comprobamos si hay algún superviviente en las casillas adyacentes
+                // Coordenadas de las casillas adyacentes
+                int[][] adyacentes = {
+                    {x + 1, y}, // Sur
+                    {x, y + 1}, // Este
+                    {x - 1, y}, // Norte
+                    {x, y - 1}  // Oeste
+                };
+
+                // Verificar cada casilla adyacente
+                for (int[] coord : adyacentes) {
+                    int x1 = coord[0];
+                    int y1 = coord[1];
+
+                    // Verificar que las coordenadas estén dentro de los límites del mapa
+                    if (x1 >= 0 && x1 < TAM_X && y1 >= 0 && y1 < TAM_Y) {
+                        // Verificar si hay algún superviviente vivo en esa casilla
+                        if (dimension[x1][y1].hayAlgunSupervivienteVivo()) {
+                            valido = false;
+                            break; // Detenemos el bucle si ya encontramos uno
+                        }
+                    }
+                }
             } while (!valido);
 
             int numero = (int) (Math.random() * 10); // Genera un número entre 0 y 9
@@ -363,8 +374,8 @@ public class Juego {
             }
         }
         
-        int x = CASILLA_INICIO.getX()-1;
-        int y = CASILLA_INICIO.getY()-1;
+        int x = CASILLA_INICIO.getX();
+        int y = CASILLA_INICIO.getY();
         
         for (int i=0; i<listaS.length; i++) {
             dimension[x][y].anadirEntidad(new Superviviente(listaS[i]));
@@ -402,10 +413,6 @@ public class Juego {
             return true; // Movimiento exitoso
         }
         return false; // Movimiento inválido
-    }
-    
-    public boolean movimientoSuperviviente() {
-        return true;
     }
 
     public boolean generarAtaque(Superviviente s, boolean izq, Casilla objetivo) {
