@@ -1,164 +1,213 @@
 package apoocalipsis;
+import java.util.ArrayList;
 
-import java.util.Arrays;
-import java.util.Objects;
-
-public class Superviviente extends EntidadActivable {
+public class Casilla {
     // Atributos
-    private String nombre;
-    private boolean estado; // vivo = true, eliminado = false
-    private int contZombisKO;
-    private int heridas; // Un Superviviente es eliminado al recibir 2 heridas o mordeduras.
-    private Arma manoIzq, manoDer;
-    
-    private static final int TAM_EQUIPO = 5; // Tamaño máximo de Equipo [0..5]
-    private Equipo inventario[];
-    private int siguiente;
+    private int x; // Coordenada x de la casilla
+    private int y; // Coordenada y de la casilla
+    private ArrayList<EntidadActivable> listaEntidades; // Lista de entidades activables dentro de la casilla
+    private boolean quedaEquipo; // true = se puede buscar, false = no se puede buscar
     
     // Constructores
-    public Superviviente(String n) {
-        if (n != null) {
-            nombre = n;
-            estado = true;
-            inventario = new Equipo[TAM_EQUIPO];
+    public Casilla(int x, int y) {
+        if (x >= 0 && y >= 0) { // Los valores de x e y solo pueden ser positivos
+            this.x = x; // Inicializa el valor de x
+            this.y = y; // Inicializa el valor de y
+            listaEntidades = new ArrayList<>(); // Inicializa la lista de entidades como una lista vacía
+            quedaEquipo = true;
+        }
+    }
+
+    public int getX() {
+        return x; // Devuelve el valor de la coordenada x
+    }
+
+    public int getY() {
+        return y; // Devuelve el valor de la coordenada y
+    }
+
+    public ArrayList<EntidadActivable> getListaEntidades() {
+        return listaEntidades;
+    }
+    
+    // Busca el arma del superviviente en función de la mano seleccionada (izquierda o derecha)
+    // Devuelve null si el superviviente no está en la casilla
+    public Arma buscarArma(Superviviente s, boolean izq) {
+        if (estaEntidad(s)) { // Verifica si el superviviente está en la lista de entidades
+            int i = listaEntidades.indexOf(s); // Obtiene el índice del superviviente en la lista
+            Superviviente sup = (Superviviente) listaEntidades.get(i); // Recupera el objeto Superviviente
+            if (izq) { // Devuelve el arma de la mano izquierda si 'izq' es true
+                return sup.getManoIzq();
+            } else { // Devuelve el arma de la mano derecha si 'izq' es false
+                return sup.getManoDer();
+            }
+        } else {
+            return null; // Devuelve null si el superviviente no está en la lista
         }
     }
     
-    // Métodos
-    public String getNombre() {
-        return nombre;
+    // Devuelve una lista de zombis eliminables usando un arma dada y un número de éxitos disponible
+    public boolean eliminarZombis(Arma a, int exitos, Superviviente s) {
+        ArrayList<EntidadActivable> zombisAEliminar = new ArrayList<>(); // Lista para almacenar los zombis eliminables
+        
+        for (EntidadActivable e : listaEntidades) { // Itera por las entidades de la casilla
+            if (exitos == 0) { // Si no quedan éxitos, detiene el proceso
+                break;
+            } else if (e instanceof Zombi) { // Verifica si la entidad es un Zombi
+                if (((Zombi) e).esMatable(a)) { // Comprueba si el zombi puede ser eliminado con el arma
+                    // Si el zombi a matar es toxico se hiere a todos los supervivientes de una casilla
+                    if (((Zombi) e) instanceof CaminanteToxico ||
+                            ((Zombi) e) instanceof AbominacionToxico ||
+                            ((Zombi) e) instanceof CorredorToxico) {
+                        herirSupervivientes();
+                    }
+                    zombisAEliminar.add(e); // Añade el zombi a la lista de eliminables
+                    exitos--;
+                }
+            }
+        }
+        
+        eliminarEntidad(zombisAEliminar);
+        
+        // Actualizamos la lista de zombis eliminados por el superviviente
+        s.sumarZombisKO(zombisAEliminar.size());
+        
+        return !zombisAEliminar.isEmpty();
     }
     
-    public Arma getManoDer() {
-        return manoDer;
-    }
-
-    public Arma getManoIzq() {
-        return manoIzq;
-    }
-
-    public Equipo[] getInventario() {
-        return inventario;
-    }
-
-    public int getHeridas() {
-        return heridas;
+    private boolean herirSupervivientes() {
+        for (EntidadActivable e : listaEntidades) {
+            if (e instanceof Superviviente) ((Superviviente) e).recibirAtaque();
+        }
+        return true;
     }
     
-    public void setEstado(boolean estado) {
-        this.estado = estado;
-    }
-
-    // Sumar tamaño a la lista de zombis eliminados
-    public void sumarZombisKO(int tam) {
-        if (contZombisKO >= 0) this.contZombisKO += tam;
+    public boolean esAdyacente(Casilla c) {
+        return Math.abs(x-c.getX()) <= 1 && Math.abs(y-c.getY()) <= 1;
     }
     
-    // Comprueba si el superviviente tiene provisión
-    public boolean tieneProvision() {
-        for (int i = 0; i < inventario.length; i++) {
-            if (inventario[i] instanceof Provision) return true;
+    // Elimina las entidades de la lista que se encuentran en la lista proporcionada como argumento
+    public void eliminarEntidad(ArrayList<EntidadActivable> l) {
+        for (EntidadActivable e : l) { // Itera por cada entidad en la lista proporcionada
+            listaEntidades.remove(e); // Elimina la entidad de la lista de la casilla
+        }
+    }
+    
+    public void eliminarEntidad(EntidadActivable e) {
+        listaEntidades.remove(e);
+    }
+    
+    public void anadirEntidad(EntidadActivable e) {
+        listaEntidades.add(e);
+    }
+    
+    // Comprueba si una entidad está presente en la lista de la casilla
+    public boolean estaEntidad(EntidadActivable e) {
+        return listaEntidades.contains(e); // Devuelve true si la lista contiene a la entidad, false en caso contrario
+    }
+    
+    // Calcula la distancia entre esta casilla y otra casilla dada usando la fórmula de pitágoras
+    public int distancia(Casilla c) {
+        return (int) Math.sqrt(Math.pow(x - c.getX(), 2) + Math.pow(y - c.getY(), 2)); // Devuelve la distancia como entero
+    }
+    
+    /* Buscar equipo en la casilla actual. Se obtiene, de forma aleatoria, una instancia de
+    equipo. No se puede buscar dos veces en la misma casilla. */
+    public boolean buscarEquipo(Superviviente s) {
+        if (!quedaEquipo || !this.estaEntidad(s)) return false;
+        
+        int i = listaEntidades.indexOf(s);
+        Superviviente superviviente = (Superviviente) listaEntidades.get(i);
+        
+        if (superviviente.inventarioLleno()) superviviente.eliminarEquipo();
+        
+        if ((int) (Math.random() * 2) == 1) { // si aleatoriamente se elige Arma
+            superviviente.agregarEquipo(new Arma());
+        } else { // si aleatoriamente se elige Provision
+            superviviente.agregarEquipo(new Provision());
+        }
+        
+        quedaEquipo = false;
+        
+        return true;
+    }
+    
+    public boolean hayAlgunSupervivienteMuerto() {
+        for (EntidadActivable e : listaEntidades) {
+            if (e instanceof Superviviente && ((Superviviente) e).estaMuerto()) {
+                return true;
+            }
         }
         return false;
     }
     
-    public Arma getArma(int id) {
-        if(inventario.length == 0) {
-            return null;
-        } else {
-            for(int i=0; i<inventario.length; i++) {
-                if((inventario[i] instanceof Arma) && (((Arma) inventario[i]).getId() == id)) {
-                    return (Arma) inventario[i];
-                }
+    public boolean hayAlgunSupervivienteVivo() {
+        for (EntidadActivable e : listaEntidades) {
+            if (e instanceof Superviviente && ((Superviviente) e).estaVivo()) {
+                return true;
             }
+        }
+        return false;
+    }
+    
+    public boolean hayAlgunSuperviviente() {
+        for (EntidadActivable e : listaEntidades) {
+            if (e instanceof Superviviente) return true; 
+        }
+        return false;
+    }
+    
+    public boolean hayAlgunZombi() {
+        for (EntidadActivable e : listaEntidades) {
+            if (e instanceof Zombi) return true; 
+        }
+        return false;
+    }
+    
+    public boolean estaSuperviviente(String nombre) {
+        for(EntidadActivable e: listaEntidades) {
+            if ((e instanceof Superviviente) && (((Superviviente) e).getNombre().equals(nombre))) return true;
+        }
+        return false;
+    }
+    
+    public boolean estaSupervivienteVivo(String nombre) {
+        for(EntidadActivable e: listaEntidades) {
+            if ((e instanceof Superviviente) && (((Superviviente) e).getNombre().equals(nombre)) 
+                    && ((Superviviente) e).estaVivo()) return true;
+        }
+        return false;
+    }
+    
+    public Superviviente getSuperviviente(String nombre) {
+        for (EntidadActivable e : listaEntidades) {
+            if ((e instanceof Superviviente) && (((Superviviente) e).getNombre().equals(nombre))) return (Superviviente) e;
         }
         return null;
     }
     
-    public boolean eliminarEquipo() {
-        if (siguiente == 0) return false;
-        else {
-            if (inventario[0].equals(manoIzq)) {
-                manoIzq = null;
-            } else if (inventario[0].equals(manoDer)) {
-                manoDer = null;
-            }
-            
-            inventario[0] = inventario[--siguiente];
-            return true;
+    // Devuelve false si hay algún superviviente que no tenga provisión
+    public boolean noTieneProvisionSuperviviente() {
+        for (EntidadActivable e: listaEntidades) {
+            if (e instanceof Superviviente && !(((Superviviente) e).tieneProvision())) return false;
         }
-    }
-    
-    public boolean estaArmaEnInventario(int id) {
-        if(inventario.length == 0) {
-            return false;
-        } else {
-            for(int i=0; i<inventario.length; i++) {
-                if((inventario[i] instanceof Arma) && (((Arma) inventario[i]).getId() == id)) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-    
-    public boolean agregarEquipo(Equipo eq) {
-        if (siguiente == TAM_EQUIPO) eliminarEquipo();
-        inventario[siguiente++] = eq;
         return true;
     }
     
-    // Cambiar un arma activa de entre las armas que lleva en su inventario.
-    public boolean elegirArma(Arma arma, boolean izq) {
-        if (arma != null && inventario != null) {
-            for (int i = 0; i < siguiente; i++) {
-                if (arma.equals(inventario[i])) {
-                    if (izq == true && !manoDer.equals(manoIzq)) {
-                        manoIzq = arma;
-                        return true;
-                    } else if (izq == false && !manoIzq.equals(manoDer)) {
-                        manoDer = arma;
-                        return true;
-                    }
-                }
-            }
+    public int numeroZombis() {
+        int num = 0;
+        for (EntidadActivable e : listaEntidades) {
+            if (e instanceof Zombi) num++;
         }
-        return false;
+        return num;
     }
     
-    public boolean inventarioLleno() {
-        return inventario.length == TAM_EQUIPO;
-    }
-    
-    public boolean estaVivo() {
-        return estado == true;
-    }
-    
-    public boolean estaMuerto() {
-        return !estaVivo();
-    }
-    
-    public boolean estaHerido() {
-        return heridas > 0;
-    }
-    
-    // Aplica los ataques de Zombi a Superviviente
-    public void recibirAtaque() { // se hace con boolean??
-        if (heridas == 0) heridas++;
-        else {
-            ++heridas;
-            setEstado(false);
-        }
-    }
-
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
         if (o == null) return false;
+        if (this == o) return true;
         if (getClass() != o.getClass()) return false;
-        
-        final Superviviente s = (Superviviente) o;
-        
-        return nombre.equals(s.getNombre());
+        Casilla aux = (Casilla) o;
+        return x == aux.getX() && y == aux.getY();
     }
 }
