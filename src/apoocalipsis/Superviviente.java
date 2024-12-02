@@ -113,10 +113,10 @@ public class Superviviente extends EntidadActivable {
         if (arma != null && inventario != null) {
             for (int i = 0; i < siguiente; i++) {
                 if (arma.equals(inventario[i])) {
-                    if (izq == true && !manoDer.equals(manoIzq)) {
+                    if (izq == true && (manoDer == null || !manoDer.equals(manoIzq))) {
                         manoIzq = arma;
                         return true;
-                    } else if (izq == false && !manoIzq.equals(manoDer)) {
+                    } else if (izq == false && (manoIzq == null || !manoIzq.equals(manoDer))) {
                         manoDer = arma;
                         return true;
                     }
