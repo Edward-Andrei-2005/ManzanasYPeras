@@ -10,6 +10,7 @@
 - [ ] Hacer que si hay zombis en la casilla de origen, cuesta tantas acciones extra como zombis acompañen al superviviente.
 
 **QUITAR EL COMENTARIO DE `turno--` EN ACCION SUPERVIVIENTE DE `cambiarArma()`**
+
 **CAMBIAR CONSTANTE DE TURNOS DE SUPERVIVIENTE EN LA CLASE DE JUEGO**
 
 # Cosas Hechas
