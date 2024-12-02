@@ -15,7 +15,7 @@ public class Juego {
     
     private static final int NUM_ZOMBIS_INICIO = 3;
     private static final int NUM_ZOMBIS_NUEVOS_POR_TURNO = 1;
-    private static final int NUM_TURNOS_SUPERVIVIENTES = 3;
+    private static final int NUM_TURNOS_SUPERVIVIENTES = 2; //¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡CAMBIAR A 3!!!!!!!!!!!!!!!!!
     
     private static final int PROBABILIDAD_CAMINANTE = 6; // 60%
     private static final int PROBABILIDAD_CORREDOR = 9; // 30%
@@ -156,29 +156,32 @@ public class Juego {
 
     // ejecutarAccionesSupervivientes solo se ejecutará si el superviviente está vivo, no hay que hacer distinciones
     private void ejecutarAccionesSupervivientes(Superviviente s) {
+        System.out.println("\n************* " + s.getNombre() + " *************");
+        
         int turnos = NUM_TURNOS_SUPERVIVIENTES;
         while (turnos > 0) {
             Scanner scanner = new Scanner(System.in);
-            System.out.println("Acciones disponibles para el Superviviente " + s.getNombre() + ":");
+            System.out.println("Acciones disponibles para el Superviviente: ");
             System.out.println("1. No hacer nada");
             System.out.println("2. Moverse");
             System.out.println("3. Atacar");
             System.out.println("4. Buscar equipo");
             System.out.println("5. Cambiar arma");
-            System.out.print("Selecciona la acción que deseas realizar (1-5): ");
+            System.out.print("Selecciona la accion que deseas realizar (1-5): \n\n");
 
             int opcion = scanner.nextInt();
 
             switch (opcion) {
                 case 1: // No hacer nada
                     turnos--;
+                    System.out.println("Tienes " + turnos + " turnos");
                     break;
                 case 2: // Moverse
                     int xDestino, yDestino;
                     do {
-                        System.out.print("Introduce la coordenada X de la casilla destino (0-10): ");
+                        System.out.print("Introduce la coordenada X de la casilla destino (0-9): ");
                         xDestino = scanner.nextInt();
-                        System.out.print("Introduce la coordenada Y de la casilla destino (0-10): ");
+                        System.out.print("Introduce la coordenada Y de la casilla destino (0-9): ");
                         yDestino = scanner.nextInt();
 
                         if (xDestino < 0 || xDestino >= TAM_X || yDestino < 0 || yDestino >= TAM_Y) {
@@ -193,10 +196,14 @@ public class Juego {
                         System.out.println("Mi loco tu no te escapas");
                         break;
                     }
+                    moverse(dimension[xDestino][yDestino], s);
                     
-                    moverse(new Casilla(xDestino, yDestino), s);
+                    Casilla destino = buscarCasillaOrigen(s);
                     
                     turnos = turnos - (origen.numeroZombis() + 1);
+                    System.out.println("Tienes " + turnos + " turnos");
+                    System.out.println("Te has movido a la casilla: " +destino.toString());
+                    System.out.println();
                     break;
 
                 case 3: // Atacar
@@ -204,10 +211,27 @@ public class Juego {
                     System.out.println("Iniciando ataque...");
 
                     // Pedir si usará el arma izquierda o derecha
-                    System.out.print("¿Usar el arma izquierda? (true para izquierda, false para derecha): ");
+                    System.out.println("¿Usar el arma izquierda? (true para izquierda, false para derecha): ");
+                    if(s.getManoIzq() != null) {
+                        System.out.println("\t- En la mano izquierda tienes: " + s.getManoIzq().toString());
+                    }
+                    if(s.getManoDer() != null) {
+                        System.out.println("\t- En la mano derecha tienes: " + s.getManoDer().toString());
+                    }
+                    if(s.getManoIzq() == null && s.getManoDer() == null) {
+                        System.out.println("No tienes ningun arma en las manos, no puedes atacar");
+                        break;
+                    }
                     boolean izq = scanner.nextBoolean();
 
                     // Pedir las coordenadas de la casilla objetivo
+                    for (int i=0; i<TAM_X; i++) {
+                        for (int j=0; j<TAM_Y; j++) {
+                            if(dimension[i][j].numeroZombis() > 0) {
+                                System.out.println("En la casilla:\n " + dimension[i][j].toString() + "\nHay " +dimension[i][j].numeroZombis() + " zombis");
+                            }
+                        }
+                    }
                     int xObjetivo, yObjetivo;
                     do {
                         System.out.print("Introduce la coordenada X de la casilla objetivo (0-10): ");
@@ -224,13 +248,26 @@ public class Juego {
                     generarAtaque(s, izq, new Casilla(xObjetivo, yObjetivo));
                     
                     turnos--;
+                    System.out.println("Tienes " + turnos + " turnos");
                     break;
 
                 case 4: // Buscar equipo
                     Casilla c = buscarCasillaOrigen(s);
-                    c.buscarEquipo(s);
-                    
-                    turnos--;
+                    System.out.println(c.toString());
+                    Equipo e = c.buscarEquipo(s);
+                    if(e != null) {
+                        if(e instanceof Arma) {
+                            System.out.println("Has encontrado un arma!: " + e.toString());
+                            turnos--;
+                        } else if (e instanceof Provision) {
+                            System.out.println("Has encontrado una provision!: " + e.toString());
+                            turnos--;
+                        }
+
+                    } else {
+                        System.out.println("No has encontrado nada.");
+                    }
+                    System.out.println("Tienes " + turnos + " turnos");
                     break;
 
                 case 5: // Cambiar arma
@@ -240,8 +277,8 @@ public class Juego {
                     // Recorremos el inventario y mostramos las armas
                     for (int i = 0; i < s.getInventario().length; i++) {
                         if (s.getInventario()[i] instanceof Arma) {
-                            System.out.println(i + ": " + ((Arma) s.getInventario()[i]).getNombre());
-                            System.out.println(i + ": " + ((Arma) s.getInventario()[i]).getId());
+                            System.out.println("Nombre : " + ((Arma) s.getInventario()[i]).getNombre() +
+                                    "\tId: " + ((Arma) s.getInventario()[i]).getId());
                         }
                     }
 
@@ -261,14 +298,17 @@ public class Juego {
                         if (mano == 'I') {
                             // Ejecutamos el método elegirArma pasando el arma y la mano elegida
                             s.elegirArma(arma, true);
+                            System.out.println("Has cambiado el arma a la mano izquierda\n");
                         } else {
                             s.elegirArma(arma, false);
+                            System.out.println("Has cambiado el arma a la mano derecha\n");
                         }
                     } else {
                         System.out.println("Índice no válido. Asegúrate de elegir un arma en el inventario.");
                     }
                     
-                    turnos--;
+                    // QUITAR ESTE COMENTARIO turnos--;
+                    System.out.println("Tienes " + turnos + " turnos");
                     break;
 
                 default:
