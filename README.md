@@ -9,9 +9,9 @@
 - [ ] Hacer reaccionarAtaqueZombie, atributo o método?
 - [ ] Hacer que si hay zombis en la casilla de origen, cuesta tantas acciones extra como zombis acompañen al superviviente.
 
-- [ ]**QUITAR EL COMENTARIO DE `turno--` EN ACCION SUPERVIVIENTE DE `cambiarArma()`**
+- [ ] **QUITAR EL COMENTARIO DE `turno--` EN ACCION SUPERVIVIENTE DE `cambiarArma()`**
 
-- [ ]**CAMBIAR CONSTANTE DE TURNOS DE SUPERVIVIENTE EN LA CLASE DE JUEGO**
+- [ ] **CAMBIAR CONSTANTE DE TURNOS DE SUPERVIVIENTE EN LA CLASE DE JUEGO**
 
 # PRÁCTICA GRUPAL 2024/2025 – A – POO – Calipsis Zombi
 <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/Edward-Andrei-2005/ManzanasYPeras">A – POO – Calipsis Zombi</a> by <span property="cc:attributionName">Anass Chikou, Edward Andrei, Manuel Alos</span> is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-NC-ND 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/nd.svg?ref=chooser-v1" alt=""></a></p>
