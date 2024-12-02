@@ -93,6 +93,7 @@ public class Casilla {
         }
     }
     
+    
     public void eliminarEntidad(EntidadActivable e) {
         listaEntidades.remove(e);
     }
@@ -113,23 +114,23 @@ public class Casilla {
     
     /* Buscar equipo en la casilla actual. Se obtiene, de forma aleatoria, una instancia de
     equipo. No se puede buscar dos veces en la misma casilla. */
-    public boolean buscarEquipo(Superviviente s) {
-        if (!quedaEquipo || !this.estaEntidad(s)) return false;
-        
+    public Equipo buscarEquipo(Superviviente s) {
+        if (!quedaEquipo || !this.estaEntidad(s)) return null;
+        quedaEquipo = false;
         int i = listaEntidades.indexOf(s);
         Superviviente superviviente = (Superviviente) listaEntidades.get(i);
         
         if (superviviente.inventarioLleno()) superviviente.eliminarEquipo();
         
         if ((int) (Math.random() * 2) == 1) { // si aleatoriamente se elige Arma
-            superviviente.agregarEquipo(new Arma());
+            Arma a = new Arma();
+            superviviente.agregarEquipo(a);
+            return a;
         } else { // si aleatoriamente se elige Provision
-            superviviente.agregarEquipo(new Provision());
+            Provision p = new Provision();
+            superviviente.agregarEquipo(p);
+            return p;
         }
-        
-        quedaEquipo = false;
-        
-        return true;
     }
     
     public boolean hayAlgunSupervivienteMuerto() {
@@ -209,5 +210,10 @@ public class Casilla {
         if (getClass() != o.getClass()) return false;
         Casilla aux = (Casilla) o;
         return x == aux.getX() && y == aux.getY();
+    }
+    
+    @Override
+    public String toString() {
+        return "Coordenada X: " + getX() + " Coordenada Y: " + getY();
     }
 }
