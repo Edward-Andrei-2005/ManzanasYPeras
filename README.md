@@ -9,7 +9,7 @@
 - [ ] Hacer reaccionarAtaqueZombie, atributo o método?
 - [ ] Hacer que si hay zombis en la casilla de origen, cuesta tantas acciones extra como zombis acompañen al superviviente.
 
-**QUITAR EL COMENTARIO DE turno-- EN ACCION SUPERVIVIENTE DE cambiarArma()**
+**QUITAR EL COMENTARIO DE `turno--` EN ACCION SUPERVIVIENTE DE `cambiarArma()`**
 
 # Cosas Hechas
 
