@@ -57,4 +57,9 @@ public class Arma extends Equipo {
         Arma aux = (Arma) o;
         return id == aux.id;
     }
+    
+    @Override
+    public String toString() {
+        return "Tipo: " + getNombre() + "\tPotencia: " +getPotencia();
+    }
 }
