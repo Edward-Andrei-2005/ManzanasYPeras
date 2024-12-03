@@ -46,6 +46,16 @@ public class Casilla {
         }
     }
     
+    public String imprimirAguanteZombis() {
+        int aux = 0;
+        for(EntidadActivable e : listaEntidades) {
+            if((e instanceof Zombi) && (((Zombi) e).getAguante() > 0)) {
+                return "El zombi " +(++aux) + " tiene potencia " +((Zombi) e).getAguante();
+            }
+        }
+        return null;
+    }
+    
     // Devuelve una lista de zombis eliminables usando un arma dada y un número de éxitos disponible
     public boolean eliminarZombis(Arma a, int exitos, Superviviente s) {
         ArrayList<EntidadActivable> zombisAEliminar = new ArrayList<>(); // Lista para almacenar los zombis eliminables
