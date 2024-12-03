@@ -15,7 +15,7 @@ public class Juego {
     
     private static final int NUM_ZOMBIS_INICIO = 3;
     private static final int NUM_ZOMBIS_NUEVOS_POR_TURNO = 1;
-    private static final int NUM_TURNOS_SUPERVIVIENTES = 20; //¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡CAMBIAR A 3!!!!!!!!!!!!!!!!!
+    private static final int NUM_TURNOS_SUPERVIVIENTES = 3; //¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡CAMBIAR A 3!!!!!!!!!!!!!!!!!
     
     private static final int PROBABILIDAD_CAMINANTE = 6; // 60%
     private static final int PROBABILIDAD_CORREDOR = 9; // 30%
@@ -193,25 +193,30 @@ public class Juego {
                     break;
                 case 2: // Moverse
                     int xDestino, yDestino;
-                    do {
-                        System.out.print("Introduce la coordenada X de la casilla destino (0-9): ");
-                        xDestino = scanner.nextInt();
-                        System.out.print("Introduce la coordenada Y de la casilla destino (0-9): ");
-                        yDestino = scanner.nextInt();
-
-                        if (xDestino < 0 || xDestino >= TAM_X || yDestino < 0 || yDestino >= TAM_Y) {
-                            System.out.println("Coordenadas fuera del rango permitido. Intenta de nuevo.");
-                        }
-                    } while (xDestino < 0 || xDestino >= TAM_X || yDestino < 0 || yDestino >= TAM_Y);
                     
                     Casilla origen = buscarCasillaOrigen(s);
-
+                    
                     // Si no tiene suficiente numero de acciones en su turno para moverse, no se ejecuta el metodo moverse()
                     if (origen.numeroZombis() + 1 > turnos) {
                         System.out.println("Mi loco tu no te escapas");
                         break;
                     }
-                    moverse(dimension[xDestino][yDestino], s);
+                    
+                    boolean esMovimientoValido;
+                    do {
+                        System.out.print("Introduce la coordenada X de la casilla destino (0-9): ");
+                        xDestino = scanner.nextInt();
+                        scanner.nextLine();
+                        System.out.print("Introduce la coordenada Y de la casilla destino (0-9): ");
+                        yDestino = scanner.nextInt();
+                        scanner.nextLine();
+                        
+                        esMovimientoValido = moverse(dimension[xDestino][yDestino], s);
+
+                        if (xDestino < 0 || xDestino >= TAM_X || yDestino < 0 || yDestino >= TAM_Y) {
+                            System.out.println("Coordenadas fuera del rango permitido. Intenta de nuevo.");
+                        }
+                    } while (!esMovimientoValido);
                     
                     Casilla destino = buscarCasillaOrigen(s);
                     
@@ -464,7 +469,8 @@ public class Juego {
     public boolean moverse(Casilla destino, EntidadActivable e) {
         Casilla origen = buscarCasillaOrigen(e); // Encuentra la casilla actual de la entidad
 
-        if (origen.esAdyacente(destino)) { // Verifica si la casilla destino es adyacente
+        if (origen.esAdyacente(destino) // Verifica si la casilla destino es adyacente
+                && destino.getX() < 0 && destino.getX() >= TAM_X && destino.getY() < 0 && destino.getY() >= TAM_Y) {  // Y si esta dentro del tablero 
             origen.eliminarEntidad(e); // Quita la entidad de la casilla actual
             destino.anadirEntidad(e); // Coloca la entidad en la casilla destino
             return true; // Movimiento exitoso
