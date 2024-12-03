@@ -76,16 +76,16 @@ public class Superviviente extends EntidadActivable {
     }
     
     public boolean eliminarEquipo() {
-        if (siguiente == 0) return false;
-        else {
+        if(siguiente == TAM_EQUIPO) {
             if (inventario[0].equals(manoIzq)) {
                 manoIzq = null;
             } else if (inventario[0].equals(manoDer)) {
                 manoDer = null;
             }
-            
             inventario[0] = inventario[--siguiente];
             return true;
+        } else {
+            return false;
         }
     }
     
