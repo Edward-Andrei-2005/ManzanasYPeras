@@ -24,6 +24,11 @@ public abstract class Zombi extends EntidadActivable {
     }
     
     // Métodos
+    
+    public int getAguante() {
+        return aguante;
+    }
+
     public boolean reaccionar() {
         return true;
     }
@@ -47,5 +52,10 @@ public abstract class Zombi extends EntidadActivable {
             // Si el zombi no es un Berserker, solo se verifica que el arma tenga suficiente potencia.
             return (a.getPotencia() >= aguante);
         }
+    }
+    
+    @Override
+    public String toString() {
+        return "Id Zombi: " +identificador;
     }
 }
