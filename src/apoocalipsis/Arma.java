@@ -1,7 +1,8 @@
 package apoocalipsis;
 
 public class Arma extends Equipo {
-    private static int id;
+    private int id;
+    private static int contador;
     private String nombre;
     private int potencia;
     private int alcance;
@@ -29,8 +30,9 @@ public class Arma extends Equipo {
         potencia = VALORES_POTENCIA[(int) (Math.random() * VALORES_POTENCIA.length)];
         numeroDeDados = (int) (Math.random() * NUM_DADOS) + 1;
         valorDeExito = VALORES_DADO[(int) (Math.random() * VALORES_DADO.length)];
-        ++id;
+        id = ++contador;
     }
+    
     
     public String getNombre() { return nombre; }
     public int getPotencia() { return potencia; }
@@ -55,7 +57,7 @@ public class Arma extends Equipo {
         if (this == o) return true;
         if (getClass() != o.getClass()) return false;
         Arma aux = (Arma) o;
-        return id == aux.id;
+        return id == aux.getId();
     }
     
     @Override
