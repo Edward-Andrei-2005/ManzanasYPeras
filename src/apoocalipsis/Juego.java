@@ -15,7 +15,7 @@ public class Juego {
     
     private static final int NUM_ZOMBIS_INICIO = 3;
     private static final int NUM_ZOMBIS_NUEVOS_POR_TURNO = 1;
-    private static final int NUM_TURNOS_SUPERVIVIENTES = 2; //¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡CAMBIAR A 3!!!!!!!!!!!!!!!!!
+    private static final int NUM_TURNOS_SUPERVIVIENTES = 1; //¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡CAMBIAR A 3!!!!!!!!!!!!!!!!!
     
     private static final int PROBABILIDAD_CAMINANTE = 6; // 60%
     private static final int PROBABILIDAD_CORREDOR = 9; // 30%
@@ -59,47 +59,55 @@ public class Juego {
     }
     
     public boolean turnoZombis() {
-        for (int i = 0; i < TAM_X; i++) {
-            for (int j = 0; j < TAM_Y; j++) {
-                if (dimension[i][j].hayAlgunZombi()) {
-                    for (EntidadActivable e : dimension[i][j].getListaEntidades()) {
-                        if (e instanceof Zombi) {
-                            Zombi zombi = (Zombi) e;
-                            for (int k=0; k<zombi.getActivaciones(); k++) {
-                                // Separar supervivientes en heridos y sanos
-                                ArrayList<Superviviente> supervivientesHeridos = new ArrayList<>();
-                                ArrayList<Superviviente> supervivientesSanos = new ArrayList<>();
-
-                                for (EntidadActivable e2 : dimension[i][j].getListaEntidades()) {
-                                    if (e2 instanceof Superviviente && ((Superviviente) e2).estaVivo()) {
-                                        if (((Superviviente) e2).estaHerido()) {
-                                            supervivientesHeridos.add((Superviviente) e2);
-                                        } else {
-                                            supervivientesSanos.add((Superviviente) e2);
-                                        }
+    for (int i = 0; i < TAM_X; i++) {
+        for (int j = 0; j < TAM_Y; j++) {
+            if (dimension[i][j].hayAlgunZombi()) {
+                // Hacemos una copia de la lista para evitar ConcurrentModificationException
+                ArrayList<EntidadActivable> entidadesCopia = new ArrayList<>(dimension[i][j].getListaEntidades());
+                
+                for (EntidadActivable e : entidadesCopia) {
+                    if (e instanceof Zombi) {
+                        Zombi zombi = (Zombi) e;
+                        for (int k = 0; k < zombi.getActivaciones(); k++) {
+                            // Separar supervivientes en heridos y sanos
+                            ArrayList<Superviviente> supervivientesHeridos = new ArrayList<>();
+                            ArrayList<Superviviente> supervivientesSanos = new ArrayList<>();
+                            
+                            for (EntidadActivable e2 : entidadesCopia) { // Iteramos sobre la copia
+                                if (e2 instanceof Superviviente && ((Superviviente) e2).estaVivo()) {
+                                    if (((Superviviente) e2).estaHerido()) {
+                                        supervivientesHeridos.add((Superviviente) e2);
+                                    } else {
+                                        supervivientesSanos.add((Superviviente) e2);
                                     }
                                 }
+                            }
 
-                                // Ataque en bucle mientras haya activaciones y supervivientes
-                                if (!supervivientesHeridos.isEmpty()) {
-                                    Superviviente herido = supervivientesHeridos.remove(0); // Ataca al primer herido
-                                    herido.recibirAtaque();
-                                } else if (!supervivientesSanos.isEmpty()) {
-                                    Superviviente sano = supervivientesSanos.remove(0); // Ataca al primer sano
-                                    sano.recibirAtaque();
-                                }
+                            // Ataque en bucle mientras haya activaciones y supervivientes
+                            if (!supervivientesHeridos.isEmpty()) {
+                                Superviviente herido = supervivientesHeridos.remove(0); // Ataca al primer herido
+                                herido.recibirAtaque();
+                            } else if (!supervivientesSanos.isEmpty()) {
+                                Superviviente sano = supervivientesSanos.remove(0); // Ataca al primer sano
+                                sano.recibirAtaque();
+                            }
 
-                                // Movimiento si quedan activaciones y no hay supervivientes en la casilla
-                                if (zombi.getActivaciones() > 0 && supervivientesHeridos.isEmpty() && supervivientesSanos.isEmpty()) {
-                                    moverseZombi(zombi, obtenerCasillaSupervivienteMasCercano(zombi));
-                                }
+                            // Movimiento si quedan activaciones y no hay supervivientes en la casilla
+                            if (zombi.getActivaciones() > 0 && supervivientesHeridos.isEmpty() && supervivientesSanos.isEmpty()) {
+                                ////////////////////////////PRUEBAS//////////////////////////////////
+                                
+                                System.out.println(zombi);
+                                System.out.println(obtenerCasillaSupervivienteMasCercano(zombi).toString()); //Imprimir para comprobar
+                                /////////////////////////////////////////////////////////////////////
+                                moverseZombi(zombi, obtenerCasillaSupervivienteMasCercano(zombi));
                             }
                         }
                     }
                 }
             }
         }
-        return false;
+    }
+    return false;
     }
     
     private Casilla obtenerCasillaSupervivienteMasCercano(Zombi z) {
@@ -110,7 +118,7 @@ public class Juego {
         // Buscar la casilla más cercana con un superviviente
         for (int i = 0; i < TAM_X; i++) {
             for (int j = 0; j < TAM_Y; j++) {
-                if (dimension[i][j].hayAlgunSuperviviente()) {
+                if (dimension[i][j].hayAlgunSupervivienteVivo()) {
                     int distancia = dimension[i][j].distancia(origen);
                     if (distancia < distanciaMinima) {
                         distanciaMinima = distancia;
@@ -228,7 +236,8 @@ public class Juego {
                     for (int i=0; i<TAM_X; i++) {
                         for (int j=0; j<TAM_Y; j++) {
                             if(dimension[i][j].numeroZombis() > 0) {
-                                System.out.println("En la casilla:\n " + dimension[i][j].toString() + "\nHay " +dimension[i][j].numeroZombis() + " zombis");
+                                System.out.println("Casilla:\n " + dimension[i][j].toString());
+                                System.out.println(dimension[i][j].imprimirAguanteZombis());
                             }
                         }
                     }
