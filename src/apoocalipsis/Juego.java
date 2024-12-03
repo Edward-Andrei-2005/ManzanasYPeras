@@ -168,7 +168,45 @@ public class Juego {
         moverse(dimension[xActual][yActual], zombi);
         
     }
+    
+    public void dibujarTableroConNumeros() {
+        // Imprimir los números de las columnas (parte superior)
+        System.out.print("    "); // Espacio inicial para alinear los números de las filas
+        for (int j = 0; j < TAM_Y; j++) {
+            System.out.printf("%3d ", j);
+        }
+        System.out.println();
 
+        // Imprimir el borde superior
+        System.out.print("   +");
+        System.out.print("---+".repeat(TAM_Y));
+        System.out.println();
+
+        for (int i = 0; i < TAM_X; i++) {
+            // Imprimir el número de la fila (parte izquierda)
+            System.out.printf("%2d |", i);
+
+            // Contenido de cada fila
+            for (int j = 0; j < TAM_Y; j++) {
+                if (dimension[i][j].hayAlgunSupervivienteVivo() && dimension[i][j].hayAlgunZombi()) {
+                System.out.print(" / |");; // Hay zombis y supervivientes
+                } else if (dimension[i][j].hayAlgunZombi()) {
+                    System.out.print(" Z |");
+                } else if (dimension[i][j].hayAlgunSupervivienteVivo()) {
+                    System.out.print(" S |");
+                } else {
+                    System.out.print("   |"); // Casilla vacía
+                }
+                if(i==5 && j==9) { System.out.print("\t/: Hay Supervivientes y Zombis en la misma casilla"); }
+            }
+            System.out.println();
+
+            // Borde entre filas
+            System.out.print("   +");
+            System.out.print("---+".repeat(TAM_Y));
+            System.out.println();
+        }
+    }
     // ejecutarAccionesSupervivientes solo se ejecutará si el superviviente está vivo, no hay que hacer distinciones
     private void ejecutarAccionesSupervivientes(Superviviente s) {
         System.out.println("\n************* " + s.getNombre() + " *************");
@@ -183,7 +221,8 @@ public class Juego {
             System.out.println("4. Buscar equipo");
             System.out.println("5. Cambiar arma");
             System.out.print("Selecciona la accion que deseas realizar (1-5): \n\n");
-
+            
+            dibujarTableroConNumeros();
             int opcion = scanner.nextInt();
 
             switch (opcion) {
