@@ -127,7 +127,7 @@ public class Superviviente extends EntidadActivable {
     }
     
     public boolean inventarioLleno() {
-        return inventario.length == TAM_EQUIPO;
+        return siguiente == TAM_EQUIPO;
     }
     
     public boolean estaVivo() {
