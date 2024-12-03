@@ -15,7 +15,7 @@ public class Juego {
     
     private static final int NUM_ZOMBIS_INICIO = 3;
     private static final int NUM_ZOMBIS_NUEVOS_POR_TURNO = 1;
-    private static final int NUM_TURNOS_SUPERVIVIENTES = 1; //¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡CAMBIAR A 3!!!!!!!!!!!!!!!!!
+    private static final int NUM_TURNOS_SUPERVIVIENTES = 20; //¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡CAMBIAR A 3!!!!!!!!!!!!!!!!!
     
     private static final int PROBABILIDAD_CAMINANTE = 6; // 60%
     private static final int PROBABILIDAD_CORREDOR = 9; // 30%
@@ -59,6 +59,7 @@ public class Juego {
     }
     
     public boolean turnoZombis() {
+    System.out.println("\n************* TURNO ZOMBIS *************\n\n");
     for (int i = 0; i < TAM_X; i++) {
         for (int j = 0; j < TAM_Y; j++) {
             if (dimension[i][j].hayAlgunZombi()) {
@@ -68,6 +69,7 @@ public class Juego {
                 for (EntidadActivable e : entidadesCopia) {
                     if (e instanceof Zombi) {
                         Zombi zombi = (Zombi) e;
+                        System.out.println("Turno del Zombi de la casilla:\n" +buscarCasillaOrigen(e));
                         for (int k = 0; k < zombi.getActivaciones(); k++) {
                             // Separar supervivientes en heridos y sanos
                             ArrayList<Superviviente> supervivientesHeridos = new ArrayList<>();
@@ -86,9 +88,11 @@ public class Juego {
                             // Ataque en bucle mientras haya activaciones y supervivientes
                             if (!supervivientesHeridos.isEmpty()) {
                                 Superviviente herido = supervivientesHeridos.remove(0); // Ataca al primer herido
+                                System.out.println("Ataque realizado con exito al superviviente herido: " +herido);
                                 herido.recibirAtaque();
                             } else if (!supervivientesSanos.isEmpty()) {
                                 Superviviente sano = supervivientesSanos.remove(0); // Ataca al primer sano
+                                System.out.println("Ataque realizado con exito al superviviente sano: " +sano);
                                 sano.recibirAtaque();
                             }
 
@@ -96,10 +100,12 @@ public class Juego {
                             if (zombi.getActivaciones() > 0 && supervivientesHeridos.isEmpty() && supervivientesSanos.isEmpty()) {
                                 ////////////////////////////PRUEBAS//////////////////////////////////
                                 
-                                System.out.println(zombi);
-                                System.out.println(obtenerCasillaSupervivienteMasCercano(zombi).toString()); //Imprimir para comprobar
+                                //System.out.println(zombi);
+                                //System.out.println(obtenerCasillaSupervivienteMasCercano(zombi).toString()); //Imprimir para comprobar
                                 /////////////////////////////////////////////////////////////////////
+                                System.out.println("No hay supervivientes en esta casilla, el mas cercano esta en: \n" +obtenerCasillaSupervivienteMasCercano(zombi));
                                 moverseZombi(zombi, obtenerCasillaSupervivienteMasCercano(zombi));
+                                System.out.println("El zombi se mueve a: " +buscarCasillaOrigen(zombi));
                             }
                         }
                     }
@@ -159,7 +165,8 @@ public class Juego {
         }
 
         // Actualizar la posición del zombi
-        moverse(new Casilla(xActual, yActual), zombi);
+        moverse(dimension[xActual][yActual], zombi);
+        
     }
 
     // ejecutarAccionesSupervivientes solo se ejecutará si el superviviente está vivo, no hay que hacer distinciones
@@ -182,7 +189,7 @@ public class Juego {
             switch (opcion) {
                 case 1: // No hacer nada
                     turnos--;
-                    System.out.println("Tienes " + turnos + " turnos");
+                    System.out.println("Tienes " + turnos + " turnos\n\n");
                     break;
                 case 2: // Moverse
                     int xDestino, yDestino;
@@ -256,8 +263,9 @@ public class Juego {
                     // Llamar al método generarAtaque
                     generarAtaque(s, izq, new Casilla(xObjetivo, yObjetivo));
                     
+                    
                     turnos--;
-                    System.out.println("Tienes " + turnos + " turnos");
+                    System.out.println("Tienes " + turnos + " turnos\n\n");
                     break;
 
                 case 4: // Buscar equipo
@@ -276,7 +284,7 @@ public class Juego {
                     } else {
                         System.out.println("No has encontrado nada.");
                     }
-                    System.out.println("Tienes " + turnos + " turnos");
+                    System.out.println("Tienes " + turnos + " turnos\n\n");
                     break;
 
                 case 5: // Cambiar arma
@@ -317,7 +325,7 @@ public class Juego {
                     }
                     
                     // QUITAR ESTE COMENTARIO turnos--;
-                    System.out.println("Tienes " + turnos + " turnos");
+                    System.out.println("Tienes " + turnos + " turnos\n\n");
                     break;
 
                 default:
