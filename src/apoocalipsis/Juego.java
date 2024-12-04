@@ -15,7 +15,7 @@ public class Juego {
     
     private static final int NUM_ZOMBIS_INICIO = 3;
     private static final int NUM_ZOMBIS_NUEVOS_POR_TURNO = 1;
-    private static final int NUM_TURNOS_SUPERVIVIENTES = 1; //¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡CAMBIAR A 3!!!!!!!!!!!!!!!!!
+    private static final int NUM_TURNOS_SUPERVIVIENTES = 3; //¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡CAMBIAR A 3!!!!!!!!!!!!!!!!!
     
     private static final int PROBABILIDAD_CAMINANTE = 6; // 60%
     private static final int PROBABILIDAD_CORREDOR = 9; // 30%
@@ -38,7 +38,6 @@ public class Juego {
         do {
             turnoSupervivientes(listaNombres);
             turnoZombis();
-            // reiniciarActivaciones();
             generarNuevoZombi();
         } while (!hayAlgunSupervivienteMuerto() && !hanGanadoSupervivientes());
         return true;
@@ -59,7 +58,7 @@ public class Juego {
     }
     
     public boolean turnoZombis() {
-    System.out.println("\n************* TURNO ZOMBIS *************\n\n");
+    System.out.println("\n----------------------- TURNO ZOMBIS -----------------------\n\n");
     for (int i = 0; i < TAM_X; i++) {
         for (int j = 0; j < TAM_Y; j++) {
             if (dimension[i][j].hayAlgunZombi()) {
@@ -113,7 +112,7 @@ public class Juego {
             }
         }
     }
-    return false;
+    return true;
     }
     
     private Casilla obtenerCasillaSupervivienteMasCercano(Zombi z) {
@@ -139,37 +138,34 @@ public class Juego {
     
     private void moverseZombi(Zombi zombi, Casilla objetivo) {
         // Obtener la posición actual del zombi
-        int xActual = buscarCasillaOrigen(zombi).getX();
-        int yActual = buscarCasillaOrigen(zombi).getY();
+            int xActual = buscarCasillaOrigen(zombi).getX();
+            int yActual = buscarCasillaOrigen(zombi).getY();
 
-        // Coordenadas de la casilla objetivo
-        int xObjetivo = objetivo.getX();
-        int yObjetivo = objetivo.getY();
+            // Coordenadas de la casilla objetivo
+            int xObjetivo = objetivo.getX();
+            int yObjetivo = objetivo.getY();
 
-        // Máximo de movimientos del zombi (1 casilla por activación)
-        int activacionesZombi = zombi.getActivaciones();
+            // Máximo de movimientos del zombi (1 casilla por activación)
+            int activacionesZombi = zombi.getActivaciones();
 
-        // Mientras el zombi tenga movimientos y no haya llegado al objetivo
-        while (activacionesZombi > 0 && (xActual != xObjetivo || yActual != yObjetivo)) {
-            // Decidir en qué dirección moverse en X
-            if (xActual < xObjetivo) {
-                xActual++; // Mover hacia la derecha
-            } else if (xActual > xObjetivo) {
-                xActual--; // Mover hacia la izquierda
-            } 
-            if (yActual < yObjetivo) {
-                yActual++; // Mover hacia abajo
-            } else if (yActual > yObjetivo) {
-                yActual--; // Mover hacia arriba
+            // Mientras el zombi tenga movimientos y no haya llegado al objetivo
+            while (activacionesZombi > 0 && (xActual != xObjetivo || yActual != yObjetivo)) {
+                // Decidir en qué dirección moverse en X
+                if (xActual < xObjetivo) {
+                    xActual++; // Bajar
+                } else if (xActual > xObjetivo) {
+                    xActual--; // Subir
+                } 
+                if (yActual < yObjetivo) {
+                    yActual++; // Mover Derecha
+                } else if (yActual > yObjetivo) {
+                    yActual--; // Mover Izquierda
+                }
+                activacionesZombi--;
+                moverse(dimension[xActual][yActual], zombi);
+                dibujarTableroConNumeros();
             }
-            activacionesZombi--;
-        }
-
-        // Actualizar la posición del zombi
-        moverse(dimension[xActual][yActual], zombi);
-        
     }
-    
     public void dibujarTableroConNumeros() {
         // Imprimir los números de las columnas (parte superior)
         System.out.print("    "); // Espacio inicial para alinear los números de las filas
@@ -210,6 +206,7 @@ public class Juego {
     }
     // ejecutarAccionesSupervivientes solo se ejecutará si el superviviente está vivo, no hay que hacer distinciones
     private void ejecutarAccionesSupervivientes(Superviviente s) {
+        System.out.println("\n----------------------- TURNO SUPERVIVIENTES -----------------------\n\n");
         System.out.println("\n************* " + s.getNombre() + " *************");
         
         int turnos = NUM_TURNOS_SUPERVIVIENTES;
@@ -221,9 +218,9 @@ public class Juego {
             System.out.println("3. Atacar");
             System.out.println("4. Buscar equipo");
             System.out.println("5. Cambiar arma");
-            System.out.print("Selecciona la accion que deseas realizar (1-5): \n\n");
-            
             dibujarTableroConNumeros();
+            System.out.println();
+            System.out.print("Selecciona la accion que deseas realizar (1-5): \n\n");
             int opcion = scanner.nextInt();
 
             switch (opcion) {
@@ -306,7 +303,7 @@ public class Juego {
                     } while (xObjetivo < 0 || xObjetivo >= TAM_X || yObjetivo < 0 || yObjetivo >= TAM_Y);
 
                     // Llamar al método generarAtaque
-                    generarAtaque(s, izq, new Casilla(xObjetivo, yObjetivo));
+                    generarAtaque(s, izq, dimension[xObjetivo][yObjetivo]);
                     
                     
                     turnos--;
@@ -510,7 +507,7 @@ public class Juego {
         Casilla origen = buscarCasillaOrigen(e); // Encuentra la casilla actual de la entidad
 
         if (origen.esAdyacente(destino) // Verifica si la casilla destino es adyacente
-                && destino.getX() > 0 && destino.getX() <= TAM_X && destino.getY() > 0 && destino.getY() <= TAM_Y) {  // Y si esta dentro del tablero 
+                && destino.getX() >= 0 && destino.getX() <= TAM_X && destino.getY() >= 0 && destino.getY() <= TAM_Y) {  // Y si esta dentro del tablero 
             origen.eliminarEntidad(e); // Quita la entidad de la casilla actual
             destino.anadirEntidad(e); // Coloca la entidad en la casilla destino
             return true; // Movimiento exitoso
@@ -518,6 +515,7 @@ public class Juego {
         return false; // Movimiento inválido
     }
 
+    
     public boolean generarAtaque(Superviviente s, boolean izq, Casilla objetivo) {
         Arma a;
         try {
@@ -586,6 +584,53 @@ public class Juego {
 
     private boolean resolverAtaque(Arma a, Casilla destino, int exitos, Superviviente s) {
         // Elimina los zombis en la casilla objetivo si el número de éxitos es suficiente
-        return destino.eliminarZombis(a, exitos, s);
+        return eliminarZombis(a, exitos, s, destino);
+    }
+    
+    public boolean esMatable(Arma a, Zombi z, Superviviente s) {
+        // Verifica si el zombi es de tipo CaminanteBerserker, CorredorBerserker o AbominacionBerserker
+        Casilla casillaSuperviviente = buscarCasillaOrigen(s);
+        Casilla casillaZombi = buscarCasillaOrigen(z);
+        if((z instanceof CaminanteBerserker) || (z instanceof CorredorBerserker) || (z instanceof AbominacionBerserker)) {
+            /*Si es un zombi Berserker, debe cumplir dos condiciones:
+            1. El arma debe tener suficiente potencia para eliminar al zombi (potencia >= aguante)
+            2. El arma debe ser cuerpo a cuerpo (alcance == 0), ya que los zombis Berserker son inmunes a ataques a distancia.*/
+            return (a.getPotencia() >= z.getAguante()) && casillaSuperviviente.distancia(casillaZombi) == 0;
+        } else {
+            // Si el zombi no es un Berserker, solo se verifica que el arma tenga suficiente potencia y que tenga suficiente alcance.
+            if(a.getAlcance() == 0) { // Armas de corto alcance
+                return (a.getPotencia() >= z.getAguante()) && casillaSuperviviente.distancia(casillaZombi) == 0;
+            } else {
+                return (a.getPotencia() >= z.getAguante()) && casillaSuperviviente.distancia(casillaZombi) <= a.getAlcance();
+            }
+        }
+    }
+    
+    public boolean eliminarZombis(Arma a, int exitos, Superviviente s, Casilla destino) {
+        ArrayList<EntidadActivable> zombisAEliminar = new ArrayList<>(); // Lista para almacenar los zombis eliminables
+        
+        for (EntidadActivable e : destino.getListaEntidades()) { // Itera por las entidades de la casilla
+            if (exitos == 0) { // Si no quedan éxitos, detiene el proceso
+                break;
+            } else if (e instanceof Zombi) { // Verifica si la entidad es un Zombi
+                if (esMatable(a,(Zombi) e, s)) { // Comprueba si el zombi puede ser eliminado con el arma
+                    // Si el zombi a matar es toxico se hiere a todos los supervivientes de una casilla
+                    if (((Zombi) e) instanceof CaminanteToxico ||
+                            ((Zombi) e) instanceof AbominacionToxico ||
+                            ((Zombi) e) instanceof CorredorToxico) {
+                        destino.herirSupervivientes();
+                    }
+                    zombisAEliminar.add(e); // Añade el zombi a la lista de eliminables
+                    exitos--;
+                }
+            }
+        }
+        
+        destino.eliminarEntidad(zombisAEliminar);
+        
+        // Actualizamos la lista de zombis eliminados por el superviviente
+        s.sumarZombisKO(zombisAEliminar.size());
+        
+        return !zombisAEliminar.isEmpty();
     }
 }
