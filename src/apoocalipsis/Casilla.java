@@ -56,49 +56,6 @@ public class Casilla {
         return null;
     }
     
-    // Devuelve una lista de zombis eliminables usando un arma dada y un número de éxitos disponible
-    /*public boolean eliminarZombis(Arma a, int exitos, Superviviente s) {
-        ArrayList<EntidadActivable> zombisAEliminar = new ArrayList<>(); // Lista para almacenar los zombis eliminables
-        
-        for (EntidadActivable e : listaEntidades) { // Itera por las entidades de la casilla
-            if (exitos == 0) { // Si no quedan éxitos, detiene el proceso
-                break;
-            } else if (e instanceof Zombi) { // Verifica si la entidad es un Zombi
-                if (((Zombi) e).esMatable(a)) { // Comprueba si el zombi puede ser eliminado con el arma
-                    // Si el zombi a matar es toxico se hiere a todos los supervivientes de una casilla
-                    if (((Zombi) e) instanceof CaminanteToxico ||
-                            ((Zombi) e) instanceof AbominacionToxico ||
-                            ((Zombi) e) instanceof CorredorToxico) {
-                        herirSupervivientes();
-                    }
-                    zombisAEliminar.add(e); // Añade el zombi a la lista de eliminables
-                    exitos--;
-                }
-            }
-        }
-        
-        eliminarEntidad(zombisAEliminar);
-        
-        // Actualizamos la lista de zombis eliminados por el superviviente
-        s.sumarZombisKO(zombisAEliminar.size());
-        
-        return !zombisAEliminar.isEmpty();
-    }
-    
-    public boolean esMatable(Arma a, Zombi z, Superviviente s) {
-        // Verifica si el zombi es de tipo CaminanteBerserker, CorredorBerserker o AbominacionBerserker
-        Casilla casillaSuperviviente = buscarCasillaOrigen(s);
-        if((z instanceof CaminanteBerserker) || (z instanceof CorredorBerserker) || (z instanceof AbominacionBerserker)) {
-            /*Si es un zombi Berserker, debe cumplir dos condiciones:
-            1. El arma debe tener suficiente potencia para eliminar al zombi (potencia >= aguante)
-            2. El arma debe ser cuerpo a cuerpo (alcance == 0), ya que los zombis Berserker son inmunes a ataques a distancia.
-            return (a.getPotencia() >= z.getAguante()) && (a.getAlcance() == 0) && ;
-        } else {
-            // Si el zombi no es un Berserker, solo se verifica que el arma tenga suficiente potencia y que tenga suficiente alcance.
-            return (a.getPotencia() >= aguante);
-        }
-    }*/
-    
     public boolean herirSupervivientes() {
         for (EntidadActivable e : listaEntidades) {
             if (e instanceof Superviviente) ((Superviviente) e).recibirAtaque();
