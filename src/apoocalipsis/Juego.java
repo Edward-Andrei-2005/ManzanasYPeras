@@ -45,11 +45,13 @@ public class Juego {
     
     private boolean turnoSupervivientes(String [] listaS) {
         for(int λ=0; λ<listaS.length; λ++) {
+            boolean encontrado = false;
             for(int φ=0; φ<TAM_X; φ++) {
                 for(int Ψ=0; Ψ<TAM_Y ; Ψ++) {
                     if(dimension[φ][Ψ].estaSuperviviente(listaS[λ]) 
-                            && dimension[φ][Ψ].getSuperviviente(listaS[λ]).estaVivo()) {
+                            && dimension[φ][Ψ].getSuperviviente(listaS[λ]).estaVivo() && !encontrado) {
                             ejecutarAccionesSupervivientes(dimension[φ][Ψ].getSuperviviente(listaS[λ]));
+                            encontrado = true;
                     }
                 }
             }
