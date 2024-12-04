@@ -198,11 +198,11 @@ public class Casilla {
     }
     
     // Devuelve false si hay algún superviviente que no tenga provisión
-    public boolean noTieneProvisionSuperviviente() {
+        public boolean noTieneProvisionSuperviviente() {
         for (EntidadActivable e: listaEntidades) {
-            if (e instanceof Superviviente && !(((Superviviente) e).tieneProvision())) return false;
+            if (e instanceof Superviviente && !(((Superviviente) e).tieneProvision())) return true;
         }
-        return true;
+        return false;
     }
     
     public int numeroZombis() {
