@@ -15,7 +15,7 @@ public class Juego {
     
     private static final int NUM_ZOMBIS_INICIO = 3;
     private static final int NUM_ZOMBIS_NUEVOS_POR_TURNO = 1;
-    private static final int NUM_TURNOS_SUPERVIVIENTES = 3; //¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡CAMBIAR A 3!!!!!!!!!!!!!!!!!
+    private static final int NUM_TURNOS_SUPERVIVIENTES = 1; //¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡CAMBIAR A 3!!!!!!!!!!!!!!!!!
     
     private static final int PROBABILIDAD_CAMINANTE = 6; // 60%
     private static final int PROBABILIDAD_CORREDOR = 9; // 30%
@@ -119,7 +119,7 @@ public class Juego {
     private Casilla obtenerCasillaSupervivienteMasCercano(Zombi z) {
         Casilla origen = buscarCasillaOrigen(z); // Encuentra la casilla actual del zombi
         Casilla destino = null;
-        int distanciaMinima = TAM_X; // El tamaño más grande que acepta el tablero
+        int distanciaMinima = (int) Math.sqrt(Math.pow(TAM_X, 2) + Math.pow(TAM_Y, 2)); // El tamaño más grande que acepta el tablero
 
         // Buscar la casilla más cercana con un superviviente
         for (int i = 0; i < TAM_X; i++) {
@@ -156,7 +156,8 @@ public class Juego {
                 xActual++; // Mover hacia la derecha
             } else if (xActual > xObjetivo) {
                 xActual--; // Mover hacia la izquierda
-            } else if (yActual < yObjetivo) {
+            } 
+            if (yActual < yObjetivo) {
                 yActual++; // Mover hacia abajo
             } else if (yActual > yObjetivo) {
                 yActual--; // Mover hacia arriba
@@ -509,7 +510,7 @@ public class Juego {
         Casilla origen = buscarCasillaOrigen(e); // Encuentra la casilla actual de la entidad
 
         if (origen.esAdyacente(destino) // Verifica si la casilla destino es adyacente
-                && destino.getX() < 0 && destino.getX() >= TAM_X && destino.getY() < 0 && destino.getY() >= TAM_Y) {  // Y si esta dentro del tablero 
+                && destino.getX() > 0 && destino.getX() <= TAM_X && destino.getY() > 0 && destino.getY() <= TAM_Y) {  // Y si esta dentro del tablero 
             origen.eliminarEntidad(e); // Quita la entidad de la casilla actual
             destino.anadirEntidad(e); // Coloca la entidad en la casilla destino
             return true; // Movimiento exitoso
