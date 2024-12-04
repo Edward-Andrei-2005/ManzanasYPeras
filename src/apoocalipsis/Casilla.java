@@ -57,7 +57,7 @@ public class Casilla {
     }
     
     // Devuelve una lista de zombis eliminables usando un arma dada y un número de éxitos disponible
-    public boolean eliminarZombis(Arma a, int exitos, Superviviente s) {
+    /*public boolean eliminarZombis(Arma a, int exitos, Superviviente s) {
         ArrayList<EntidadActivable> zombisAEliminar = new ArrayList<>(); // Lista para almacenar los zombis eliminables
         
         for (EntidadActivable e : listaEntidades) { // Itera por las entidades de la casilla
@@ -85,7 +85,21 @@ public class Casilla {
         return !zombisAEliminar.isEmpty();
     }
     
-    private boolean herirSupervivientes() {
+    public boolean esMatable(Arma a, Zombi z, Superviviente s) {
+        // Verifica si el zombi es de tipo CaminanteBerserker, CorredorBerserker o AbominacionBerserker
+        Casilla casillaSuperviviente = buscarCasillaOrigen(s);
+        if((z instanceof CaminanteBerserker) || (z instanceof CorredorBerserker) || (z instanceof AbominacionBerserker)) {
+            /*Si es un zombi Berserker, debe cumplir dos condiciones:
+            1. El arma debe tener suficiente potencia para eliminar al zombi (potencia >= aguante)
+            2. El arma debe ser cuerpo a cuerpo (alcance == 0), ya que los zombis Berserker son inmunes a ataques a distancia.
+            return (a.getPotencia() >= z.getAguante()) && (a.getAlcance() == 0) && ;
+        } else {
+            // Si el zombi no es un Berserker, solo se verifica que el arma tenga suficiente potencia y que tenga suficiente alcance.
+            return (a.getPotencia() >= aguante);
+        }
+    }*/
+    
+    public boolean herirSupervivientes() {
         for (EntidadActivable e : listaEntidades) {
             if (e instanceof Superviviente) ((Superviviente) e).recibirAtaque();
         }
@@ -198,7 +212,7 @@ public class Casilla {
     }
     
     // Devuelve false si hay algún superviviente que no tenga provisión
-        public boolean noTieneProvisionSuperviviente() {
+    public boolean noTieneProvisionSuperviviente() {
         for (EntidadActivable e: listaEntidades) {
             if (e instanceof Superviviente && !(((Superviviente) e).tieneProvision())) return true;
         }
