@@ -39,7 +39,7 @@ public class Juego {
             turnoSupervivientes(listaNombres);
             turnoZombis();
             generarNuevoZombi();
-        } while (!hayAlgunSupervivienteMuerto() && !hanGanadoSupervivientes());
+        } while (!hayAlgunSupervivienteMuerto() && !hanGanadoSupervivientes(listaNombres));
         return true;
     }
     
@@ -61,65 +61,80 @@ public class Juego {
     
     public boolean turnoZombis() {
     System.out.println("\n----------------------- TURNO ZOMBIS -----------------------\n\n");
-    for (int i = 0; i < TAM_X; i++) {
-        for (int j = 0; j < TAM_Y; j++) {
-            if (dimension[i][j].hayAlgunZombi()) {
-                // Hacemos una copia de la lista para evitar ConcurrentModificationException
-                ArrayList<EntidadActivable> entidadesCopia = new ArrayList<>(dimension[i][j].getListaEntidades());
-                
-                for (EntidadActivable e : entidadesCopia) {
-                    if (e instanceof Zombi) {
-                        Zombi zombi = (Zombi) e;
-                        System.out.println("Turno del Zombi de la casilla:\n" +buscarCasillaOrigen(e));
-                        for (int k = 0; k < zombi.getActivaciones(); k++) {
-                            // Separar supervivientes en heridos y sanos
-                            ArrayList<Superviviente> supervivientesHeridos = new ArrayList<>();
-                            ArrayList<Superviviente> supervivientesSanos = new ArrayList<>();
-                            
-                            for (EntidadActivable e2 : entidadesCopia) { // Iteramos sobre la copia
-                                if (e2 instanceof Superviviente && ((Superviviente) e2).estaVivo()) {
-                                    if (((Superviviente) e2).estaHerido()) {
-                                        supervivientesHeridos.add((Superviviente) e2);
-                                    } else {
-                                        supervivientesSanos.add((Superviviente) e2);
+    
+    // Guardamos todos los zombis que existan en ese momento en el juego en un arrayList
+    // Esto es para luego recorrer el arrayList y asegurarnos de que un mismo zombi no haga una accion dos veces en un turno
+    ArrayList<Zombi> todosLosZombisDelJuego = new ArrayList <> ();
+    for (int i=0; i<TAM_X; i++) {
+        for (int j=0; j<TAM_Y; j++) {
+            todosLosZombisDelJuego.addAll(dimension[i][j].todosLosZombis());
+        }
+    }
+    for (Zombi z : todosLosZombisDelJuego) {
+        for (int k=0; k<z.getActivaciones(); k++) {
+            boolean zombiEncontrado = false;
+            for (int i = 0; i < TAM_X; i++) {
+                for (int j = 0; j < TAM_Y; j++) {
+                    if (dimension[i][j].hayAlgunZombi() && !zombiEncontrado) {
+                        // Hacemos una copia de la lista para evitar ConcurrentModificationException
+                        ArrayList<EntidadActivable> entidadesCopia = new ArrayList<>(dimension[i][j].getListaEntidades());
+
+                        for (EntidadActivable e : entidadesCopia) {
+                            if (e instanceof Zombi && e.equals(z)) {
+                                Zombi zombi = (Zombi) e;
+                                System.out.println("Turno del Zombi de la casilla:\n" +buscarCasillaOrigen(e));
+                                
+                                // Separar supervivientes en heridos y sanos
+                                ArrayList<Superviviente> supervivientesHeridos = new ArrayList<>();
+                                ArrayList<Superviviente> supervivientesSanos = new ArrayList<>();
+
+                                for (EntidadActivable e2 : entidadesCopia) { // Iteramos sobre la copia
+                                    if (e2 instanceof Superviviente && ((Superviviente) e2).estaVivo()) {
+                                        if (((Superviviente) e2).estaHerido()) {
+                                            supervivientesHeridos.add((Superviviente) e2);
+                                        } else {
+                                            supervivientesSanos.add((Superviviente) e2);
+                                        }
                                     }
                                 }
-                            }
 
-                            // Ataque en bucle mientras haya activaciones y supervivientes
-                            if (!supervivientesHeridos.isEmpty()) {
-                                Superviviente herido = supervivientesHeridos.remove(0); // Ataca al primer herido
-                                System.out.println("Ataque realizado con exito al superviviente herido: " +herido);
-                                herido.recibirAtaque();
-                            } else if (!supervivientesSanos.isEmpty()) {
-                                Superviviente sano = supervivientesSanos.remove(0); // Ataca al primer sano
-                                System.out.println("Ataque realizado con exito al superviviente sano: " +sano);
-                                sano.recibirAtaque();
-                            }
+                                // Ataque en bucle mientras haya activaciones y supervivientes
+                                if (!supervivientesHeridos.isEmpty()) {
+                                    Superviviente herido = supervivientesHeridos.remove(0); // Ataca al primer herido
+                                    System.out.println("Ataque realizado con exito al superviviente herido: " +herido);
+                                    herido.recibirAtaque();
+                                } else if (!supervivientesSanos.isEmpty()) {
+                                    Superviviente sano = supervivientesSanos.remove(0); // Ataca al primer sano
+                                    System.out.println("Ataque realizado con exito al superviviente sano: " +sano);
+                                    sano.recibirAtaque();
+                                }
 
-                            // Movimiento si quedan activaciones y no hay supervivientes en la casilla
-                            if (zombi.getActivaciones() > 0 && supervivientesHeridos.isEmpty() && supervivientesSanos.isEmpty()) {
-                                ////////////////////////////PRUEBAS//////////////////////////////////
-                                
-                                //System.out.println(zombi);
-                                //System.out.println(obtenerCasillaSupervivienteMasCercano(zombi).toString()); //Imprimir para comprobar
-                                /////////////////////////////////////////////////////////////////////
-                                System.out.println("No hay supervivientes en esta casilla, el mas cercano esta en: \n" +obtenerCasillaSupervivienteMasCercano(zombi));
-                                moverseZombi(zombi, obtenerCasillaSupervivienteMasCercano(zombi));
-                                System.out.println("El zombi se mueve a: " +buscarCasillaOrigen(zombi));
+                                // Movimiento si quedan activaciones y no hay supervivientes en la casilla
+                                if (zombi.getActivaciones() > 0 && supervivientesHeridos.isEmpty() && supervivientesSanos.isEmpty()) {
+                                    ////////////////////////////PRUEBAS//////////////////////////////////
+
+                                    //System.out.println(zombi);
+                                    //System.out.println(obtenerCasillaSupervivienteMasCercano(zombi).toString()); //Imprimir para comprobar
+                                    /////////////////////////////////////////////////////////////////////
+                                    System.out.println("No hay supervivientes en esta casilla, el mas cercano esta en: \n" +obtenerCasillaSupervivienteMasCercano(zombi));
+                                    moverseZombi(zombi, obtenerCasillaSupervivienteMasCercano(zombi));
+                                    System.out.println("El zombi se mueve a: " +buscarCasillaOrigen(zombi));
+                                }
+                                zombiEncontrado = true;
                             }
                         }
                     }
                 }
             }
         }
+        
     }
     return true;
     }
     
     private Casilla obtenerCasillaSupervivienteMasCercano(Zombi z) {
         Casilla origen = buscarCasillaOrigen(z); // Encuentra la casilla actual del zombi
-        Casilla destino = null;
+        Casilla destino = dimension[CASILLA_INICIO.getX()][CASILLA_INICIO.getY()];
         int distanciaMinima = (int) Math.sqrt(Math.pow(TAM_X, 2) + Math.pow(TAM_Y, 2)); // El tamaño más grande que acepta el tablero
 
         // Buscar la casilla más cercana con un superviviente
@@ -147,10 +162,23 @@ public class Juego {
             int xObjetivo = objetivo.getX();
             int yObjetivo = objetivo.getY();
 
-            // Máximo de movimientos del zombi (1 casilla por activación)
-            int activacionesZombi = zombi.getActivaciones();
+            /*// Máximo de movimientos del zombi (1 casilla por activación)
+            int activacionesZombi = zombi.getActivaciones();*/
+            
+            if (xActual < xObjetivo) {
+                xActual++; // Bajar
+            } else if (xActual > xObjetivo) {
+                xActual--; // Subir
+            } 
+            if (yActual < yObjetivo) {
+                yActual++; // Mover Derecha
+            } else if (yActual > yObjetivo) {
+                yActual--; // Mover Izquierda
+            }
+            moverse(dimension[xActual][yActual], zombi);
+            dibujarTableroConNumeros();
 
-            // Mientras el zombi tenga movimientos y no haya llegado al objetivo
+            /*// Mientras el zombi tenga movimientos y no haya llegado al objetivo
             while (activacionesZombi > 0 && (xActual != xObjetivo || yActual != yObjetivo)) {
                 // Decidir en qué dirección moverse en X
                 if (xActual < xObjetivo) {
@@ -166,7 +194,7 @@ public class Juego {
                 activacionesZombi--;
                 moverse(dimension[xActual][yActual], zombi);
                 dibujarTableroConNumeros();
-            }
+            }*/
     }
     public void dibujarTableroConNumeros() {
         // Imprimir los números de las columnas (parte superior)
@@ -395,10 +423,15 @@ public class Juego {
                 // Comprobamos si hay algún superviviente en las casillas adyacentes
                 // Coordenadas de las casillas adyacentes
                 int[][] adyacentes = {
+                    {x, y},     // Misma casilla
                     {x + 1, y}, // Sur
                     {x, y + 1}, // Este
                     {x - 1, y}, // Norte
-                    {x, y - 1}  // Oeste
+                    {x, y - 1},  // Oeste
+                    {x + 1, y + 1},
+                    {x + 1, y - 1},
+                    {x - 1, y + 1},
+                    {x - 1, y - 1}
                 };
 
                 // Verificar cada casilla adyacente
@@ -488,20 +521,42 @@ public class Juego {
     private boolean hayAlgunSupervivienteMuerto() {
         for (int i=0; i<TAM_X; i++) {
             for (int j=0; j<TAM_Y; j++) {
-                if (dimension[i][j].hayAlgunSupervivienteMuerto()) return true;
+                if (dimension[i][j].hayAlgunSupervivienteMuerto()) {
+                    System.out.println("Han matado a un superviviente");
+                    return true;
+                }
             }
         }
         return false;
     }
     
-    private boolean hanGanadoSupervivientes() {
+    private int numeroZombis() {
+        int num = 0;
         for (int i=0; i<TAM_X; i++) {
+            for (int j=0; j<TAM_Y; j++) {
+                num += dimension[i][j].numeroZombis();
+            }
+        }
+        return num;
+    }
+    
+    private boolean hanGanadoSupervivientes(String [] listaS) {
+        int x = CASILLA_FIN.getX();
+        int y = CASILLA_FIN.getY();
+        
+        if (dimension[x][y].numeroSupervivientes() == listaS.length 
+                && !dimension[x][y].noTieneProvisionSuperviviente()) {
+            System.out.println("Han ganado los supervivientes");
+            return true;
+        }
+        
+        /*for (int i=0; i<TAM_X; i++) {
             for (int j=0; j<TAM_Y; j++) {
                 if (!dimension[i][j].equals(CASILLA_FIN) && dimension[i][j].hayAlgunSuperviviente()
                         && dimension[i][j].noTieneProvisionSuperviviente()) return false;
             }
-        }
-        return true;
+        }*/
+        return false;
     }
 
     // Este método solo funciona cuando la casilla está adyacente
@@ -589,7 +644,7 @@ public class Juego {
         return eliminarZombis(a, exitos, s, destino);
     }
     
-    public boolean esMatable(Arma a, Zombi z, Superviviente s) {
+    /*public boolean esMatable(Arma a, Zombi z, Superviviente s) {
         // Verifica si el zombi es de tipo CaminanteBerserker, CorredorBerserker o AbominacionBerserker
         Casilla casillaSuperviviente = buscarCasillaOrigen(s);
         Casilla casillaZombi = buscarCasillaOrigen(z);
@@ -597,7 +652,7 @@ public class Juego {
             /*Si es un zombi Berserker, debe cumplir dos condiciones:
             1. El arma debe tener suficiente potencia para eliminar al zombi (potencia >= aguante)
             2. El arma debe ser cuerpo a cuerpo (alcance == 0), ya que los zombis Berserker son inmunes a ataques a distancia.*/
-            return (a.getPotencia() >= z.getAguante()) && casillaSuperviviente.distancia(casillaZombi) == 0;
+/*            return (a.getPotencia() >= z.getAguante()) && casillaSuperviviente.distancia(casillaZombi) == 0;
         } else {
             // Si el zombi no es un Berserker, solo se verifica que el arma tenga suficiente potencia y que tenga suficiente alcance.
             if(a.getAlcance() == 0) { // Armas de corto alcance
@@ -606,7 +661,7 @@ public class Juego {
                 return (a.getPotencia() >= z.getAguante()) && casillaSuperviviente.distancia(casillaZombi) <= a.getAlcance();
             }
         }
-    }
+    }*/
     
     public boolean eliminarZombis(Arma a, int exitos, Superviviente s, Casilla destino) {
         ArrayList<EntidadActivable> zombisAEliminar = new ArrayList<>(); // Lista para almacenar los zombis eliminables
@@ -615,7 +670,7 @@ public class Juego {
             if (exitos == 0) { // Si no quedan éxitos, detiene el proceso
                 break;
             } else if (e instanceof Zombi) { // Verifica si la entidad es un Zombi
-                if (esMatable(a,(Zombi) e, s)) { // Comprueba si el zombi puede ser eliminado con el arma
+                if (((Zombi) e).esMatable(a)) { // Comprueba si el zombi puede ser eliminado con el arma
                     // Si el zombi a matar es toxico se hiere a todos los supervivientes de una casilla
                     if (((Zombi) e) instanceof CaminanteToxico ||
                             ((Zombi) e) instanceof AbominacionToxico ||
@@ -627,12 +682,12 @@ public class Juego {
                 }
             }
         }
-        
+
         destino.eliminarEntidad(zombisAEliminar);
-        
+
         // Actualizamos la lista de zombis eliminados por el superviviente
         s.sumarZombisKO(zombisAEliminar.size());
-        
+
         return !zombisAEliminar.isEmpty();
     }
 }
