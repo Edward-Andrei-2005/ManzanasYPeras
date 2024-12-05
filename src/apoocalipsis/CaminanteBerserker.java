@@ -5,4 +5,8 @@ public class CaminanteBerserker extends Caminante {
     public CaminanteBerserker() {
         super();
     }
+    
+    public boolean esMatable(Arma a) {
+        return (a.getPotencia() >= AGUANTE) && (a.getAlcance() == 0);
+    }
 }
