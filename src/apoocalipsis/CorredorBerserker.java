@@ -5,4 +5,8 @@ public class CorredorBerserker extends Corredor {
     public CorredorBerserker() {
         super();
     }
+    
+    public boolean esMatable(Arma a) {
+        return (a.getPotencia() >= AGUANTE) && (a.getAlcance() == 0);
+    }
 }
