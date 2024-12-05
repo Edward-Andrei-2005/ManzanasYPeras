@@ -184,6 +184,23 @@ public class Casilla {
         return num;
     }
     
+    public int numeroSupervivientes() {
+        int num = 0;
+        for (EntidadActivable e : listaEntidades) {
+            if (e instanceof Superviviente) num++;
+        }
+        return num;
+    }
+    
+    // Devuelve un arrayList con todos los zombis de la casilla
+    public ArrayList<Zombi> todosLosZombis() {
+        ArrayList <Zombi> lista = new ArrayList <> ();
+        for (EntidadActivable e : listaEntidades) {
+            if (e instanceof Zombi) lista.add((Zombi) e);
+        }
+        return lista;
+    }
+    
     @Override
     public boolean equals(Object o) {
         if (o == null) return false;
