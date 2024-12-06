@@ -1,13 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package apoocalipsis;
-
-/**
- *
- * @author Edward
- */
 public class J_CrearPartida extends javax.swing.JFrame {
 
     /**
