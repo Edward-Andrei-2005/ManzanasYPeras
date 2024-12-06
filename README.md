@@ -7,7 +7,7 @@
 - [x] ¿Es necesario distinguir el tipo de Zombi que ataca? Atacan todos igual, ¿no?
 - [ ] Revisar TODAS las funciones en las que intervengan los supervivientes. Modificar a que las usen solo los supervivientes vivos.
 - [x] Hacer reaccionarAtaqueZombie, atributo o método?
-- [ ] Hacer que si hay zombis en la casilla de origen, cuesta tantas acciones extra como zombis acompañen al superviviente.
+- [x] Hacer que si hay zombis en la casilla de origen, cuesta tantas acciones extra como zombis acompañen al superviviente.
 
 - [ ] **QUITAR EL COMENTARIO DE `turno--` EN ACCION SUPERVIVIENTE DE `cambiarArma()`**
 
