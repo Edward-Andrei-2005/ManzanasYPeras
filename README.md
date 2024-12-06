@@ -6,7 +6,7 @@
 - [x] Modificar cuando un Superviviente mata un Zombi. Si éste es tóxico, inflinge daño en esa casilla. Pág2.
 - [x] ¿Es necesario distinguir el tipo de Zombi que ataca? Atacan todos igual, ¿no?
 - [ ] Revisar TODAS las funciones en las que intervengan los supervivientes. Modificar a que las usen solo los supervivientes vivos.
-- [ ] Hacer reaccionarAtaqueZombie, atributo o método?
+- [x] Hacer reaccionarAtaqueZombie, atributo o método?
 - [ ] Hacer que si hay zombis en la casilla de origen, cuesta tantas acciones extra como zombis acompañen al superviviente.
 
 - [ ] **QUITAR EL COMENTARIO DE `turno--` EN ACCION SUPERVIVIENTE DE `cambiarArma()`**
