@@ -1,13 +1,12 @@
 # Cosas a Mirar
 
-- [x] Arma ahora se distinguen por el id, revisar si hemos utilizado el equals en otra función y modificarlo.
-- [x] Modificar función hanGanadoSupervivientes y poner otra condición donde se vea si todos los supervivientes tienen una provisión en su inventario.
-- [x] Añadir +1 contador de zombis matados de superviviente en la función resolver ataque.
-- [x] Modificar cuando un Superviviente mata un Zombi. Si éste es tóxico, inflinge daño en esa casilla. Pág2.
-- [x] ¿Es necesario distinguir el tipo de Zombi que ataca? Atacan todos igual, ¿no?
+- [ ] En la interfaz de escribir los nombres. Quitar boton cancelar
+
+- [ ] En la interfaz de escribir los nombres. Hacer que no admita nombres vacios
+
+- [ ] Montar un layout de botones en el frame del tablero
+
 - [ ] Revisar TODAS las funciones en las que intervengan los supervivientes. Modificar a que las usen solo los supervivientes vivos.
-- [x] Hacer reaccionarAtaqueZombie, atributo o método?
-- [x] Hacer que si hay zombis en la casilla de origen, cuesta tantas acciones extra como zombis acompañen al superviviente.
 
 - [ ] **QUITAR EL COMENTARIO DE `turno--` EN ACCION SUPERVIVIENTE DE `cambiarArma()`**
 
