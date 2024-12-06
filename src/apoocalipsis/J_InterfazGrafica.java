@@ -1,5 +1,4 @@
 package apoocalipsis;
-
 import javax.swing.JOptionPane;
 
 public class J_InterfazGrafica extends javax.swing.JFrame {
