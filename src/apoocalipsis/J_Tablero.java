@@ -1,13 +1,22 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
 package apoocalipsis;
+
+/**
+ *
+ * @author manue
+ */
 public class J_Tablero extends javax.swing.JFrame {
 
     /**
-     * Creates new form J_CrearPartida
+     * Creates new form Tablero
      */
     public J_Tablero() {
         initComponents();
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -17,1595 +26,454 @@ public class J_Tablero extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        B0_29 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        L_LogoURJC = new javax.swing.JLabel();
-        B0_0 = new javax.swing.JButton();
-        B2_0 = new javax.swing.JButton();
-        B3_0 = new javax.swing.JButton();
-        B4_0 = new javax.swing.JButton();
-        B6_0 = new javax.swing.JButton();
-        B7_0 = new javax.swing.JButton();
-        B8_0 = new javax.swing.JButton();
-        B5_0 = new javax.swing.JButton();
-        B9_0 = new javax.swing.JButton();
-        B0_19 = new javax.swing.JButton();
-        B0_20 = new javax.swing.JButton();
-        B1_0 = new javax.swing.JButton();
-        B0_22 = new javax.swing.JButton();
-        B0_23 = new javax.swing.JButton();
-        B0_24 = new javax.swing.JButton();
-        B0_25 = new javax.swing.JButton();
-        B0_26 = new javax.swing.JButton();
-        B0_27 = new javax.swing.JButton();
-        B0_28 = new javax.swing.JButton();
-        B0_30 = new javax.swing.JButton();
-        B0_31 = new javax.swing.JButton();
-        B0_32 = new javax.swing.JButton();
-        B0_33 = new javax.swing.JButton();
-        B0_34 = new javax.swing.JButton();
-        B0_35 = new javax.swing.JButton();
-        B0_36 = new javax.swing.JButton();
-        B0_37 = new javax.swing.JButton();
-        B0_38 = new javax.swing.JButton();
-        B0_39 = new javax.swing.JButton();
-        B0_40 = new javax.swing.JButton();
-        B0_41 = new javax.swing.JButton();
-        B0_42 = new javax.swing.JButton();
-        B0_43 = new javax.swing.JButton();
-        B0_44 = new javax.swing.JButton();
-        B0_45 = new javax.swing.JButton();
-        B0_46 = new javax.swing.JButton();
-        B0_47 = new javax.swing.JButton();
-        B0_48 = new javax.swing.JButton();
-        B0_49 = new javax.swing.JButton();
-        B0_50 = new javax.swing.JButton();
-        B0_51 = new javax.swing.JButton();
-        B0_52 = new javax.swing.JButton();
-        B0_53 = new javax.swing.JButton();
-        B0_54 = new javax.swing.JButton();
-        B0_55 = new javax.swing.JButton();
-        B0_56 = new javax.swing.JButton();
-        B0_57 = new javax.swing.JButton();
-        B0_58 = new javax.swing.JButton();
-        B0_59 = new javax.swing.JButton();
-        B0_60 = new javax.swing.JButton();
-        B0_61 = new javax.swing.JButton();
-        B0_62 = new javax.swing.JButton();
-        B0_63 = new javax.swing.JButton();
-        B0_64 = new javax.swing.JButton();
-        B0_65 = new javax.swing.JButton();
-        B0_66 = new javax.swing.JButton();
-        B0_67 = new javax.swing.JButton();
-        B0_68 = new javax.swing.JButton();
-        B0_69 = new javax.swing.JButton();
-        B0_70 = new javax.swing.JButton();
-        B0_71 = new javax.swing.JButton();
-        B0_72 = new javax.swing.JButton();
-        B0_73 = new javax.swing.JButton();
-        B0_74 = new javax.swing.JButton();
-        B0_75 = new javax.swing.JButton();
-        B0_76 = new javax.swing.JButton();
-        B0_77 = new javax.swing.JButton();
-        B0_78 = new javax.swing.JButton();
-        B0_79 = new javax.swing.JButton();
-        B0_80 = new javax.swing.JButton();
-        B0_81 = new javax.swing.JButton();
-        B0_82 = new javax.swing.JButton();
-        B0_83 = new javax.swing.JButton();
-        B0_84 = new javax.swing.JButton();
-        B0_85 = new javax.swing.JButton();
-        B0_86 = new javax.swing.JButton();
-        B0_87 = new javax.swing.JButton();
-        B0_88 = new javax.swing.JButton();
-        B0_89 = new javax.swing.JButton();
-        B0_90 = new javax.swing.JButton();
-        B0_91 = new javax.swing.JButton();
-        B0_92 = new javax.swing.JButton();
-        B0_93 = new javax.swing.JButton();
-        B0_94 = new javax.swing.JButton();
-        B0_95 = new javax.swing.JButton();
-        B0_96 = new javax.swing.JButton();
-        B0_97 = new javax.swing.JButton();
-        B0_98 = new javax.swing.JButton();
-        B0_99 = new javax.swing.JButton();
-        B0_100 = new javax.swing.JButton();
-        B0_101 = new javax.swing.JButton();
-        B0_102 = new javax.swing.JButton();
-        B0_103 = new javax.swing.JButton();
-        B0_104 = new javax.swing.JButton();
-        B0_105 = new javax.swing.JButton();
-        B0_106 = new javax.swing.JButton();
-        B0_107 = new javax.swing.JButton();
-        B0_108 = new javax.swing.JButton();
-        B0_109 = new javax.swing.JButton();
-        B0_110 = new javax.swing.JButton();
-        L_Columnas = new javax.swing.JLabel();
-        L_Fila1 = new javax.swing.JLabel();
-        L_Fila2 = new javax.swing.JLabel();
-        L_Fila3 = new javax.swing.JLabel();
-        L_Fila4 = new javax.swing.JLabel();
-        L_Fila0 = new javax.swing.JLabel();
-        L_Fila5 = new javax.swing.JLabel();
-        L_Fila7 = new javax.swing.JLabel();
-        L_Fila8 = new javax.swing.JLabel();
-        L_Fila9 = new javax.swing.JLabel();
-        L_Fila6 = new javax.swing.JLabel();
-
-        B0_29.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_29ActionPerformed(evt);
-            }
-        });
-
-        jLabel1.setText("jLabel1");
-
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(7, 33, 68));
-        jLabel3.setText("0");
+        b00 = new javax.swing.JButton();
+        b01 = new javax.swing.JButton();
+        b02 = new javax.swing.JButton();
+        b03 = new javax.swing.JButton();
+        b04 = new javax.swing.JButton();
+        b05 = new javax.swing.JButton();
+        b06 = new javax.swing.JButton();
+        b07 = new javax.swing.JButton();
+        b08 = new javax.swing.JButton();
+        b09 = new javax.swing.JButton();
+        b10 = new javax.swing.JButton();
+        b11 = new javax.swing.JButton();
+        b12 = new javax.swing.JButton();
+        b13 = new javax.swing.JButton();
+        b14 = new javax.swing.JButton();
+        b15 = new javax.swing.JButton();
+        b16 = new javax.swing.JButton();
+        b17 = new javax.swing.JButton();
+        b18 = new javax.swing.JButton();
+        b19 = new javax.swing.JButton();
+        b20 = new javax.swing.JButton();
+        b21 = new javax.swing.JButton();
+        b22 = new javax.swing.JButton();
+        b23 = new javax.swing.JButton();
+        b24 = new javax.swing.JButton();
+        b25 = new javax.swing.JButton();
+        b26 = new javax.swing.JButton();
+        b27 = new javax.swing.JButton();
+        b28 = new javax.swing.JButton();
+        b29 = new javax.swing.JButton();
+        b30 = new javax.swing.JButton();
+        b31 = new javax.swing.JButton();
+        b32 = new javax.swing.JButton();
+        b33 = new javax.swing.JButton();
+        b34 = new javax.swing.JButton();
+        b35 = new javax.swing.JButton();
+        b36 = new javax.swing.JButton();
+        b37 = new javax.swing.JButton();
+        b38 = new javax.swing.JButton();
+        b39 = new javax.swing.JButton();
+        b40 = new javax.swing.JButton();
+        b41 = new javax.swing.JButton();
+        b42 = new javax.swing.JButton();
+        b43 = new javax.swing.JButton();
+        b44 = new javax.swing.JButton();
+        b45 = new javax.swing.JButton();
+        b46 = new javax.swing.JButton();
+        b47 = new javax.swing.JButton();
+        b48 = new javax.swing.JButton();
+        b49 = new javax.swing.JButton();
+        b50 = new javax.swing.JButton();
+        b51 = new javax.swing.JButton();
+        b52 = new javax.swing.JButton();
+        b53 = new javax.swing.JButton();
+        b54 = new javax.swing.JButton();
+        b55 = new javax.swing.JButton();
+        b56 = new javax.swing.JButton();
+        b57 = new javax.swing.JButton();
+        b58 = new javax.swing.JButton();
+        b59 = new javax.swing.JButton();
+        b60 = new javax.swing.JButton();
+        b61 = new javax.swing.JButton();
+        b62 = new javax.swing.JButton();
+        b63 = new javax.swing.JButton();
+        b64 = new javax.swing.JButton();
+        b65 = new javax.swing.JButton();
+        b66 = new javax.swing.JButton();
+        b67 = new javax.swing.JButton();
+        b68 = new javax.swing.JButton();
+        b69 = new javax.swing.JButton();
+        b70 = new javax.swing.JButton();
+        b71 = new javax.swing.JButton();
+        b72 = new javax.swing.JButton();
+        b73 = new javax.swing.JButton();
+        b74 = new javax.swing.JButton();
+        b75 = new javax.swing.JButton();
+        b76 = new javax.swing.JButton();
+        b77 = new javax.swing.JButton();
+        b78 = new javax.swing.JButton();
+        b79 = new javax.swing.JButton();
+        b80 = new javax.swing.JButton();
+        b81 = new javax.swing.JButton();
+        b82 = new javax.swing.JButton();
+        b83 = new javax.swing.JButton();
+        b84 = new javax.swing.JButton();
+        b85 = new javax.swing.JButton();
+        b86 = new javax.swing.JButton();
+        b87 = new javax.swing.JButton();
+        b88 = new javax.swing.JButton();
+        b89 = new javax.swing.JButton();
+        b90 = new javax.swing.JButton();
+        b91 = new javax.swing.JButton();
+        b92 = new javax.swing.JButton();
+        b93 = new javax.swing.JButton();
+        b94 = new javax.swing.JButton();
+        b95 = new javax.swing.JButton();
+        b96 = new javax.swing.JButton();
+        b97 = new javax.swing.JButton();
+        b98 = new javax.swing.JButton();
+        b99 = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(253, 253, 253));
 
-        jPanel1.setBackground(new java.awt.Color(253, 253, 253));
+        jPanel1.setLayout(new java.awt.GridLayout(10, 10, 10, 10));
 
-        L_LogoURJC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/apoocalipsis/images/URJ_simbolo_POS_1.png"))); // NOI18N
-
-        B0_0.addActionListener(new java.awt.event.ActionListener() {
+        b00.setText("jButton1");
+        b00.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_0ActionPerformed(evt);
+                b00ActionPerformed(evt);
             }
         });
+        jPanel1.add(b00);
 
-        B2_0.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B2_0ActionPerformed(evt);
-            }
-        });
+        b01.setText("jButton7");
+        jPanel1.add(b01);
 
-        B3_0.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B3_0ActionPerformed(evt);
-            }
-        });
+        b02.setText("jButton6");
+        jPanel1.add(b02);
 
-        B4_0.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B4_0ActionPerformed(evt);
-            }
-        });
+        b03.setText("jButton2");
+        jPanel1.add(b03);
 
-        B6_0.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B6_0ActionPerformed(evt);
-            }
-        });
+        b04.setText("jButton4");
+        jPanel1.add(b04);
 
-        B7_0.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B7_0ActionPerformed(evt);
-            }
-        });
+        b05.setText("jButton10");
+        jPanel1.add(b05);
 
-        B8_0.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B8_0ActionPerformed(evt);
-            }
-        });
+        b06.setText("jButton9");
+        jPanel1.add(b06);
 
-        B5_0.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B5_0ActionPerformed(evt);
-            }
-        });
+        b07.setText("jButton13");
+        jPanel1.add(b07);
 
-        B9_0.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B9_0ActionPerformed(evt);
-            }
-        });
+        b08.setText("jButton8");
+        jPanel1.add(b08);
 
-        B0_19.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_19ActionPerformed(evt);
-            }
-        });
+        b09.setText("jButton1");
+        jPanel1.add(b09);
 
-        B0_20.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_20ActionPerformed(evt);
-            }
-        });
+        b10.setText("jButton20");
+        jPanel1.add(b10);
 
-        B1_0.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B1_0ActionPerformed(evt);
-            }
-        });
+        b11.setText("jButton5");
+        jPanel1.add(b11);
 
-        B0_22.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_22ActionPerformed(evt);
-            }
-        });
+        b12.setText("jButton19");
+        jPanel1.add(b12);
 
-        B0_23.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_23ActionPerformed(evt);
-            }
-        });
+        b13.setText("jButton17");
+        jPanel1.add(b13);
 
-        B0_24.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_24ActionPerformed(evt);
-            }
-        });
+        b14.setText("jButton21");
+        jPanel1.add(b14);
 
-        B0_25.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_25ActionPerformed(evt);
-            }
-        });
+        b15.setText("jButton23");
+        jPanel1.add(b15);
 
-        B0_26.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_26ActionPerformed(evt);
-            }
-        });
+        b16.setText("jButton3");
+        jPanel1.add(b16);
 
-        B0_27.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_27ActionPerformed(evt);
-            }
-        });
+        b17.setText("jButton30");
+        jPanel1.add(b17);
 
-        B0_28.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_28ActionPerformed(evt);
-            }
-        });
+        b18.setText("jButton28");
+        jPanel1.add(b18);
 
-        B0_30.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_30ActionPerformed(evt);
-            }
-        });
+        b19.setText("jButton43");
+        jPanel1.add(b19);
 
-        B0_31.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_31ActionPerformed(evt);
-            }
-        });
+        b20.setText("jButton46");
+        jPanel1.add(b20);
 
-        B0_32.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_32ActionPerformed(evt);
-            }
-        });
+        b21.setText("jButton38");
+        jPanel1.add(b21);
 
-        B0_33.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_33ActionPerformed(evt);
-            }
-        });
+        b22.setText("jButton59");
+        jPanel1.add(b22);
 
-        B0_34.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_34ActionPerformed(evt);
-            }
-        });
+        b23.setText("jButton60");
+        jPanel1.add(b23);
 
-        B0_35.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_35ActionPerformed(evt);
-            }
-        });
+        b24.setText("jButton57");
+        jPanel1.add(b24);
 
-        B0_36.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_36ActionPerformed(evt);
-            }
-        });
+        b25.setText("jButton69");
+        jPanel1.add(b25);
 
-        B0_37.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_37ActionPerformed(evt);
-            }
-        });
+        b26.setText("jButton58");
+        jPanel1.add(b26);
 
-        B0_38.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_38ActionPerformed(evt);
-            }
-        });
+        b27.setText("jButton68");
+        jPanel1.add(b27);
 
-        B0_39.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_39ActionPerformed(evt);
-            }
-        });
+        b28.setText("jButton63");
+        jPanel1.add(b28);
 
-        B0_40.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_40ActionPerformed(evt);
-            }
-        });
+        b29.setText("jButton67");
+        jPanel1.add(b29);
 
-        B0_41.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_41ActionPerformed(evt);
-            }
-        });
+        b30.setText("jButton79");
+        jPanel1.add(b30);
 
-        B0_42.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_42ActionPerformed(evt);
-            }
-        });
+        b31.setText("jButton73");
+        jPanel1.add(b31);
 
-        B0_43.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_43ActionPerformed(evt);
-            }
-        });
+        b32.setText("jButton76");
+        jPanel1.add(b32);
 
-        B0_44.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_44ActionPerformed(evt);
-            }
-        });
+        b33.setText("jButton72");
+        jPanel1.add(b33);
 
-        B0_45.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_45ActionPerformed(evt);
-            }
-        });
+        b34.setText("jButton71");
+        jPanel1.add(b34);
 
-        B0_46.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_46ActionPerformed(evt);
-            }
-        });
+        b35.setText("jButton81");
+        jPanel1.add(b35);
 
-        B0_47.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_47ActionPerformed(evt);
-            }
-        });
+        b36.setText("jButton93");
+        jPanel1.add(b36);
 
-        B0_48.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_48ActionPerformed(evt);
-            }
-        });
+        b37.setText("jButton66");
+        jPanel1.add(b37);
 
-        B0_49.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_49ActionPerformed(evt);
-            }
-        });
+        b38.setText("jButton92");
+        jPanel1.add(b38);
 
-        B0_50.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_50ActionPerformed(evt);
-            }
-        });
+        b39.setText("jButton64");
+        jPanel1.add(b39);
 
-        B0_51.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_51ActionPerformed(evt);
-            }
-        });
+        b40.setText("jButton80");
+        jPanel1.add(b40);
 
-        B0_52.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_52ActionPerformed(evt);
-            }
-        });
+        b41.setText("jButton37");
+        jPanel1.add(b41);
 
-        B0_53.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_53ActionPerformed(evt);
-            }
-        });
+        b42.setText("jButton70");
+        jPanel1.add(b42);
 
-        B0_54.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_54ActionPerformed(evt);
-            }
-        });
+        b43.setText("jButton74");
+        jPanel1.add(b43);
 
-        B0_55.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_55ActionPerformed(evt);
-            }
-        });
+        b44.setText("jButton77");
+        jPanel1.add(b44);
 
-        B0_56.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_56ActionPerformed(evt);
-            }
-        });
+        b45.setText("jButton89");
+        jPanel1.add(b45);
 
-        B0_57.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_57ActionPerformed(evt);
-            }
-        });
+        b46.setText("jButton94");
+        jPanel1.add(b46);
 
-        B0_58.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_58ActionPerformed(evt);
-            }
-        });
+        b47.setText("jButton100");
+        jPanel1.add(b47);
 
-        B0_59.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_59ActionPerformed(evt);
-            }
-        });
+        b48.setText("jButton95");
+        jPanel1.add(b48);
 
-        B0_60.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_60ActionPerformed(evt);
-            }
-        });
+        b49.setText("jButton99");
+        jPanel1.add(b49);
 
-        B0_61.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_61ActionPerformed(evt);
-            }
-        });
+        b50.setText("jButton98");
+        jPanel1.add(b50);
 
-        B0_62.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_62ActionPerformed(evt);
-            }
-        });
+        b51.setText("jButton75");
+        jPanel1.add(b51);
 
-        B0_63.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_63ActionPerformed(evt);
-            }
-        });
+        b52.setText("jButton82");
+        jPanel1.add(b52);
 
-        B0_64.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_64ActionPerformed(evt);
-            }
-        });
+        b53.setText("jButton61");
+        jPanel1.add(b53);
 
-        B0_65.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_65ActionPerformed(evt);
-            }
-        });
+        b54.setText("jButton54");
+        jPanel1.add(b54);
 
-        B0_66.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_66ActionPerformed(evt);
-            }
-        });
+        b55.setText("jButton56");
+        jPanel1.add(b55);
 
-        B0_67.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_67ActionPerformed(evt);
-            }
-        });
+        b56.setText("jButton36");
+        jPanel1.add(b56);
 
-        B0_68.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_68ActionPerformed(evt);
-            }
-        });
+        b57.setText("jButton50");
+        jPanel1.add(b57);
 
-        B0_69.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_69ActionPerformed(evt);
-            }
-        });
+        b58.setText("jButton85");
+        jPanel1.add(b58);
 
-        B0_70.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_70ActionPerformed(evt);
-            }
-        });
+        b59.setText("jButton78");
+        jPanel1.add(b59);
 
-        B0_71.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_71ActionPerformed(evt);
-            }
-        });
+        b60.setText("jButton97");
+        jPanel1.add(b60);
 
-        B0_72.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_72ActionPerformed(evt);
-            }
-        });
+        b61.setText("jButton90");
+        jPanel1.add(b61);
 
-        B0_73.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_73ActionPerformed(evt);
-            }
-        });
+        b62.setText("jButton96");
+        jPanel1.add(b62);
 
-        B0_74.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_74ActionPerformed(evt);
-            }
-        });
+        b63.setText("jButton86");
+        jPanel1.add(b63);
 
-        B0_75.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_75ActionPerformed(evt);
-            }
-        });
+        b64.setText("jButton88");
+        jPanel1.add(b64);
 
-        B0_76.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_76ActionPerformed(evt);
-            }
-        });
+        b65.setText("jButton65");
+        jPanel1.add(b65);
 
-        B0_77.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_77ActionPerformed(evt);
-            }
-        });
+        b66.setText("jButton91");
+        jPanel1.add(b66);
 
-        B0_78.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_78ActionPerformed(evt);
-            }
-        });
+        b67.setText("jButton84");
+        jPanel1.add(b67);
 
-        B0_79.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_79ActionPerformed(evt);
-            }
-        });
+        b68.setText("jButton62");
+        jPanel1.add(b68);
 
-        B0_80.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_80ActionPerformed(evt);
-            }
-        });
+        b69.setText("jButton48");
+        jPanel1.add(b69);
 
-        B0_81.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_81ActionPerformed(evt);
-            }
-        });
+        b70.setText("jButton32");
+        jPanel1.add(b70);
 
-        B0_82.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_82ActionPerformed(evt);
-            }
-        });
+        b71.setText("jButton45");
+        jPanel1.add(b71);
 
-        B0_83.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_83ActionPerformed(evt);
-            }
-        });
+        b72.setText("jButton55");
+        jPanel1.add(b72);
 
-        B0_84.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_84ActionPerformed(evt);
-            }
-        });
+        b73.setText("jButton87");
+        jPanel1.add(b73);
 
-        B0_85.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_85ActionPerformed(evt);
-            }
-        });
+        b74.setText("jButton52");
+        jPanel1.add(b74);
 
-        B0_86.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_86ActionPerformed(evt);
-            }
-        });
+        b75.setText("jButton53");
+        jPanel1.add(b75);
 
-        B0_87.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_87ActionPerformed(evt);
-            }
-        });
+        b76.setText("jButton44");
+        jPanel1.add(b76);
 
-        B0_88.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_88ActionPerformed(evt);
-            }
-        });
+        b77.setText("jButton51");
+        jPanel1.add(b77);
 
-        B0_89.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_89ActionPerformed(evt);
-            }
-        });
+        b78.setText("jButton39");
+        jPanel1.add(b78);
 
-        B0_90.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_90ActionPerformed(evt);
-            }
-        });
+        b79.setText("jButton83");
+        jPanel1.add(b79);
 
-        B0_91.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_91ActionPerformed(evt);
-            }
-        });
+        b80.setText("jButton49");
+        jPanel1.add(b80);
 
-        B0_92.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_92ActionPerformed(evt);
-            }
-        });
+        b81.setText("jButton12");
+        jPanel1.add(b81);
 
-        B0_93.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_93ActionPerformed(evt);
-            }
-        });
+        b82.setText("jButton47");
+        jPanel1.add(b82);
 
-        B0_94.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_94ActionPerformed(evt);
-            }
-        });
+        b83.setText("jButton25");
+        jPanel1.add(b83);
 
-        B0_95.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_95ActionPerformed(evt);
-            }
-        });
+        b84.setText("jButton29");
+        jPanel1.add(b84);
 
-        B0_96.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_96ActionPerformed(evt);
-            }
-        });
+        b85.setText("jButton24");
+        jPanel1.add(b85);
 
-        B0_97.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_97ActionPerformed(evt);
-            }
-        });
+        b86.setText("jButton42");
+        jPanel1.add(b86);
 
-        B0_98.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_98ActionPerformed(evt);
-            }
-        });
+        b87.setText("jButton40");
+        jPanel1.add(b87);
 
-        B0_99.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_99ActionPerformed(evt);
-            }
-        });
+        b88.setText("jButton41");
+        jPanel1.add(b88);
 
-        B0_100.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_100ActionPerformed(evt);
-            }
-        });
+        b89.setText("jButton27");
+        jPanel1.add(b89);
 
-        B0_101.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_101ActionPerformed(evt);
-            }
-        });
+        b90.setText("jButton26");
+        jPanel1.add(b90);
 
-        B0_102.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_102ActionPerformed(evt);
-            }
-        });
+        b91.setText("jButton16");
+        jPanel1.add(b91);
 
-        B0_103.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_103ActionPerformed(evt);
-            }
-        });
+        b92.setText("jButton35");
+        jPanel1.add(b92);
 
-        B0_104.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_104ActionPerformed(evt);
-            }
-        });
+        b93.setText("jButton33");
+        jPanel1.add(b93);
 
-        B0_105.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_105ActionPerformed(evt);
-            }
-        });
+        b94.setText("jButton18");
+        jPanel1.add(b94);
 
-        B0_106.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_106ActionPerformed(evt);
-            }
-        });
+        b95.setText("jButton14");
+        jPanel1.add(b95);
 
-        B0_107.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_107ActionPerformed(evt);
-            }
-        });
+        b96.setText("jButton31");
+        jPanel1.add(b96);
 
-        B0_108.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_108ActionPerformed(evt);
-            }
-        });
+        b97.setText("jButton34");
+        jPanel1.add(b97);
 
-        B0_109.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_109ActionPerformed(evt);
-            }
-        });
+        b98.setText("jButton22");
+        jPanel1.add(b98);
 
-        B0_110.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B0_110ActionPerformed(evt);
-            }
-        });
+        b99.setText("jButton11");
+        jPanel1.add(b99);
 
-        L_Columnas.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        L_Columnas.setForeground(new java.awt.Color(7, 33, 68));
-        L_Columnas.setText(" 0   1   2   3   4   5   6   7   8   9");
-
-        L_Fila1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        L_Fila1.setForeground(new java.awt.Color(7, 33, 68));
-        L_Fila1.setText("1");
-
-        L_Fila2.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        L_Fila2.setForeground(new java.awt.Color(7, 33, 68));
-        L_Fila2.setText("2");
-
-        L_Fila3.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        L_Fila3.setForeground(new java.awt.Color(7, 33, 68));
-        L_Fila3.setText("3");
-
-        L_Fila4.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        L_Fila4.setForeground(new java.awt.Color(7, 33, 68));
-        L_Fila4.setText("4");
-
-        L_Fila0.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        L_Fila0.setForeground(new java.awt.Color(7, 33, 68));
-        L_Fila0.setText("0");
-
-        L_Fila5.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        L_Fila5.setForeground(new java.awt.Color(7, 33, 68));
-        L_Fila5.setText("5");
-
-        L_Fila7.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        L_Fila7.setForeground(new java.awt.Color(7, 33, 68));
-        L_Fila7.setText("7");
-
-        L_Fila8.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        L_Fila8.setForeground(new java.awt.Color(7, 33, 68));
-        L_Fila8.setText("8");
-
-        L_Fila9.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        L_Fila9.setForeground(new java.awt.Color(7, 33, 68));
-        L_Fila9.setText("9");
-
-        L_Fila6.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        L_Fila6.setForeground(new java.awt.Color(7, 33, 68));
-        L_Fila6.setText("6");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(83, 83, 83)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(L_Fila1)
-                    .addComponent(L_Fila2)
-                    .addComponent(L_Fila3)
-                    .addComponent(L_Fila4)
-                    .addComponent(L_Fila5)
-                    .addComponent(L_Fila7)
-                    .addComponent(L_Fila8)
-                    .addComponent(L_Fila9)
-                    .addComponent(L_Fila6)
-                    .addComponent(L_Fila0))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(B9_0, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(B0_42, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(B0_53, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(B0_103, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(B0_104, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(B0_105, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(B0_106, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(B0_108, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(B0_109, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(B0_110, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 796, Short.MAX_VALUE)
-                        .addComponent(L_LogoURJC))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(L_Columnas, javax.swing.GroupLayout.PREFERRED_SIZE, 654, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(B3_0, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_36, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_44, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_46, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_48, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_50, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_52, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_58, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_79, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_81, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(B4_0, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_37, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_82, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_83, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_84, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_85, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_86, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_87, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_88, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_89, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(B6_0, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_39, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_73, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_59, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_60, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_61, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_62, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_63, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_64, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_65, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(B5_0, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_38, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_90, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_91, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_92, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_93, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_94, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_95, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_96, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_97, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(B7_0, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_40, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_66, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_67, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_68, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_69, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_70, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_71, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_72, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_74, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(B8_0, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_41, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_54, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_76, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_107, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_98, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_99, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_100, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_101, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_102, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                        .addComponent(B0_0, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(B0_19, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(B0_20, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(B0_26, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(B0_22, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                        .addComponent(B1_0, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(B0_28, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(B0_30, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(B0_31, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(B0_33, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(B0_55, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(B0_56, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(B0_23, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(B0_24, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(B0_25, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(B0_32, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(B0_27, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(B0_57, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(B0_34, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(B0_75, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(B2_0, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_35, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_43, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_45, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_47, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_49, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_51, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_77, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_78, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(B0_80, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 344, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(L_LogoURJC)
-                .addContainerGap())
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(L_Columnas, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(B0_0, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(B0_19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(B0_20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(B0_22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(B0_23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(B0_24, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(B0_25, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(B0_26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(B0_32, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(B0_27, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                                        .addComponent(L_Fila0, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addGap(0, 10, Short.MAX_VALUE)))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(B1_0, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(B0_30, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                    .addComponent(B0_31, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(B0_33, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(B0_55, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(B0_56, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(B0_57, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(B0_34, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(B0_75, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(L_Fila1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                            .addComponent(B0_28, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(10, 10, 10)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(B2_0, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(B0_35, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(B0_43, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(B0_45, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(B0_47, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(B0_49, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(B0_51, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(B0_77, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(B0_78, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(B0_80, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(L_Fila2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(B3_0, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(B0_44, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addComponent(B0_46, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(B0_48, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(B0_50, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(B0_52, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(B0_58, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(B0_79, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(B0_81, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(L_Fila3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addComponent(B0_36, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(B4_0, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(B0_82, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(B0_83, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(B0_84, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(B0_85, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(B0_86, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(B0_87, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(B0_88, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(B0_89, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(L_Fila4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(B0_37, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(B5_0, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(B0_38, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(B0_90, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(B0_91, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(B0_92, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(B0_93, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(B0_94, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(B0_95, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(B0_96, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(B0_97, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(L_Fila5, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(B6_0, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(B0_73, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(B0_59, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(B0_60, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(B0_61, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(B0_62, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(B0_63, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(B0_64, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(B0_65, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(L_Fila6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(B0_39, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(B7_0, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(B0_40, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(B0_66, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(B0_67, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(B0_68, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(B0_69, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(B0_70, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(B0_71, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(B0_72, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(B0_74, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(B8_0, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(B0_41, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(B0_54, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(B0_76, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(B0_107, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(B0_98, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(B0_99, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(B0_100, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(B0_101, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(B0_102, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(L_Fila8, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(B9_0, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(B0_42, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(B0_53, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(B0_103, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(B0_104, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(B0_105, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(B0_106, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(B0_108, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(B0_109, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(B0_110, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(L_Fila9, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(L_Fila7, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(45, 45, 45))
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 532, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 511, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 511, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void B0_29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_29ActionPerformed
+    private void b00ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b00ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_B0_29ActionPerformed
-
-    private void B0_110ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_110ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_110ActionPerformed
-
-    private void B0_109ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_109ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_109ActionPerformed
-
-    private void B0_108ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_108ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_108ActionPerformed
-
-    private void B0_107ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_107ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_107ActionPerformed
-
-    private void B0_106ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_106ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_106ActionPerformed
-
-    private void B0_105ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_105ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_105ActionPerformed
-
-    private void B0_104ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_104ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_104ActionPerformed
-
-    private void B0_103ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_103ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_103ActionPerformed
-
-    private void B0_102ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_102ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_102ActionPerformed
-
-    private void B0_101ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_101ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_101ActionPerformed
-
-    private void B0_100ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_100ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_100ActionPerformed
-
-    private void B0_99ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_99ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_99ActionPerformed
-
-    private void B0_98ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_98ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_98ActionPerformed
-
-    private void B0_97ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_97ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_97ActionPerformed
-
-    private void B0_96ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_96ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_96ActionPerformed
-
-    private void B0_95ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_95ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_95ActionPerformed
-
-    private void B0_94ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_94ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_94ActionPerformed
-
-    private void B0_93ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_93ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_93ActionPerformed
-
-    private void B0_92ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_92ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_92ActionPerformed
-
-    private void B0_91ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_91ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_91ActionPerformed
-
-    private void B0_90ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_90ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_90ActionPerformed
-
-    private void B0_89ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_89ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_89ActionPerformed
-
-    private void B0_88ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_88ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_88ActionPerformed
-
-    private void B0_87ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_87ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_87ActionPerformed
-
-    private void B0_86ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_86ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_86ActionPerformed
-
-    private void B0_85ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_85ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_85ActionPerformed
-
-    private void B0_84ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_84ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_84ActionPerformed
-
-    private void B0_83ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_83ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_83ActionPerformed
-
-    private void B0_82ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_82ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_82ActionPerformed
-
-    private void B0_81ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_81ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_81ActionPerformed
-
-    private void B0_80ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_80ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_80ActionPerformed
-
-    private void B0_79ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_79ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_79ActionPerformed
-
-    private void B0_78ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_78ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_78ActionPerformed
-
-    private void B0_77ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_77ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_77ActionPerformed
-
-    private void B0_76ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_76ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_76ActionPerformed
-
-    private void B0_75ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_75ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_75ActionPerformed
-
-    private void B0_74ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_74ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_74ActionPerformed
-
-    private void B0_73ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_73ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_73ActionPerformed
-
-    private void B0_72ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_72ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_72ActionPerformed
-
-    private void B0_71ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_71ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_71ActionPerformed
-
-    private void B0_70ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_70ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_70ActionPerformed
-
-    private void B0_69ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_69ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_69ActionPerformed
-
-    private void B0_68ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_68ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_68ActionPerformed
-
-    private void B0_67ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_67ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_67ActionPerformed
-
-    private void B0_66ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_66ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_66ActionPerformed
-
-    private void B0_65ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_65ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_65ActionPerformed
-
-    private void B0_64ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_64ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_64ActionPerformed
-
-    private void B0_63ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_63ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_63ActionPerformed
-
-    private void B0_62ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_62ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_62ActionPerformed
-
-    private void B0_61ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_61ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_61ActionPerformed
-
-    private void B0_60ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_60ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_60ActionPerformed
-
-    private void B0_59ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_59ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_59ActionPerformed
-
-    private void B0_58ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_58ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_58ActionPerformed
-
-    private void B0_57ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_57ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_57ActionPerformed
-
-    private void B0_56ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_56ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_56ActionPerformed
-
-    private void B0_55ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_55ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_55ActionPerformed
-
-    private void B0_54ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_54ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_54ActionPerformed
-
-    private void B0_53ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_53ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_53ActionPerformed
-
-    private void B0_52ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_52ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_52ActionPerformed
-
-    private void B0_51ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_51ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_51ActionPerformed
-
-    private void B0_50ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_50ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_50ActionPerformed
-
-    private void B0_49ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_49ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_49ActionPerformed
-
-    private void B0_48ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_48ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_48ActionPerformed
-
-    private void B0_47ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_47ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_47ActionPerformed
-
-    private void B0_46ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_46ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_46ActionPerformed
-
-    private void B0_45ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_45ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_45ActionPerformed
-
-    private void B0_44ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_44ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_44ActionPerformed
-
-    private void B0_43ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_43ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_43ActionPerformed
-
-    private void B0_42ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_42ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_42ActionPerformed
-
-    private void B0_41ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_41ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_41ActionPerformed
-
-    private void B0_40ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_40ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_40ActionPerformed
-
-    private void B0_39ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_39ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_39ActionPerformed
-
-    private void B0_38ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_38ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_38ActionPerformed
-
-    private void B0_37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_37ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_37ActionPerformed
-
-    private void B0_36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_36ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_36ActionPerformed
-
-    private void B0_35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_35ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_35ActionPerformed
-
-    private void B0_34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_34ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_34ActionPerformed
-
-    private void B0_33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_33ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_33ActionPerformed
-
-    private void B0_32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_32ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_32ActionPerformed
-
-    private void B0_31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_31ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_31ActionPerformed
-
-    private void B0_30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_30ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_30ActionPerformed
-
-    private void B0_28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_28ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_28ActionPerformed
-
-    private void B0_27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_27ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_27ActionPerformed
-
-    private void B0_26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_26ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_26ActionPerformed
-
-    private void B0_25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_25ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_25ActionPerformed
-
-    private void B0_24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_24ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_24ActionPerformed
-
-    private void B0_23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_23ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_23ActionPerformed
-
-    private void B0_22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_22ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_22ActionPerformed
-
-    private void B1_0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B1_0ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B1_0ActionPerformed
-
-    private void B0_20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_20ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_20ActionPerformed
-
-    private void B0_19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_19ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_19ActionPerformed
-
-    private void B9_0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B9_0ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B9_0ActionPerformed
-
-    private void B5_0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B5_0ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B5_0ActionPerformed
-
-    private void B8_0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B8_0ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B8_0ActionPerformed
-
-    private void B7_0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B7_0ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B7_0ActionPerformed
-
-    private void B6_0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B6_0ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B6_0ActionPerformed
-
-    private void B4_0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B4_0ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B4_0ActionPerformed
-
-    private void B3_0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B3_0ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B3_0ActionPerformed
-
-    private void B2_0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B2_0ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B2_0ActionPerformed
-
-    private void B0_0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B0_0ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_B0_0ActionPerformed
+    }//GEN-LAST:event_b00ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1633,13 +501,6 @@ public class J_Tablero extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(J_Tablero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -1650,121 +511,107 @@ public class J_Tablero extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton B0_0;
-    private javax.swing.JButton B0_100;
-    private javax.swing.JButton B0_101;
-    private javax.swing.JButton B0_102;
-    private javax.swing.JButton B0_103;
-    private javax.swing.JButton B0_104;
-    private javax.swing.JButton B0_105;
-    private javax.swing.JButton B0_106;
-    private javax.swing.JButton B0_107;
-    private javax.swing.JButton B0_108;
-    private javax.swing.JButton B0_109;
-    private javax.swing.JButton B0_110;
-    private javax.swing.JButton B0_19;
-    private javax.swing.JButton B0_20;
-    private javax.swing.JButton B0_22;
-    private javax.swing.JButton B0_23;
-    private javax.swing.JButton B0_24;
-    private javax.swing.JButton B0_25;
-    private javax.swing.JButton B0_26;
-    private javax.swing.JButton B0_27;
-    private javax.swing.JButton B0_28;
-    private javax.swing.JButton B0_29;
-    private javax.swing.JButton B0_30;
-    private javax.swing.JButton B0_31;
-    private javax.swing.JButton B0_32;
-    private javax.swing.JButton B0_33;
-    private javax.swing.JButton B0_34;
-    private javax.swing.JButton B0_35;
-    private javax.swing.JButton B0_36;
-    private javax.swing.JButton B0_37;
-    private javax.swing.JButton B0_38;
-    private javax.swing.JButton B0_39;
-    private javax.swing.JButton B0_40;
-    private javax.swing.JButton B0_41;
-    private javax.swing.JButton B0_42;
-    private javax.swing.JButton B0_43;
-    private javax.swing.JButton B0_44;
-    private javax.swing.JButton B0_45;
-    private javax.swing.JButton B0_46;
-    private javax.swing.JButton B0_47;
-    private javax.swing.JButton B0_48;
-    private javax.swing.JButton B0_49;
-    private javax.swing.JButton B0_50;
-    private javax.swing.JButton B0_51;
-    private javax.swing.JButton B0_52;
-    private javax.swing.JButton B0_53;
-    private javax.swing.JButton B0_54;
-    private javax.swing.JButton B0_55;
-    private javax.swing.JButton B0_56;
-    private javax.swing.JButton B0_57;
-    private javax.swing.JButton B0_58;
-    private javax.swing.JButton B0_59;
-    private javax.swing.JButton B0_60;
-    private javax.swing.JButton B0_61;
-    private javax.swing.JButton B0_62;
-    private javax.swing.JButton B0_63;
-    private javax.swing.JButton B0_64;
-    private javax.swing.JButton B0_65;
-    private javax.swing.JButton B0_66;
-    private javax.swing.JButton B0_67;
-    private javax.swing.JButton B0_68;
-    private javax.swing.JButton B0_69;
-    private javax.swing.JButton B0_70;
-    private javax.swing.JButton B0_71;
-    private javax.swing.JButton B0_72;
-    private javax.swing.JButton B0_73;
-    private javax.swing.JButton B0_74;
-    private javax.swing.JButton B0_75;
-    private javax.swing.JButton B0_76;
-    private javax.swing.JButton B0_77;
-    private javax.swing.JButton B0_78;
-    private javax.swing.JButton B0_79;
-    private javax.swing.JButton B0_80;
-    private javax.swing.JButton B0_81;
-    private javax.swing.JButton B0_82;
-    private javax.swing.JButton B0_83;
-    private javax.swing.JButton B0_84;
-    private javax.swing.JButton B0_85;
-    private javax.swing.JButton B0_86;
-    private javax.swing.JButton B0_87;
-    private javax.swing.JButton B0_88;
-    private javax.swing.JButton B0_89;
-    private javax.swing.JButton B0_90;
-    private javax.swing.JButton B0_91;
-    private javax.swing.JButton B0_92;
-    private javax.swing.JButton B0_93;
-    private javax.swing.JButton B0_94;
-    private javax.swing.JButton B0_95;
-    private javax.swing.JButton B0_96;
-    private javax.swing.JButton B0_97;
-    private javax.swing.JButton B0_98;
-    private javax.swing.JButton B0_99;
-    private javax.swing.JButton B1_0;
-    private javax.swing.JButton B2_0;
-    private javax.swing.JButton B3_0;
-    private javax.swing.JButton B4_0;
-    private javax.swing.JButton B5_0;
-    private javax.swing.JButton B6_0;
-    private javax.swing.JButton B7_0;
-    private javax.swing.JButton B8_0;
-    private javax.swing.JButton B9_0;
-    private javax.swing.JLabel L_Columnas;
-    private javax.swing.JLabel L_Fila0;
-    private javax.swing.JLabel L_Fila1;
-    private javax.swing.JLabel L_Fila2;
-    private javax.swing.JLabel L_Fila3;
-    private javax.swing.JLabel L_Fila4;
-    private javax.swing.JLabel L_Fila5;
-    private javax.swing.JLabel L_Fila6;
-    private javax.swing.JLabel L_Fila7;
-    private javax.swing.JLabel L_Fila8;
-    private javax.swing.JLabel L_Fila9;
-    private javax.swing.JLabel L_LogoURJC;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JButton b00;
+    private javax.swing.JButton b01;
+    private javax.swing.JButton b02;
+    private javax.swing.JButton b03;
+    private javax.swing.JButton b04;
+    private javax.swing.JButton b05;
+    private javax.swing.JButton b06;
+    private javax.swing.JButton b07;
+    private javax.swing.JButton b08;
+    private javax.swing.JButton b09;
+    private javax.swing.JButton b10;
+    private javax.swing.JButton b11;
+    private javax.swing.JButton b12;
+    private javax.swing.JButton b13;
+    private javax.swing.JButton b14;
+    private javax.swing.JButton b15;
+    private javax.swing.JButton b16;
+    private javax.swing.JButton b17;
+    private javax.swing.JButton b18;
+    private javax.swing.JButton b19;
+    private javax.swing.JButton b20;
+    private javax.swing.JButton b21;
+    private javax.swing.JButton b22;
+    private javax.swing.JButton b23;
+    private javax.swing.JButton b24;
+    private javax.swing.JButton b25;
+    private javax.swing.JButton b26;
+    private javax.swing.JButton b27;
+    private javax.swing.JButton b28;
+    private javax.swing.JButton b29;
+    private javax.swing.JButton b30;
+    private javax.swing.JButton b31;
+    private javax.swing.JButton b32;
+    private javax.swing.JButton b33;
+    private javax.swing.JButton b34;
+    private javax.swing.JButton b35;
+    private javax.swing.JButton b36;
+    private javax.swing.JButton b37;
+    private javax.swing.JButton b38;
+    private javax.swing.JButton b39;
+    private javax.swing.JButton b40;
+    private javax.swing.JButton b41;
+    private javax.swing.JButton b42;
+    private javax.swing.JButton b43;
+    private javax.swing.JButton b44;
+    private javax.swing.JButton b45;
+    private javax.swing.JButton b46;
+    private javax.swing.JButton b47;
+    private javax.swing.JButton b48;
+    private javax.swing.JButton b49;
+    private javax.swing.JButton b50;
+    private javax.swing.JButton b51;
+    private javax.swing.JButton b52;
+    private javax.swing.JButton b53;
+    private javax.swing.JButton b54;
+    private javax.swing.JButton b55;
+    private javax.swing.JButton b56;
+    private javax.swing.JButton b57;
+    private javax.swing.JButton b58;
+    private javax.swing.JButton b59;
+    private javax.swing.JButton b60;
+    private javax.swing.JButton b61;
+    private javax.swing.JButton b62;
+    private javax.swing.JButton b63;
+    private javax.swing.JButton b64;
+    private javax.swing.JButton b65;
+    private javax.swing.JButton b66;
+    private javax.swing.JButton b67;
+    private javax.swing.JButton b68;
+    private javax.swing.JButton b69;
+    private javax.swing.JButton b70;
+    private javax.swing.JButton b71;
+    private javax.swing.JButton b72;
+    private javax.swing.JButton b73;
+    private javax.swing.JButton b74;
+    private javax.swing.JButton b75;
+    private javax.swing.JButton b76;
+    private javax.swing.JButton b77;
+    private javax.swing.JButton b78;
+    private javax.swing.JButton b79;
+    private javax.swing.JButton b80;
+    private javax.swing.JButton b81;
+    private javax.swing.JButton b82;
+    private javax.swing.JButton b83;
+    private javax.swing.JButton b84;
+    private javax.swing.JButton b85;
+    private javax.swing.JButton b86;
+    private javax.swing.JButton b87;
+    private javax.swing.JButton b88;
+    private javax.swing.JButton b89;
+    private javax.swing.JButton b90;
+    private javax.swing.JButton b91;
+    private javax.swing.JButton b92;
+    private javax.swing.JButton b93;
+    private javax.swing.JButton b94;
+    private javax.swing.JButton b95;
+    private javax.swing.JButton b96;
+    private javax.swing.JButton b97;
+    private javax.swing.JButton b98;
+    private javax.swing.JButton b99;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }
