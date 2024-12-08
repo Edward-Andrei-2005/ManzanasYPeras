@@ -1,5 +1,5 @@
 # Cosas a Mirar
-
+- [ ] Poder simular de manera aislada determinadas acciones del juego
 - [ ] En la interfaz de escribir los nombres. Quitar boton cancelar
 
 - [ ] En la interfaz de escribir los nombres. Hacer que no admita nombres vacios
