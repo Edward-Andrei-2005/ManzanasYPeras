@@ -1,5 +1,10 @@
 package apoocalipsis;
 import apoocalipsis.Arma;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -127,8 +132,8 @@ public class Juego {
                 }
             }
         }
-        
     }
+    guardarPartida();
     return true;
     }
     
@@ -257,6 +262,7 @@ public class Juego {
                 case 1: // No hacer nada
                     turnos--;
                     System.out.println("Tienes " + turnos + " turnos\n\n");
+                    guardarPartida();
                     break;
                 case 2: // Moverse
                     int xDestino, yDestino;
@@ -291,6 +297,7 @@ public class Juego {
                     System.out.println("Tienes " + turnos + " turnos");
                     System.out.println("Te has movido a la casilla: " +destino.toString());
                     System.out.println();
+                    guardarPartida();
                     break;
 
                 case 3: // Atacar
@@ -330,7 +337,10 @@ public class Juego {
                         if (xObjetivo < 0 || xObjetivo >= TAM_X || yObjetivo < 0 || yObjetivo >= TAM_Y) {
                             System.out.println("Coordenadas fuera del rango permitido. Intenta de nuevo.");
                         }
-                    } while (xObjetivo < 0 || xObjetivo >= TAM_X || yObjetivo < 0 || yObjetivo >= TAM_Y);
+                        if(!buscarCasillaOrigen(s).esAdyacente(dimension[xObjetivo][yObjetivo])) {
+                            System.out.print("La casilla no es adyacente. Intenta de nuevo: ");
+                        }
+                    } while (xObjetivo < 0 || xObjetivo >= TAM_X || yObjetivo < 0 || yObjetivo >= TAM_Y || !buscarCasillaOrigen(s).esAdyacente(dimension[xObjetivo][yObjetivo]));
 
                     // Llamar al método generarAtaque
                     generarAtaque(s, izq, dimension[xObjetivo][yObjetivo]);
@@ -338,6 +348,7 @@ public class Juego {
                     
                     turnos--;
                     System.out.println("Tienes " + turnos + " turnos\n\n");
+                    guardarPartida();
                     break;
 
                 case 4: // Buscar equipo
@@ -357,6 +368,7 @@ public class Juego {
                         System.out.println("No has encontrado nada.");
                     }
                     System.out.println("Tienes " + turnos + " turnos\n\n");
+                    guardarPartida();
                     break;
 
                 case 5: // Cambiar arma
@@ -398,6 +410,7 @@ public class Juego {
                     
                     // QUITAR ESTE COMENTARIO turnos--;
                     System.out.println("Tienes " + turnos + " turnos\n\n");
+                    guardarPartida();
                     break;
 
                 default:
@@ -651,8 +664,8 @@ public class Juego {
         if((z instanceof CaminanteBerserker) || (z instanceof CorredorBerserker) || (z instanceof AbominacionBerserker)) {
             /*Si es un zombi Berserker, debe cumplir dos condiciones:
             1. El arma debe tener suficiente potencia para eliminar al zombi (potencia >= aguante)
-            2. El arma debe ser cuerpo a cuerpo (alcance == 0), ya que los zombis Berserker son inmunes a ataques a distancia.*/
-/*            return (a.getPotencia() >= z.getAguante()) && casillaSuperviviente.distancia(casillaZombi) == 0;
+            2. El arma debe ser cuerpo a cuerpo (alcance == 0), ya que los zombis Berserker son inmunes a ataques a distancia.<
+           return (a.getPotencia() >= z.getAguante()) && casillaSuperviviente.distancia(casillaZombi) == 0;
         } else {
             // Si el zombi no es un Berserker, solo se verifica que el arma tenga suficiente potencia y que tenga suficiente alcance.
             if(a.getAlcance() == 0) { // Armas de corto alcance
@@ -689,5 +702,29 @@ public class Juego {
         s.sumarZombisKO(zombisAEliminar.size());
 
         return !zombisAEliminar.isEmpty();
+    }
+    
+    public void guardarPartida() {
+        // Nombre del archivo binario
+        String archivo = "APOOCalipsis.dat";
+        
+        // Guardar la lista de empleados en un archivo binario
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(archivo))) {
+            oos.writeObject(dimension); // Serializa la lista de empleados
+            System.out.println("\n***Tablero guardado correctamente***\n");
+        } catch (IOException e) {
+            System.err.println("Error al guardar el tablero: " + e.getMessage());
+        }
+    }
+    
+    public void leerPartida() {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("APOOCalipsis.dat"))) {
+            
+            dimension = (Casilla[][]) ois.readObject();
+            System.out.println("\n***Tablero leido correctamente***\n");
+            dibujarTableroConNumeros();
+        } catch (IOException | ClassNotFoundException e) {
+            System.err.println("Error al leer el tablero: " + e.getMessage());
+        }
     }
 }

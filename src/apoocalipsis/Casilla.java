@@ -1,7 +1,8 @@
 package apoocalipsis;
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Casilla {
+public class Casilla implements Serializable {
     // Atributos
     private int x; // Coordenada x de la casilla
     private int y; // Coordenada y de la casilla

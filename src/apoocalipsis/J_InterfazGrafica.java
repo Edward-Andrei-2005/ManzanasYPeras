@@ -1,9 +1,8 @@
 package apoocalipsis;
 import java.util.Arrays;
 import javax.swing.JOptionPane;
-/*import java.util.Timer;
-import java.util.TimerTask;*/
-
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class J_InterfazGrafica extends javax.swing.JFrame {
 
@@ -148,7 +147,7 @@ public class J_InterfazGrafica extends javax.swing.JFrame {
             // Lógica para retomar partida empezada
             JOptionPane.showMessageDialog(this, "Retomando partida empezada...");
         } else if (O_Crear_Nueva_Partida.isSelected()) { // Crear nueva partida
-           /* J_FotoJuego ventanaFotoJuego = new J_FotoJuego();
+           J_FotoJuego ventanaFotoJuego = new J_FotoJuego();
             ventanaFotoJuego.setVisible(true);
             
            Timer timer = new Timer();
@@ -165,7 +164,7 @@ public class J_InterfazGrafica extends javax.swing.JFrame {
                 Thread.sleep(3000);
             } catch (InterruptedException e) {
                 e.printStackTrace(); // Manejo de excepciones si la espera es interrumpida
-            }*/
+            }
 
             J_NombrarSupervivientes ventanaNombrarSupervivientes = new J_NombrarSupervivientes(); // Creamos la ventana para nombrar
 

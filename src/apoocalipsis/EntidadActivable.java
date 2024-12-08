@@ -1,4 +1,6 @@
 package apoocalipsis;
 
-public abstract class EntidadActivable {
+import java.io.Serializable;
+
+public abstract class EntidadActivable implements Serializable {
 }
