@@ -31,6 +31,8 @@ public class J_InterfazGrafica extends javax.swing.JFrame {
         O_Crear_Nueva_Partida = new javax.swing.JRadioButton();
         B_Jugar = new javax.swing.JButton();
         L_LogoETSII = new javax.swing.JLabel();
+        O_Simular_Acciones = new javax.swing.JRadioButton();
+        B_Salir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -76,6 +78,26 @@ public class J_InterfazGrafica extends javax.swing.JFrame {
 
         L_LogoETSII.setIcon(new javax.swing.ImageIcon(getClass().getResource("/apoocalipsis/images/siglas_ETSII_negro_negro.png"))); // NOI18N
 
+        G_Inicio.add(O_Simular_Acciones);
+        O_Simular_Acciones.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        O_Simular_Acciones.setForeground(new java.awt.Color(7, 33, 68));
+        O_Simular_Acciones.setText("Simular acciones aisladas");
+        O_Simular_Acciones.setPreferredSize(new java.awt.Dimension(334, 53));
+        O_Simular_Acciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                O_Simular_AccionesActionPerformed(evt);
+            }
+        });
+
+        B_Salir.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        B_Salir.setForeground(new java.awt.Color(255, 51, 0));
+        B_Salir.setText("SALIR");
+        B_Salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B_SalirActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -87,35 +109,45 @@ public class J_InterfazGrafica extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(483, 483, 483)
+                        .addComponent(L_APOOCALIPSIS, javax.swing.GroupLayout.PREFERRED_SIZE, 579, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(576, 576, 576)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(44, 44, 44)
+                                .addComponent(B_Jugar))
                             .addComponent(O_Crear_Nueva_Partida)
                             .addComponent(O_Retomar_Partida_Empezada)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addComponent(L_LogoETSII))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(620, 620, 620)
-                        .addComponent(B_Jugar))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(483, 483, 483)
-                        .addComponent(L_APOOCALIPSIS, javax.swing.GroupLayout.PREFERRED_SIZE, 579, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(576, 576, 576)
+                        .addComponent(O_Simular_Acciones, javax.swing.GroupLayout.PREFERRED_SIZE, 466, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(L_LogoETSII)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(B_Salir))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(L_LogoETSII)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(L_LogoETSII))
+                    .addComponent(B_Salir))
                 .addGap(25, 25, 25)
                 .addComponent(L_APOOCALIPSIS)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
                 .addComponent(L_Inicio, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(52, 52, 52)
+                .addGap(26, 26, 26)
                 .addComponent(O_Retomar_Partida_Empezada)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(O_Crear_Nueva_Partida)
-                .addGap(43, 43, 43)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(O_Simular_Acciones, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(B_Jugar)
                 .addGap(61, 61, 61))
         );
@@ -238,11 +270,31 @@ public class J_InterfazGrafica extends javax.swing.JFrame {
 
         //Llamada a main
 
+    } else if (O_Simular_Acciones.isSelected()) {
+        
     } else {
         // Si no hay opción seleccionada, muestra un mensaje
         JOptionPane.showMessageDialog(this, "Por favor, selecciona una opción antes de jugar.");
     }
     }//GEN-LAST:event_B_JugarActionPerformed
+
+    private void O_Simular_AccionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_O_Simular_AccionesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_O_Simular_AccionesActionPerformed
+
+    private void B_SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_SalirActionPerformed
+        // Mostrar un cuadro de confirmación
+        int opcion = JOptionPane.showConfirmDialog(this,
+            "¿Estás seguro de que quieres salir?",
+            "Confirmar salida",
+            JOptionPane.YES_NO_OPTION,
+            JOptionPane.QUESTION_MESSAGE);
+
+        // Si el usuario elige "Sí", cerrar el programa
+        if (opcion == JOptionPane.YES_OPTION) {
+            System.exit(0);
+        }
+    }//GEN-LAST:event_B_SalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -282,11 +334,13 @@ public class J_InterfazGrafica extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton B_Jugar;
+    private javax.swing.JButton B_Salir;
     private javax.swing.JLabel L_APOOCALIPSIS;
     private javax.swing.JLabel L_Inicio;
     private javax.swing.JLabel L_LogoETSII;
     private javax.swing.JRadioButton O_Crear_Nueva_Partida;
     private javax.swing.JRadioButton O_Retomar_Partida_Empezada;
+    private javax.swing.JRadioButton O_Simular_Acciones;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
