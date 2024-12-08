@@ -32,7 +32,7 @@ public class PruebaFicheros {
         empleados.add(new Trabajo("Maria", "Diseñador", "CreativeWorks"));
         
          // Guardar la lista de empleados en un archivo binario
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("empleados.dat"))) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(archivo))) {
             oos.writeObject(empleados); // Serializa la lista de empleados
             System.out.println("Empleados guardados en el archivo binario.");
         } catch (IOException e) {
