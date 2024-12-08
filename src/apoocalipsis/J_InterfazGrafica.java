@@ -1,9 +1,8 @@
 package apoocalipsis;
 import java.util.Arrays;
 import javax.swing.JOptionPane;
-/*import java.util.Timer;
-import java.util.TimerTask;*/
-
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class J_InterfazGrafica extends javax.swing.JFrame {
 
@@ -32,6 +31,8 @@ public class J_InterfazGrafica extends javax.swing.JFrame {
         O_Crear_Nueva_Partida = new javax.swing.JRadioButton();
         B_Jugar = new javax.swing.JButton();
         L_LogoETSII = new javax.swing.JLabel();
+        O_Simular_Acciones = new javax.swing.JRadioButton();
+        B_Salir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -77,48 +78,78 @@ public class J_InterfazGrafica extends javax.swing.JFrame {
 
         L_LogoETSII.setIcon(new javax.swing.ImageIcon(getClass().getResource("/apoocalipsis/images/siglas_ETSII_negro_negro.png"))); // NOI18N
 
+        G_Inicio.add(O_Simular_Acciones);
+        O_Simular_Acciones.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        O_Simular_Acciones.setForeground(new java.awt.Color(7, 33, 68));
+        O_Simular_Acciones.setText("Simular acciones aisladas");
+        O_Simular_Acciones.setPreferredSize(new java.awt.Dimension(334, 53));
+        O_Simular_Acciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                O_Simular_AccionesActionPerformed(evt);
+            }
+        });
+
+        B_Salir.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        B_Salir.setForeground(new java.awt.Color(255, 51, 0));
+        B_Salir.setText("SALIR");
+        B_Salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B_SalirActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(L_LogoETSII)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(B_Salir))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 317, Short.MAX_VALUE)
-                .addComponent(L_Inicio, javax.swing.GroupLayout.PREFERRED_SIZE, 966, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(288, 288, 288))
+                .addGap(0, 319, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(L_Inicio, javax.swing.GroupLayout.PREFERRED_SIZE, 966, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(286, 286, 286))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(L_APOOCALIPSIS, javax.swing.GroupLayout.PREFERRED_SIZE, 579, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(448, 448, 448))))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(576, 576, 576)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(O_Retomar_Partida_Empezada)
                             .addComponent(O_Crear_Nueva_Partida)
-                            .addComponent(O_Retomar_Partida_Empezada)))
+                            .addComponent(O_Simular_Acciones, javax.swing.GroupLayout.PREFERRED_SIZE, 466, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addComponent(L_LogoETSII))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(620, 620, 620)
-                        .addComponent(B_Jugar))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(483, 483, 483)
-                        .addComponent(L_APOOCALIPSIS, javax.swing.GroupLayout.PREFERRED_SIZE, 579, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(662, 662, 662)
+                        .addComponent(B_Jugar)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(L_LogoETSII)
-                .addGap(25, 25, 25)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(L_LogoETSII))
+                    .addComponent(B_Salir))
+                .addGap(17, 17, 17)
                 .addComponent(L_APOOCALIPSIS)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
+                .addGap(49, 49, 49)
                 .addComponent(L_Inicio, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(52, 52, 52)
+                .addGap(35, 35, 35)
                 .addComponent(O_Retomar_Partida_Empezada)
                 .addGap(18, 18, 18)
                 .addComponent(O_Crear_Nueva_Partida)
-                .addGap(43, 43, 43)
+                .addGap(18, 18, 18)
+                .addComponent(O_Simular_Acciones, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                 .addComponent(B_Jugar)
-                .addGap(61, 61, 61))
+                .addGap(38, 38, 38))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -148,10 +179,10 @@ public class J_InterfazGrafica extends javax.swing.JFrame {
             // Lógica para retomar partida empezada
             JOptionPane.showMessageDialog(this, "Retomando partida empezada...");
         } else if (O_Crear_Nueva_Partida.isSelected()) { // Crear nueva partida
-           /* J_FotoJuego ventanaFotoJuego = new J_FotoJuego();
+            /*J_FotoJuego ventanaFotoJuego = new J_FotoJuego();
             ventanaFotoJuego.setVisible(true);
             
-           Timer timer = new Timer();
+            Timer timer = new Timer();
             TimerTask tarea = new TimerTask() {
                 @Override
                 public void run() {
@@ -239,11 +270,68 @@ public class J_InterfazGrafica extends javax.swing.JFrame {
 
         //Llamada a main
 
+    } else if (O_Simular_Acciones.isSelected()) {
+        J_ConfirmacionAcciones ventanaConfirmacion = new J_ConfirmacionAcciones();
+        boolean aux = false;
+        do {
+            int opcion = JOptionPane.showConfirmDialog(this, ventanaConfirmacion, 
+                                                                "Fase de Selección de Acciones",
+                                                                JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
+            if (opcion == JOptionPane.OK_OPTION) {
+                // Si confirma, pasa al tablero
+                if (ventanaConfirmacion.obtenerSeleccionado().equals("Buscar Equipo")) {
+                    J_Tablero ventanaTablero = new J_Tablero();
+                    ventanaTablero.setVisible(true); // Mostrar ventana de tablero
+                    this.setVisible(false);
+                    aux = true; // Salir del ciclo y finalizar
+                    
+                } else if(ventanaConfirmacion.obtenerSeleccionado().equals("Activación Zombi")) {
+                    J_Tablero ventanaTablero = new J_Tablero();
+                    ventanaTablero.setVisible(true); // Mostrar ventana de tablero
+                    this.setVisible(false);
+                    aux = true; // Salir del ciclo y finalizar
+                    
+                } else if(ventanaConfirmacion.obtenerSeleccionado().equals("Ataque Superviviente a Zombi")) {
+                    J_Tablero ventanaTablero = new J_Tablero();
+                    ventanaTablero.setVisible(true); // Mostrar ventana de tablero
+                    this.setVisible(false);
+                    return; // Salir del ciclo y finalizar
+                    
+                } else {
+                    // Si cancela en la confirmación, volver al nombramiento
+                    JOptionPane.showMessageDialog(this,"Por favor, selecciona una opción.",
+                                                              "Información", JOptionPane.INFORMATION_MESSAGE);
+                }
+            } else {
+                JOptionPane.showMessageDialog(this, "Creación de nueva partida cancelada.", 
+                                                      "Información", JOptionPane.INFORMATION_MESSAGE);
+                aux = true;
+            }
+        } while(!aux);
+        
     } else {
         // Si no hay opción seleccionada, muestra un mensaje
         JOptionPane.showMessageDialog(this, "Por favor, selecciona una opción antes de jugar.");
     }
     }//GEN-LAST:event_B_JugarActionPerformed
+
+    private void O_Simular_AccionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_O_Simular_AccionesActionPerformed
+        
+    }//GEN-LAST:event_O_Simular_AccionesActionPerformed
+
+    private void B_SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_SalirActionPerformed
+        // Mostrar un cuadro de confirmación
+        int opcion = JOptionPane.showConfirmDialog(this,
+            "¿Estás seguro de que quieres salir?",
+            "Confirmar salida",
+            JOptionPane.YES_NO_OPTION,
+            JOptionPane.QUESTION_MESSAGE);
+
+        // Si el usuario elige "Sí", cerrar el programa
+        if (opcion == JOptionPane.YES_OPTION) {
+            System.exit(0);
+        }
+    }//GEN-LAST:event_B_SalirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -283,11 +371,13 @@ public class J_InterfazGrafica extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton B_Jugar;
+    private javax.swing.JButton B_Salir;
     private javax.swing.JLabel L_APOOCALIPSIS;
     private javax.swing.JLabel L_Inicio;
     private javax.swing.JLabel L_LogoETSII;
     private javax.swing.JRadioButton O_Crear_Nueva_Partida;
     private javax.swing.JRadioButton O_Retomar_Partida_Empezada;
+    private javax.swing.JRadioButton O_Simular_Acciones;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

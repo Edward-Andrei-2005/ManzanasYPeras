@@ -11,12 +11,14 @@ import javax.swing.JOptionPane;
  * @author manue
  */
 public class J_Tablero extends javax.swing.JFrame {
-
+    private static javax.swing.JButton [][] botones;
+    
     /**
      * Creates new form Tablero
      */
     public J_Tablero() {
         initComponents();
+        botones = new javax.swing.JButton [10][10];
     }
 
     /**
@@ -28,6 +30,8 @@ public class J_Tablero extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        B_Salir = new javax.swing.JButton();
+        L_LogoURJC = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         b00 = new javax.swing.JButton();
         b01 = new javax.swing.JButton();
@@ -129,12 +133,53 @@ public class J_Tablero extends javax.swing.JFrame {
         b97 = new javax.swing.JButton();
         b98 = new javax.swing.JButton();
         b99 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        bNada = new javax.swing.JButton();
+        bMoverse = new javax.swing.JButton();
+        bAtaque = new javax.swing.JButton();
+        bBuscarEquipo = new javax.swing.JButton();
+        bCambiarArma = new javax.swing.JButton();
+        turnos = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        B_Salir = new javax.swing.JButton();
-        L_LogoURJC = new javax.swing.JLabel();
+        nombreSuperviviente1 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        inventarioSuperviviente1 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(253, 253, 253));
+
+        B_Salir.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        B_Salir.setForeground(new java.awt.Color(255, 51, 0));
+        B_Salir.setText("SALIR");
+        B_Salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B_SalirActionPerformed(evt);
+            }
+        });
+
+        L_LogoURJC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/apoocalipsis/images/URJ_simbolo_POS_1.png"))); // NOI18N
 
         jPanel1.setBackground(new java.awt.Color(253, 253, 253));
         jPanel1.setLayout(new java.awt.GridLayout(10, 10, 10, 10));
@@ -148,9 +193,19 @@ public class J_Tablero extends javax.swing.JFrame {
         jPanel1.add(b00);
 
         b01.setText("jButton7");
+        b01.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b01ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b01);
 
         b02.setText("jButton6");
+        b02.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b02ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b02);
 
         b03.setText("jButton2");
@@ -444,47 +499,312 @@ public class J_Tablero extends javax.swing.JFrame {
         b99.setText("jButton11");
         jPanel1.add(b99);
 
-        jPanel2.setBackground(new java.awt.Color(253, 253, 253));
-        jPanel2.setLayout(new java.awt.CardLayout());
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(7, 33, 68));
+        jLabel1.setText("0");
 
-        B_Salir.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        B_Salir.setForeground(new java.awt.Color(255, 51, 0));
-        B_Salir.setText("SALIR");
-        B_Salir.addActionListener(new java.awt.event.ActionListener() {
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(7, 33, 68));
+        jLabel2.setText("1");
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(7, 33, 68));
+        jLabel3.setText("2");
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(7, 33, 68));
+        jLabel4.setText("3");
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(7, 33, 68));
+        jLabel5.setText("4");
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(7, 33, 68));
+        jLabel6.setText("5");
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(7, 33, 68));
+        jLabel7.setText("6");
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(7, 33, 68));
+        jLabel8.setText("7");
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(7, 33, 68));
+        jLabel9.setText("8");
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(7, 33, 68));
+        jLabel10.setText("9");
+
+        jLabel21.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(7, 33, 68));
+        jLabel21.setText("0");
+
+        jLabel22.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(7, 33, 68));
+        jLabel22.setText("1");
+
+        jLabel23.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel23.setForeground(new java.awt.Color(7, 33, 68));
+        jLabel23.setText("2");
+
+        jLabel24.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(7, 33, 68));
+        jLabel24.setText("3");
+
+        jLabel25.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel25.setForeground(new java.awt.Color(7, 33, 68));
+        jLabel25.setText("4");
+
+        jLabel26.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel26.setForeground(new java.awt.Color(7, 33, 68));
+        jLabel26.setText("5");
+
+        jLabel27.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel27.setForeground(new java.awt.Color(7, 33, 68));
+        jLabel27.setText("6");
+
+        jLabel28.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(7, 33, 68));
+        jLabel28.setText("7");
+
+        jLabel29.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(7, 33, 68));
+        jLabel29.setText("8");
+
+        jLabel30.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(7, 33, 68));
+        jLabel30.setText("9");
+
+        bNada.setText("No hacer nada");
+        bNada.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B_SalirActionPerformed(evt);
+                bNadaActionPerformed(evt);
             }
         });
 
-        L_LogoURJC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/apoocalipsis/images/URJ_simbolo_POS_1.png"))); // NOI18N
+        bMoverse.setText("Moverse");
+        bMoverse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bMoverseActionPerformed(evt);
+            }
+        });
+
+        bAtaque.setText("Atacar");
+        bAtaque.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bAtaqueActionPerformed(evt);
+            }
+        });
+
+        bBuscarEquipo.setText("Buscar equipo");
+        bBuscarEquipo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bBuscarEquipoActionPerformed(evt);
+            }
+        });
+
+        bCambiarArma.setText("Cambiar Arma");
+        bCambiarArma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bCambiarArmaActionPerformed(evt);
+            }
+        });
+
+        turnos.setText("jLabel12");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(turnos)
+                .addGap(55, 55, 55)
+                .addComponent(bNada)
+                .addGap(3, 3, 3)
+                .addComponent(bMoverse)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(bAtaque)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(bBuscarEquipo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(bCambiarArma)
+                .addContainerGap(160, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(bNada, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bMoverse)
+                            .addComponent(bAtaque)
+                            .addComponent(bBuscarEquipo)
+                            .addComponent(bCambiarArma)))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addComponent(turnos)))
+                .addContainerGap(50, Short.MAX_VALUE))
+        );
+
+        nombreSuperviviente1.setText("jLabel11");
+
+        jLabel11.setText("Inventario");
+
+        inventarioSuperviviente1.setColumns(20);
+        inventarioSuperviviente1.setRows(5);
+        jScrollPane1.setViewportView(inventarioSuperviviente1);
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(100, 100, 100)
+                        .addComponent(nombreSuperviviente1))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel11))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(87, 87, 87)
+                .addComponent(nombreSuperviviente1)
+                .addGap(64, 64, 64)
+                .addComponent(jLabel11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(420, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 930, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 514, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(131, 131, 131)
-                        .addComponent(L_LogoURJC))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(B_Salir)))
-                .addContainerGap())
+                        .addGap(58, 58, 58)
+                        .addComponent(jLabel21)
+                        .addGap(56, 56, 56)
+                        .addComponent(jLabel2)
+                        .addGap(59, 59, 59)
+                        .addComponent(jLabel3)
+                        .addGap(63, 63, 63)
+                        .addComponent(jLabel4)
+                        .addGap(58, 58, 58)
+                        .addComponent(jLabel5)
+                        .addGap(61, 61, 61)
+                        .addComponent(jLabel6)
+                        .addGap(57, 57, 57)
+                        .addComponent(jLabel7)
+                        .addGap(59, 59, 59)
+                        .addComponent(jLabel8)
+                        .addGap(57, 57, 57)
+                        .addComponent(jLabel9)
+                        .addGap(60, 60, 60)
+                        .addComponent(jLabel10))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel22)
+                            .addComponent(jLabel23)
+                            .addComponent(jLabel24)
+                            .addComponent(jLabel25)
+                            .addComponent(jLabel26)
+                            .addComponent(jLabel27)
+                            .addComponent(jLabel28)
+                            .addComponent(jLabel29)
+                            .addComponent(jLabel30))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 777, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(L_LogoURJC)
+                    .addComponent(B_Salir))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 821, Short.MAX_VALUE)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(B_Salir)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(L_LogoURJC)
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(B_Salir)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(L_LogoURJC))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel7)
+                                    .addComponent(jLabel8)
+                                    .addComponent(jLabel9)
+                                    .addComponent(jLabel10))
+                                .addComponent(jLabel21, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 777, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(16, 16, 16)
+                                    .addComponent(jLabel1)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(jLabel22)
+                                    .addGap(40, 40, 40)
+                                    .addComponent(jLabel23)
+                                    .addGap(33, 33, 33)
+                                    .addComponent(jLabel24)
+                                    .addGap(29, 29, 29)
+                                    .addComponent(jLabel25)
+                                    .addGap(29, 29, 29)
+                                    .addComponent(jLabel26)
+                                    .addGap(29, 29, 29)
+                                    .addComponent(jLabel27)
+                                    .addGap(28, 28, 28)
+                                    .addComponent(jLabel28)
+                                    .addGap(32, 32, 32)
+                                    .addComponent(jLabel29)
+                                    .addGap(30, 30, 30)
+                                    .addComponent(jLabel30))))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -507,6 +827,35 @@ public class J_Tablero extends javax.swing.JFrame {
             System.exit(0);
         }
     }//GEN-LAST:event_B_SalirActionPerformed
+
+    private void bNadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bNadaActionPerformed
+        //juego.
+    }//GEN-LAST:event_bNadaActionPerformed
+
+    private void bMoverseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMoverseActionPerformed
+        
+    }//GEN-LAST:event_bMoverseActionPerformed
+
+    private void b01ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b01ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_b01ActionPerformed
+
+    private void b02ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b02ActionPerformed
+        if (bMoverse.isSelected())
+        juego.moverse(destino, e)
+    }//GEN-LAST:event_b02ActionPerformed
+
+    private void bAtaqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAtaqueActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bAtaqueActionPerformed
+
+    private void bBuscarEquipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBuscarEquipoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bBuscarEquipoActionPerformed
+
+    private void bCambiarArmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCambiarArmaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bCambiarArmaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -538,9 +887,137 @@ public class J_Tablero extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new J_Tablero().setVisible(true);
+                J_Tablero tablero = new J_Tablero();
+                tablero.setVisible(true);
+                this.actualizarBotones();
+                
+                this.juego.
             }
         });
+    }
+    
+    private String ponerTexto(Casilla c) {
+        if (c.hayAlgunSupervivienteVivo()) {
+            return "S";
+        } else if (c.hayAlgunZombi()) {
+            return "Z";
+        } else if (c.hayAlgunSupervivienteVivo() && c.hayAlgunZombi()) {
+            return "/";
+        } else {
+            return "";
+        }
+    }
+    
+    private void actualizarBotones() {
+        b00.setText(ponerTexto(juego.getCasilla(0, 0)));
+        b01.setText(ponerTexto(juego.getCasilla(0, 1)));
+        b02.setText(ponerTexto(juego.getCasilla(0, 2)));
+        b03.setText(ponerTexto(juego.getCasilla(0, 3)));
+        b04.setText(ponerTexto(juego.getCasilla(0, 4)));
+        b05.setText(ponerTexto(juego.getCasilla(0, 5)));
+        b06.setText(ponerTexto(juego.getCasilla(0, 6)));
+        b07.setText(ponerTexto(juego.getCasilla(0, 7)));
+        b08.setText(ponerTexto(juego.getCasilla(0, 8)));
+        b09.setText(ponerTexto(juego.getCasilla(0, 9)));
+
+        b10.setText(ponerTexto(juego.getCasilla(1, 0)));
+        b11.setText(ponerTexto(juego.getCasilla(1, 1)));
+        b12.setText(ponerTexto(juego.getCasilla(1, 2)));
+        b13.setText(ponerTexto(juego.getCasilla(1, 3)));
+        b14.setText(ponerTexto(juego.getCasilla(1, 4)));
+        b15.setText(ponerTexto(juego.getCasilla(1, 5)));
+        b16.setText(ponerTexto(juego.getCasilla(1, 6)));
+        b17.setText(ponerTexto(juego.getCasilla(1, 7)));
+        b18.setText(ponerTexto(juego.getCasilla(1, 8)));
+        b19.setText(ponerTexto(juego.getCasilla(1, 9)));
+
+        b20.setText(ponerTexto(juego.getCasilla(2, 0)));
+        b21.setText(ponerTexto(juego.getCasilla(2, 1)));
+        b22.setText(ponerTexto(juego.getCasilla(2, 2)));
+        b23.setText(ponerTexto(juego.getCasilla(2, 3)));
+        b24.setText(ponerTexto(juego.getCasilla(2, 4)));
+        b25.setText(ponerTexto(juego.getCasilla(2, 5)));
+        b26.setText(ponerTexto(juego.getCasilla(2, 6)));
+        b27.setText(ponerTexto(juego.getCasilla(2, 7)));
+        b28.setText(ponerTexto(juego.getCasilla(2, 8)));
+        b29.setText(ponerTexto(juego.getCasilla(2, 9)));
+
+        b30.setText(ponerTexto(juego.getCasilla(3, 0)));
+        b31.setText(ponerTexto(juego.getCasilla(3, 1)));
+        b32.setText(ponerTexto(juego.getCasilla(3, 2)));
+        b33.setText(ponerTexto(juego.getCasilla(3, 3)));
+        b34.setText(ponerTexto(juego.getCasilla(3, 4)));
+        b35.setText(ponerTexto(juego.getCasilla(3, 5)));
+        b36.setText(ponerTexto(juego.getCasilla(3, 6)));
+        b37.setText(ponerTexto(juego.getCasilla(3, 7)));
+        b38.setText(ponerTexto(juego.getCasilla(3, 8)));
+        b39.setText(ponerTexto(juego.getCasilla(3, 9)));
+
+        b40.setText(ponerTexto(juego.getCasilla(4, 0)));
+        b41.setText(ponerTexto(juego.getCasilla(4, 1)));
+        b42.setText(ponerTexto(juego.getCasilla(4, 2)));
+        b43.setText(ponerTexto(juego.getCasilla(4, 3)));
+        b44.setText(ponerTexto(juego.getCasilla(4, 4)));
+        b45.setText(ponerTexto(juego.getCasilla(4, 5)));
+        b46.setText(ponerTexto(juego.getCasilla(4, 6)));
+        b47.setText(ponerTexto(juego.getCasilla(4, 7)));
+        b48.setText(ponerTexto(juego.getCasilla(4, 8)));
+        b49.setText(ponerTexto(juego.getCasilla(4, 9)));
+
+        b50.setText(ponerTexto(juego.getCasilla(5, 0)));
+        b51.setText(ponerTexto(juego.getCasilla(5, 1)));
+        b52.setText(ponerTexto(juego.getCasilla(5, 2)));
+        b53.setText(ponerTexto(juego.getCasilla(5, 3)));
+        b54.setText(ponerTexto(juego.getCasilla(5, 4)));
+        b55.setText(ponerTexto(juego.getCasilla(5, 5)));
+        b56.setText(ponerTexto(juego.getCasilla(5, 6)));
+        b57.setText(ponerTexto(juego.getCasilla(5, 7)));
+        b58.setText(ponerTexto(juego.getCasilla(5, 8)));
+        b59.setText(ponerTexto(juego.getCasilla(5, 9)));
+
+        b60.setText(ponerTexto(juego.getCasilla(6, 0)));
+        b61.setText(ponerTexto(juego.getCasilla(6, 1)));
+        b62.setText(ponerTexto(juego.getCasilla(6, 2)));
+        b63.setText(ponerTexto(juego.getCasilla(6, 3)));
+        b64.setText(ponerTexto(juego.getCasilla(6, 4)));
+        b65.setText(ponerTexto(juego.getCasilla(6, 5)));
+        b66.setText(ponerTexto(juego.getCasilla(6, 6)));
+        b67.setText(ponerTexto(juego.getCasilla(6, 7)));
+        b68.setText(ponerTexto(juego.getCasilla(6, 8)));
+        b69.setText(ponerTexto(juego.getCasilla(6, 9)));
+
+        b70.setText(ponerTexto(juego.getCasilla(7, 0)));
+        b71.setText(ponerTexto(juego.getCasilla(7, 1)));
+        b72.setText(ponerTexto(juego.getCasilla(7, 2)));
+        b73.setText(ponerTexto(juego.getCasilla(7, 3)));
+        b74.setText(ponerTexto(juego.getCasilla(7, 4)));
+        b75.setText(ponerTexto(juego.getCasilla(7, 5)));
+        b76.setText(ponerTexto(juego.getCasilla(7, 6)));
+        b77.setText(ponerTexto(juego.getCasilla(7, 7)));
+        b78.setText(ponerTexto(juego.getCasilla(7, 8)));
+        b79.setText(ponerTexto(juego.getCasilla(7, 9)));
+
+        b80.setText(ponerTexto(juego.getCasilla(8, 0)));
+        b81.setText(ponerTexto(juego.getCasilla(8, 1)));
+        b82.setText(ponerTexto(juego.getCasilla(8, 2)));
+        b83.setText(ponerTexto(juego.getCasilla(8, 3)));
+        b84.setText(ponerTexto(juego.getCasilla(8, 4)));
+        b85.setText(ponerTexto(juego.getCasilla(8, 5)));
+        b86.setText(ponerTexto(juego.getCasilla(8, 6)));
+        b87.setText(ponerTexto(juego.getCasilla(8, 7)));
+        b88.setText(ponerTexto(juego.getCasilla(8, 8)));
+        b89.setText(ponerTexto(juego.getCasilla(8, 9)));
+
+        b90.setText(ponerTexto(juego.getCasilla(9, 0)));
+        b91.setText(ponerTexto(juego.getCasilla(9, 1)));
+        b92.setText(ponerTexto(juego.getCasilla(9, 2)));
+        b93.setText(ponerTexto(juego.getCasilla(9, 3)));
+        b94.setText(ponerTexto(juego.getCasilla(9, 4)));
+        b95.setText(ponerTexto(juego.getCasilla(9, 5)));
+        b96.setText(ponerTexto(juego.getCasilla(9, 6)));
+        b97.setText(ponerTexto(juego.getCasilla(9, 7)));
+        b98.setText(ponerTexto(juego.getCasilla(9, 8)));
+        b99.setText(ponerTexto(juego.getCasilla(9, 9)));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -646,7 +1123,39 @@ public class J_Tablero extends javax.swing.JFrame {
     private javax.swing.JButton b97;
     private javax.swing.JButton b98;
     private javax.swing.JButton b99;
+    private javax.swing.JButton bAtaque;
+    private javax.swing.JButton bBuscarEquipo;
+    private javax.swing.JButton bCambiarArma;
+    private javax.swing.JButton bMoverse;
+    private javax.swing.JButton bNada;
+    private javax.swing.JTextArea inventarioSuperviviente1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel nombreSuperviviente1;
+    private javax.swing.JLabel turnos;
     // End of variables declaration//GEN-END:variables
 }

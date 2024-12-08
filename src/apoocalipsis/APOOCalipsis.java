@@ -7,7 +7,9 @@ public class APOOCalipsis {
      */
     public static void main(String[] args) {
         Juego miJuego = new Juego();
-        String [] nombres = {"Edward", "Anass", "Manuel", "Robert", "Paco"};
-        miJuego.hacerPartida(nombres);
+        miJuego.leerPartida();
+        //String [] nombres = {"Edward", "Anass", "Manuel", "Robert", "Paco"};
+        //miJuego.hacerPartida(nombres);
+        
     }
 }
