@@ -1,4 +1,5 @@
 # Cosas a Mirar
+- [ ] Quitar el comentario del main en el J_Tablero
 - [ ] Poder simular de manera aislada determinadas acciones del juego
 - [ ] En la interfaz de escribir los nombres. Quitar boton cancelar
 
