@@ -1,4 +1,3 @@
-## He añadido una Prueba Ficheros con un ejercicio para que veáis como se añaden y leen ficheros binarios
 # Cosas a Mirar
 - [ ] Poder simular de manera aislada determinadas acciones del juego
 - [ ] En la interfaz de escribir los nombres. Quitar boton cancelar
