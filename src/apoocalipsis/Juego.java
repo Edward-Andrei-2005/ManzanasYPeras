@@ -53,6 +53,18 @@ public class Juego {
         return true;
     }
     
+    public Superviviente getSuperviviente(String nombre) {
+        for(int φ=0; φ<TAM_X; φ++) {
+            for(int Ψ=0; Ψ<TAM_Y ; Ψ++) {
+                if(dimension[φ][Ψ].estaSuperviviente(nombre) 
+                        && dimension[φ][Ψ].getSuperviviente(nombre).estaVivo()) {
+                        return dimension[φ][Ψ].getSuperviviente(nombre);
+                }
+            }
+        }
+        return null;
+    }
+    
     private boolean turnoSupervivientes(String [] listaS) {
         for(int λ=0; λ<listaS.length; λ++) {
             boolean encontrado = false;
@@ -536,7 +548,7 @@ public class Juego {
         return true;
     }
     
-    private boolean hayAlgunSupervivienteMuerto() {
+    public boolean hayAlgunSupervivienteMuerto() {
         for (int i=0; i<TAM_X; i++) {
             for (int j=0; j<TAM_Y; j++) {
                 if (dimension[i][j].hayAlgunSupervivienteMuerto()) {
@@ -558,7 +570,7 @@ public class Juego {
         return num;
     }
     
-    private boolean hanGanadoSupervivientes(String [] listaS) {
+    public boolean hanGanadoSupervivientes(String [] listaS) {
         int x = CASILLA_FIN.getX();
         int y = CASILLA_FIN.getY();
         

@@ -6,12 +6,15 @@ package apoocalipsis;
 
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author manue
- */
 public class J_Tablero extends javax.swing.JFrame {
     private static javax.swing.JButton [][] botones;
+    private Juego juego;
+    private int turnoJuego;  // Vale -1 si le toca a los zombis y de 0 a 3 dependiendo de que superviviente le toque
+    private int turnosRestantesSuperviviente;
+    private int estadoMover;
+    private Casilla auxCasilla;
+    private String [] listaNombres = {"Edward", "Manu", "Anass", "ChatGPT"};
+    private Superviviente [] listaSup;
     
     /**
      * Creates new form Tablero
@@ -19,6 +22,8 @@ public class J_Tablero extends javax.swing.JFrame {
     public J_Tablero() {
         initComponents();
         botones = new javax.swing.JButton [10][10];
+        juego = new Juego();
+        listaSup = new Superviviente[4];
     }
 
     /**
@@ -166,6 +171,7 @@ public class J_Tablero extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         inventarioSuperviviente1 = new javax.swing.JTextArea();
+        bJugar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(253, 253, 253));
@@ -661,6 +667,13 @@ public class J_Tablero extends javax.swing.JFrame {
         inventarioSuperviviente1.setRows(5);
         jScrollPane1.setViewportView(inventarioSuperviviente1);
 
+        bJugar.setText("Jugar");
+        bJugar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bJugarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -672,21 +685,27 @@ public class J_Tablero extends javax.swing.JFrame {
                         .addComponent(nombreSuperviviente1))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel11))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel11)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(85, 85, 85)
+                        .addComponent(bJugar)))
+                .addContainerGap(354, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(87, 87, 87)
                 .addComponent(nombreSuperviviente1)
-                .addGap(64, 64, 64)
-                .addComponent(jLabel11)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(64, 64, 64)
+                        .addComponent(jLabel11)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(78, 78, 78)
+                        .addComponent(bJugar)))
                 .addContainerGap(420, Short.MAX_VALUE))
         );
 
@@ -811,7 +830,15 @@ public class J_Tablero extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void b00ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b00ActionPerformed
-        // TODO add your handling code here:
+        if (estadoMover == 1) {
+            estadoMover = 2;
+            auxCasilla = juego.getCasilla(0,0);
+        } else if (estadoMover == 2) {
+            if (juego.moverse(juego.getCasilla(0,0), listaSup[turnoJuego])) {
+                estadoMover = 0;
+            } 
+        }
+        actualizarPartida();
     }//GEN-LAST:event_b00ActionPerformed
 
     private void B_SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_SalirActionPerformed
@@ -833,16 +860,33 @@ public class J_Tablero extends javax.swing.JFrame {
     }//GEN-LAST:event_bNadaActionPerformed
 
     private void bMoverseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMoverseActionPerformed
-        
+        if (turnoJuego != -1 && estadoMover == 0) {
+            estadoMover = 1;
+        }
     }//GEN-LAST:event_bMoverseActionPerformed
 
     private void b01ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b01ActionPerformed
-        // TODO add your handling code here:
+        if (estadoMover == 1) {
+            estadoMover = 2;
+            auxCasilla = juego.getCasilla(0,1);
+        } else if (estadoMover == 2) {
+            if (juego.moverse(juego.getCasilla(0,1), listaSup[turnoJuego])) {
+                estadoMover = 0;
+            } 
+        }
+        actualizarPartida();
     }//GEN-LAST:event_b01ActionPerformed
 
     private void b02ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b02ActionPerformed
-        if (bMoverse.isSelected())
-        juego.moverse(destino, e)
+        if (estadoMover == 1) {
+            estadoMover = 2;
+            auxCasilla = juego.getCasilla(0,2);
+        } else if (estadoMover == 2) {
+            if (juego.moverse(juego.getCasilla(0,2), listaSup[turnoJuego])) {
+                estadoMover = 0;
+            } 
+        }
+        actualizarPartida();
     }//GEN-LAST:event_b02ActionPerformed
 
     private void bAtaqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAtaqueActionPerformed
@@ -856,6 +900,11 @@ public class J_Tablero extends javax.swing.JFrame {
     private void bCambiarArmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCambiarArmaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_bCambiarArmaActionPerformed
+
+    private void bJugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bJugarActionPerformed
+        juego.asignarSupervivientesPosicionInicial(listaNombres);
+        actualizarPartida();
+    }//GEN-LAST:event_bJugarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -889,11 +938,51 @@ public class J_Tablero extends javax.swing.JFrame {
             public void run() {
                 J_Tablero tablero = new J_Tablero();
                 tablero.setVisible(true);
-                this.actualizarBotones();
+                tablero.actualizarPartida();
                 
-                this.juego.
+                
             }
         });
+    }
+    
+    private void  actualizarPartida() {
+        actualizarListaSupervivientes();
+        siguienteAccion();
+        actualizarBotones();
+        haTerminadoPartida();
+        System.out.println(turnoJuego +", "+ turnosRestantesSuperviviente +", " + estadoMover);
+    }
+    
+    private void haTerminadoPartida() {
+        if (juego.hayAlgunSupervivienteMuerto()) {
+            
+        }
+        if (juego.hanGanadoSupervivientes(listaNombres)) {
+            
+        }
+    }
+    
+    private void actualizarListaSupervivientes() {
+        for (int i=0; i<listaNombres.length; i++) {
+            listaSup[i] = juego.getSuperviviente(listaNombres[i]);
+        }
+    }
+    
+    private void siguienteAccion() {
+        if (turnoJuego != -1) {
+            switch (turnosRestantesSuperviviente) {
+                case 3: turnosRestantesSuperviviente = 2; break;
+                case 2: turnosRestantesSuperviviente = 1; break;
+                case 1: 
+                    turnosRestantesSuperviviente = 3;
+                    siguienteTurnoJuego();
+                    break;
+            }
+        } else {
+            juego.turnoZombis();
+            siguienteTurnoJuego();
+        }
+        
     }
     
     private String ponerTexto(Casilla c) {
@@ -905,6 +994,16 @@ public class J_Tablero extends javax.swing.JFrame {
             return "/";
         } else {
             return "";
+        }
+    }
+    
+    private void siguienteTurnoJuego() {
+        switch (turnoJuego) {
+            case -1: turnoJuego = 0; break;
+            case 0: turnoJuego = 1; break;
+            case 1: turnoJuego = 2; break;
+            case 2: turnoJuego = 3; break;
+            case 3: turnoJuego = -1; break;
         }
     }
     
@@ -1126,6 +1225,7 @@ public class J_Tablero extends javax.swing.JFrame {
     private javax.swing.JButton bAtaque;
     private javax.swing.JButton bBuscarEquipo;
     private javax.swing.JButton bCambiarArma;
+    private javax.swing.JButton bJugar;
     private javax.swing.JButton bMoverse;
     private javax.swing.JButton bNada;
     private javax.swing.JTextArea inventarioSuperviviente1;
