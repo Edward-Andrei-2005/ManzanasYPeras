@@ -248,7 +248,7 @@ public class J_InterfazGrafica extends javax.swing.JFrame {
 
                         if (opcion2 == JOptionPane.OK_OPTION) {
                             // Si confirma, pasa al tablero
-                            J_Tablero ventanaTablero = new J_Tablero();
+                            J_Tablero ventanaTablero = new J_Tablero(arrayNombres);
                             ventanaTablero.setVisible(true); // Mostrar ventana de tablero
                             this.setVisible(false);
                             return; // Salir del ciclo y finalizar
@@ -273,6 +273,7 @@ public class J_InterfazGrafica extends javax.swing.JFrame {
     } else if (O_Simular_Acciones.isSelected()) {
         J_ConfirmacionAcciones ventanaConfirmacion = new J_ConfirmacionAcciones();
         boolean aux = false;
+        String [] nombresPrueba = {"Prueba"};
         do {
             int opcion = JOptionPane.showConfirmDialog(this, ventanaConfirmacion, 
                                                                 "Fase de Selección de Acciones",
@@ -280,19 +281,19 @@ public class J_InterfazGrafica extends javax.swing.JFrame {
             if (opcion == JOptionPane.OK_OPTION) {
                 // Si confirma, pasa al tablero
                 if (ventanaConfirmacion.obtenerSeleccionado().equals("Buscar Equipo")) {
-                    J_Tablero ventanaTablero = new J_Tablero();
+                    J_Tablero ventanaTablero = new J_Tablero(nombresPrueba);
                     ventanaTablero.setVisible(true); // Mostrar ventana de tablero
                     this.setVisible(false);
                     aux = true; // Salir del ciclo y finalizar
                     
                 } else if(ventanaConfirmacion.obtenerSeleccionado().equals("Activación Zombi")) {
-                    J_Tablero ventanaTablero = new J_Tablero();
+                    J_Tablero ventanaTablero = new J_Tablero(nombresPrueba);
                     ventanaTablero.setVisible(true); // Mostrar ventana de tablero
                     this.setVisible(false);
                     aux = true; // Salir del ciclo y finalizar
                     
                 } else if(ventanaConfirmacion.obtenerSeleccionado().equals("Ataque Superviviente a Zombi")) {
-                    J_Tablero ventanaTablero = new J_Tablero();
+                    J_Tablero ventanaTablero = new J_Tablero(nombresPrueba);
                     ventanaTablero.setVisible(true); // Mostrar ventana de tablero
                     this.setVisible(false);
                     return; // Salir del ciclo y finalizar

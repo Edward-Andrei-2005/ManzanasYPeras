@@ -13,17 +13,18 @@ public class J_Tablero extends javax.swing.JFrame {
     private int turnosRestantesSuperviviente;
     private int estadoMover;
     private Casilla auxCasilla;
-    private String [] listaNombres = {"Edward", "Manu", "Anass", "ChatGPT"};
+    private String [] listaNombres; // = {"Edward", "Manu", "Anass", "ChatGPT"};
     private Superviviente [] listaSup;
     
     /**
      * Creates new form Tablero
      */
-    public J_Tablero() {
+    public J_Tablero(String [] nombres) {
         initComponents();
         botones = new javax.swing.JButton [10][10];
         juego = new Juego();
         listaSup = new Superviviente[4];
+        listaNombres = nombres;
     }
 
     /**
@@ -165,7 +166,6 @@ public class J_Tablero extends javax.swing.JFrame {
         bAtaque = new javax.swing.JButton();
         bBuscarEquipo = new javax.swing.JButton();
         bCambiarArma = new javax.swing.JButton();
-        turnos = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         nombreSuperviviente1 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -620,16 +620,12 @@ public class J_Tablero extends javax.swing.JFrame {
             }
         });
 
-        turnos.setText("jLabel12");
-
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(turnos)
-                .addGap(55, 55, 55)
+                .addGap(104, 104, 104)
                 .addComponent(bNada)
                 .addGap(3, 3, 3)
                 .addComponent(bMoverse)
@@ -644,18 +640,13 @@ public class J_Tablero extends javax.swing.JFrame {
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(39, 39, 39)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(bNada, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(bMoverse)
-                            .addComponent(bAtaque)
-                            .addComponent(bBuscarEquipo)
-                            .addComponent(bCambiarArma)))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addComponent(turnos)))
+                .addGap(39, 39, 39)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bNada, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bMoverse)
+                    .addComponent(bAtaque)
+                    .addComponent(bBuscarEquipo)
+                    .addComponent(bCambiarArma))
                 .addContainerGap(50, Short.MAX_VALUE))
         );
 
@@ -690,7 +681,7 @@ public class J_Tablero extends javax.swing.JFrame {
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(85, 85, 85)
                         .addComponent(bJugar)))
-                .addContainerGap(354, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -934,12 +925,12 @@ public class J_Tablero extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
+        String [] nombres = {"Edward", "Manu", "Anass", "ChatGPT"};
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                J_Tablero tablero = new J_Tablero();
+                J_Tablero tablero = new J_Tablero(nombres);
                 tablero.setVisible(true);
                 tablero.actualizarPartida();
-                
                 
             }
         });
@@ -1256,6 +1247,5 @@ public class J_Tablero extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel nombreSuperviviente1;
-    private javax.swing.JLabel turnos;
     // End of variables declaration//GEN-END:variables
 }

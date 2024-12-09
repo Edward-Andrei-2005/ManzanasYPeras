@@ -161,4 +161,10 @@ public class Superviviente extends EntidadActivable {
         
         return nombre.equals(s.getNombre());
     }
+    
+    /*@Override
+    public String toString() {
+        return nombre + "\n" +
+                
+    }*/
 }
