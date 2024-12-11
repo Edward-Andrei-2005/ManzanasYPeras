@@ -439,7 +439,7 @@ public class Juego {
         
     }
     
-    private boolean generarNuevoZombi() {
+    public boolean generarNuevoZombi() {
         for (int i = 0; i < NUM_ZOMBIS_NUEVOS_POR_TURNO; i++) {
             // Genera una posicion aleatoria para un zombi que cumpla
             // que no este en una casilla adyacente a un superviviente

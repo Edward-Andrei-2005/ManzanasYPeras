@@ -952,6 +952,7 @@ public class J_Tablero extends javax.swing.JFrame {
         // Cuando el ultimo superviviente gasta su ultima accion juegan los zombis
         if (turnoJuego == listaNombres.length - 1 && turnosRestantesSuperviviente == 1) { 
             juego.turnoZombis();
+            juego.generarNuevoZombi();
             turnosRestantesSuperviviente = juego.NUM_TURNOS_SUPERVIVIENTES;
             siguienteTurnoJuego();
         } else if (turnosRestantesSuperviviente == 1) { // Cuando un superviviente agota sus turnos, se reinicia el contador para el siguiente
