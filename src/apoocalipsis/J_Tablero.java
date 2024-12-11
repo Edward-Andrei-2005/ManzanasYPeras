@@ -9,9 +9,12 @@ import javax.swing.JOptionPane;
 public class J_Tablero extends javax.swing.JFrame {
     private static javax.swing.JButton [][] botones;
     private Juego juego;
-    private int turnoJuego;  // Vale -1 si le toca a los zombis y de 0 a 3 dependiendo de que superviviente le toque
+    private int turnoJuego;  // Vale de 0 al numero de supervivientes -1 dependiendo de que superviviente le toque
     private int turnosRestantesSuperviviente;
+    
     private int estadoMover;
+    private int estadoAtacar;
+    
     private Casilla auxCasilla;
     private String [] listaNombres; // = {"Edward", "Manu", "Anass", "ChatGPT"};
     private Superviviente [] listaSup;
@@ -169,9 +172,8 @@ public class J_Tablero extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         nombreSuperviviente1 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        inventarioSuperviviente1 = new javax.swing.JTextArea();
         estadoJuego = new javax.swing.JLabel();
+        narradorJuego = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(253, 253, 253));
@@ -654,11 +656,9 @@ public class J_Tablero extends javax.swing.JFrame {
 
         jLabel11.setText("Inventario");
 
-        inventarioSuperviviente1.setColumns(20);
-        inventarioSuperviviente1.setRows(5);
-        jScrollPane1.setViewportView(inventarioSuperviviente1);
-
         estadoJuego.setText("jLabel12");
+
+        narradorJuego.setText("jLabel12");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -671,12 +671,13 @@ public class J_Tablero extends javax.swing.JFrame {
                         .addComponent(nombreSuperviviente1))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel11)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel11))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(341, 341, 341)
-                        .addComponent(estadoJuego)))
+                        .addComponent(estadoJuego))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(narradorJuego, javax.swing.GroupLayout.PREFERRED_SIZE, 679, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -686,9 +687,9 @@ public class J_Tablero extends javax.swing.JFrame {
                 .addComponent(nombreSuperviviente1)
                 .addGap(64, 64, 64)
                 .addComponent(jLabel11)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 280, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 281, Short.MAX_VALUE)
+                .addComponent(narradorJuego, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16)
                 .addComponent(estadoJuego)
                 .addGap(124, 124, 124))
         );
@@ -814,10 +815,15 @@ public class J_Tablero extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void b00ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b00ActionPerformed
+        Casilla c = juego.getCasilla(0,0);
+        
         if (estadoMover == 1) {
-            if (juego.moverse(juego.getCasilla(0,0), listaSup[turnoJuego])) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
                 estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
                 actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
         }
     }//GEN-LAST:event_b00ActionPerformed
@@ -837,39 +843,60 @@ public class J_Tablero extends javax.swing.JFrame {
     }//GEN-LAST:event_B_SalirActionPerformed
 
     private void bNadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bNadaActionPerformed
-        //juego.
+        actualizarPartida();
     }//GEN-LAST:event_bNadaActionPerformed
 
     private void bMoverseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMoverseActionPerformed
-        if (turnoJuego != -1 && estadoMover == 0) {
+        if (juego.buscarCasillaOrigen(listaSup[turnoJuego]).numeroZombis() + 1 > turnosRestantesSuperviviente) {
+            narradorJuego.setText(listaNombres[turnoJuego] + "no puede escapar de los zombis");
+        } else {
             estadoMover = 1;
+            estadoAtacar = 0;
         }
     }//GEN-LAST:event_bMoverseActionPerformed
 
     private void b01ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b01ActionPerformed
+        Casilla c = juego.getCasilla(0,1);
+        
         if (estadoMover == 1) {
-            if (juego.moverse(juego.getCasilla(0,1), listaSup[turnoJuego])) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
                 estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
                 actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
         }
     }//GEN-LAST:event_b01ActionPerformed
 
     private void b02ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b02ActionPerformed
+        Casilla c = juego.getCasilla(0,2);
+        
         if (estadoMover == 1) {
-            if (juego.moverse(juego.getCasilla(0,2), listaSup[turnoJuego])) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
                 estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
                 actualizarPartida();
-            } 
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            }
         }
     }//GEN-LAST:event_b02ActionPerformed
 
     private void bAtaqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAtaqueActionPerformed
-        // TODO add your handling code here:
+        estadoAtacar = 1;
+        estadoMover = 0;
     }//GEN-LAST:event_bAtaqueActionPerformed
 
     private void bBuscarEquipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBuscarEquipoActionPerformed
-        // TODO add your handling code here:
+        Equipo e = juego.buscarEquipo(listaSup[turnoJuego]);
+        
+        if (e == null) {
+            narradorJuego.setText(listaNombres[turnoJuego] + " no ha encontrado ningun equipo");
+        } else {
+            narradorJuego.setText(listaNombres[turnoJuego] + " ha encontrado un(a) " + e.toString());
+            actualizarPartida();
+        }
     }//GEN-LAST:event_bBuscarEquipoActionPerformed
 
     private void bCambiarArmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCambiarArmaActionPerformed
@@ -1207,7 +1234,6 @@ public class J_Tablero extends javax.swing.JFrame {
     private javax.swing.JButton bMoverse;
     private javax.swing.JButton bNada;
     private javax.swing.JLabel estadoJuego;
-    private javax.swing.JTextArea inventarioSuperviviente1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1233,7 +1259,7 @@ public class J_Tablero extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel narradorJuego;
     private javax.swing.JLabel nombreSuperviviente1;
     // End of variables declaration//GEN-END:variables
 }

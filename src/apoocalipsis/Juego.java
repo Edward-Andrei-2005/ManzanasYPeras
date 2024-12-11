@@ -39,6 +39,10 @@ public class Juego {
         return dimension[i][j];
     }
     
+    public Equipo buscarEquipo(Superviviente s) {
+        return buscarCasillaOrigen(s).buscarEquipo(s);
+    }
+    
     // Metodo que gestiona todo el ciclo de una partida
     public boolean hacerPartida(String [] listaNombres) {
         asignarSupervivientesPosicionInicial(listaNombres);
@@ -636,7 +640,7 @@ public class Juego {
         return null; // Devuelve null si no encuentra el arma
     }
 
-    private Casilla buscarCasillaOrigen(EntidadActivable e) {
+    public Casilla buscarCasillaOrigen(EntidadActivable e) {
         // Encuentra la casilla donde se encuentra la entidad activable
         for (int i = 0; i < TAM_X; i++) {
             for (int j = 0; j < TAM_Y; j++) {
