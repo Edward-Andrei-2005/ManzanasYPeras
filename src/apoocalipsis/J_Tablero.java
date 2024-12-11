@@ -23,7 +23,7 @@ public class J_Tablero extends javax.swing.JFrame {
         initComponents();
         botones = new javax.swing.JButton [10][10];
         juego = new Juego();
-        listaSup = new Superviviente[4];
+        listaSup = new Superviviente[nombres.length];
         listaNombres = nombres;
     }
 
@@ -171,7 +171,7 @@ public class J_Tablero extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         inventarioSuperviviente1 = new javax.swing.JTextArea();
-        bJugar = new javax.swing.JButton();
+        estadoJuego = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(253, 253, 253));
@@ -658,12 +658,7 @@ public class J_Tablero extends javax.swing.JFrame {
         inventarioSuperviviente1.setRows(5);
         jScrollPane1.setViewportView(inventarioSuperviviente1);
 
-        bJugar.setText("Jugar");
-        bJugar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bJugarActionPerformed(evt);
-            }
-        });
+        estadoJuego.setText("jLabel12");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -678,9 +673,10 @@ public class J_Tablero extends javax.swing.JFrame {
                         .addContainerGap()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel11)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(85, 85, 85)
-                        .addComponent(bJugar)))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(341, 341, 341)
+                        .addComponent(estadoJuego)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -688,16 +684,13 @@ public class J_Tablero extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(87, 87, 87)
                 .addComponent(nombreSuperviviente1)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(64, 64, 64)
-                        .addComponent(jLabel11)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(78, 78, 78)
-                        .addComponent(bJugar)))
-                .addContainerGap(420, Short.MAX_VALUE))
+                .addGap(64, 64, 64)
+                .addComponent(jLabel11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 280, Short.MAX_VALUE)
+                .addComponent(estadoJuego)
+                .addGap(124, 124, 124))
         );
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -822,14 +815,11 @@ public class J_Tablero extends javax.swing.JFrame {
 
     private void b00ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b00ActionPerformed
         if (estadoMover == 1) {
-            estadoMover = 2;
-            auxCasilla = juego.getCasilla(0,0);
-        } else if (estadoMover == 2) {
             if (juego.moverse(juego.getCasilla(0,0), listaSup[turnoJuego])) {
                 estadoMover = 0;
+                actualizarPartida();
             } 
         }
-        actualizarPartida();
     }//GEN-LAST:event_b00ActionPerformed
 
     private void B_SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_SalirActionPerformed
@@ -858,26 +848,20 @@ public class J_Tablero extends javax.swing.JFrame {
 
     private void b01ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b01ActionPerformed
         if (estadoMover == 1) {
-            estadoMover = 2;
-            auxCasilla = juego.getCasilla(0,1);
-        } else if (estadoMover == 2) {
             if (juego.moverse(juego.getCasilla(0,1), listaSup[turnoJuego])) {
                 estadoMover = 0;
+                actualizarPartida();
             } 
         }
-        actualizarPartida();
     }//GEN-LAST:event_b01ActionPerformed
 
     private void b02ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b02ActionPerformed
         if (estadoMover == 1) {
-            estadoMover = 2;
-            auxCasilla = juego.getCasilla(0,2);
-        } else if (estadoMover == 2) {
             if (juego.moverse(juego.getCasilla(0,2), listaSup[turnoJuego])) {
                 estadoMover = 0;
+                actualizarPartida();
             } 
         }
-        actualizarPartida();
     }//GEN-LAST:event_b02ActionPerformed
 
     private void bAtaqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAtaqueActionPerformed
@@ -891,11 +875,6 @@ public class J_Tablero extends javax.swing.JFrame {
     private void bCambiarArmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCambiarArmaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_bCambiarArmaActionPerformed
-
-    private void bJugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bJugarActionPerformed
-        juego.asignarSupervivientesPosicionInicial(listaNombres);
-        actualizarPartida();
-    }//GEN-LAST:event_bJugarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -931,13 +910,23 @@ public class J_Tablero extends javax.swing.JFrame {
                 J_Tablero tablero = new J_Tablero(nombres);
                 tablero.setVisible(true);
                 tablero.actualizarPartida();
-                
+                tablero.iniciarPartida();
             }
         });
     }
     
+    public void iniciarPartida() {
+        juego.asignarSupervivientesPosicionInicial(listaNombres);
+        juego.generarZombisInicio();
+        turnoJuego = 0;
+        turnosRestantesSuperviviente = juego.NUM_TURNOS_SUPERVIVIENTES;
+        actualizarListaSupervivientes();
+        actualizarBotones();
+    }
+    
     private void  actualizarPartida() {
         actualizarListaSupervivientes();
+        
         siguienteAccion();
         actualizarBotones();
         haTerminadoPartida();
@@ -960,20 +949,18 @@ public class J_Tablero extends javax.swing.JFrame {
     }
     
     private void siguienteAccion() {
-        if (turnoJuego != -1) {
-            switch (turnosRestantesSuperviviente) {
-                case 3: turnosRestantesSuperviviente = 2; break;
-                case 2: turnosRestantesSuperviviente = 1; break;
-                case 1: 
-                    turnosRestantesSuperviviente = 3;
-                    siguienteTurnoJuego();
-                    break;
-            }
-        } else {
+        // Cuando el ultimo superviviente gasta su ultima accion juegan los zombis
+        if (turnoJuego == listaNombres.length - 1 && turnosRestantesSuperviviente == 1) { 
             juego.turnoZombis();
+            turnosRestantesSuperviviente = juego.NUM_TURNOS_SUPERVIVIENTES;
             siguienteTurnoJuego();
+        } else if (turnosRestantesSuperviviente == 1) { // Cuando un superviviente agota sus turnos, se reinicia el contador para el siguiente
+            turnosRestantesSuperviviente = juego.NUM_TURNOS_SUPERVIVIENTES;
+            siguienteTurnoJuego();
+        } else {
+            turnosRestantesSuperviviente--;
         }
-        
+        System.out.println(turnosRestantesSuperviviente);
     }
     
     private String ponerTexto(Casilla c) {
@@ -989,16 +976,16 @@ public class J_Tablero extends javax.swing.JFrame {
     }
     
     private void siguienteTurnoJuego() {
-        switch (turnoJuego) {
-            case -1: turnoJuego = 0; break;
-            case 0: turnoJuego = 1; break;
-            case 1: turnoJuego = 2; break;
-            case 2: turnoJuego = 3; break;
-            case 3: turnoJuego = -1; break;
+        if (turnoJuego == listaNombres.length - 1) {  // Despues del ultimo superviviente va el primero
+            turnoJuego = 0;
+        } else {  // Despues de un superviviente va el siguiente
+            turnoJuego++;
         }
     }
     
     private void actualizarBotones() {
+        estadoJuego.setText("Turno=" + turnoJuego + " Acciones=" + turnosRestantesSuperviviente);
+        
         b00.setText(ponerTexto(juego.getCasilla(0, 0)));
         b01.setText(ponerTexto(juego.getCasilla(0, 1)));
         b02.setText(ponerTexto(juego.getCasilla(0, 2)));
@@ -1216,9 +1203,9 @@ public class J_Tablero extends javax.swing.JFrame {
     private javax.swing.JButton bAtaque;
     private javax.swing.JButton bBuscarEquipo;
     private javax.swing.JButton bCambiarArma;
-    private javax.swing.JButton bJugar;
     private javax.swing.JButton bMoverse;
     private javax.swing.JButton bNada;
+    private javax.swing.JLabel estadoJuego;
     private javax.swing.JTextArea inventarioSuperviviente1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

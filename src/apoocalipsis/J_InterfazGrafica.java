@@ -250,6 +250,7 @@ public class J_InterfazGrafica extends javax.swing.JFrame {
                             // Si confirma, pasa al tablero
                             J_Tablero ventanaTablero = new J_Tablero(arrayNombres);
                             ventanaTablero.setVisible(true); // Mostrar ventana de tablero
+                            ventanaTablero.iniciarPartida();
                             this.setVisible(false);
                             return; // Salir del ciclo y finalizar
                         } else {
