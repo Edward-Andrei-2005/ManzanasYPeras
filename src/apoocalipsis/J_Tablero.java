@@ -39,7 +39,6 @@ public class J_Tablero extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        B_Salir = new javax.swing.JButton();
         L_LogoURJC = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         b00 = new javax.swing.JButton();
@@ -174,18 +173,18 @@ public class J_Tablero extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         estadoJuego = new javax.swing.JLabel();
         narradorJuego = new javax.swing.JLabel();
+        P_MostrarInformacionSuperviviente = new javax.swing.JPanel();
+        L_NombreSuperviviente = new javax.swing.JLabel();
+        L_ManoIzquierda = new javax.swing.JLabel();
+        L_ManoDerecha = new javax.swing.JLabel();
+        L_Inventario = new javax.swing.JLabel();
+        L_ConfirmacionArmaIzq = new javax.swing.JLabel();
+        L_ConfirmacionArmaDcha = new javax.swing.JLabel();
+        L_ConfirmacionInventario = new javax.swing.JLabel();
+        B_Salir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(253, 253, 253));
-
-        B_Salir.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
-        B_Salir.setForeground(new java.awt.Color(255, 51, 0));
-        B_Salir.setText("SALIR");
-        B_Salir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                B_SalirActionPerformed(evt);
-            }
-        });
 
         L_LogoURJC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/apoocalipsis/images/URJ_simbolo_POS_1.png"))); // NOI18N
 
@@ -627,9 +626,9 @@ public class J_Tablero extends javax.swing.JFrame {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(104, 104, 104)
+                .addGap(26, 26, 26)
                 .addComponent(bNada)
-                .addGap(3, 3, 3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(bMoverse)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(bAtaque)
@@ -637,7 +636,7 @@ public class J_Tablero extends javax.swing.JFrame {
                 .addComponent(bBuscarEquipo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(bCambiarArma)
-                .addContainerGap(160, Short.MAX_VALUE))
+                .addContainerGap(103, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -665,49 +664,142 @@ public class J_Tablero extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(100, 100, 100)
-                        .addComponent(nombreSuperviviente1))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel11))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(341, 341, 341)
-                        .addComponent(estadoJuego))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(narradorJuego, javax.swing.GroupLayout.PREFERRED_SIZE, 679, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel11)
+                    .addComponent(narradorJuego, javax.swing.GroupLayout.PREFERRED_SIZE, 679, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(estadoJuego)
+                    .addComponent(nombreSuperviviente1)))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(87, 87, 87)
+                .addGap(15, 15, 15)
                 .addComponent(nombreSuperviviente1)
-                .addGap(64, 64, 64)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel11)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 281, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(narradorJuego, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(16, 16, 16)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(estadoJuego)
-                .addGap(124, 124, 124))
+                .addGap(134, 134, 134))
+        );
+
+        P_MostrarInformacionSuperviviente.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        L_NombreSuperviviente.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        L_NombreSuperviviente.setForeground(new java.awt.Color(7, 33, 68));
+        L_NombreSuperviviente.setText("NombreSuperviviente");
+
+        L_ManoIzquierda.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        L_ManoIzquierda.setForeground(new java.awt.Color(7, 33, 68));
+        L_ManoIzquierda.setText("Arma Mano Izq:");
+
+        L_ManoDerecha.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        L_ManoDerecha.setForeground(new java.awt.Color(7, 33, 68));
+        L_ManoDerecha.setText("Arma Mano Dcha:");
+
+        L_Inventario.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        L_Inventario.setForeground(new java.awt.Color(7, 33, 68));
+        L_Inventario.setText("Inventario:");
+
+        L_ConfirmacionArmaIzq.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        L_ConfirmacionArmaIzq.setForeground(new java.awt.Color(7, 33, 68));
+        L_ConfirmacionArmaIzq.setText("ArmaIzq");
+
+        L_ConfirmacionArmaDcha.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        L_ConfirmacionArmaDcha.setForeground(new java.awt.Color(7, 33, 68));
+        L_ConfirmacionArmaDcha.setText("ArmaDcha");
+
+        L_ConfirmacionInventario.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        L_ConfirmacionInventario.setForeground(new java.awt.Color(7, 33, 68));
+        L_ConfirmacionInventario.setText("Inventario");
+
+        javax.swing.GroupLayout P_MostrarInformacionSupervivienteLayout = new javax.swing.GroupLayout(P_MostrarInformacionSuperviviente);
+        P_MostrarInformacionSuperviviente.setLayout(P_MostrarInformacionSupervivienteLayout);
+        P_MostrarInformacionSupervivienteLayout.setHorizontalGroup(
+            P_MostrarInformacionSupervivienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P_MostrarInformacionSupervivienteLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(L_NombreSuperviviente)
+                .addGap(140, 140, 140))
+            .addGroup(P_MostrarInformacionSupervivienteLayout.createSequentialGroup()
+                .addGroup(P_MostrarInformacionSupervivienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(P_MostrarInformacionSupervivienteLayout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addGroup(P_MostrarInformacionSupervivienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(P_MostrarInformacionSupervivienteLayout.createSequentialGroup()
+                                .addComponent(L_ManoDerecha)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(L_ConfirmacionArmaDcha, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(P_MostrarInformacionSupervivienteLayout.createSequentialGroup()
+                                .addComponent(L_ManoIzquierda)
+                                .addGap(18, 18, 18)
+                                .addComponent(L_ConfirmacionArmaIzq, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(P_MostrarInformacionSupervivienteLayout.createSequentialGroup()
+                        .addGap(13, 13, 13)
+                        .addComponent(L_Inventario)
+                        .addGap(61, 61, 61)
+                        .addComponent(L_ConfirmacionInventario, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(83, Short.MAX_VALUE))
+        );
+        P_MostrarInformacionSupervivienteLayout.setVerticalGroup(
+            P_MostrarInformacionSupervivienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(P_MostrarInformacionSupervivienteLayout.createSequentialGroup()
+                .addComponent(L_NombreSuperviviente, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(P_MostrarInformacionSupervivienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(P_MostrarInformacionSupervivienteLayout.createSequentialGroup()
+                        .addGap(58, 58, 58)
+                        .addGroup(P_MostrarInformacionSupervivienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(L_ConfirmacionArmaDcha)
+                            .addComponent(L_ManoDerecha)))
+                    .addGroup(P_MostrarInformacionSupervivienteLayout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addGroup(P_MostrarInformacionSupervivienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(L_ConfirmacionArmaIzq)
+                            .addComponent(L_ManoIzquierda))))
+                .addGap(140, 140, 140)
+                .addGroup(P_MostrarInformacionSupervivienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(L_Inventario)
+                    .addComponent(L_ConfirmacionInventario, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(224, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(P_MostrarInformacionSuperviviente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(P_MostrarInformacionSuperviviente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        B_Salir.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        B_Salir.setForeground(new java.awt.Color(255, 51, 0));
+        B_Salir.setText("SALIR");
+        B_Salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B_SalirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -753,62 +845,65 @@ public class J_Tablero extends javax.swing.JFrame {
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 777, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(L_LogoURJC)
-                    .addComponent(B_Salir))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(L_LogoURJC, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(B_Salir, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addGap(38, 38, 38)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(jLabel2)
+                                        .addComponent(jLabel3)
+                                        .addComponent(jLabel4)
+                                        .addComponent(jLabel5)
+                                        .addComponent(jLabel6)
+                                        .addComponent(jLabel7)
+                                        .addComponent(jLabel8)
+                                        .addComponent(jLabel9)
+                                        .addComponent(jLabel10))
+                                    .addComponent(jLabel21, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 777, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(16, 16, 16)
+                                        .addComponent(jLabel1)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabel22)
+                                        .addGap(40, 40, 40)
+                                        .addComponent(jLabel23)
+                                        .addGap(33, 33, 33)
+                                        .addComponent(jLabel24)
+                                        .addGap(29, 29, 29)
+                                        .addComponent(jLabel25)
+                                        .addGap(29, 29, 29)
+                                        .addComponent(jLabel26)
+                                        .addGap(29, 29, 29)
+                                        .addComponent(jLabel27)
+                                        .addGap(28, 28, 28)
+                                        .addComponent(jLabel28)
+                                        .addGap(32, 32, 32)
+                                        .addComponent(jLabel29)
+                                        .addGap(30, 30, 30)
+                                        .addComponent(jLabel30)))))
+                        .addGap(0, 13, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(B_Salir)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(L_LogoURJC))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel7)
-                                    .addComponent(jLabel8)
-                                    .addComponent(jLabel9)
-                                    .addComponent(jLabel10))
-                                .addComponent(jLabel21, javax.swing.GroupLayout.Alignment.TRAILING))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 777, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(16, 16, 16)
-                                    .addComponent(jLabel1)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(jLabel22)
-                                    .addGap(40, 40, 40)
-                                    .addComponent(jLabel23)
-                                    .addGap(33, 33, 33)
-                                    .addComponent(jLabel24)
-                                    .addGap(29, 29, 29)
-                                    .addComponent(jLabel25)
-                                    .addGap(29, 29, 29)
-                                    .addComponent(jLabel26)
-                                    .addGap(29, 29, 29)
-                                    .addComponent(jLabel27)
-                                    .addGap(28, 28, 28)
-                                    .addComponent(jLabel28)
-                                    .addGap(32, 32, 32)
-                                    .addComponent(jLabel29)
-                                    .addGap(30, 30, 30)
-                                    .addComponent(jLabel30))))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(L_LogoURJC)))
+                .addContainerGap())
         );
 
         pack();
@@ -948,6 +1043,7 @@ public class J_Tablero extends javax.swing.JFrame {
         turnoJuego = 0;
         turnosRestantesSuperviviente = juego.NUM_TURNOS_SUPERVIVIENTES;
         actualizarListaSupervivientes();
+        imprimirInformacionSuperviviente(listaNombres[turnoJuego]); //Imprimo la información del primer superviviente justo cuando se actualiza su información
         actualizarBotones();
     }
     
@@ -1008,6 +1104,41 @@ public class J_Tablero extends javax.swing.JFrame {
             turnoJuego = 0;
         } else {  // Despues de un superviviente va el siguiente
             turnoJuego++;
+        }
+
+        imprimirInformacionSuperviviente(listaNombres[turnoJuego]);
+    }
+    
+    private void imprimirInformacionSuperviviente(String nombreSuperviviente) {
+        for(int i=0; i<listaSup.length; i++) {
+            if(nombreSuperviviente.equals(listaSup[i].getNombre())) {
+                L_NombreSuperviviente.setText(listaSup[i].getNombre());
+                //Si no tiene mano izquierda/derecha imprimirmos "No tiene"
+                if(listaSup[i].getManoIzq() == null) {
+                    L_ConfirmacionArmaIzq.setText("No tiene");
+                } else {
+                    L_ConfirmacionArmaIzq.setText(listaSup[i].getManoIzq().toString());
+                }
+                
+                if(listaSup[i].getManoDer() == null) {
+                    L_ConfirmacionArmaDcha.setText("No tiene");
+                } else {
+                    L_ConfirmacionArmaDcha.setText(listaSup[i].getManoDer().toString());
+                }
+                
+                if(listaSup[i].getInventario() == null || listaSup[i].getInventario().length == 0) {
+                    L_ConfirmacionInventario.setText("No tiene");
+                } else {
+                    for(int j=0; j<listaSup[i].getInventario().length; j++) {
+                        L_ConfirmacionInventario.setText("No tiene 2");
+                        if(listaSup[i].getInventario()[j] != null) {
+                            L_ConfirmacionInventario.setText(listaSup[i].getInventario()[j].toString() + "\n");
+                        }
+                        
+                    }
+                }
+
+            }
         }
     }
     
@@ -1127,7 +1258,15 @@ public class J_Tablero extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton B_Salir;
+    private javax.swing.JLabel L_ConfirmacionArmaDcha;
+    private javax.swing.JLabel L_ConfirmacionArmaIzq;
+    private javax.swing.JLabel L_ConfirmacionInventario;
+    private javax.swing.JLabel L_Inventario;
     private javax.swing.JLabel L_LogoURJC;
+    private javax.swing.JLabel L_ManoDerecha;
+    private javax.swing.JLabel L_ManoIzquierda;
+    private javax.swing.JLabel L_NombreSuperviviente;
+    private javax.swing.JPanel P_MostrarInformacionSuperviviente;
     private javax.swing.JButton b00;
     private javax.swing.JButton b01;
     private javax.swing.JButton b02;
