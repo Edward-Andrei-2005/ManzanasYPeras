@@ -1126,11 +1126,10 @@ public class J_Tablero extends javax.swing.JFrame {
                     L_ConfirmacionArmaDcha.setText(listaSup[i].getManoDer().toString());
                 }
                 
-                if(listaSup[i].getInventario() == null || listaSup[i].getInventario().length == 0) {
+                if(listaSup[i].inventarioVacio()) {
                     L_ConfirmacionInventario.setText("No tiene");
                 } else {
                     for(int j=0; j<listaSup[i].getInventario().length; j++) {
-                        L_ConfirmacionInventario.setText("No tiene 2");
                         if(listaSup[i].getInventario()[j] != null) {
                             L_ConfirmacionInventario.setText(listaSup[i].getInventario()[j].toString() + "\n");
                         }
