@@ -2,8 +2,8 @@ package apoocalipsis;
 
 public class Corredor extends Zombi {
     //Atributos
-    protected static final int AGUANTE = 1;
-    protected static final int ACTIVACIONES = 2;
+    private static final int AGUANTE = 1;
+    private static final int ACTIVACIONES = 2;
     //Constructores
     public Corredor() {
         super(AGUANTE, ACTIVACIONES);

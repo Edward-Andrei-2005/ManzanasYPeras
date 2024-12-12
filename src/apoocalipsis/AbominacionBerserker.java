@@ -6,6 +6,6 @@ public class AbominacionBerserker extends Abominacion {
     }
     
     public boolean esMatable(Arma a) {
-        return a.getPotencia() >= AGUANTE && a.getAlcance() == 0;
+        return a.getPotencia() >= getAguante() && a.getAlcance() == 0;
     }
 }

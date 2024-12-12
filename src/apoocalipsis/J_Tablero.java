@@ -14,6 +14,7 @@ public class J_Tablero extends javax.swing.JFrame {
     
     private int estadoMover;
     private int estadoAtacar;
+    private int estadoCambiarArma;
     
     private Casilla auxCasilla;
     private String [] listaNombres; // = {"Edward", "Manu", "Anass", "ChatGPT"};
@@ -178,9 +179,13 @@ public class J_Tablero extends javax.swing.JFrame {
         L_ManoIzquierda = new javax.swing.JLabel();
         L_ManoDerecha = new javax.swing.JLabel();
         L_Inventario = new javax.swing.JLabel();
-        L_ConfirmacionArmaIzq = new javax.swing.JLabel();
-        L_ConfirmacionArmaDcha = new javax.swing.JLabel();
-        L_ConfirmacionInventario = new javax.swing.JLabel();
+        bManoIzq = new javax.swing.JButton();
+        bManoDer = new javax.swing.JButton();
+        bInv1 = new javax.swing.JButton();
+        bInv2 = new javax.swing.JButton();
+        bInv3 = new javax.swing.JButton();
+        bInv4 = new javax.swing.JButton();
+        bInv5 = new javax.swing.JButton();
         B_Salir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -685,8 +690,6 @@ public class J_Tablero extends javax.swing.JFrame {
                 .addGap(134, 134, 134))
         );
 
-        P_MostrarInformacionSuperviviente.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
         L_NombreSuperviviente.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         L_NombreSuperviviente.setForeground(new java.awt.Color(7, 33, 68));
         L_NombreSuperviviente.setText("NombreSuperviviente");
@@ -703,24 +706,31 @@ public class J_Tablero extends javax.swing.JFrame {
         L_Inventario.setForeground(new java.awt.Color(7, 33, 68));
         L_Inventario.setText("Inventario:");
 
-        L_ConfirmacionArmaIzq.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        L_ConfirmacionArmaIzq.setForeground(new java.awt.Color(7, 33, 68));
-        L_ConfirmacionArmaIzq.setText("ArmaIzq");
+        bManoIzq.setText("jButton1");
 
-        L_ConfirmacionArmaDcha.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        L_ConfirmacionArmaDcha.setForeground(new java.awt.Color(7, 33, 68));
-        L_ConfirmacionArmaDcha.setText("ArmaDcha");
+        bManoDer.setText("jButton1");
 
-        L_ConfirmacionInventario.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        L_ConfirmacionInventario.setForeground(new java.awt.Color(7, 33, 68));
-        L_ConfirmacionInventario.setText("Inventario");
+        bInv1.setText("jButton1");
+        bInv1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bInv1ActionPerformed(evt);
+            }
+        });
+
+        bInv2.setText("jButton2");
+
+        bInv3.setText("jButton3");
+
+        bInv4.setText("jButton4");
+
+        bInv5.setText("jButton5");
 
         javax.swing.GroupLayout P_MostrarInformacionSupervivienteLayout = new javax.swing.GroupLayout(P_MostrarInformacionSuperviviente);
         P_MostrarInformacionSuperviviente.setLayout(P_MostrarInformacionSupervivienteLayout);
         P_MostrarInformacionSupervivienteLayout.setHorizontalGroup(
             P_MostrarInformacionSupervivienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P_MostrarInformacionSupervivienteLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(0, 154, Short.MAX_VALUE)
                 .addComponent(L_NombreSuperviviente)
                 .addGap(140, 140, 140))
             .addGroup(P_MostrarInformacionSupervivienteLayout.createSequentialGroup()
@@ -728,41 +738,53 @@ public class J_Tablero extends javax.swing.JFrame {
                     .addGroup(P_MostrarInformacionSupervivienteLayout.createSequentialGroup()
                         .addGap(14, 14, 14)
                         .addGroup(P_MostrarInformacionSupervivienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(P_MostrarInformacionSupervivienteLayout.createSequentialGroup()
-                                .addComponent(L_ManoDerecha)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(L_ConfirmacionArmaDcha, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(P_MostrarInformacionSupervivienteLayout.createSequentialGroup()
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, P_MostrarInformacionSupervivienteLayout.createSequentialGroup()
                                 .addComponent(L_ManoIzquierda)
                                 .addGap(18, 18, 18)
-                                .addComponent(L_ConfirmacionArmaIzq, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(bManoIzq))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, P_MostrarInformacionSupervivienteLayout.createSequentialGroup()
+                                .addComponent(L_ManoDerecha)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(bManoDer))))
                     .addGroup(P_MostrarInformacionSupervivienteLayout.createSequentialGroup()
                         .addGap(13, 13, 13)
-                        .addComponent(L_Inventario)
-                        .addGap(61, 61, 61)
-                        .addComponent(L_ConfirmacionInventario, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(83, Short.MAX_VALUE))
+                        .addGroup(P_MostrarInformacionSupervivienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(bInv1)
+                            .addComponent(L_Inventario)
+                            .addComponent(bInv2)
+                            .addComponent(bInv3)
+                            .addComponent(bInv4)
+                            .addComponent(bInv5))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         P_MostrarInformacionSupervivienteLayout.setVerticalGroup(
             P_MostrarInformacionSupervivienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(P_MostrarInformacionSupervivienteLayout.createSequentialGroup()
                 .addComponent(L_NombreSuperviviente, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(P_MostrarInformacionSupervivienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(P_MostrarInformacionSupervivienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(P_MostrarInformacionSupervivienteLayout.createSequentialGroup()
                         .addGap(58, 58, 58)
-                        .addGroup(P_MostrarInformacionSupervivienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(L_ConfirmacionArmaDcha)
-                            .addComponent(L_ManoDerecha)))
+                        .addComponent(L_ManoDerecha))
                     .addGroup(P_MostrarInformacionSupervivienteLayout.createSequentialGroup()
                         .addGap(12, 12, 12)
                         .addGroup(P_MostrarInformacionSupervivienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(L_ConfirmacionArmaIzq)
-                            .addComponent(L_ManoIzquierda))))
-                .addGap(140, 140, 140)
-                .addGroup(P_MostrarInformacionSupervivienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(L_Inventario)
-                    .addComponent(L_ConfirmacionInventario, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(224, Short.MAX_VALUE))
+                            .addComponent(L_ManoIzquierda)
+                            .addComponent(bManoIzq))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(bManoDer)))
+                .addGap(144, 144, 144)
+                .addComponent(L_Inventario)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(bInv1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(bInv2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(bInv3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(bInv4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(bInv5)
+                .addContainerGap(79, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -772,13 +794,14 @@ public class J_Tablero extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(P_MostrarInformacionSuperviviente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(P_MostrarInformacionSuperviviente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -981,6 +1004,7 @@ public class J_Tablero extends javax.swing.JFrame {
     private void bAtaqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAtaqueActionPerformed
         estadoAtacar = 1;
         estadoMover = 0;
+        estadoCambiarArma = 0;
     }//GEN-LAST:event_bAtaqueActionPerformed
 
     private void bBuscarEquipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBuscarEquipoActionPerformed
@@ -995,8 +1019,14 @@ public class J_Tablero extends javax.swing.JFrame {
     }//GEN-LAST:event_bBuscarEquipoActionPerformed
 
     private void bCambiarArmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCambiarArmaActionPerformed
-        // TODO add your handling code here:
+        estadoAtacar = 0;
+        estadoMover = 0;
+        estadoCambiarArma = 1;
     }//GEN-LAST:event_bCambiarArmaActionPerformed
+
+    private void bInv1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bInv1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bInv1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1041,9 +1071,9 @@ public class J_Tablero extends javax.swing.JFrame {
         juego.asignarSupervivientesPosicionInicial(listaNombres);
         juego.generarZombisInicio();
         turnoJuego = 0;
-        turnosRestantesSuperviviente = juego.NUM_TURNOS_SUPERVIVIENTES;
+        turnosRestantesSuperviviente = juego.getTurnosSupervivientes();
         actualizarListaSupervivientes();
-        imprimirInformacionSuperviviente(listaNombres[turnoJuego]); //Imprimo la información del primer superviviente justo cuando se actualiza su información
+        imprimirInformacionSuperviviente(); //Imprimo la información del primer superviviente justo cuando se actualiza su información
         actualizarBotones();
     }
     
@@ -1076,10 +1106,10 @@ public class J_Tablero extends javax.swing.JFrame {
         if (turnoJuego == listaNombres.length - 1 && turnosRestantesSuperviviente == 1) { 
             juego.turnoZombis();
             juego.generarNuevoZombi();
-            turnosRestantesSuperviviente = juego.NUM_TURNOS_SUPERVIVIENTES;
+            turnosRestantesSuperviviente = juego.getTurnosSupervivientes();
             siguienteTurnoJuego();
         } else if (turnosRestantesSuperviviente == 1) { // Cuando un superviviente agota sus turnos, se reinicia el contador para el siguiente
-            turnosRestantesSuperviviente = juego.NUM_TURNOS_SUPERVIVIENTES;
+            turnosRestantesSuperviviente = juego.getTurnosSupervivientes();
             siguienteTurnoJuego();
         } else {
             turnosRestantesSuperviviente--;
@@ -1106,39 +1136,33 @@ public class J_Tablero extends javax.swing.JFrame {
             turnoJuego++;
         }
 
-        imprimirInformacionSuperviviente(listaNombres[turnoJuego]);
+        imprimirInformacionSuperviviente();
     }
     
-     private void imprimirInformacionSuperviviente(String nombreSuperviviente) {
-        for(int i = 0; i < listaSup.length; i++) {
-            if(nombreSuperviviente.equals(listaSup[i].getNombre())) {
-                L_NombreSuperviviente.setText(listaSup[i].getNombre());
+    private void imprimirInformacionSuperviviente() {
+        L_NombreSuperviviente.setText(listaSup[turnoJuego].getNombre());
+        //Si no tiene mano izquierda/derecha imprimirmos "No tiene"
+        if(listaSup[turnoJuego].getManoIzq() == null) {
+            bManoIzq.setText("No tiene");
+        } else {
+            bManoIzq.setText(listaSup[turnoJuego].getManoIzq().toString());
+        }
 
-                // Si no tiene mano izquierda/derecha imprimimos "No tiene"
-                if(listaSup[i].getManoIzq() == null) {
-                    L_ConfirmacionArmaIzq.setText("No tiene");
-                } else {
-                    L_ConfirmacionArmaIzq.setText(listaSup[i].getManoIzq().toString());
+        if(listaSup[turnoJuego].getManoDer() == null) {
+            bManoDer.setText("No tiene");
+        } else {
+            bManoDer.setText(listaSup[turnoJuego].getManoDer().toString());
+        }
+
+        if(listaSup[turnoJuego].getInventario() == null || listaSup[turnoJuego].getInventario().length == 0) {
+            L_ConfirmacionInventario.setText("No tiene");
+        } else {
+            for(int j=0; j<listaSup[turnoJuego].getInventario().length; j++) {
+                L_ConfirmacionInventario.setText("No tiene 2");
+                if(listaSup[turnoJuego].getInventario()[j] != null) {
+                    L_ConfirmacionInventario.setText(listaSup[turnoJuego].getInventario()[j].toString() + "\n");
                 }
 
-                if(listaSup[i].getManoDer() == null) {
-                    L_ConfirmacionArmaDcha.setText("No tiene");
-                } else {
-                    L_ConfirmacionArmaDcha.setText(listaSup[i].getManoDer().toString());
-                }
-
-                // Para el inventario, acumulamos los ítems en una variable StringBuilder
-                StringBuilder inventarioText = new StringBuilder();
-                if(listaSup[i].inventarioVacio()) {
-                    L_ConfirmacionInventario.setText("No tiene");
-                } else {
-                    for(int j = 0; j < listaSup[i].getInventario().length; j++) {
-                        if(listaSup[i].getInventario()[j] != null) {
-                            inventarioText.append(listaSup[i].getInventario()[j].toString()).append("\n");
-                        }                
-                    }
-                    L_ConfirmacionInventario.setText(inventarioText.toString());
-                }
             }
         }
     }
@@ -1259,9 +1283,6 @@ public class J_Tablero extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton B_Salir;
-    private javax.swing.JLabel L_ConfirmacionArmaDcha;
-    private javax.swing.JLabel L_ConfirmacionArmaIzq;
-    private javax.swing.JLabel L_ConfirmacionInventario;
     private javax.swing.JLabel L_Inventario;
     private javax.swing.JLabel L_LogoURJC;
     private javax.swing.JLabel L_ManoDerecha;
@@ -1371,6 +1392,13 @@ public class J_Tablero extends javax.swing.JFrame {
     private javax.swing.JButton bAtaque;
     private javax.swing.JButton bBuscarEquipo;
     private javax.swing.JButton bCambiarArma;
+    private javax.swing.JButton bInv1;
+    private javax.swing.JButton bInv2;
+    private javax.swing.JButton bInv3;
+    private javax.swing.JButton bInv4;
+    private javax.swing.JButton bInv5;
+    private javax.swing.JButton bManoDer;
+    private javax.swing.JButton bManoIzq;
     private javax.swing.JButton bMoverse;
     private javax.swing.JButton bNada;
     private javax.swing.JLabel estadoJuego;

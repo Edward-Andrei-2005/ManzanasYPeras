@@ -2,8 +2,8 @@ package apoocalipsis;
 
 public class Abominacion extends Zombi {
     //Atributos
-    protected static final int AGUANTE = 3;
-    protected static final int ACTIVACIONES = 1;
+    private static final int AGUANTE = 3;
+    private static final int ACTIVACIONES = 1;
     
     //Constructores
     public Abominacion() {

@@ -20,7 +20,7 @@ public class Juego {
     
     private static final int NUM_ZOMBIS_INICIO = 3;
     private static final int NUM_ZOMBIS_NUEVOS_POR_TURNO = 1;
-    public static final int NUM_TURNOS_SUPERVIVIENTES = 3; //¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡CAMBIAR A 3!!!!!!!!!!!!!!!!!
+    private static final int NUM_TURNOS_SUPERVIVIENTES = 3; //¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡CAMBIAR A 3!!!!!!!!!!!!!!!!!
     
     private static final int PROBABILIDAD_CAMINANTE = 6; // 60%
     private static final int PROBABILIDAD_CORREDOR = 9; // 30%
@@ -41,6 +41,10 @@ public class Juego {
     
     public Equipo buscarEquipo(Superviviente s) {
         return buscarCasillaOrigen(s).buscarEquipo(s);
+    }
+    
+    public int getTurnosSupervivientes() {
+        return NUM_TURNOS_SUPERVIVIENTES;
     }
     
     // Metodo que gestiona todo el ciclo de una partida

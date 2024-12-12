@@ -7,6 +7,6 @@ public class CorredorBerserker extends Corredor {
     }
     
     public boolean esMatable(Arma a) {
-        return (a.getPotencia() >= AGUANTE) && (a.getAlcance() == 0);
+        return (a.getPotencia() >= getAguante()) && (a.getAlcance() == 0);
     }
 }
