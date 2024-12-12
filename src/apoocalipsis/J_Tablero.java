@@ -15,6 +15,9 @@ public class J_Tablero extends javax.swing.JFrame {
     private int estadoMover;
     private int estadoAtacar;
     private int estadoCambiarArma;
+    private int estadoInfo;
+    
+    private Arma armaAux;
     
     private Casilla auxCasilla;
     private String [] listaNombres; // = {"Edward", "Manu", "Anass", "ChatGPT"};
@@ -169,6 +172,7 @@ public class J_Tablero extends javax.swing.JFrame {
         bAtaque = new javax.swing.JButton();
         bBuscarEquipo = new javax.swing.JButton();
         bCambiarArma = new javax.swing.JButton();
+        bInfo = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         nombreSuperviviente1 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -626,6 +630,13 @@ public class J_Tablero extends javax.swing.JFrame {
             }
         });
 
+        bInfo.setText("Info en...");
+        bInfo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bInfoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -641,7 +652,9 @@ public class J_Tablero extends javax.swing.JFrame {
                 .addComponent(bBuscarEquipo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(bCambiarArma)
-                .addContainerGap(103, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(bInfo)
+                .addContainerGap(22, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -652,7 +665,8 @@ public class J_Tablero extends javax.swing.JFrame {
                     .addComponent(bMoverse)
                     .addComponent(bAtaque)
                     .addComponent(bBuscarEquipo)
-                    .addComponent(bCambiarArma))
+                    .addComponent(bCambiarArma)
+                    .addComponent(bInfo))
                 .addContainerGap(50, Short.MAX_VALUE))
         );
 
@@ -707,8 +721,18 @@ public class J_Tablero extends javax.swing.JFrame {
         L_Inventario.setText("Inventario:");
 
         bManoIzq.setText("jButton1");
+        bManoIzq.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bManoIzqActionPerformed(evt);
+            }
+        });
 
         bManoDer.setText("jButton1");
+        bManoDer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bManoDerActionPerformed(evt);
+            }
+        });
 
         bInv1.setText("jButton1");
         bInv1.addActionListener(new java.awt.event.ActionListener() {
@@ -718,12 +742,32 @@ public class J_Tablero extends javax.swing.JFrame {
         });
 
         bInv2.setText("jButton2");
+        bInv2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bInv2ActionPerformed(evt);
+            }
+        });
 
         bInv3.setText("jButton3");
+        bInv3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bInv3ActionPerformed(evt);
+            }
+        });
 
         bInv4.setText("jButton4");
+        bInv4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bInv4ActionPerformed(evt);
+            }
+        });
 
         bInv5.setText("jButton5");
+        bInv5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bInv5ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout P_MostrarInformacionSupervivienteLayout = new javax.swing.GroupLayout(P_MostrarInformacionSuperviviente);
         P_MostrarInformacionSuperviviente.setLayout(P_MostrarInformacionSupervivienteLayout);
@@ -881,7 +925,9 @@ public class J_Tablero extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                .addGap(29, 29, 29))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addGap(38, 38, 38)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1025,8 +1071,120 @@ public class J_Tablero extends javax.swing.JFrame {
     }//GEN-LAST:event_bCambiarArmaActionPerformed
 
     private void bInv1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bInv1ActionPerformed
-        // TODO add your handling code here:
+        if (estadoInfo == 1) {
+            J_Info panel = new J_Info();
+            panel.setVisible(true);
+            if (listaSup[turnoJuego].getInvSig() >= 1) {
+                Equipo e = listaSup[turnoJuego].getInventario()[0];
+                panel.setInfo(e.toString());
+            } else {
+                panel.setInfo("Hueco vacio");
+            }
+        } else if (estadoCambiarArma == 1) {
+            if (listaSup[turnoJuego].getInvSig() >= 1) {
+                Equipo e = listaSup[turnoJuego].getInventario()[0];
+                if (e instanceof Arma) {
+                    estadoCambiarArma = 2;
+                    armaAux = (Arma) e;
+                    narradorJuego.setText(((Arma) e).toString() + " seleccionada");
+                } else {
+                    narradorJuego.setText("Eso no es un arma");
+                }
+            } else {
+                narradorJuego.setText("Ese hueco esta vacio");
+            }
+        }
     }//GEN-LAST:event_bInv1ActionPerformed
+
+    private void bInv2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bInv2ActionPerformed
+        if (estadoCambiarArma == 1) {
+            if (listaSup[turnoJuego].getInvSig() >= 2) {
+                Equipo e = listaSup[turnoJuego].getInventario()[1];
+                if (e instanceof Arma) {
+                    estadoCambiarArma = 2;
+                    armaAux = (Arma) e;
+                    narradorJuego.setText(((Arma) e).toString() + " seleccionada");
+                } else {
+                    narradorJuego.setText("Eso no es un arma");
+                }
+            } else {
+                narradorJuego.setText("Ese hueco esta vacio");
+            }
+        }
+    }//GEN-LAST:event_bInv2ActionPerformed
+
+    private void bInv3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bInv3ActionPerformed
+        if (estadoCambiarArma == 1) {
+            if (listaSup[turnoJuego].getInvSig() >= 3) {
+                Equipo e = listaSup[turnoJuego].getInventario()[2];
+                if (e instanceof Arma) {
+                    estadoCambiarArma = 2;
+                    armaAux = (Arma) e;
+                    narradorJuego.setText(((Arma) e).toString() + " seleccionada");
+                } else {
+                    narradorJuego.setText("Eso no es un arma");
+                }
+            } else {
+                narradorJuego.setText("Ese hueco esta vacio");
+            }
+        }
+    }//GEN-LAST:event_bInv3ActionPerformed
+
+    private void bInv4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bInv4ActionPerformed
+        if (estadoCambiarArma == 1) {
+            if (listaSup[turnoJuego].getInvSig() >= 4) {
+                Equipo e = listaSup[turnoJuego].getInventario()[3];
+                if (e instanceof Arma) {
+                    estadoCambiarArma = 2;
+                    armaAux = (Arma) e;
+                    narradorJuego.setText(((Arma) e).toString() + " seleccionada");
+                } else {
+                    narradorJuego.setText("Eso no es un arma");
+                }
+            } else {
+                narradorJuego.setText("Ese hueco esta vacio");
+            }
+        }
+    }//GEN-LAST:event_bInv4ActionPerformed
+
+    private void bInv5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bInv5ActionPerformed
+        if (estadoCambiarArma == 1) {
+            if (listaSup[turnoJuego].getInvSig() >= 5) {
+                Equipo e = listaSup[turnoJuego].getInventario()[4];
+                if (e instanceof Arma) {
+                    estadoCambiarArma = 2;
+                    armaAux = (Arma) e;
+                    narradorJuego.setText(((Arma) e).toString() + " seleccionada");
+                } else {
+                    narradorJuego.setText("Eso no es un arma");
+                }
+            } else {
+                narradorJuego.setText("Ese hueco esta vacio");
+            }
+        }
+    }//GEN-LAST:event_bInv5ActionPerformed
+
+    private void bManoIzqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bManoIzqActionPerformed
+        if (estadoCambiarArma == 2) {
+            listaSup[turnoJuego].elegirArma(armaAux, true);
+            actualizarPartida();
+            estadoCambiarArma = 0;
+            narradorJuego.setText(armaAux.toString() + " en mano izquierda");
+        }
+    }//GEN-LAST:event_bManoIzqActionPerformed
+
+    private void bManoDerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bManoDerActionPerformed
+        if (estadoCambiarArma == 2) {
+            listaSup[turnoJuego].elegirArma(armaAux, false);
+            actualizarPartida();
+            estadoCambiarArma = 0;
+            narradorJuego.setText(armaAux.toString() + " en mano derecha");
+        }
+    }//GEN-LAST:event_bManoDerActionPerformed
+
+    private void bInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bInfoActionPerformed
+        estadoInfo = 1;
+    }//GEN-LAST:event_bInfoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1061,7 +1219,6 @@ public class J_Tablero extends javax.swing.JFrame {
             public void run() {
                 J_Tablero tablero = new J_Tablero(nombres);
                 tablero.setVisible(true);
-                tablero.actualizarPartida();
                 tablero.iniciarPartida();
             }
         });
@@ -1082,8 +1239,8 @@ public class J_Tablero extends javax.swing.JFrame {
         
         siguienteAccion();
         actualizarBotones();
+        imprimirInformacionSuperviviente();
         haTerminadoPartida();
-        System.out.println(turnoJuego +", "+ turnosRestantesSuperviviente +", " + estadoMover);
     }
     
     private void haTerminadoPartida() {
@@ -1118,12 +1275,12 @@ public class J_Tablero extends javax.swing.JFrame {
     }
     
     private String ponerTexto(Casilla c) {
-        if (c.hayAlgunSupervivienteVivo()) {
-            return "S";
+        if (c.hayAlgunSupervivienteVivo() && c.hayAlgunZombi()) {
+            return "/";
         } else if (c.hayAlgunZombi()) {
             return "Z";
-        } else if (c.hayAlgunSupervivienteVivo() && c.hayAlgunZombi()) {
-            return "/";
+        } else if (c.hayAlgunSupervivienteVivo()) {
+            return "S";
         } else {
             return "";
         }
@@ -1136,11 +1293,11 @@ public class J_Tablero extends javax.swing.JFrame {
             turnoJuego++;
         }
 
-        imprimirInformacionSuperviviente();
+        //imprimirInformacionSuperviviente();
     }
     
     private void imprimirInformacionSuperviviente() {
-        L_NombreSuperviviente.setText(listaSup[turnoJuego].getNombre());
+        L_NombreSuperviviente.setText(listaNombres[turnoJuego]);
         //Si no tiene mano izquierda/derecha imprimirmos "No tiene"
         if(listaSup[turnoJuego].getManoIzq() == null) {
             bManoIzq.setText("No tiene");
@@ -1153,8 +1310,22 @@ public class J_Tablero extends javax.swing.JFrame {
         } else {
             bManoDer.setText(listaSup[turnoJuego].getManoDer().toString());
         }
+        
+        // Mostramos el inventario del superviviente
+        // Este codigo esta ligado al numero de botones que hay en la UI y al numero de huecos de inventario del superviviente (5 en este caso)
+        // Ampliar o reducir este numero de huecos es tan facil como añadir o borrar un boton y su respectiva linea de codigo
+        bInv1.setText("Hueco vacio");
+        bInv2.setText("Hueco vacio");
+        bInv3.setText("Hueco vacio");
+        bInv4.setText("Hueco vacio");
+        bInv5.setText("Hueco vacio");
+        if (listaSup[turnoJuego].getInvSig() >= 1)      bInv1.setText(listaSup[turnoJuego].getInventario()[0].toString());
+        if (listaSup[turnoJuego].getInvSig() >= 2)      bInv2.setText(listaSup[turnoJuego].getInventario()[1].toString());
+        if (listaSup[turnoJuego].getInvSig() >= 3)      bInv3.setText(listaSup[turnoJuego].getInventario()[2].toString());
+        if (listaSup[turnoJuego].getInvSig() >= 4)      bInv4.setText(listaSup[turnoJuego].getInventario()[3].toString());
+        if (listaSup[turnoJuego].getInvSig() >= 5)      bInv5.setText(listaSup[turnoJuego].getInventario()[4].toString());
 
-        if(listaSup[turnoJuego].getInventario() == null || listaSup[turnoJuego].getInventario().length == 0) {
+        /*if(listaSup[turnoJuego].getInventario() == null || listaSup[turnoJuego].getInventario().length == 0) {
             L_ConfirmacionInventario.setText("No tiene");
         } else {
             for(int j=0; j<listaSup[turnoJuego].getInventario().length; j++) {
@@ -1164,7 +1335,7 @@ public class J_Tablero extends javax.swing.JFrame {
                 }
 
             }
-        }
+        }*/
     }
     
     private void actualizarBotones() {
@@ -1392,6 +1563,7 @@ public class J_Tablero extends javax.swing.JFrame {
     private javax.swing.JButton bAtaque;
     private javax.swing.JButton bBuscarEquipo;
     private javax.swing.JButton bCambiarArma;
+    private javax.swing.JButton bInfo;
     private javax.swing.JButton bInv1;
     private javax.swing.JButton bInv2;
     private javax.swing.JButton bInv3;

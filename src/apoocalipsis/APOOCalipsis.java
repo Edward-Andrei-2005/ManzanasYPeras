@@ -7,7 +7,11 @@ public class APOOCalipsis {
      */
     public static void main(String[] args) {
         Juego miJuego = new Juego();
-        miJuego.leerPartida();
+        String[] s = {"Edward", "Manu"};
+        miJuego.asignarSupervivientesPosicionInicial(s);
+        System.out.println(miJuego.getSuperviviente("Edward").getManoDer());
+        
+        //miJuego.leerPartida();
         //String [] nombres = {"Edward", "Anass", "Manuel", "Robert", "Paco"};
         //miJuego.hacerPartida(nombres);
         

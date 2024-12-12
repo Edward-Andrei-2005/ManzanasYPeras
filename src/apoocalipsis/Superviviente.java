@@ -40,6 +40,10 @@ public class Superviviente extends EntidadActivable {
     public Equipo[] getInventario() {
         return inventario;
     }
+    
+    public int getInvSig() {
+        return siguiente;
+    }
 
     public int getHeridas() {
         return heridas;
