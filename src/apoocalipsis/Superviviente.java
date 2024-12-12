@@ -44,10 +44,6 @@ public class Superviviente extends EntidadActivable {
     public int getHeridas() {
         return heridas;
     }
-
-    public int getLongitudInventario() {
-        return inventario.length;
-    }
     
     public void setEstado(boolean estado) {
         this.estado = estado;
