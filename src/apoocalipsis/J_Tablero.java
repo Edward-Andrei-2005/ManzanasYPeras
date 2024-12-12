@@ -1109,34 +1109,36 @@ public class J_Tablero extends javax.swing.JFrame {
         imprimirInformacionSuperviviente(listaNombres[turnoJuego]);
     }
     
-    private void imprimirInformacionSuperviviente(String nombreSuperviviente) {
-        for(int i=0; i<listaSup.length; i++) {
+     private void imprimirInformacionSuperviviente(String nombreSuperviviente) {
+        for(int i = 0; i < listaSup.length; i++) {
             if(nombreSuperviviente.equals(listaSup[i].getNombre())) {
                 L_NombreSuperviviente.setText(listaSup[i].getNombre());
-                //Si no tiene mano izquierda/derecha imprimirmos "No tiene"
+
+                // Si no tiene mano izquierda/derecha imprimimos "No tiene"
                 if(listaSup[i].getManoIzq() == null) {
                     L_ConfirmacionArmaIzq.setText("No tiene");
                 } else {
                     L_ConfirmacionArmaIzq.setText(listaSup[i].getManoIzq().toString());
                 }
-                
+
                 if(listaSup[i].getManoDer() == null) {
                     L_ConfirmacionArmaDcha.setText("No tiene");
                 } else {
                     L_ConfirmacionArmaDcha.setText(listaSup[i].getManoDer().toString());
                 }
-                
+
+                // Para el inventario, acumulamos los ítems en una variable StringBuilder
+                StringBuilder inventarioText = new StringBuilder();
                 if(listaSup[i].inventarioVacio()) {
                     L_ConfirmacionInventario.setText("No tiene");
                 } else {
-                    for(int j=0; j<listaSup[i].getInventario().length; j++) {
+                    for(int j = 0; j < listaSup[i].getInventario().length; j++) {
                         if(listaSup[i].getInventario()[j] != null) {
-                            L_ConfirmacionInventario.setText(listaSup[i].getInventario()[j].toString() + "\n");
-                        }
-                        
+                            inventarioText.append(listaSup[i].getInventario()[j].toString()).append("\n");
+                        }                
                     }
+                    L_ConfirmacionInventario.setText(inventarioText.toString());
                 }
-
             }
         }
     }
