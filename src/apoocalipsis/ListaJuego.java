@@ -34,14 +34,16 @@ public class ListaJuego {
         }
     }
     
-    public void leerFichero() {
+    public ArrayList<Juego> leerFichero() {
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("APOOCalipsis.dat"))) {
             
             listaJuegos = (ArrayList<Juego>) ois.readObject();
             System.out.println("\n***Tablero leido correctamente***\n");
             listaJuegos.get(listaJuegos.size() - 1).dibujarTableroConNumeros(); //Imprime el ultimo juego guardado
+            return listaJuegos;
         } catch (IOException | ClassNotFoundException e) {
             System.err.println("Error al leer el tablero: " + e.getMessage());
+            return null;
         }
     }
 }
