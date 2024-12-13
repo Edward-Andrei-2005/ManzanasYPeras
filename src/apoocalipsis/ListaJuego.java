@@ -27,7 +27,7 @@ public class ListaJuego {
         
         // Guardar la lista de empleados en un archivo binario
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(archivo))) {
-            oos.writeObject(listaJuegos); // Serializa la lista de empleados
+            oos.writeObject(listaJuegos); // Serializa 
             System.out.println("\n***Tablero guardado correctamente***\n");
         } catch (IOException e) {
             System.err.println("Error al guardar el tablero: " + e.getMessage());
