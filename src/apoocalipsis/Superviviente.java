@@ -166,6 +166,34 @@ public class Superviviente extends EntidadActivable {
         return nombre.equals(s.getNombre());
     }
     
+    public String getInfo() {
+        String salud;
+        if (estaHerido()) {
+            salud = "Esta herido";
+        } else {
+            salud = "Esta sano";
+        }
+        
+        String armas;
+        if (manoIzq==null && manoDer==null) {
+            armas = "No tiene armas equipadas";
+        } else if (manoIzq!=null && manoDer!=null) {
+            armas = "Mano Izquierda: " + manoIzq.getInfo() + "\n\tMano Derecha: " + manoDer.getInfo();
+        } else if (manoIzq!=null) {
+            armas = "Mano Izquierda: " + manoIzq.getInfo();
+        } else {
+            armas = "Mano Derecha: " + manoDer.getInfo();
+        }
+        
+        String provision;
+        if (tieneProvision()) {
+            provision = "Tiene provision";
+        } else {
+            provision = "No tiene provision";
+        }
+        return "Superviviente " + nombre + "\n\t" + salud + "\n\t" + armas + "\n\t" + provision;
+    }
+    
     /*@Override
     public String toString() {
         return nombre + "\n" +

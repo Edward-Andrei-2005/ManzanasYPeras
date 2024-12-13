@@ -5,4 +5,8 @@ public class CorredorToxico extends Corredor {
     public CorredorToxico() {
         super();
     }
+    
+    public String getInfo() {
+        return "Corredor:\n\tAguante: " + getAguante() + "\n\tActivaciones: "+ getActivaciones();
+    }
 }

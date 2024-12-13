@@ -202,6 +202,23 @@ public class Casilla implements Serializable {
         return lista;
     }
     
+    public String getInfo() {
+        String s;
+        if (quedaEquipo) {
+            s = "< Queda equipo >\n\n";
+        } else {
+            s = "< No queda equipo >\n\n";
+        }
+        
+        if (listaEntidades.isEmpty()) return s + "Casilla vacia";
+        
+        for (EntidadActivable e : listaEntidades) {
+            s += e.getInfo() + "\n";
+        }
+        
+        return s;
+    }
+    
     @Override
     public boolean equals(Object o) {
         if (o == null) return false;

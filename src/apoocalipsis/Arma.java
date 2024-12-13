@@ -50,6 +50,10 @@ public class Arma extends Equipo {
         return VALORES_DADO[(int) (Math.random() * VALORES_DADO.length)];
     }
     
+    public String getInfo() {
+        return nombre + " | Potencia: " + potencia + " | Alcance: " + alcance;
+    }
+    
     // HAY QUE AÑADIR UN ID
     @Override
     public boolean equals(Object o) {
@@ -62,6 +66,6 @@ public class Arma extends Equipo {
     
     @Override
     public String toString() {
-        return "Tipo: " + getNombre() + "\tPotencia: " +getPotencia();
+        return getNombre();
     }
 }

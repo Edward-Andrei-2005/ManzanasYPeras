@@ -12,4 +12,8 @@ public class Corredor extends Zombi {
     public boolean esMatable(Arma a) {
         return (a.getPotencia() >= AGUANTE);
     }
+    
+    public String getInfo() {
+        return "Corredor:\n\tAguante: " + getAguante() + "\n\tActivaciones: "+ getActivaciones();
+    }
 }

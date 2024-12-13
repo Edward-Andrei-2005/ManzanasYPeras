@@ -57,7 +57,7 @@ public abstract class Zombi extends EntidadActivable {
             return (a.getPotencia() >= aguante);
         }*/
         
-    
+    public abstract String getInfo();
     
     @Override
     public String toString() {

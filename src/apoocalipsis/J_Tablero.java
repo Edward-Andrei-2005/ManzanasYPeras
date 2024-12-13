@@ -981,7 +981,10 @@ public class J_Tablero extends javax.swing.JFrame {
     private void b00ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b00ActionPerformed
         Casilla c = juego.getCasilla(0,0);
         
-        if (estadoMover == 1) {
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
             if (juego.moverse(c, listaSup[turnoJuego])) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
@@ -1022,7 +1025,10 @@ public class J_Tablero extends javax.swing.JFrame {
     private void b01ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b01ActionPerformed
         Casilla c = juego.getCasilla(0,1);
         
-        if (estadoMover == 1) {
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
             if (juego.moverse(c, listaSup[turnoJuego])) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
@@ -1036,7 +1042,10 @@ public class J_Tablero extends javax.swing.JFrame {
     private void b02ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b02ActionPerformed
         Casilla c = juego.getCasilla(0,2);
         
-        if (estadoMover == 1) {
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
             if (juego.moverse(c, listaSup[turnoJuego])) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
@@ -1051,6 +1060,7 @@ public class J_Tablero extends javax.swing.JFrame {
         estadoAtacar = 1;
         estadoMover = 0;
         estadoCambiarArma = 0;
+        estadoInfo = 0;
     }//GEN-LAST:event_bAtaqueActionPerformed
 
     private void bBuscarEquipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBuscarEquipoActionPerformed
@@ -1068,18 +1078,18 @@ public class J_Tablero extends javax.swing.JFrame {
         estadoAtacar = 0;
         estadoMover = 0;
         estadoCambiarArma = 1;
+        estadoInfo = 0;
     }//GEN-LAST:event_bCambiarArmaActionPerformed
 
     private void bInv1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bInv1ActionPerformed
         if (estadoInfo == 1) {
-            J_Info panel = new J_Info();
-            panel.setVisible(true);
             if (listaSup[turnoJuego].getInvSig() >= 1) {
                 Equipo e = listaSup[turnoJuego].getInventario()[0];
-                panel.setInfo(e.toString());
+                mostrarPanelInfo("Posicion 1 Inventario", e.getInfo());
             } else {
-                panel.setInfo("Hueco vacio");
+                mostrarPanelInfo("Posicion 1 Inventario", "Hueco vacio");
             }
+            estadoInfo = 0;
         } else if (estadoCambiarArma == 1) {
             if (listaSup[turnoJuego].getInvSig() >= 1) {
                 Equipo e = listaSup[turnoJuego].getInventario()[0];
@@ -1097,7 +1107,15 @@ public class J_Tablero extends javax.swing.JFrame {
     }//GEN-LAST:event_bInv1ActionPerformed
 
     private void bInv2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bInv2ActionPerformed
-        if (estadoCambiarArma == 1) {
+        if (estadoInfo == 1) {
+            if (listaSup[turnoJuego].getInvSig() >= 2) {
+                Equipo e = listaSup[turnoJuego].getInventario()[1];
+                mostrarPanelInfo("Posicion 2 Inventario", e.getInfo());
+            } else {
+                mostrarPanelInfo("Posicion 2 Inventario", "Hueco vacio");
+            }
+            estadoInfo = 0;
+        } else if (estadoCambiarArma == 1) {
             if (listaSup[turnoJuego].getInvSig() >= 2) {
                 Equipo e = listaSup[turnoJuego].getInventario()[1];
                 if (e instanceof Arma) {
@@ -1114,7 +1132,15 @@ public class J_Tablero extends javax.swing.JFrame {
     }//GEN-LAST:event_bInv2ActionPerformed
 
     private void bInv3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bInv3ActionPerformed
-        if (estadoCambiarArma == 1) {
+        if (estadoInfo == 1) {
+            if (listaSup[turnoJuego].getInvSig() >= 3) {
+                Equipo e = listaSup[turnoJuego].getInventario()[2];
+                mostrarPanelInfo("Posicion 3 Inventario", e.getInfo());
+            } else {
+                mostrarPanelInfo("Posicion 3 Inventario", "Hueco vacio");
+            }
+            estadoInfo = 0;
+        } else if (estadoCambiarArma == 1) {
             if (listaSup[turnoJuego].getInvSig() >= 3) {
                 Equipo e = listaSup[turnoJuego].getInventario()[2];
                 if (e instanceof Arma) {
@@ -1131,7 +1157,15 @@ public class J_Tablero extends javax.swing.JFrame {
     }//GEN-LAST:event_bInv3ActionPerformed
 
     private void bInv4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bInv4ActionPerformed
-        if (estadoCambiarArma == 1) {
+        if (estadoInfo == 1) {
+            if (listaSup[turnoJuego].getInvSig() >= 4) {
+                Equipo e = listaSup[turnoJuego].getInventario()[3];
+                mostrarPanelInfo("Posicion 4 Inventario", e.getInfo());
+            } else {
+                mostrarPanelInfo("Posicion 4 Inventario", "Hueco vacio");
+            }
+            estadoInfo = 0;
+        } else if (estadoCambiarArma == 1) {
             if (listaSup[turnoJuego].getInvSig() >= 4) {
                 Equipo e = listaSup[turnoJuego].getInventario()[3];
                 if (e instanceof Arma) {
@@ -1148,7 +1182,15 @@ public class J_Tablero extends javax.swing.JFrame {
     }//GEN-LAST:event_bInv4ActionPerformed
 
     private void bInv5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bInv5ActionPerformed
-        if (estadoCambiarArma == 1) {
+        if (estadoInfo == 1) {
+            if (listaSup[turnoJuego].getInvSig() >= 5) {
+                Equipo e = listaSup[turnoJuego].getInventario()[4];
+                mostrarPanelInfo("Posicion 5 Inventario", e.getInfo());
+            } else {
+                mostrarPanelInfo("Posicion 5 Inventario", "Hueco vacio");
+            }
+            estadoInfo = 0;
+        } else if (estadoCambiarArma == 1) {
             if (listaSup[turnoJuego].getInvSig() >= 5) {
                 Equipo e = listaSup[turnoJuego].getInventario()[4];
                 if (e instanceof Arma) {
@@ -1184,6 +1226,9 @@ public class J_Tablero extends javax.swing.JFrame {
 
     private void bInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bInfoActionPerformed
         estadoInfo = 1;
+        estadoMover = 0;
+        estadoAtacar = 0;
+        estadoCambiarArma = 0;
     }//GEN-LAST:event_bInfoActionPerformed
 
     /**
@@ -1272,6 +1317,12 @@ public class J_Tablero extends javax.swing.JFrame {
             turnosRestantesSuperviviente--;
         }
         System.out.println(turnosRestantesSuperviviente);
+    }
+    
+    private void mostrarPanelInfo(String titulo, String texto) {
+        J_Info panel = new J_Info();
+        panel.setInfo(texto);
+        JOptionPane.showConfirmDialog(this, panel, titulo, JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
     }
     
     private String ponerTexto(Casilla c) {

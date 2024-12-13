@@ -9,4 +9,8 @@ public class CaminanteBerserker extends Caminante {
     public boolean esMatable(Arma a) {
         return (a.getPotencia() >= getAguante()) && (a.getAlcance() == 0);
     }
+    
+    public String getInfo() {
+        return "Caminante Berserker:\n\tAguante: " + getAguante() + "\n\tActivaciones: "+ getActivaciones();
+    }
 }

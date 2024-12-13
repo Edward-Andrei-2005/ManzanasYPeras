@@ -21,8 +21,12 @@ public class Provision extends Equipo {
     public int getValorEnergetico() { return valorEnergetico; }
     public int getCaducidad() { return caducidad; }
     
+    public String getInfo() {
+        return toString();
+    }
+    
     @Override
     public String toString() {
-        return "Tipo: " + getNombre();
+        return getNombre();
     }
 }

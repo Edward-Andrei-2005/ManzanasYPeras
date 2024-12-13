@@ -12,4 +12,8 @@ public class Caminante extends Zombi {
     public boolean esMatable(Arma a) {
         return a.getPotencia() >= AGUANTE;
     }
+    
+    public String getInfo() {
+        return "Caminante:\n\tAguante: " + getAguante() + "\n\tActivaciones: "+ getActivaciones();
+    }
 }
