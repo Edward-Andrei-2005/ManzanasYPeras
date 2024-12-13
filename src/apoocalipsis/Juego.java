@@ -5,10 +5,11 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Juego {
+public class Juego implements Serializable{
     private boolean turno; // true = turno del superviviente, false = turno del zombi
     private Casilla[][] dimension; // Representación del tablero del juego como matriz de casillas
 
@@ -57,6 +58,7 @@ public class Juego {
             turnoZombis();
             generarNuevoZombi();
             
+            
         } while (!hayAlgunSupervivienteMuerto() && !hanGanadoSupervivientes(listaNombres));
         return true;
     }
@@ -73,7 +75,7 @@ public class Juego {
         return null;
     }
     
-    private boolean turnoSupervivientes(String [] listaS) {
+    public boolean turnoSupervivientes(String [] listaS) {
         for(int λ=0; λ<listaS.length; λ++) {
             boolean encontrado = false;
             for(int φ=0; φ<TAM_X; φ++) {
@@ -158,7 +160,6 @@ public class Juego {
             }
         }
     }
-    guardarPartida();
     return true;
     }
     
@@ -287,7 +288,6 @@ public class Juego {
                 case 1: // No hacer nada
                     turnos--;
                     System.out.println("Tienes " + turnos + " turnos\n\n");
-                    guardarPartida();
                     break;
                 case 2: // Moverse
                     int xDestino, yDestino;
@@ -322,7 +322,6 @@ public class Juego {
                     System.out.println("Tienes " + turnos + " turnos");
                     System.out.println("Te has movido a la casilla: " +destino.toString());
                     System.out.println();
-                    guardarPartida();
                     break;
 
                 case 3: // Atacar
@@ -373,7 +372,6 @@ public class Juego {
                     
                     turnos--;
                     System.out.println("Tienes " + turnos + " turnos\n\n");
-                    guardarPartida();
                     break;
 
                 case 4: // Buscar equipo
@@ -393,7 +391,6 @@ public class Juego {
                         System.out.println("No has encontrado nada.");
                     }
                     System.out.println("Tienes " + turnos + " turnos\n\n");
-                    guardarPartida();
                     break;
 
                 case 5: // Cambiar arma
@@ -435,7 +432,6 @@ public class Juego {
                     
                     // QUITAR ESTE COMENTARIO turnos--;
                     System.out.println("Tienes " + turnos + " turnos\n\n");
-                    guardarPartida();
                     break;
 
                 default:
@@ -727,29 +723,5 @@ public class Juego {
         s.sumarZombisKO(zombisAEliminar.size());
 
         return !zombisAEliminar.isEmpty();
-    }
-    
-    public void guardarPartida() {
-        // Nombre del archivo binario
-        String archivo = "APOOCalipsis.dat";
-        
-        // Guardar la lista de empleados en un archivo binario
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(archivo))) {
-            oos.writeObject(dimension); // Serializa la lista de empleados
-            System.out.println("\n***Tablero guardado correctamente***\n");
-        } catch (IOException e) {
-            System.err.println("Error al guardar el tablero: " + e.getMessage());
-        }
-    }
-    
-    public void leerPartida() {
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("APOOCalipsis.dat"))) {
-            
-            dimension = (Casilla[][]) ois.readObject();
-            System.out.println("\n***Tablero leido correctamente***\n");
-            dibujarTableroConNumeros();
-        } catch (IOException | ClassNotFoundException e) {
-            System.err.println("Error al leer el tablero: " + e.getMessage());
-        }
     }
 }
