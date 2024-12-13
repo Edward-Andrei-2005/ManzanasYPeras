@@ -58,7 +58,6 @@ public class Juego implements Serializable {
             turnoZombis();
             generarNuevoZombi();
             
-            
         } while (!hayAlgunSupervivienteMuerto() && !hanGanadoSupervivientes(listaNombres));
         return true;
     }
