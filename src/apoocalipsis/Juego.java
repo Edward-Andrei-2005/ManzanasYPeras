@@ -9,7 +9,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Juego implements Serializable{
+public class Juego implements Serializable {
     private boolean turno; // true = turno del superviviente, false = turno del zombi
     private Casilla[][] dimension; // Representación del tablero del juego como matriz de casillas
 
