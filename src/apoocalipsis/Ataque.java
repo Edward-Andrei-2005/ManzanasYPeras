@@ -1,5 +1,4 @@
 package apoocalipsis;
-
 import java.io.Serializable;
 
 public class Ataque implements Serializable {

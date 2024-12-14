@@ -369,7 +369,7 @@ public class Juego implements Serializable {
                     } while (xObjetivo < 0 || xObjetivo >= TAM_X || yObjetivo < 0 || yObjetivo >= TAM_Y || !buscarCasillaOrigen(s).esAdyacente(dimension[xObjetivo][yObjetivo]));
 
                     // Llamar al método generarAtaque
-                    generarAtaque(s, izq, dimension[xObjetivo][yObjetivo]);
+                    //generarAtaque(s, izq, dimension[xObjetivo][yObjetivo]);
                     
                     
                     turnos--;
@@ -609,15 +609,7 @@ public class Juego implements Serializable {
     }
 
     
-    public boolean generarAtaque(Superviviente s, boolean izq, Casilla objetivo) {
-        Arma a;
-        try {
-            a = elegirArma(s, izq); // Intenta elegir el arma del superviviente
-        } catch (Exception e) {
-            System.err.println("ElegirArma devuelve null"); // Maneja el caso de arma no encontrada
-            return false; // Ataque falla si no hay arma
-        }
-
+    public boolean generarAtaque(Superviviente s, Arma a, Casilla objetivo) {
         Casilla origen = buscarCasillaOrigen(s); // Encuentra la posición del superviviente
 
         if (!seleccionarObjetivo(origen, a, objetivo)) { // Comprueba si el objetivo está en el rango del arma
@@ -626,7 +618,7 @@ public class Juego implements Serializable {
         }
         
         int dados[] = lanzarDados(a);
-        int exitos = evaluarExito(lanzarDados(a), a); // Calcula los éxitos del ataque basados en los dados
+        int exitos = evaluarExito(dados, a); // Calcula los éxitos del ataque basados en los dados
         
         Ataque ataque = new Ataque(s, a, dados, exitos, objetivo);
         listaAtaques.add(ataque);
@@ -681,7 +673,6 @@ public class Juego implements Serializable {
 
     private boolean resolverAtaque(Arma a, Casilla destino, int exitos, Superviviente s) {
         // Elimina los zombis en la casilla objetivo si el número de éxitos es suficiente
-        
         return eliminarZombis(a, exitos, s, destino);
     }
     
@@ -729,6 +720,6 @@ public class Juego implements Serializable {
         // Actualizamos la lista de zombis eliminados por el superviviente
         s.sumarZombisKO(zombisAEliminar.size());
 
-        return !zombisAEliminar.isEmpty();
+        return true;  // Cabmiar el true si sale mal a: !zombisAEliminar.isEmpty()
     }
 }

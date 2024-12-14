@@ -19,7 +19,6 @@ public class J_Tablero extends javax.swing.JFrame {
     
     private Arma armaAux;
     
-    private Casilla auxCasilla;
     private String [] listaNombres; // = {"Edward", "Manu", "Anass", "ChatGPT"};
     private Superviviente [] listaSup;
     
@@ -992,6 +991,14 @@ public class J_Tablero extends javax.swing.JFrame {
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
         }
     }//GEN-LAST:event_b00ActionPerformed
 
@@ -1036,6 +1043,14 @@ public class J_Tablero extends javax.swing.JFrame {
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
         }
     }//GEN-LAST:event_b01ActionPerformed
 
@@ -1052,6 +1067,14 @@ public class J_Tablero extends javax.swing.JFrame {
                 actualizarPartida();
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            }
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
         }
     }//GEN-LAST:event_b02ActionPerformed
@@ -1212,6 +1235,14 @@ public class J_Tablero extends javax.swing.JFrame {
             actualizarPartida();
             estadoCambiarArma = 0;
             narradorJuego.setText(armaAux.toString() + " en mano izquierda");
+        } else if (estadoAtacar == 1) {
+            if (listaSup[turnoJuego].getManoIzq() != null) {
+                armaAux = listaSup[turnoJuego].getManoIzq();
+                estadoAtacar = 2;
+                narradorJuego.setText(armaAux.toString() + " seleccionada para atacar");
+            } else {
+                narradorJuego.setText("No se puede elegir arma para atacar");
+            }
         }
     }//GEN-LAST:event_bManoIzqActionPerformed
 
@@ -1221,6 +1252,14 @@ public class J_Tablero extends javax.swing.JFrame {
             actualizarPartida();
             estadoCambiarArma = 0;
             narradorJuego.setText(armaAux.toString() + " en mano derecha");
+        } else if (estadoAtacar == 1) {
+            if (listaSup[turnoJuego].getManoDer() != null) {
+                armaAux = listaSup[turnoJuego].getManoDer();
+                estadoAtacar = 2;
+                narradorJuego.setText(armaAux.toString() + " seleccionada para atacar");
+            } else {
+                narradorJuego.setText("No se puede elegir arma para atacar");
+            }
         }
     }//GEN-LAST:event_bManoDerActionPerformed
 
