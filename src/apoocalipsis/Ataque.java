@@ -16,6 +16,7 @@ public class Ataque implements Serializable {
         this.numeroExito = numeroExito;
         casillaDestino = dest;
     }
+   
     @Override
     public String toString() {
         return ("****" + superviviente.getNombre() + "****\n" + superviviente.getInfo() + "\nArma usada: " +arma);
