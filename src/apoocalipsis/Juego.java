@@ -25,6 +25,8 @@ public class Juego implements Serializable {
     
     private static final int PROBABILIDAD_CAMINANTE = 6; // 60%
     private static final int PROBABILIDAD_CORREDOR = 9; // 30%
+    
+    private ArrayList<Ataque> listaAtaques;
 
     public Juego() {
         dimension = new Casilla[TAM_X][TAM_Y]; // Inicializa el tablero con casillas vacías
@@ -34,6 +36,7 @@ public class Juego implements Serializable {
             }
         }
         turno = true;
+        listaAtaques = new ArrayList<>();
     }
     
     public Casilla getCasilla(int i, int j) {
@@ -622,7 +625,11 @@ public class Juego implements Serializable {
             return false;
         }
         
+        int dados[] = lanzarDados(a);
         int exitos = evaluarExito(lanzarDados(a), a); // Calcula los éxitos del ataque basados en los dados
+        
+        Ataque ataque = new Ataque(s, a, dados, exitos, objetivo);
+        listaAtaques.add(ataque);
         
         return resolverAtaque(a, objetivo, exitos, s); // Resuelve el ataque eliminando enemigos si aplica
     }
@@ -674,6 +681,7 @@ public class Juego implements Serializable {
 
     private boolean resolverAtaque(Arma a, Casilla destino, int exitos, Superviviente s) {
         // Elimina los zombis en la casilla objetivo si el número de éxitos es suficiente
+        
         return eliminarZombis(a, exitos, s, destino);
     }
     
