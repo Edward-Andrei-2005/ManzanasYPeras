@@ -1,4 +1,5 @@
 package apoocalipsis;
+import java.util.ArrayList;
 import java.util.Arrays;
 import javax.swing.JOptionPane;
 import java.util.Timer;
@@ -9,7 +10,7 @@ public class J_InterfazGrafica extends javax.swing.JFrame {
     private ListaJuego arrayDeJuegos;
     private ArrayList<Ataque> listaAtaques;
     private static final int TAM = 4;
-
+    
     //Constructores
     public J_InterfazGrafica() {
         initComponents();
@@ -44,6 +45,7 @@ public class J_InterfazGrafica extends javax.swing.JFrame {
         L_LogoETSII = new javax.swing.JLabel();
         O_Simular_Acciones = new javax.swing.JRadioButton();
         B_Salir = new javax.swing.JButton();
+        O_Historial = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -109,6 +111,16 @@ public class J_InterfazGrafica extends javax.swing.JFrame {
             }
         });
 
+        G_Inicio.add(O_Historial);
+        O_Historial.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        O_Historial.setForeground(new java.awt.Color(7, 33, 68));
+        O_Historial.setText("Consultar historial");
+        O_Historial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                O_HistorialActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -116,51 +128,50 @@ public class J_InterfazGrafica extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addComponent(L_LogoETSII)
+                .addGap(116, 116, 116)
+                .addComponent(L_APOOCALIPSIS, javax.swing.GroupLayout.PREFERRED_SIZE, 579, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(B_Salir))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 319, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(L_Inicio, javax.swing.GroupLayout.PREFERRED_SIZE, 966, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(286, 286, 286))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(L_APOOCALIPSIS, javax.swing.GroupLayout.PREFERRED_SIZE, 579, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(448, 448, 448))))
+                .addComponent(B_Salir)
+                .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(684, 684, 684)
+                .addComponent(B_Jugar)
+                .addContainerGap(686, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(L_Inicio, javax.swing.GroupLayout.PREFERRED_SIZE, 966, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(265, 265, 265))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(576, 576, 576)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(O_Retomar_Partida_Empezada)
-                            .addComponent(O_Crear_Nueva_Partida)
-                            .addComponent(O_Simular_Acciones, javax.swing.GroupLayout.PREFERRED_SIZE, 466, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(662, 662, 662)
-                        .addComponent(B_Jugar)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(O_Retomar_Partida_Empezada)
+                    .addComponent(O_Crear_Nueva_Partida)
+                    .addComponent(O_Simular_Acciones, javax.swing.GroupLayout.PREFERRED_SIZE, 466, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(O_Historial))
+                .addGap(495, 495, 495))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(L_LogoETSII))
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(L_LogoETSII)
+                        .addComponent(L_APOOCALIPSIS, javax.swing.GroupLayout.Alignment.TRAILING))
                     .addComponent(B_Salir))
-                .addGap(17, 17, 17)
-                .addComponent(L_APOOCALIPSIS)
-                .addGap(49, 49, 49)
+                .addGap(45, 45, 45)
                 .addComponent(L_Inicio, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
+                .addGap(28, 28, 28)
                 .addComponent(O_Retomar_Partida_Empezada)
                 .addGap(18, 18, 18)
                 .addComponent(O_Crear_Nueva_Partida)
                 .addGap(18, 18, 18)
                 .addComponent(O_Simular_Acciones, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(O_Historial)
+                .addGap(44, 44, 44)
                 .addComponent(B_Jugar)
-                .addGap(38, 38, 38))
+                .addContainerGap(64, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -186,7 +197,7 @@ public class J_InterfazGrafica extends javax.swing.JFrame {
     }//GEN-LAST:event_O_Crear_Nueva_PartidaActionPerformed
 
     private void B_JugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_JugarActionPerformed
-if (O_Retomar_Partida_Empezada.isSelected()) {
+        if (O_Retomar_Partida_Empezada.isSelected()) {
             // Lógica para retomar partida empezada
             JOptionPane.showMessageDialog(this, "Retomando partida empezada...");
         } else if (O_Crear_Nueva_Partida.isSelected()) { // Crear nueva partida
@@ -324,12 +335,12 @@ if (O_Retomar_Partida_Empezada.isSelected()) {
         
         } else if (O_Historial.isSelected()) {
             J_Info panel = new J_Info();
-            String ataques = null;
+            String ataques = "";
             
             for(Ataque a : listaAtaques) {
                 ataques += a.toString();
             }
-            if(ataques == null) {
+            if(ataques.equals("")) {
                 panel.setInfo("No hay información");
             } else {
                 panel.setInfo(ataques);
@@ -359,6 +370,10 @@ if (O_Retomar_Partida_Empezada.isSelected()) {
             System.exit(0);
         }
     }//GEN-LAST:event_B_SalirActionPerformed
+
+    private void O_HistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_O_HistorialActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_O_HistorialActionPerformed
 
     /**
      * @param args the command line arguments
@@ -403,6 +418,7 @@ if (O_Retomar_Partida_Empezada.isSelected()) {
     private javax.swing.JLabel L_Inicio;
     private javax.swing.JLabel L_LogoETSII;
     private javax.swing.JRadioButton O_Crear_Nueva_Partida;
+    private javax.swing.JRadioButton O_Historial;
     private javax.swing.JRadioButton O_Retomar_Partida_Empezada;
     private javax.swing.JRadioButton O_Simular_Acciones;
     private javax.swing.JPanel jPanel1;
