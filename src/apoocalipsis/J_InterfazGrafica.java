@@ -5,13 +5,24 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class J_InterfazGrafica extends javax.swing.JFrame {
-
-    /**
-     * Creates new form InterfazGrafica
-     */
+    //Atributos
+    private ListaJuego arrayDeJuegos;
+    private ArrayList<Ataque> listaAtaques;
     private static final int TAM = 4;
+
+    //Constructores
     public J_InterfazGrafica() {
         initComponents();
+        arrayDeJuegos = new ListaJuego();
+        listaAtaques = new ArrayList<>();
+        //Leemos el fichero para guardar la lista de partidas en arrayDeJuegos
+        arrayDeJuegos.leerFichero();
+        //Iteramos dentro de cada array de Juegos, y en cada uno, su array de ataques y los guardamos en listaAtaques
+        for(Juego j : arrayDeJuegos.getListaJuegos()) {
+            for(Ataque a : j.getListaAtaques()) {
+                listaAtaques.add(a);
+            }
+        }
     }
     
     /**
@@ -175,14 +186,14 @@ public class J_InterfazGrafica extends javax.swing.JFrame {
     }//GEN-LAST:event_O_Crear_Nueva_PartidaActionPerformed
 
     private void B_JugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_JugarActionPerformed
-        if (O_Retomar_Partida_Empezada.isSelected()) {
+if (O_Retomar_Partida_Empezada.isSelected()) {
             // Lógica para retomar partida empezada
             JOptionPane.showMessageDialog(this, "Retomando partida empezada...");
         } else if (O_Crear_Nueva_Partida.isSelected()) { // Crear nueva partida
-            /*J_FotoJuego ventanaFotoJuego = new J_FotoJuego();
+            J_FotoJuego ventanaFotoJuego = new J_FotoJuego();
             ventanaFotoJuego.setVisible(true);
             
-            Timer timer = new Timer();
+            /*Timer timer = new Timer();
             TimerTask tarea = new TimerTask() {
                 @Override
                 public void run() {
@@ -271,50 +282,64 @@ public class J_InterfazGrafica extends javax.swing.JFrame {
 
         //Llamada a main
 
-    } else if (O_Simular_Acciones.isSelected()) {
-        J_ConfirmacionAcciones ventanaConfirmacion = new J_ConfirmacionAcciones();
-        boolean aux = false;
-        String [] nombresPrueba = {"Prueba"};
-        do {
-            int opcion = JOptionPane.showConfirmDialog(this, ventanaConfirmacion, 
-                                                                "Fase de Selección de Acciones",
-                                                                JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
-            if (opcion == JOptionPane.OK_OPTION) {
-                // Si confirma, pasa al tablero
-                if (ventanaConfirmacion.obtenerSeleccionado().equals("Buscar Equipo")) {
-                    J_Tablero ventanaTablero = new J_Tablero(nombresPrueba);
-                    ventanaTablero.setVisible(true); // Mostrar ventana de tablero
-                    this.setVisible(false);
-                    aux = true; // Salir del ciclo y finalizar
-                    
-                } else if(ventanaConfirmacion.obtenerSeleccionado().equals("Activación Zombi")) {
-                    J_Tablero ventanaTablero = new J_Tablero(nombresPrueba);
-                    ventanaTablero.setVisible(true); // Mostrar ventana de tablero
-                    this.setVisible(false);
-                    aux = true; // Salir del ciclo y finalizar
-                    
-                } else if(ventanaConfirmacion.obtenerSeleccionado().equals("Ataque Superviviente a Zombi")) {
-                    J_Tablero ventanaTablero = new J_Tablero(nombresPrueba);
-                    ventanaTablero.setVisible(true); // Mostrar ventana de tablero
-                    this.setVisible(false);
-                    return; // Salir del ciclo y finalizar
-                    
+        } else if (O_Simular_Acciones.isSelected()) {
+            J_ConfirmacionAcciones ventanaConfirmacion = new J_ConfirmacionAcciones();
+            boolean aux = false;
+            String [] nombresPrueba = {"Prueba"};
+            do {
+                int opcion = JOptionPane.showConfirmDialog(this, ventanaConfirmacion, 
+                                                                    "Fase de Selección de Acciones",
+                                                                    JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
+                if (opcion == JOptionPane.OK_OPTION) {
+                    // Si confirma, pasa al tablero
+                    if (ventanaConfirmacion.obtenerSeleccionado().equals("Buscar Equipo")) {
+                        J_Tablero ventanaTablero = new J_Tablero(nombresPrueba);
+                        ventanaTablero.setVisible(true); // Mostrar ventana de tablero
+                        this.setVisible(false);
+                        aux = true; // Salir del ciclo y finalizar
+
+                    } else if(ventanaConfirmacion.obtenerSeleccionado().equals("Activación Zombi")) {
+                        J_Tablero ventanaTablero = new J_Tablero(nombresPrueba);
+                        ventanaTablero.setVisible(true); // Mostrar ventana de tablero
+                        this.setVisible(false);
+                        aux = true; // Salir del ciclo y finalizar
+
+                    } else if(ventanaConfirmacion.obtenerSeleccionado().equals("Ataque Superviviente a Zombi")) {
+                        J_Tablero ventanaTablero = new J_Tablero(nombresPrueba);
+                        ventanaTablero.setVisible(true); // Mostrar ventana de tablero
+                        this.setVisible(false);
+                        return; // Salir del ciclo y finalizar
+
+                    } else {
+                        // Si cancela en la confirmación, volver al nombramiento
+                        JOptionPane.showMessageDialog(this,"Por favor, selecciona una opción.",
+                                                                  "Información", JOptionPane.INFORMATION_MESSAGE);
+                    }
                 } else {
-                    // Si cancela en la confirmación, volver al nombramiento
-                    JOptionPane.showMessageDialog(this,"Por favor, selecciona una opción.",
-                                                              "Información", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(this, "Creación de nueva partida cancelada.", 
+                                                          "Información", JOptionPane.INFORMATION_MESSAGE);
+                    aux = true;
                 }
-            } else {
-                JOptionPane.showMessageDialog(this, "Creación de nueva partida cancelada.", 
-                                                      "Información", JOptionPane.INFORMATION_MESSAGE);
-                aux = true;
-            }
-        } while(!aux);
+            } while(!aux);
         
-    } else {
-        // Si no hay opción seleccionada, muestra un mensaje
-        JOptionPane.showMessageDialog(this, "Por favor, selecciona una opción antes de jugar.");
-    }
+        } else if (O_Historial.isSelected()) {
+            J_Info panel = new J_Info();
+            String ataques = null;
+            
+            for(Ataque a : listaAtaques) {
+                ataques += a.toString();
+            }
+            if(ataques == null) {
+                panel.setInfo("No hay información");
+            } else {
+                panel.setInfo(ataques);
+            }
+            JOptionPane.showConfirmDialog(this, panel, "Historial de Ataques", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
+            //JOptionPane.showMessageDialog(this, "Mostrando historial...");
+        } else {
+            // Si no hay opción seleccionada, muestra un mensaje
+            JOptionPane.showMessageDialog(this, "Por favor, selecciona una opción antes de jugar.");
+        }
     }//GEN-LAST:event_B_JugarActionPerformed
 
     private void O_Simular_AccionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_O_Simular_AccionesActionPerformed
