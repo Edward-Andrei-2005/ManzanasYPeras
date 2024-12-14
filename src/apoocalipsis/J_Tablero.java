@@ -224,294 +224,779 @@ public class J_Tablero extends javax.swing.JFrame {
         jPanel1.add(b02);
 
         b03.setText("jButton2");
+        b03.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b03ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b03);
 
         b04.setText("jButton4");
+        b04.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b04ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b04);
 
         b05.setText("jButton10");
+        b05.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b05ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b05);
 
         b06.setText("jButton9");
+        b06.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b06ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b06);
 
         b07.setText("jButton13");
+        b07.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b07ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b07);
 
         b08.setText("jButton8");
+        b08.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b08ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b08);
 
         b09.setText("jButton1");
+        b09.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b09ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b09);
 
         b10.setText("jButton20");
+        b10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b10ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b10);
 
         b11.setText("jButton5");
+        b11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b11ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b11);
 
         b12.setText("jButton19");
+        b12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b12ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b12);
 
         b13.setText("jButton17");
+        b13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b13ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b13);
 
         b14.setText("jButton21");
+        b14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b14ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b14);
 
         b15.setText("jButton23");
+        b15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b15ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b15);
 
         b16.setText("jButton3");
+        b16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b16ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b16);
 
         b17.setText("jButton30");
+        b17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b17ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b17);
 
         b18.setText("jButton28");
+        b18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b18ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b18);
 
         b19.setText("jButton43");
+        b19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b19ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b19);
 
         b20.setText("jButton46");
+        b20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b20ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b20);
 
         b21.setText("jButton38");
+        b21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b21ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b21);
 
         b22.setText("jButton59");
+        b22.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b22ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b22);
 
         b23.setText("jButton60");
+        b23.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b23ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b23);
 
         b24.setText("jButton57");
+        b24.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b24ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b24);
 
         b25.setText("jButton69");
+        b25.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b25ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b25);
 
         b26.setText("jButton58");
+        b26.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b26ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b26);
 
         b27.setText("jButton68");
+        b27.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b27ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b27);
 
         b28.setText("jButton63");
+        b28.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b28ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b28);
 
         b29.setText("jButton67");
+        b29.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b29ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b29);
 
         b30.setText("jButton79");
+        b30.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b30ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b30);
 
         b31.setText("jButton73");
+        b31.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b31ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b31);
 
         b32.setText("jButton76");
+        b32.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b32ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b32);
 
         b33.setText("jButton72");
+        b33.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b33ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b33);
 
         b34.setText("jButton71");
+        b34.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b34ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b34);
 
         b35.setText("jButton81");
+        b35.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b35ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b35);
 
         b36.setText("jButton93");
+        b36.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b36ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b36);
 
         b37.setText("jButton66");
+        b37.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b37ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b37);
 
         b38.setText("jButton92");
+        b38.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b38ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b38);
 
         b39.setText("jButton64");
+        b39.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b39ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b39);
 
         b40.setText("jButton80");
+        b40.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b40ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b40);
 
         b41.setText("jButton37");
+        b41.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b41ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b41);
 
         b42.setText("jButton70");
+        b42.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b42ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b42);
 
         b43.setText("jButton74");
+        b43.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b43ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b43);
 
         b44.setText("jButton77");
+        b44.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b44ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b44);
 
         b45.setText("jButton89");
+        b45.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b45ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b45);
 
         b46.setText("jButton94");
+        b46.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b46ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b46);
 
         b47.setText("jButton100");
+        b47.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b47ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b47);
 
         b48.setText("jButton95");
+        b48.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b48ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b48);
 
         b49.setText("jButton99");
+        b49.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b49ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b49);
 
         b50.setText("jButton98");
+        b50.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b50ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b50);
 
         b51.setText("jButton75");
+        b51.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b51ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b51);
 
         b52.setText("jButton82");
+        b52.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b52ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b52);
 
         b53.setText("jButton61");
+        b53.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b53ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b53);
 
         b54.setText("jButton54");
+        b54.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b54ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b54);
 
         b55.setText("jButton56");
+        b55.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b55ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b55);
 
         b56.setText("jButton36");
+        b56.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b56ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b56);
 
         b57.setText("jButton50");
+        b57.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b57ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b57);
 
         b58.setText("jButton85");
+        b58.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b58ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b58);
 
         b59.setText("jButton78");
+        b59.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b59ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b59);
 
         b60.setText("jButton97");
+        b60.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b60ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b60);
 
         b61.setText("jButton90");
+        b61.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b61ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b61);
 
         b62.setText("jButton96");
+        b62.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b62ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b62);
 
         b63.setText("jButton86");
+        b63.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b63ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b63);
 
         b64.setText("jButton88");
+        b64.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b64ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b64);
 
         b65.setText("jButton65");
+        b65.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b65ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b65);
 
         b66.setText("jButton91");
+        b66.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b66ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b66);
 
         b67.setText("jButton84");
+        b67.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b67ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b67);
 
         b68.setText("jButton62");
+        b68.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b68ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b68);
 
         b69.setText("jButton48");
+        b69.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b69ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b69);
 
         b70.setText("jButton32");
+        b70.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b70ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b70);
 
         b71.setText("jButton45");
+        b71.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b71ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b71);
 
         b72.setText("jButton55");
+        b72.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b72ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b72);
 
         b73.setText("jButton87");
+        b73.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b73ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b73);
 
         b74.setText("jButton52");
+        b74.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b74ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b74);
 
         b75.setText("jButton53");
+        b75.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b75ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b75);
 
         b76.setText("jButton44");
+        b76.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b76ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b76);
 
         b77.setText("jButton51");
+        b77.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b77ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b77);
 
         b78.setText("jButton39");
+        b78.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b78ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b78);
 
         b79.setText("jButton83");
+        b79.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b79ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b79);
 
         b80.setText("jButton49");
+        b80.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b80ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b80);
 
         b81.setText("jButton12");
+        b81.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b81ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b81);
 
         b82.setText("jButton47");
+        b82.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b82ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b82);
 
         b83.setText("jButton25");
+        b83.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b83ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b83);
 
         b84.setText("jButton29");
+        b84.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b84ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b84);
 
         b85.setText("jButton24");
+        b85.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b85ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b85);
 
         b86.setText("jButton42");
+        b86.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b86ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b86);
 
         b87.setText("jButton40");
+        b87.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b87ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b87);
 
         b88.setText("jButton41");
+        b88.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b88ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b88);
 
         b89.setText("jButton27");
+        b89.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b89ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b89);
 
         b90.setText("jButton26");
+        b90.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b90ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b90);
 
         b91.setText("jButton16");
+        b91.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b91ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b91);
 
         b92.setText("jButton35");
+        b92.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b92ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b92);
 
         b93.setText("jButton33");
+        b93.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b93ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b93);
 
         b94.setText("jButton18");
+        b94.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b94ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b94);
 
         b95.setText("jButton14");
+        b95.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b95ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b95);
 
         b96.setText("jButton31");
+        b96.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b96ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b96);
 
         b97.setText("jButton34");
+        b97.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b97ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b97);
 
         b98.setText("jButton22");
+        b98.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b98ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b98);
 
         b99.setText("jButton11");
+        b99.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b99ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b99);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
@@ -1269,6 +1754,2431 @@ public class J_Tablero extends javax.swing.JFrame {
         estadoAtacar = 0;
         estadoCambiarArma = 0;
     }//GEN-LAST:event_bInfoActionPerformed
+
+    private void b03ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b03ActionPerformed
+        Casilla c = juego.getCasilla(0,3);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b03ActionPerformed
+
+    private void b04ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b04ActionPerformed
+        Casilla c = juego.getCasilla(0,4);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b04ActionPerformed
+
+    private void b05ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b05ActionPerformed
+        Casilla c = juego.getCasilla(0,5);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b05ActionPerformed
+
+    private void b06ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b06ActionPerformed
+        Casilla c = juego.getCasilla(0,6);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b06ActionPerformed
+
+    private void b07ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b07ActionPerformed
+        Casilla c = juego.getCasilla(0,7);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b07ActionPerformed
+
+    private void b08ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b08ActionPerformed
+        Casilla c = juego.getCasilla(0,8);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b08ActionPerformed
+
+    private void b09ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b09ActionPerformed
+        Casilla c = juego.getCasilla(0,9);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b09ActionPerformed
+
+    private void b10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b10ActionPerformed
+        Casilla c = juego.getCasilla(1,0);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b10ActionPerformed
+
+    private void b11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b11ActionPerformed
+        Casilla c = juego.getCasilla(1,1);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b11ActionPerformed
+
+    private void b12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b12ActionPerformed
+        Casilla c = juego.getCasilla(1,2);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b12ActionPerformed
+
+    private void b13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b13ActionPerformed
+        Casilla c = juego.getCasilla(1,3);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b13ActionPerformed
+
+    private void b14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b14ActionPerformed
+        Casilla c = juego.getCasilla(1,4);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b14ActionPerformed
+
+    private void b15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b15ActionPerformed
+        Casilla c = juego.getCasilla(1,5);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b15ActionPerformed
+
+    private void b16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b16ActionPerformed
+        Casilla c = juego.getCasilla(1,6);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b16ActionPerformed
+
+    private void b17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b17ActionPerformed
+        Casilla c = juego.getCasilla(1,7);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b17ActionPerformed
+
+    private void b18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b18ActionPerformed
+        Casilla c = juego.getCasilla(1,8);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b18ActionPerformed
+
+    private void b19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b19ActionPerformed
+        Casilla c = juego.getCasilla(1,9);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b19ActionPerformed
+
+    private void b20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b20ActionPerformed
+        Casilla c = juego.getCasilla(2,0);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b20ActionPerformed
+
+    private void b21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b21ActionPerformed
+        Casilla c = juego.getCasilla(2,1);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b21ActionPerformed
+
+    private void b22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b22ActionPerformed
+        Casilla c = juego.getCasilla(2,2);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b22ActionPerformed
+
+    private void b23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b23ActionPerformed
+        Casilla c = juego.getCasilla(2,3);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b23ActionPerformed
+
+    private void b24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b24ActionPerformed
+        Casilla c = juego.getCasilla(2,4);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b24ActionPerformed
+
+    private void b25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b25ActionPerformed
+       Casilla c = juego.getCasilla(2,5);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b25ActionPerformed
+
+    private void b26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b26ActionPerformed
+      Casilla c = juego.getCasilla(2,6);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b26ActionPerformed
+
+    private void b27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b27ActionPerformed
+       Casilla c = juego.getCasilla(2,7);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b27ActionPerformed
+
+    private void b28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b28ActionPerformed
+      Casilla c = juego.getCasilla(2,8);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b28ActionPerformed
+
+    private void b29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b29ActionPerformed
+        Casilla c = juego.getCasilla(2,9);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b29ActionPerformed
+
+    private void b30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b30ActionPerformed
+        Casilla c = juego.getCasilla(3,0);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b30ActionPerformed
+
+    private void b31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b31ActionPerformed
+      Casilla c = juego.getCasilla(3,1);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b31ActionPerformed
+
+    private void b32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b32ActionPerformed
+        Casilla c = juego.getCasilla(3,2);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b32ActionPerformed
+
+    private void b33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b33ActionPerformed
+        Casilla c = juego.getCasilla(3,3);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b33ActionPerformed
+
+    private void b34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b34ActionPerformed
+        Casilla c = juego.getCasilla(3,4);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b34ActionPerformed
+
+    private void b35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b35ActionPerformed
+        Casilla c = juego.getCasilla(3,5);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b35ActionPerformed
+
+    private void b36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b36ActionPerformed
+        Casilla c = juego.getCasilla(3,6);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b36ActionPerformed
+
+    private void b37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b37ActionPerformed
+        Casilla c = juego.getCasilla(3,7);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b37ActionPerformed
+
+    private void b38ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b38ActionPerformed
+        Casilla c = juego.getCasilla(3,8);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b38ActionPerformed
+
+    private void b39ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b39ActionPerformed
+       Casilla c = juego.getCasilla(3,9);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b39ActionPerformed
+
+    private void b40ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b40ActionPerformed
+        Casilla c = juego.getCasilla(4,0);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b40ActionPerformed
+
+    private void b41ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b41ActionPerformed
+        Casilla c = juego.getCasilla(4,1);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b41ActionPerformed
+
+    private void b42ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b42ActionPerformed
+       Casilla c = juego.getCasilla(4,2);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b42ActionPerformed
+
+    private void b43ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b43ActionPerformed
+        Casilla c = juego.getCasilla(4,3);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b43ActionPerformed
+
+    private void b44ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b44ActionPerformed
+       Casilla c = juego.getCasilla(4,4);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b44ActionPerformed
+
+    private void b45ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b45ActionPerformed
+       Casilla c = juego.getCasilla(4,5);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b45ActionPerformed
+
+    private void b46ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b46ActionPerformed
+       Casilla c = juego.getCasilla(4,6);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b46ActionPerformed
+
+    private void b47ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b47ActionPerformed
+       Casilla c = juego.getCasilla(4,7);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b47ActionPerformed
+
+    private void b48ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b48ActionPerformed
+     Casilla c = juego.getCasilla(4,8);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b48ActionPerformed
+
+    private void b49ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b49ActionPerformed
+      Casilla c = juego.getCasilla(4,9);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b49ActionPerformed
+
+    private void b50ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b50ActionPerformed
+       Casilla c = juego.getCasilla(5,0);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b50ActionPerformed
+
+    private void b51ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b51ActionPerformed
+      Casilla c = juego.getCasilla(5,1);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b51ActionPerformed
+
+    private void b52ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b52ActionPerformed
+       Casilla c = juego.getCasilla(5,2);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b52ActionPerformed
+
+    private void b53ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b53ActionPerformed
+        Casilla c = juego.getCasilla(5,3);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b53ActionPerformed
+
+    private void b54ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b54ActionPerformed
+        Casilla c = juego.getCasilla(5,4);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b54ActionPerformed
+
+    private void b55ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b55ActionPerformed
+        Casilla c = juego.getCasilla(5,5);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b55ActionPerformed
+
+    private void b56ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b56ActionPerformed
+        Casilla c = juego.getCasilla(5,6);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b56ActionPerformed
+
+    private void b57ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b57ActionPerformed
+       Casilla c = juego.getCasilla(5,7);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b57ActionPerformed
+
+    private void b58ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b58ActionPerformed
+        Casilla c = juego.getCasilla(5,8);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b58ActionPerformed
+
+    private void b59ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b59ActionPerformed
+       Casilla c = juego.getCasilla(5,9);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b59ActionPerformed
+
+    private void b60ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b60ActionPerformed
+       Casilla c = juego.getCasilla(6,0);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b60ActionPerformed
+
+    private void b61ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b61ActionPerformed
+      Casilla c = juego.getCasilla(6,1);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b61ActionPerformed
+
+    private void b62ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b62ActionPerformed
+      Casilla c = juego.getCasilla(6,2);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b62ActionPerformed
+
+    private void b63ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b63ActionPerformed
+     Casilla c = juego.getCasilla(6,3);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b63ActionPerformed
+
+    private void b64ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b64ActionPerformed
+       Casilla c = juego.getCasilla(6,4);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b64ActionPerformed
+
+    private void b65ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b65ActionPerformed
+        Casilla c = juego.getCasilla(6,5);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b65ActionPerformed
+
+    private void b66ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b66ActionPerformed
+        Casilla c = juego.getCasilla(6,6);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b66ActionPerformed
+
+    private void b67ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b67ActionPerformed
+       Casilla c = juego.getCasilla(6,7);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b67ActionPerformed
+
+    private void b68ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b68ActionPerformed
+       Casilla c = juego.getCasilla(6,8);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b68ActionPerformed
+
+    private void b69ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b69ActionPerformed
+    Casilla c = juego.getCasilla(6,9);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b69ActionPerformed
+
+    private void b70ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b70ActionPerformed
+      Casilla c = juego.getCasilla(7,0);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b70ActionPerformed
+
+    private void b71ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b71ActionPerformed
+       Casilla c = juego.getCasilla(7,1);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b71ActionPerformed
+
+    private void b72ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b72ActionPerformed
+        Casilla c = juego.getCasilla(7,2);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b72ActionPerformed
+
+    private void b73ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b73ActionPerformed
+        Casilla c = juego.getCasilla(7,3);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b73ActionPerformed
+
+    private void b74ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b74ActionPerformed
+       Casilla c = juego.getCasilla(7,4);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b74ActionPerformed
+
+    private void b75ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b75ActionPerformed
+     Casilla c = juego.getCasilla(7,5);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b75ActionPerformed
+
+    private void b76ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b76ActionPerformed
+       Casilla c = juego.getCasilla(7,6);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b76ActionPerformed
+
+    private void b77ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b77ActionPerformed
+       Casilla c = juego.getCasilla(7,7);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b77ActionPerformed
+
+    private void b78ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b78ActionPerformed
+      Casilla c = juego.getCasilla(7,8);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b78ActionPerformed
+
+    private void b79ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b79ActionPerformed
+       Casilla c = juego.getCasilla(7,9);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b79ActionPerformed
+
+    private void b80ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b80ActionPerformed
+        Casilla c = juego.getCasilla(8,0);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b80ActionPerformed
+
+    private void b81ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b81ActionPerformed
+      Casilla c = juego.getCasilla(8,1);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b81ActionPerformed
+
+    private void b82ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b82ActionPerformed
+        Casilla c = juego.getCasilla(8,2);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b82ActionPerformed
+
+    private void b83ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b83ActionPerformed
+        Casilla c = juego.getCasilla(8,3);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b83ActionPerformed
+
+    private void b84ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b84ActionPerformed
+        Casilla c = juego.getCasilla(8,4);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b84ActionPerformed
+
+    private void b85ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b85ActionPerformed
+        Casilla c = juego.getCasilla(8,5);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b85ActionPerformed
+
+    private void b86ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b86ActionPerformed
+       Casilla c = juego.getCasilla(8,6);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b86ActionPerformed
+
+    private void b87ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b87ActionPerformed
+       Casilla c = juego.getCasilla(8,7);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b87ActionPerformed
+
+    private void b88ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b88ActionPerformed
+        Casilla c = juego.getCasilla(8,8);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b88ActionPerformed
+
+    private void b89ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b89ActionPerformed
+        Casilla c = juego.getCasilla(8,9);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b89ActionPerformed
+
+    private void b90ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b90ActionPerformed
+        Casilla c = juego.getCasilla(9,0);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b90ActionPerformed
+
+    private void b91ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b91ActionPerformed
+       Casilla c = juego.getCasilla(9,1);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b91ActionPerformed
+
+    private void b92ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b92ActionPerformed
+       Casilla c = juego.getCasilla(9,2);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b92ActionPerformed
+
+    private void b93ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b93ActionPerformed
+        Casilla c = juego.getCasilla(9,3);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b93ActionPerformed
+
+    private void b94ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b94ActionPerformed
+       Casilla c = juego.getCasilla(9,4);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b94ActionPerformed
+
+    private void b95ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b95ActionPerformed
+        Casilla c = juego.getCasilla(9,5);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b95ActionPerformed
+
+    private void b96ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b96ActionPerformed
+       Casilla c = juego.getCasilla(9,6);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b96ActionPerformed
+
+    private void b97ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b97ActionPerformed
+       Casilla c = juego.getCasilla(9,7);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b97ActionPerformed
+
+    private void b98ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b98ActionPerformed
+        Casilla c = juego.getCasilla(9,8);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b98ActionPerformed
+
+    private void b99ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b99ActionPerformed
+        Casilla c = juego.getCasilla(9,9);
+        
+        if (estadoInfo==1) {
+            mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
+            estadoInfo = 0;
+        } else if (estadoMover == 1) {
+            if (juego.moverse(c, listaSup[turnoJuego])) {
+                estadoMover = 0;
+                narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
+                actualizarPartida();
+            } else {
+                narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
+            } 
+        } else if (estadoAtacar == 2) {
+            if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
+                estadoAtacar = 0;
+                narradorJuego.setText("El ataque se ha ejecutado con exito");
+                actualizarPartida();
+            } else {
+                narradorJuego.setText("El ataque no se ha ejecutado con exito");
+            }
+        }
+    }//GEN-LAST:event_b99ActionPerformed
 
     /**
      * @param args the command line arguments
