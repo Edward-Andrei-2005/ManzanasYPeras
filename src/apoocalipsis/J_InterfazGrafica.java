@@ -20,7 +20,7 @@ public class J_InterfazGrafica extends javax.swing.JFrame {
         arrayDeJuegos.leerFichero();
         //Iteramos dentro de cada array de Juegos, y en cada uno, su array de ataques y los guardamos en listaAtaques
         for(Juego j : arrayDeJuegos.getListaJuegos()) {
-            for(Ataque a : j.getListaAtaques()) {
+            for(Ataque a : j.getListaAtaques()){
                 listaAtaques.add(a);
             }
         }

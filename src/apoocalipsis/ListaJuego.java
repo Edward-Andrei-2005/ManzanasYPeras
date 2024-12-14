@@ -21,6 +21,10 @@ public class ListaJuego {
         guardarFichero();
     }
     
+    public ArrayList<Juego> getListaJuegos() {
+        return listaJuegos;
+    }
+    
     public void guardarFichero() {
         // Nombre del archivo binario
         String archivo = "APOOCalipsis.dat";
@@ -34,16 +38,15 @@ public class ListaJuego {
         }
     }
     
-    public ArrayList<Juego> leerFichero() {
+    public void leerFichero() {
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("APOOCalipsis.dat"))) {
             
             listaJuegos = (ArrayList<Juego>) ois.readObject();
             System.out.println("\n***Tablero leido correctamente***\n");
             listaJuegos.get(listaJuegos.size() - 1).dibujarTableroConNumeros(); //Imprime el ultimo juego guardado
-            return listaJuegos;
         } catch (IOException | ClassNotFoundException e) {
             System.err.println("Error al leer el tablero: " + e.getMessage());
-            return null;
         }
     }
+
 }

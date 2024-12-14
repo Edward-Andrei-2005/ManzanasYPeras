@@ -7,13 +7,22 @@ public class APOOCalipsis {
      */
     public static void main(String[] args) {
         Juego miJuego = new Juego();
-        String[] s = {"Edward", "Manu"};
-        miJuego.asignarSupervivientesPosicionInicial(s);
-        System.out.println(miJuego.getSuperviviente("Edward").getManoDer());
+        ListaJuego ListaDeJuegos = new ListaJuego();
+        //String[] s = {"Edward", "Manu"};
+        //miJuego.asignarSupervivientesPosicionInicial(s);
+        //System.out.println(miJuego.getSuperviviente("Edward").getManoDer());
         
-        //miJuego.leerPartida();
-        //String [] nombres = {"Edward", "Anass", "Manuel", "Robert", "Paco"};
-        //miJuego.hacerPartida(nombres);
+        String [] nombres = {"Edward", "Anass", "Manuel", "Robert"};
+        miJuego.asignarSupervivientesPosicionInicial(nombres);
+        miJuego.generarZombisInicio();
+        do {
+            miJuego.turnoSupervivientes(nombres);
+            miJuego.turnoZombis();
+            miJuego.generarNuevoZombi();
+            ListaDeJuegos.guardarJuego(miJuego);
+            
+        } while (!miJuego.hayAlgunSupervivienteMuerto() && !miJuego.hanGanadoSupervivientes(nombres));
+        //ListaDeJuegos.leerFichero(); //Para comprobar lo que se ha guardado en el fichero
         
     }
 }

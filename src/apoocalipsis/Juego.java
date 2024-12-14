@@ -27,7 +27,7 @@ public class Juego implements Serializable {
     private static final int PROBABILIDAD_CORREDOR = 9; // 30%
     
     private ArrayList<Ataque> listaAtaques;
-
+ 
     public Juego() {
         dimension = new Casilla[TAM_X][TAM_Y]; // Inicializa el tablero con casillas vacías
         for (int i=0; i<TAM_X; i++) {
@@ -50,7 +50,7 @@ public class Juego implements Serializable {
     public int getTurnosSupervivientes() {
         return NUM_TURNOS_SUPERVIVIENTES;
     }
-
+    
     public ArrayList<Ataque> getListaAtaques() {
         return listaAtaques;
     }
@@ -726,4 +726,5 @@ public class Juego implements Serializable {
 
         return true;  // Cabmiar el true si sale mal a: !zombisAEliminar.isEmpty()
     }
+
 }
