@@ -50,6 +50,10 @@ public class Juego implements Serializable {
     public int getTurnosSupervivientes() {
         return NUM_TURNOS_SUPERVIVIENTES;
     }
+
+    public ArrayList<Ataque> getListaAtaques() {
+        return listaAtaques;
+    }
     
     // Metodo que gestiona todo el ciclo de una partida
     public boolean hacerPartida(String [] listaNombres) {
