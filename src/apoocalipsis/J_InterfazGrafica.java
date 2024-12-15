@@ -270,7 +270,7 @@ public class J_InterfazGrafica extends javax.swing.JFrame {
 
                         if (opcion2 == JOptionPane.OK_OPTION) {
                             // Si confirma, pasa al tablero
-                            J_Tablero ventanaTablero = new J_Tablero(arrayNombres);
+                            J_Tablero ventanaTablero = new J_Tablero(arrayNombres, arrayDeJuegos);
                             ventanaTablero.setVisible(true); // Mostrar ventana de tablero
                             ventanaTablero.iniciarPartida();
                             this.setVisible(false);

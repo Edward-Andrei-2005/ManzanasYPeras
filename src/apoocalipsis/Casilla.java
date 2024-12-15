@@ -193,6 +193,14 @@ public class Casilla implements Serializable {
         return num;
     }
     
+    public ArrayList<Superviviente> todosLosSupervivientes() {
+        ArrayList <Superviviente> lista = new ArrayList <> ();
+        for (EntidadActivable e : listaEntidades) {
+            if (e instanceof Superviviente) lista.add((Superviviente) e);
+        }
+        return lista;
+    }
+    
     // Devuelve un arrayList con todos los zombis de la casilla
     public ArrayList<Zombi> todosLosZombis() {
         ArrayList <Zombi> lista = new ArrayList <> ();

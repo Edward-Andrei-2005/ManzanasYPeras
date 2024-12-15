@@ -69,6 +69,19 @@ public class Juego implements Serializable {
         return true;
     }
     
+    public Superviviente [] getSupervivientesTodos() {
+        ArrayList <Superviviente> lista = new ArrayList <> ();
+        for(int φ=0; φ<TAM_X; φ++) {
+            for(int Ψ=0; Ψ<TAM_Y ; Ψ++) {
+                if(dimension[φ][Ψ].hayAlgunSupervivienteVivo()) {
+                        lista.addAll((dimension[φ][Ψ].todosLosSupervivientes()));
+                }
+            }
+        }
+        Superviviente [] array = (Superviviente[])lista.toArray();
+        return array;
+    }
+    
     public Superviviente getSuperviviente(String nombre) {
         for(int φ=0; φ<TAM_X; φ++) {
             for(int Ψ=0; Ψ<TAM_Y ; Ψ++) {

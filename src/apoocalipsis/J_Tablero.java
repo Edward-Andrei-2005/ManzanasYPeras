@@ -7,8 +7,8 @@ package apoocalipsis;
 import javax.swing.JOptionPane;
 
 public class J_Tablero extends javax.swing.JFrame {
-    private static javax.swing.JButton [][] botones;
     private Juego juego, juegoAnterior;
+    private ListaJuego arrayJuegos;
     private int turnoJuego;  // Vale de 0 al numero de supervivientes -1 dependiendo de que superviviente le toque
     private int turnosRestantesSuperviviente;
     
@@ -27,7 +27,6 @@ public class J_Tablero extends javax.swing.JFrame {
      */
     public J_Tablero(String [] nombres) {
         initComponents();
-        botones = new javax.swing.JButton [10][10];
         juego = new Juego();
         juegoAnterior = new Juego();
         listaSup = new Superviviente[nombres.length];
@@ -35,8 +34,17 @@ public class J_Tablero extends javax.swing.JFrame {
     }
     
     public J_Tablero(Juego juego) {
+        initComponents();
         this.juego = juego;
-        
+        listaSup = juego.getSupervivientesTodos();
+        for (int i=0; i<listaSup.length; i++) {
+            listaNombres[i] = listaSup[i].getNombre();
+        }
+    }
+    
+    public J_Tablero(String [] nombres, ListaJuego arrayJuegos) {
+        this(nombres);
+        this.arrayJuegos = arrayJuegos;
     }
 
     /**
@@ -1504,6 +1512,7 @@ public class J_Tablero extends javax.swing.JFrame {
         // Si el usuario elige "Sí", cerrar el programa
         if (opcion == JOptionPane.YES_OPTION) {
             System.exit(0);
+            arrayJuegos.guardarJuego(juegoAnterior);
         }
     }//GEN-LAST:event_B_SalirActionPerformed
 
