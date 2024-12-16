@@ -1511,8 +1511,8 @@ public class J_Tablero extends javax.swing.JFrame {
 
         // Si el usuario elige "Sí", cerrar el programa
         if (opcion == JOptionPane.YES_OPTION) {
-            System.exit(0);
             arrayJuegos.guardarJuego(juegoAnterior);
+            System.exit(0);
         }
     }//GEN-LAST:event_B_SalirActionPerformed
 
