@@ -51,7 +51,7 @@ public class Arma extends Equipo {
     }
     
     public String getInfo() {
-        return nombre + " | Potencia: " + potencia + " | Alcance: " + alcance;
+        return nombre + " | Potencia: " + potencia + " | Alcance: " + alcance + " | Dados: " + numeroDeDados +" | Exito: " + valorDeExito;
     }
     
     // HAY QUE AÑADIR UN ID
