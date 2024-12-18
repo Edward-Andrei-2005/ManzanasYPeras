@@ -4253,11 +4253,16 @@ public class J_Tablero extends javax.swing.JFrame {
     }
     
     private void haTerminadoPartida() {
-        if (juego.hayAlgunSupervivienteMuerto()) {
-            
-        }
-        if (juego.hanGanadoSupervivientes(listaNombres)) {
-            
+        if(juego.hayAlgunSupervivienteMuerto() || juego.hanGanadoSupervivientes(listaNombres)) {
+            J_PartidaFinalizada ventanaPartidaFinalizada = null;
+            // true = Ganan Supervivientes, false = Pierden Supervivientes
+            if (juego.hayAlgunSupervivienteMuerto()) {
+                ventanaPartidaFinalizada = new J_PartidaFinalizada(false);
+            } else if (juego.hanGanadoSupervivientes(listaNombres)) {
+                ventanaPartidaFinalizada = new J_PartidaFinalizada(true);
+            }
+            ventanaPartidaFinalizada.setVisible(true);
+            this.setVisible(false);
         }
     }
     
