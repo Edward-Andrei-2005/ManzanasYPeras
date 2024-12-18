@@ -624,7 +624,6 @@ public class Juego implements Serializable {
         }
         return false; // Movimiento inválido
     }
-
     
     public boolean generarAtaque(Superviviente s, Arma a, Casilla objetivo) {
         Casilla origen = buscarCasillaOrigen(s); // Encuentra la posición del superviviente
@@ -637,12 +636,20 @@ public class Juego implements Serializable {
         int dados[] = lanzarDados(a);
         int exitos = evaluarExito(dados, a); // Calcula los éxitos del ataque basados en los dados
         
-        Ataque ataque = new Ataque(s, a, dados, exitos, objetivo);
+        ArrayList<Zombi> eliminarZombis = eliminarZombis(a, exitos, s, objetivo);
+        
+        Ataque ataque = new Ataque(s, a, dados, exitos, objetivo, eliminarZombis);
         listaAtaques.add(ataque);
         
-        return resolverAtaque(a, objetivo, exitos, s); // Resuelve el ataque eliminando enemigos si aplica
+        //return resolverAtaque(a, objetivo, exitos, s); // Resuelve el ataque eliminando enemigos si aplica
+        
+        return true;
     }
 
+    /*private boolean resolverAtaque(Arma a, Casilla destino, int exitos, Superviviente s) {
+        // Elimina los zombis en la casilla objetivo si el número de éxitos es suficiente
+        return eliminarZombis(a, exitos, s, destino);
+    }*/
     
     private Arma elegirArma(Superviviente s, boolean izq) {
         // Busca el arma en todas las casillas del tablero
@@ -687,11 +694,6 @@ public class Juego implements Serializable {
         }
         return contador; // Devuelve el número de éxitos
     }
-
-    private boolean resolverAtaque(Arma a, Casilla destino, int exitos, Superviviente s) {
-        // Elimina los zombis en la casilla objetivo si el número de éxitos es suficiente
-        return eliminarZombis(a, exitos, s, destino);
-    }
     
     /*public boolean esMatable(Arma a, Zombi z, Superviviente s) {
         // Verifica si el zombi es de tipo CaminanteBerserker, CorredorBerserker o AbominacionBerserker
@@ -712,7 +714,7 @@ public class Juego implements Serializable {
         }
     }*/
     
-    public boolean eliminarZombis(Arma a, int exitos, Superviviente s, Casilla destino) {
+    public ArrayList eliminarZombis(Arma a, int exitos, Superviviente s, Casilla destino) {
         ArrayList<EntidadActivable> zombisAEliminar = new ArrayList<>(); // Lista para almacenar los zombis eliminables
         
         for (EntidadActivable e : destino.getListaEntidades()) { // Itera por las entidades de la casilla
@@ -737,7 +739,7 @@ public class Juego implements Serializable {
         // Actualizamos la lista de zombis eliminados por el superviviente
         s.sumarZombisKO(zombisAEliminar.size());
 
-        return true;  // Cabmiar el true si sale mal a: !zombisAEliminar.isEmpty()
+        return zombisAEliminar;  // Cabmiar el true si sale mal a: !zombisAEliminar.isEmpty()
     }
 
 }
