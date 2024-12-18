@@ -320,7 +320,7 @@ public class Juego implements Serializable {
                     }
                     
                     boolean esMovimientoValido;
-                    do {
+                    /*do {
                         System.out.print("Introduce la coordenada X de la casilla destino (0-9): ");
                         xDestino = scanner.nextInt();
                         scanner.nextLine();
@@ -328,12 +328,12 @@ public class Juego implements Serializable {
                         yDestino = scanner.nextInt();
                         scanner.nextLine();
                         
-                        esMovimientoValido = moverse(dimension[xDestino][yDestino], s);
+                        //esMovimientoValido = moverse(dimension[xDestino][yDestino], s);
 
                         if (xDestino < 0 || xDestino >= TAM_X || yDestino < 0 || yDestino >= TAM_Y) {
                             System.out.println("Coordenadas fuera del rango permitido. Intenta de nuevo.");
                         }
-                    } while (!esMovimientoValido);
+                    } while (!esMovimientoValido);*/
                     
                     Casilla destino = buscarCasillaOrigen(s);
                     
@@ -613,16 +613,16 @@ public class Juego implements Serializable {
     }
 
     // Este método solo funciona cuando la casilla está adyacente
-    public boolean moverse(Casilla destino, EntidadActivable e) {
+    public int moverse(Casilla destino, EntidadActivable e) {
         Casilla origen = buscarCasillaOrigen(e); // Encuentra la casilla actual de la entidad
 
         if (origen.esAdyacente(destino) // Verifica si la casilla destino es adyacente
                 && destino.getX() >= 0 && destino.getX() <= TAM_X && destino.getY() >= 0 && destino.getY() <= TAM_Y) {  // Y si esta dentro del tablero 
             origen.eliminarEntidad(e); // Quita la entidad de la casilla actual
             destino.anadirEntidad(e); // Coloca la entidad en la casilla destino
-            return true; // Movimiento exitoso
+            return origen.numeroZombis() + 1; // Movimiento exitoso. Devuelve el numero de turnos a restar
         }
-        return false; // Movimiento inválido
+        return 0; // Movimiento inválido
     }
     
     public boolean generarAtaque(Superviviente s, Arma a, Casilla objetivo) {

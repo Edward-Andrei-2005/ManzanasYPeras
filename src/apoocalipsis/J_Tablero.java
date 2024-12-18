@@ -1483,10 +1483,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -1494,7 +1495,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -1517,7 +1518,7 @@ public class J_Tablero extends javax.swing.JFrame {
     }//GEN-LAST:event_B_SalirActionPerformed
 
     private void bNadaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bNadaActionPerformed
-        actualizarPartida();
+        actualizarPartida(1);
     }//GEN-LAST:event_bNadaActionPerformed
 
     private void bMoverseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bMoverseActionPerformed
@@ -1532,14 +1533,15 @@ public class J_Tablero extends javax.swing.JFrame {
     private void b01ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b01ActionPerformed
         Casilla c = juego.getCasilla(0,1);
         
-        if (estadoInfo==1) {
+       if (estadoInfo==1) {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -1547,7 +1549,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -1561,18 +1563,19 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
-            }
+            } 
         } else if (estadoAtacar == 2) {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -1593,7 +1596,7 @@ public class J_Tablero extends javax.swing.JFrame {
             narradorJuego.setText(listaNombres[turnoJuego] + " no ha encontrado ningun equipo");
         } else {
             narradorJuego.setText(listaNombres[turnoJuego] + " ha encontrado un(a) " + e.toString());
-            actualizarPartida();
+            actualizarPartida(1);
         }
     }//GEN-LAST:event_bBuscarEquipoActionPerformed
 
@@ -1732,7 +1735,7 @@ public class J_Tablero extends javax.swing.JFrame {
     private void bManoIzqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bManoIzqActionPerformed
         if (estadoCambiarArma == 2) {
             listaSup[turnoJuego].elegirArma(armaAux, true);
-            actualizarPartida();
+            actualizarPartida(1);
             estadoCambiarArma = 0;
             narradorJuego.setText(armaAux.toString() + " en mano izquierda");
         } else if (estadoAtacar == 1) {
@@ -1749,7 +1752,7 @@ public class J_Tablero extends javax.swing.JFrame {
     private void bManoDerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bManoDerActionPerformed
         if (estadoCambiarArma == 2) {
             listaSup[turnoJuego].elegirArma(armaAux, false);
-            actualizarPartida();
+            actualizarPartida(1);
             estadoCambiarArma = 0;
             narradorJuego.setText(armaAux.toString() + " en mano derecha");
         } else if (estadoAtacar == 1) {
@@ -1777,10 +1780,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -1788,7 +1792,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -1802,10 +1806,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -1813,7 +1818,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -1827,10 +1832,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -1838,7 +1844,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -1852,10 +1858,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -1863,7 +1870,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -1877,10 +1884,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -1888,7 +1896,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -1902,10 +1910,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -1913,7 +1922,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -1927,10 +1936,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -1938,7 +1948,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -1952,10 +1962,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -1963,7 +1974,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -1977,10 +1988,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -1988,7 +2000,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -2002,10 +2014,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -2013,7 +2026,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -2027,10 +2040,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -2038,7 +2052,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -2052,10 +2066,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -2063,7 +2078,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -2077,10 +2092,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -2088,7 +2104,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -2102,10 +2118,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -2113,7 +2130,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -2127,10 +2144,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -2138,7 +2156,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -2152,10 +2170,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -2163,7 +2182,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -2177,10 +2196,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -2188,7 +2208,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -2202,10 +2222,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -2213,7 +2234,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -2227,10 +2248,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -2238,7 +2260,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -2252,10 +2274,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -2263,7 +2286,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -2277,10 +2300,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -2288,7 +2312,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -2302,10 +2326,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -2313,7 +2338,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -2327,10 +2352,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -2338,7 +2364,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -2352,10 +2378,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -2363,7 +2390,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -2377,10 +2404,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -2388,7 +2416,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -2402,10 +2430,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -2413,7 +2442,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -2427,10 +2456,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -2438,7 +2468,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -2452,10 +2482,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -2463,7 +2494,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -2477,10 +2508,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -2488,7 +2520,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -2502,10 +2534,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -2513,7 +2546,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -2527,10 +2560,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -2538,7 +2572,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -2552,10 +2586,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -2563,7 +2598,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -2577,10 +2612,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -2588,7 +2624,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -2602,10 +2638,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -2613,7 +2650,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -2627,10 +2664,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -2638,7 +2676,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -2652,10 +2690,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -2663,7 +2702,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -2677,10 +2716,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -2688,7 +2728,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -2702,10 +2742,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -2713,7 +2754,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -2727,10 +2768,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -2738,7 +2780,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -2752,10 +2794,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -2763,7 +2806,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -2777,10 +2820,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -2788,7 +2832,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -2802,10 +2846,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -2813,7 +2858,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -2827,10 +2872,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -2838,7 +2884,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -2852,10 +2898,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -2863,7 +2910,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -2877,10 +2924,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -2888,7 +2936,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -2902,10 +2950,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -2913,7 +2962,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -2927,10 +2976,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -2938,7 +2988,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -2952,10 +3002,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -2963,7 +3014,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -2977,10 +3028,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -2988,7 +3040,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -3002,10 +3054,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -3013,7 +3066,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -3027,10 +3080,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -3038,7 +3092,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -3052,10 +3106,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -3063,7 +3118,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -3077,10 +3132,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -3088,7 +3144,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -3102,10 +3158,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -3113,7 +3170,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -3127,10 +3184,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -3138,7 +3196,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -3152,10 +3210,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -3163,7 +3222,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -3177,10 +3236,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -3188,7 +3248,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -3202,10 +3262,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -3213,7 +3274,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -3227,10 +3288,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -3238,7 +3300,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -3252,10 +3314,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -3263,7 +3326,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -3277,10 +3340,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -3288,7 +3352,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -3302,10 +3366,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -3313,7 +3378,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -3327,10 +3392,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -3338,7 +3404,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -3352,10 +3418,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -3363,7 +3430,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -3377,10 +3444,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -3388,7 +3456,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -3402,10 +3470,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -3413,7 +3482,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -3427,10 +3496,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -3438,7 +3508,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -3452,10 +3522,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -3463,7 +3534,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -3477,10 +3548,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -3488,7 +3560,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -3502,10 +3574,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -3513,7 +3586,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -3527,10 +3600,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -3538,7 +3612,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -3552,10 +3626,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -3563,7 +3638,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -3577,10 +3652,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -3588,7 +3664,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -3602,10 +3678,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -3613,7 +3690,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -3627,10 +3704,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -3638,7 +3716,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -3652,10 +3730,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -3663,7 +3742,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -3677,10 +3756,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -3688,7 +3768,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -3702,10 +3782,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -3713,7 +3794,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -3727,10 +3808,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -3738,7 +3820,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -3752,10 +3834,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -3763,7 +3846,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -3777,10 +3860,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -3788,7 +3872,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -3802,10 +3886,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -3813,7 +3898,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -3827,10 +3912,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -3838,7 +3924,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -3852,10 +3938,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -3863,7 +3950,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -3877,10 +3964,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -3888,7 +3976,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -3902,10 +3990,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -3913,7 +4002,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -3927,10 +4016,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -3938,7 +4028,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -3952,10 +4042,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -3963,7 +4054,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -3977,10 +4068,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -3988,7 +4080,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -4002,10 +4094,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -4013,7 +4106,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -4027,10 +4120,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -4038,7 +4132,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -4052,10 +4146,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -4063,7 +4158,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -4077,10 +4172,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -4088,7 +4184,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -4102,10 +4198,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -4113,7 +4210,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -4127,10 +4224,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -4138,7 +4236,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -4152,10 +4250,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -4163,7 +4262,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -4177,10 +4276,11 @@ public class J_Tablero extends javax.swing.JFrame {
             mostrarPanelInfo("Informacion casilla " + c.toString(), c.getInfo());
             estadoInfo = 0;
         } else if (estadoMover == 1) {
-            if (juego.moverse(c, listaSup[turnoJuego])) {
+            int turnosGastados = juego.moverse(c, listaSup[turnoJuego]);
+            if (turnosGastados > 0) {
                 estadoMover = 0;
                 narradorJuego.setText(listaNombres[turnoJuego] + " se ha movido a " + c.toString());
-                actualizarPartida();
+                actualizarPartida(turnosGastados);
             } else {
                 narradorJuego.setText(listaNombres[turnoJuego] + " no se ha podido mover a " + c.toString());
             } 
@@ -4188,7 +4288,7 @@ public class J_Tablero extends javax.swing.JFrame {
             if (juego.generarAtaque(listaSup[turnoJuego], armaAux, c)) {
                 estadoAtacar = 0;
                 narradorJuego.setText("El ataque se ha ejecutado con exito");
-                actualizarPartida();
+                actualizarPartida(1);
             } else {
                 narradorJuego.setText("El ataque no se ha ejecutado con exito");
             }
@@ -4243,10 +4343,11 @@ public class J_Tablero extends javax.swing.JFrame {
         actualizarBotones();
     }
     
-    private void  actualizarPartida() {
+    private void  actualizarPartida(int turnosGastados) {
+        System.out.println("Turnos que restar: " + turnosGastados);
         actualizarListaSupervivientes();
         
-        siguienteAccion();
+        siguienteAccion(turnosGastados);
         actualizarBotones();
         imprimirInformacionSuperviviente();
         haTerminadoPartida();
@@ -4272,19 +4373,19 @@ public class J_Tablero extends javax.swing.JFrame {
         }
     }
     
-    private void siguienteAccion() {
+    private void siguienteAccion(int turnosGastados) {
         // Cuando el ultimo superviviente gasta su ultima accion juegan los zombis
-        if (turnoJuego == listaNombres.length - 1 && turnosRestantesSuperviviente == 1) { 
+        if (turnoJuego == listaNombres.length - 1 && turnosRestantesSuperviviente - turnosGastados == 0) { 
             juego.turnoZombis();
             juego.generarNuevoZombi();
             turnosRestantesSuperviviente = juego.getTurnosSupervivientes();
             siguienteTurnoJuego();
             juegoAnterior = juego;
-        } else if (turnosRestantesSuperviviente == 1) { // Cuando un superviviente agota sus turnos, se reinicia el contador para el siguiente
+        } else if (turnosRestantesSuperviviente - turnosGastados == 0) { // Cuando un superviviente agota sus turnos, se reinicia el contador para el siguiente
             turnosRestantesSuperviviente = juego.getTurnosSupervivientes();
             siguienteTurnoJuego();
         } else {
-            turnosRestantesSuperviviente--;
+            turnosRestantesSuperviviente -= turnosGastados;
         }
         System.out.println(turnosRestantesSuperviviente);
     }
