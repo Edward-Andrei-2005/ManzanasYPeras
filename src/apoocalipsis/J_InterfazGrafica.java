@@ -2,7 +2,7 @@ package apoocalipsis;
 import java.util.ArrayList;
 import java.util.Arrays;
 import javax.swing.JOptionPane;
-import java.util.Timer;
+import javax.swing.Timer;
 import java.util.TimerTask;
 
 public class J_InterfazGrafica extends javax.swing.JFrame {
@@ -223,98 +223,20 @@ public class J_InterfazGrafica extends javax.swing.JFrame {
             
             
         } else if (O_Crear_Nueva_Partida.isSelected()) { // Crear nueva partida
+            // Crear e inicializar la ventana del juego
             J_FotoJuego ventanaFotoJuego = new J_FotoJuego();
             ventanaFotoJuego.setVisible(true);
-            
-            Timer timer = new Timer();
-            TimerTask tarea = new TimerTask() {
-                @Override
-                public void run() {
-                    ventanaFotoJuego.setVisible(false);
-                }
-            };
-            timer.schedule(tarea, 3000);
-                    // Bloquea la ejecución hasta que la ventana se oculte
-            try {
-                // Hacer que el hilo actual espere 3000 milisegundos (3 segundos)
-                Thread.sleep(3000);
-            } catch (InterruptedException e) {
-                e.printStackTrace(); // Manejo de excepciones si la espera es interrumpida
-            }
 
-            J_NombrarSupervivientes ventanaNombrarSupervivientes = new J_NombrarSupervivientes(); // Creamos la ventana para nombrar
+            // Crear un temporizador para ocultar la ventana después de 3 segundos
+            Timer timer = new Timer(3000, e -> {
+                // Ocultar ventanaFotoJuego
+                ventanaFotoJuego.setVisible(false);
 
-            String arrayNombres[] = new String[TAM]; // Creamos un array para guardar los nombres
-            boolean repetidos; // Creamos en booleano para volver a pedir los nombres si hay repetidos/nulos
-
-            do {
-                repetidos = false; // Reiniciar el estado en cada iteración
-                
-                // Mostrar el panel de nombrar supervivientes dentro del JOptionPane
-                int opcion = JOptionPane.showConfirmDialog(this, ventanaNombrarSupervivientes, 
-                                                           "Fase de Nombramiento de Supervivientes",
-                                                           JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
-
-                if (opcion == JOptionPane.OK_OPTION) {
-                    // Recogida de datos
-                    arrayNombres[0] = ventanaNombrarSupervivientes.getNombreSuperviviente1();
-                    arrayNombres[1] = ventanaNombrarSupervivientes.getNombreSuperviviente2();
-                    arrayNombres[2] = ventanaNombrarSupervivientes.getNombreSuperviviente3();
-                    arrayNombres[3] = ventanaNombrarSupervivientes.getNombreSuperviviente4();
-
-                    // Validar si hay repetidos o vacíos
-                    for (int i = 0; i < TAM; i++) {
-                        if (arrayNombres[i] == null || arrayNombres[i].isEmpty()) {
-                            repetidos = true;
-                            break;
-                        }
-                        for (int j = i + 1; j < TAM; j++) {
-                            if (arrayNombres[i].equals(arrayNombres[j])) {
-                                repetidos = true;
-                                break;
-                            }
-                        }
-                        if (repetidos) break;
-                    }
-
-                    if (repetidos) {
-                        JOptionPane.showMessageDialog(this, 
-                                                      "Los nombres no deben estar vacíos ni repetirse. Inténtalo de nuevo.",
-                                                      "Error", JOptionPane.ERROR_MESSAGE);
-                    } else {
-                        // Mostrar ventana de confirmación
-                        J_ConfirmacionSupervivientes ventanaConfirmacion = new J_ConfirmacionSupervivientes();
-                        ventanaConfirmacion.escribirConfirmacion(arrayNombres); // Escribimos los nombres del array que hemos creado antes
-
-                        int opcion2 = JOptionPane.showConfirmDialog(this, ventanaConfirmacion, 
-                                                                    "Fase de Confirmación de Supervivientes",
-                                                                    JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
-
-                        if (opcion2 == JOptionPane.OK_OPTION) {
-                            // Si confirma, pasa al tablero
-                            J_Tablero ventanaTablero = new J_Tablero(arrayNombres, arrayDeJuegos);
-                            ventanaTablero.setVisible(true); // Mostrar ventana de tablero
-                            ventanaTablero.iniciarPartida();
-                            this.setVisible(false);
-                            return; // Salir del ciclo y finalizar
-                        } else {
-                            // Si cancela en la confirmación, volver al nombramiento
-                            JOptionPane.showMessageDialog(this, 
-                                                          "Por favor, vuelve a introducir los nombres.",
-                                                          "Información", JOptionPane.INFORMATION_MESSAGE);
-                        }
-                    }
-                } else {
-                    // Si cancela en la ventana de nombrar supervivientes, salir del bucle
-                    JOptionPane.showMessageDialog(this, 
-                                                  "Creación de nueva partida cancelada.", 
-                                                  "Información", JOptionPane.INFORMATION_MESSAGE);
-                    return;
-                }
-            } while (repetidos || true); // Repetir si hay nombres inválidos o el usuario cancela en la confirmación
-
-        //Llamada a main
-
+                // Continuar con la lógica después del temporizador
+                iniciarNombrarSupervivientes();
+            });
+            timer.setRepeats(false); // Solo una ejecución
+            timer.start();
         } else if (O_Simular_Acciones.isSelected()) {
             J_ConfirmacionAcciones ventanaConfirmacion = new J_ConfirmacionAcciones();
             boolean aux = false;
@@ -382,6 +304,73 @@ public class J_InterfazGrafica extends javax.swing.JFrame {
         
     }//GEN-LAST:event_O_Simular_AccionesActionPerformed
 
+    private void iniciarNombrarSupervivientes() {
+        J_NombrarSupervivientes ventanaNombrarSupervivientes = new J_NombrarSupervivientes();
+        String arrayNombres[] = new String[TAM]; // Creamos un array para guardar los nombres
+        boolean repetidos;
+
+        do {
+            repetidos = false;
+            int opcion = JOptionPane.showConfirmDialog(this, ventanaNombrarSupervivientes,
+                                                       "Fase de Nombramiento de Supervivientes",
+                                                       JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
+
+            if (opcion == JOptionPane.OK_OPTION) {
+                arrayNombres[0] = ventanaNombrarSupervivientes.getNombreSuperviviente1();
+                arrayNombres[1] = ventanaNombrarSupervivientes.getNombreSuperviviente2();
+                arrayNombres[2] = ventanaNombrarSupervivientes.getNombreSuperviviente3();
+                arrayNombres[3] = ventanaNombrarSupervivientes.getNombreSuperviviente4();
+
+                // Validar nombres
+                for (int i = 0; i < TAM; i++) {
+                    if (arrayNombres[i] == null || arrayNombres[i].isEmpty()) {
+                        repetidos = true;
+                        break;
+                    }
+                    for (int j = i + 1; j < TAM; j++) {
+                        if (arrayNombres[i].equals(arrayNombres[j])) {
+                            repetidos = true;
+                            break;
+                        }
+                    }
+                    if (repetidos) break;
+                }
+
+                if (repetidos) {
+                    JOptionPane.showMessageDialog(this,
+                                                  "Los nombres no deben estar vacíos ni repetirse. Inténtalo de nuevo.",
+                                                  "Error", JOptionPane.ERROR_MESSAGE);
+                } else {
+                    // Confirmación de nombres
+                    J_ConfirmacionSupervivientes ventanaConfirmacion = new J_ConfirmacionSupervivientes();
+                    ventanaConfirmacion.escribirConfirmacion(arrayNombres);
+
+                    int opcion2 = JOptionPane.showConfirmDialog(this, ventanaConfirmacion,
+                                                                "Fase de Confirmación de Supervivientes",
+                                                                JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
+
+                    if (opcion2 == JOptionPane.OK_OPTION) {
+                        // Inicia el tablero
+                        J_Tablero ventanaTablero = new J_Tablero(arrayNombres, arrayDeJuegos);
+                        ventanaTablero.setVisible(true);
+                        ventanaTablero.iniciarPartida();
+                        this.setVisible(false);
+                        return;
+                    } else {
+                        JOptionPane.showMessageDialog(this,
+                                                      "Por favor, vuelve a introducir los nombres.",
+                                                      "Información", JOptionPane.INFORMATION_MESSAGE);
+                    }
+                }
+            } else {
+                JOptionPane.showMessageDialog(this,
+                                              "Creación de nueva partida cancelada.",
+                                              "Información", JOptionPane.INFORMATION_MESSAGE);
+                return;
+            }
+        } while (repetidos || true);
+    }
+    
     private void B_SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_SalirActionPerformed
         // Mostrar un cuadro de confirmación
         int opcion = JOptionPane.showConfirmDialog(this,
