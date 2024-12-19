@@ -12,6 +12,7 @@ import java.util.Scanner;
 public class Juego implements Serializable {
     private boolean turno; // true = turno del superviviente, false = turno del zombi
     private Casilla[][] dimension; // Representación del tablero del juego como matriz de casillas
+    private boolean juegoAcabado;
 
     private static final int TAM_X = 10; // Tamaño del tablero en el eje X
     private static final int TAM_Y = 10; // Tamaño del tablero en el eje Y
@@ -36,6 +37,7 @@ public class Juego implements Serializable {
             }
         }
         turno = true;
+        juegoAcabado = false;
         listaAtaques = new ArrayList<>();
     }
     
@@ -53,6 +55,10 @@ public class Juego implements Serializable {
     
     public ArrayList<Ataque> getListaAtaques() {
         return listaAtaques;
+    }
+    
+    public void terminarJuego() {
+        juegoAcabado = true;
     }
     
     // Metodo que gestiona todo el ciclo de una partida

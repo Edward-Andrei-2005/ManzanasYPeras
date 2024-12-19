@@ -4356,7 +4356,11 @@ public class J_Tablero extends javax.swing.JFrame {
     private void haTerminadoPartida() {
         if(juego.hayAlgunSupervivienteMuerto() || juego.hanGanadoSupervivientes(listaNombres)) {
             J_PartidaFinalizada ventanaPartidaFinalizada = null;
+            juegoAnterior = juego;
+            juegoAnterior.terminarJuego();
+            arrayJuegos.guardarJuego(juegoAnterior);
             // true = Ganan Supervivientes, false = Pierden Supervivientes
+            
             if (juego.hayAlgunSupervivienteMuerto()) {
                 ventanaPartidaFinalizada = new J_PartidaFinalizada(false);
             } else if (juego.hanGanadoSupervivientes(listaNombres)) {
