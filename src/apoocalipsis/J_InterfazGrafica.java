@@ -5,8 +5,11 @@ import javax.swing.JOptionPane;
 import javax.swing.Timer;
 import java.util.TimerTask;
 
+
 public class J_InterfazGrafica extends javax.swing.JFrame {
     //Atributos
+    ReproductorMusica reproductor = new ReproductorMusica();
+    private final String MALBEC = "/apoocalipsis/sounds/Malbec.wav";
     private ListaJuego arrayDeJuegos;
     //private ArrayList<Ataque> listaAtaques;
     private static final int TAM = 4;
@@ -14,6 +17,8 @@ public class J_InterfazGrafica extends javax.swing.JFrame {
     //Constructores
     public J_InterfazGrafica() {
         initComponents();
+        // Reproducir música de fondo
+        reproductor.reproducirMusica(MALBEC);
         arrayDeJuegos = new ListaJuego();
         ArrayList <Ataque> listaAtaques = new ArrayList<>();
         //Leemos el fichero para guardar la lista de partidas en arrayDeJuegos
@@ -136,7 +141,7 @@ public class J_InterfazGrafica extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(684, 684, 684)
                 .addComponent(B_Jugar)
-                .addContainerGap(656, Short.MAX_VALUE))
+                .addContainerGap(686, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(L_Inicio, javax.swing.GroupLayout.PREFERRED_SIZE, 966, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -178,10 +183,7 @@ public class J_InterfazGrafica extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -356,6 +358,7 @@ public class J_InterfazGrafica extends javax.swing.JFrame {
                         ventanaTablero.setVisible(true);
                         ventanaTablero.iniciarPartida();
                         this.setVisible(false);
+                        reproductor.detenerMusica();
                         return;
                     } else {
                         JOptionPane.showMessageDialog(this,
@@ -389,7 +392,9 @@ public class J_InterfazGrafica extends javax.swing.JFrame {
     private void O_HistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_O_HistorialActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_O_HistorialActionPerformed
-
+    
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -425,6 +430,7 @@ public class J_InterfazGrafica extends javax.swing.JFrame {
             }
         });
     }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton B_Jugar;

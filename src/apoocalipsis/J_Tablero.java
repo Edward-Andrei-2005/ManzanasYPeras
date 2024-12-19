@@ -8,6 +8,8 @@ import javax.swing.JOptionPane;
 import javax.swing.Timer;
 
 public class J_Tablero extends javax.swing.JFrame {
+    ReproductorMusica reproductor = new ReproductorMusica();
+    private final String PLANTSVSZOMBIS = "/apoocalipsis/sounds/PlantsVSZombies.wav";
     private Juego juego, juegoAnterior;
     private ListaJuego arrayJuegos;
     private int turnoJuego;  // Vale de 0 al numero de supervivientes -1 dependiendo de que superviviente le toque
@@ -28,6 +30,7 @@ public class J_Tablero extends javax.swing.JFrame {
      */
     public J_Tablero(String [] nombres) {
         initComponents();
+        reproductor.reproducirMusica(PLANTSVSZOMBIS);
         juego = new Juego();
         juegoAnterior = new Juego();
         listaSup = new Superviviente[nombres.length];
@@ -4365,6 +4368,7 @@ public class J_Tablero extends javax.swing.JFrame {
     
     private void haTerminadoPartida() {
         if(juego.hayAlgunSupervivienteMuerto() || juego.hanGanadoSupervivientes(listaNombres)) {
+            reproductor.detenerMusica();
             J_PartidaFinalizada ventanaPartidaFinalizada = null;
             juegoAnterior = juego;
             juegoAnterior.terminarJuego();
