@@ -23,6 +23,12 @@ public class ListaJuego {
         guardarFichero();
     }
     
+    public Juego getUltimo() {
+        if (listaJuegos.isEmpty()) return null;
+        
+        return listaJuegos.get(listaJuegos.size()-1);
+    }
+    
     public ArrayList<Juego> getListaJuegos() {
         return listaJuegos;
     }

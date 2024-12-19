@@ -61,6 +61,10 @@ public class Juego implements Serializable {
         juegoAcabado = true;
     }
     
+    public boolean estaJuegoTerminado() {
+        return juegoAcabado;
+    }
+    
     // Metodo que gestiona todo el ciclo de una partida
     public boolean hacerPartida(String [] listaNombres) {
         asignarSupervivientesPosicionInicial(listaNombres);
@@ -84,7 +88,13 @@ public class Juego implements Serializable {
                 }
             }
         }
-        Superviviente [] array = (Superviviente[])lista.toArray();
+        Superviviente [] array = new Superviviente [lista.size()];
+        int i = 0;
+        for (Superviviente s : lista) {
+            array[i] = s;
+            i++;
+        }
+        //Superviviente [] array = (Superviviente[])lista.toArray();
         return array;
     }
     

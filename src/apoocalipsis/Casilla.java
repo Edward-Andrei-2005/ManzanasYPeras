@@ -238,6 +238,6 @@ public class Casilla implements Serializable {
     
     @Override
     public String toString() {
-        return "Coordenada X: " + getX() + " Coordenada Y: " + getY();
+        return "(" + getX() + ", " + getY() + ")";
     }
 }

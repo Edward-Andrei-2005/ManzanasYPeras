@@ -37,9 +37,12 @@ public class J_Tablero extends javax.swing.JFrame {
         initComponents();
         this.juego = juego;
         listaSup = juego.getSupervivientesTodos();
+        listaNombres = new String [listaSup.length];
         for (int i=0; i<listaSup.length; i++) {
             listaNombres[i] = listaSup[i].getNombre();
         }
+        actualizarBotones();
+        imprimirInformacionSuperviviente();
     }
     
     public J_Tablero(String [] nombres, ListaJuego arrayJuegos) {

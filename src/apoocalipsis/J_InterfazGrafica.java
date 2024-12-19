@@ -8,14 +8,14 @@ import java.util.TimerTask;
 public class J_InterfazGrafica extends javax.swing.JFrame {
     //Atributos
     private ListaJuego arrayDeJuegos;
-    private ArrayList<Ataque> listaAtaques;
+    //private ArrayList<Ataque> listaAtaques;
     private static final int TAM = 4;
     
     //Constructores
     public J_InterfazGrafica() {
         initComponents();
         arrayDeJuegos = new ListaJuego();
-        listaAtaques = new ArrayList<>();
+        ArrayList <Ataque> listaAtaques = new ArrayList<>();
         //Leemos el fichero para guardar la lista de partidas en arrayDeJuegos
         arrayDeJuegos.leerFichero();
         //Iteramos dentro de cada array de Juegos, y en cada uno, su array de ataques y los guardamos en listaAtaques
@@ -136,7 +136,7 @@ public class J_InterfazGrafica extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(684, 684, 684)
                 .addComponent(B_Jugar)
-                .addContainerGap(686, Short.MAX_VALUE))
+                .addContainerGap(656, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(L_Inicio, javax.swing.GroupLayout.PREFERRED_SIZE, 966, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -178,7 +178,10 @@ public class J_InterfazGrafica extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -198,13 +201,32 @@ public class J_InterfazGrafica extends javax.swing.JFrame {
 
     private void B_JugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_JugarActionPerformed
         if (O_Retomar_Partida_Empezada.isSelected()) {
-            // Lógica para retomar partida empezada
-            JOptionPane.showMessageDialog(this, "Retomando partida empezada...");
+            
+            Juego aux = arrayDeJuegos.getUltimo();
+            
+            if (aux == null) {
+                JOptionPane.showMessageDialog(this, 
+                                              "No hay partidas guardadas. Mi loco tu no juega",
+                                              "Error", JOptionPane.ERROR_MESSAGE);
+            } else if (aux.estaJuegoTerminado()) {
+                JOptionPane.showMessageDialog(this, 
+                                                "No se puede retomar la partida porque ya esta finalizada. Mi loco devoraste o quedaste devorado",
+                                                "Error", JOptionPane.ERROR_MESSAGE);
+            } else {
+                // se retoma la ultima partida
+                J_Tablero ventanaTablero = new J_Tablero(aux);
+                            ventanaTablero.setVisible(true); // Mostrar ventana de tablero
+                            this.setVisible(false);
+                            return; // Salir del ciclo y finalizar
+            }
+            
+            
+            
         } else if (O_Crear_Nueva_Partida.isSelected()) { // Crear nueva partida
             J_FotoJuego ventanaFotoJuego = new J_FotoJuego();
             ventanaFotoJuego.setVisible(true);
             
-            /*Timer timer = new Timer();
+            Timer timer = new Timer();
             TimerTask tarea = new TimerTask() {
                 @Override
                 public void run() {
@@ -218,7 +240,7 @@ public class J_InterfazGrafica extends javax.swing.JFrame {
                 Thread.sleep(3000);
             } catch (InterruptedException e) {
                 e.printStackTrace(); // Manejo de excepciones si la espera es interrumpida
-            }*/
+            }
 
             J_NombrarSupervivientes ventanaNombrarSupervivientes = new J_NombrarSupervivientes(); // Creamos la ventana para nombrar
 
@@ -337,9 +359,12 @@ public class J_InterfazGrafica extends javax.swing.JFrame {
             J_Info panel = new J_Info();
             String ataques = "";
             
-            for(Ataque a : listaAtaques) {
-                ataques += a.toString();
+            for(Juego j : arrayDeJuegos.getListaJuegos()) {
+                for(Ataque a : j.getListaAtaques()){
+                    ataques += a.toString();
+                }
             }
+            
             if(ataques.equals("")) {
                 panel.setInfo("No hay información");
             } else {
