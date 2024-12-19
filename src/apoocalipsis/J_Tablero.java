@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 import javax.swing.Timer;
 
 public class J_Tablero extends javax.swing.JFrame {
-    ReproductorMusica reproductor = new ReproductorMusica();
+    private ReproductorMusica reproductor = new ReproductorMusica();
     private final String PLANTSVSZOMBIS = "/apoocalipsis/sounds/PlantsVSZombies.wav";
     private Juego juego, juegoAnterior;
     private ListaJuego arrayJuegos;

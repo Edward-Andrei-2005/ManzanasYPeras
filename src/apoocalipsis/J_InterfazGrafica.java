@@ -8,7 +8,7 @@ import java.util.TimerTask;
 
 public class J_InterfazGrafica extends javax.swing.JFrame {
     //Atributos
-    ReproductorMusica reproductor = new ReproductorMusica();
+    private ReproductorMusica reproductor = new ReproductorMusica();
     private final String MALBEC = "/apoocalipsis/sounds/Malbec.wav";
     private ListaJuego arrayDeJuegos;
     //private ArrayList<Ataque> listaAtaques;

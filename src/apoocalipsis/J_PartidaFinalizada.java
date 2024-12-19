@@ -1,23 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package apoocalipsis;
 
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
-
-/**
- *
- * @author Edward
- */
 public class J_PartidaFinalizada extends javax.swing.JFrame {
+    //Atributos
+    private ReproductorMusica reproductor = new ReproductorMusica();
+    private final String MALBEC_END = "/apoocalipsis/sounds/Malbec_end.wav";
 
-    /**
-     * Creates new form J_PartidaFinalizada
-     */
     public J_PartidaFinalizada(boolean estado) {
         initComponents();
+        reproductor.reproducirMusica(MALBEC_END);
         // true = Ganan Supervivientes, false = Pierden Supervivientes
         String rutaImagen = estado ? "/apoocalipsis/image/Victoria.jpg" : "/apoocalipsis/image/Derrota.jpg";
             L_PartidaFinalizada.setIcon(new ImageIcon(getClass().getResource(rutaImagen)));
@@ -86,6 +78,7 @@ public class J_PartidaFinalizada extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void B_InicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_InicioActionPerformed
+        reproductor.detenerMusica();
         J_InterfazGrafica ventanaInterfazGrafica = new J_InterfazGrafica();
         ventanaInterfazGrafica.setVisible(true);
         this.setVisible(false);

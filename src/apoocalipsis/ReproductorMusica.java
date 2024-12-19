@@ -36,6 +36,7 @@ public class ReproductorMusica {
         }
     }
     
+    // Método para detener la música
     public void detenerMusica() {
         if (clip != null && clip.isRunning()) {
             clip.stop();
