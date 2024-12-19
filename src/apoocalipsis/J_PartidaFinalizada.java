@@ -19,7 +19,7 @@ public class J_PartidaFinalizada extends javax.swing.JFrame {
     public J_PartidaFinalizada(boolean estado) {
         initComponents();
         // true = Ganan Supervivientes, false = Pierden Supervivientes
-        String rutaImagen = estado ? "/apoocalipsis/images/Victoria.jpg" : "/apoocalipsis/images/Derrota.jpg";
+        String rutaImagen = estado ? "/apoocalipsis/image/Victoria.jpg" : "/apoocalipsis/image/Derrota.jpg";
             L_PartidaFinalizada.setIcon(new ImageIcon(getClass().getResource(rutaImagen)));
     }
 
@@ -38,6 +38,7 @@ public class J_PartidaFinalizada extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        L_PartidaFinalizada.setToolTipText("");
         L_PartidaFinalizada.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         B_Inicio.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
@@ -63,22 +64,22 @@ public class J_PartidaFinalizada extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(L_PartidaFinalizada, javax.swing.GroupLayout.PREFERRED_SIZE, 1024, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(L_PartidaFinalizada, javax.swing.GroupLayout.PREFERRED_SIZE, 850, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(B_Inicio)
-                    .addComponent(B_Salir))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(B_Salir)
+                    .addComponent(B_Inicio))
+                .addContainerGap(10, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(B_Salir)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 870, Short.MAX_VALUE)
+                .addGap(696, 696, 696)
                 .addComponent(B_Inicio)
                 .addContainerGap())
-            .addComponent(L_PartidaFinalizada, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(L_PartidaFinalizada, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 850, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
