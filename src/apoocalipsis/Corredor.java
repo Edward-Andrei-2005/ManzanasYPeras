@@ -16,4 +16,8 @@ public class Corredor extends Zombi {
     public String getInfo() {
         return "Corredor:\n\tAguante: " + getAguante() + "\n\tActivaciones: "+ getActivaciones();
     }
+    
+    public String toString() {
+        return "Corredor";
+    }
 }

@@ -24,15 +24,27 @@ public class Ataque implements Serializable {
         String aux = "";
         
         for(Zombi z: zombisEliminados) {
-            aux += z.getInfo() + "\n";
+            aux += "\t" + z.toString() + "\n";
         }
+        
+        return aux;
+    }
+    
+    private String numeroDados(int [] numeroDados) {
+        String aux = "[";
+        
+        for (int i=0; i<numeroDados.length-1; i++) {
+            aux += numeroDados[i] + ", ";
+        }
+        aux += numeroDados[numeroDados.length-1] + "]";
         
         return aux;
     }
     
     @Override
     public String toString() {
-        return ("****" + superviviente.getNombre() + " ha atacado a " + casillaDestino.numeroZombis() + " zombis:\n" 
-                + zombisEliminados(zombisEliminados)) + "****\n" + superviviente.getInfo() + "\nArma usada: " + arma.getInfo();
+        return ("****" + superviviente.getNombre() + " ha atacado a " + " zombis:\n" 
+                + zombisEliminados(zombisEliminados)) + "\tArma usada: " + arma.getInfo() + "\n\tDados obtenidos: " + numeroDados(numeroDeDados)
+                + "\n\tExitos obtenidos: " + numeroExito;
     }
 }

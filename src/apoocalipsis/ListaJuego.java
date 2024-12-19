@@ -2,6 +2,7 @@ package apoocalipsis;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -23,10 +24,22 @@ public class ListaJuego {
         guardarFichero();
     }
     
+    public static void vaciarFichero() {
+        try (FileWriter escritor = new FileWriter(ARCHIVO, false)) {
+            System.out.println("Fichero vaciado");
+        } catch (IOException e) {
+            
+        }
+    }
+    
     public Juego getUltimo() {
         if (listaJuegos.isEmpty()) return null;
         
         return listaJuegos.get(listaJuegos.size()-1);
+    }
+    
+    public void borrar(Juego juego) {
+        listaJuegos.remove(juego);
     }
     
     public ArrayList<Juego> getListaJuegos() {

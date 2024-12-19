@@ -5,6 +5,7 @@
 package apoocalipsis;
 
 import javax.swing.JOptionPane;
+import javax.swing.Timer;
 
 public class J_Tablero extends javax.swing.JFrame {
     private Juego juego, juegoAnterior;
@@ -41,8 +42,14 @@ public class J_Tablero extends javax.swing.JFrame {
         for (int i=0; i<listaSup.length; i++) {
             listaNombres[i] = listaSup[i].getNombre();
         }
+        turnosRestantesSuperviviente = juego.getTurnosSupervivientes();
         actualizarBotones();
         imprimirInformacionSuperviviente();
+    }
+    
+    public J_Tablero(Juego juego, ListaJuego arrayJuegos) {
+        this(juego);
+        this.arrayJuegos = arrayJuegos;
     }
     
     public J_Tablero(String [] nombres, ListaJuego arrayJuegos) {
@@ -4362,8 +4369,9 @@ public class J_Tablero extends javax.swing.JFrame {
             juegoAnterior = juego;
             juegoAnterior.terminarJuego();
             arrayJuegos.guardarJuego(juegoAnterior);
+
             // true = Ganan Supervivientes, false = Pierden Supervivientes
-            
+
             if (juego.hayAlgunSupervivienteMuerto()) {
                 ventanaPartidaFinalizada = new J_PartidaFinalizada(false);
             } else if (juego.hanGanadoSupervivientes(listaNombres)) {
@@ -4371,6 +4379,25 @@ public class J_Tablero extends javax.swing.JFrame {
             }
             ventanaPartidaFinalizada.setVisible(true);
             this.setVisible(false);
+            
+            /*Timer timer = new Timer(5000, e -> {
+                J_PartidaFinalizada ventanaPartidaFinalizada = null;
+                juegoAnterior = juego;
+                juegoAnterior.terminarJuego();
+                arrayJuegos.guardarJuego(juegoAnterior);
+                
+                // true = Ganan Supervivientes, false = Pierden Supervivientes
+            
+                if (juego.hayAlgunSupervivienteMuerto()) {
+                    ventanaPartidaFinalizada = new J_PartidaFinalizada(false);
+                } else if (juego.hanGanadoSupervivientes(listaNombres)) {
+                    ventanaPartidaFinalizada = new J_PartidaFinalizada(true);
+                }
+                ventanaPartidaFinalizada.setVisible(true);
+                this.setVisible(false);
+            });
+            timer.setRepeats(false); // Solo una ejecución
+            timer.start();*/
         }
     }
     

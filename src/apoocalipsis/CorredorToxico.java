@@ -9,4 +9,8 @@ public class CorredorToxico extends Corredor {
     public String getInfo() {
         return "Corredor:\n\tAguante: " + getAguante() + "\n\tActivaciones: "+ getActivaciones();
     }
+    
+    public String toString() {
+        return "Corredor Berserker";
+    }
 }

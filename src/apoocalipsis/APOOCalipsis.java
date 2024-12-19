@@ -6,7 +6,8 @@ public class APOOCalipsis {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Juego miJuego = new Juego();
+        //ListaJuego.vaciarFichero();
+        /*Juego miJuego = new Juego();
         ListaJuego ListaDeJuegos = new ListaJuego();
         //String[] s = {"Edward", "Manu"};
         //miJuego.asignarSupervivientesPosicionInicial(s);
@@ -22,7 +23,7 @@ public class APOOCalipsis {
             ListaDeJuegos.guardarJuego(miJuego);
             
         } while (!miJuego.hayAlgunSupervivienteMuerto() && !miJuego.hanGanadoSupervivientes(nombres));
-        //ListaDeJuegos.leerFichero(); //Para comprobar lo que se ha guardado en el fichero
+        //ListaDeJuegos.leerFichero(); //Para comprobar lo que se ha guardado en el fichero*/
         
     }
 }

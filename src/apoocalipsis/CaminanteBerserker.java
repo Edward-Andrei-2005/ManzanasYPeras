@@ -13,4 +13,8 @@ public class CaminanteBerserker extends Caminante {
     public String getInfo() {
         return "Caminante Berserker:\n\tAguante: " + getAguante() + "\n\tActivaciones: "+ getActivaciones();
     }
+    
+    public String toString() {
+        return "Caminante Berserker";
+    }
 }

@@ -8,4 +8,8 @@ public class AbominacionToxico extends Abominacion {
     public String getInfo() {
         return "Abominacion Toxico:\n\tAguante: " + getAguante() + "\n\tActivaciones: "+ getActivaciones();
     }
+    
+    public String toString() {
+        return "Abominacion Toxico";
+    }
 }

@@ -203,6 +203,7 @@ public class J_InterfazGrafica extends javax.swing.JFrame {
         if (O_Retomar_Partida_Empezada.isSelected()) {
             
             Juego aux = arrayDeJuegos.getUltimo();
+            arrayDeJuegos.borrar(aux);
             
             if (aux == null) {
                 JOptionPane.showMessageDialog(this, 
@@ -214,10 +215,10 @@ public class J_InterfazGrafica extends javax.swing.JFrame {
                                                 "Error", JOptionPane.ERROR_MESSAGE);
             } else {
                 // se retoma la ultima partida
-                J_Tablero ventanaTablero = new J_Tablero(aux);
-                            ventanaTablero.setVisible(true); // Mostrar ventana de tablero
-                            this.setVisible(false);
-                            return; // Salir del ciclo y finalizar
+                J_Tablero ventanaTablero = new J_Tablero(aux, arrayDeJuegos);
+                ventanaTablero.setVisible(true); // Mostrar ventana de tablero
+                this.setVisible(false);
+                return; // Salir del ciclo y finalizar
             }
             
             
@@ -283,7 +284,7 @@ public class J_InterfazGrafica extends javax.swing.JFrame {
             
             for(Juego j : arrayDeJuegos.getListaJuegos()) {
                 for(Ataque a : j.getListaAtaques()){
-                    ataques += a.toString();
+                    ataques += a.toString() + "\n";
                 }
             }
             

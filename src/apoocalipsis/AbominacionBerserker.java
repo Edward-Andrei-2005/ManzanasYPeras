@@ -12,4 +12,8 @@ public class AbominacionBerserker extends Abominacion {
     public String getInfo() {
         return "Abominacion Berserker:\n\tAguante: " + getAguante() + "\n\tActivaciones: "+ getActivaciones();
     }
+    
+    public String toString() {
+        return "Abominacion Berserker";
+    }
 }

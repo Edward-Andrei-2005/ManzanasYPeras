@@ -16,4 +16,8 @@ public class Caminante extends Zombi {
     public String getInfo() {
         return "Caminante:\n\tAguante: " + getAguante() + "\n\tActivaciones: "+ getActivaciones();
     }
+    
+    public String toString() {
+        return "Caminante";
+    }
 }

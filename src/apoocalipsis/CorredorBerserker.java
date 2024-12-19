@@ -13,4 +13,8 @@ public class CorredorBerserker extends Corredor {
     public String getInfo() {
         return "Corredor Berserker:\n\tAguante: " + getAguante() + "\n\tActivaciones: "+ getActivaciones();
     }
+    
+    public String toString() {
+        return "Corredor Berserker";
+    }
 }

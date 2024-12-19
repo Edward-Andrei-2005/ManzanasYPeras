@@ -17,4 +17,8 @@ public class Abominacion extends Zombi {
     public String getInfo() {
         return "Abominacion:\n\tAguante: " + getAguante() + "\n\tActivaciones: "+ getActivaciones();
     }
+    
+    public String toString() {
+        return "Abominacion";
+    }
 }
