@@ -1,6 +1,9 @@
 package apoocalipsis;
 import javax.swing.JOptionPane;
-
+/**
+ *
+ * @author Anass Chikou El Mahraoui, Edward Andrei, Manuel Alos de la Vega
+ */
 public class J_NombrarSupervivientes extends javax.swing.JPanel {
 
     /**
