@@ -34,6 +34,7 @@ public class J_PosicionZombiAislado extends javax.swing.JPanel {
         L_NombreSuperviviente4 = new javax.swing.JLabel();
         L_NombreSuperviviente5 = new javax.swing.JLabel();
         cbTipoZombi = new javax.swing.JComboBox<>();
+        L_LogoURJC = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(253, 253, 253));
 
@@ -69,6 +70,8 @@ public class J_PosicionZombiAislado extends javax.swing.JPanel {
         L_NombreSuperviviente5.setForeground(new java.awt.Color(7, 33, 68));
         L_NombreSuperviviente5.setText("Elige el tipo de zombi: ");
 
+        L_LogoURJC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/apoocalipsis/image/URJ_simbolo_POS_1.png"))); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -94,11 +97,13 @@ public class J_PosicionZombiAislado extends javax.swing.JPanel {
                 .addComponent(L_NombreSuperviviente5)
                 .addGap(36, 36, 36)
                 .addComponent(cbTipoZombi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(L_LogoURJC)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(L_NombreSuperviviente4, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -114,6 +119,10 @@ public class J_PosicionZombiAislado extends javax.swing.JPanel {
                     .addComponent(L_NombreSuperviviente5, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cbTipoZombi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(L_LogoURJC)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -152,6 +161,7 @@ public class J_PosicionZombiAislado extends javax.swing.JPanel {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel L_LogoURJC;
     private javax.swing.JLabel L_NombreSuperviviente1;
     private javax.swing.JLabel L_NombreSuperviviente2;
     private javax.swing.JLabel L_NombreSuperviviente3;

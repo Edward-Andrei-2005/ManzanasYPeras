@@ -1,13 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package apoocalipsis;
-
-/**
- *
- * @author manue
- */
 public class J_DatosAtaqueAislado extends javax.swing.JPanel {
 
     /**
@@ -29,11 +20,11 @@ public class J_DatosAtaqueAislado extends javax.swing.JPanel {
         }
         for (int i : a.getValoresDado()) {
             String s = i + "";
-            cbNumDadosArma.addItem(s);
+            cbValorExitoArma.addItem(s);
         }
         for (int i=0; i<=a.getValoresExito(); i++) {
             String s = i + "";
-            cbValorExitoArma.addItem(s);
+            cbNumDadosArma.addItem(s);
         }
     }
     
@@ -95,135 +86,156 @@ public class J_DatosAtaqueAislado extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        L_NombreSuperviviente12 = new javax.swing.JLabel();
-        L_NombreSuperviviente4 = new javax.swing.JLabel();
+        jTextField4 = new javax.swing.JTextField();
         L_NombreSuperviviente5 = new javax.swing.JLabel();
+        L_NombreSuperviviente4 = new javax.swing.JLabel();
         L_NombreSuperviviente6 = new javax.swing.JLabel();
         L_NombreSuperviviente7 = new javax.swing.JLabel();
-        tfSupX = new javax.swing.JTextField();
-        tfSupY = new javax.swing.JTextField();
         L_NombreSuperviviente8 = new javax.swing.JLabel();
         L_NombreSuperviviente9 = new javax.swing.JLabel();
         L_NombreSuperviviente10 = new javax.swing.JLabel();
+        L_NombreSuperviviente11 = new javax.swing.JLabel();
+        cbTipoZombi = new javax.swing.JComboBox<>();
+        tfSupX = new javax.swing.JTextField();
+        tfSupY = new javax.swing.JTextField();
         tfZombiX = new javax.swing.JTextField();
         tfZombiY = new javax.swing.JTextField();
-        cbTipoZombi = new javax.swing.JComboBox<>();
-        L_NombreSuperviviente11 = new javax.swing.JLabel();
         L_NombreSuperviviente13 = new javax.swing.JLabel();
         L_NombreSuperviviente14 = new javax.swing.JLabel();
-        cbNombreArma = new javax.swing.JComboBox<>();
-        L_NombreSuperviviente15 = new javax.swing.JLabel();
         L_NombreSuperviviente16 = new javax.swing.JLabel();
-        L_NombreSuperviviente17 = new javax.swing.JLabel();
-        L_NombreSuperviviente18 = new javax.swing.JLabel();
+        cbNombreArma = new javax.swing.JComboBox<>();
         cbAlcanceArma = new javax.swing.JComboBox<>();
-        cbNumDadosArma = new javax.swing.JComboBox<>();
         cbPotenciaArma = new javax.swing.JComboBox<>();
+        L_NombreSuperviviente15 = new javax.swing.JLabel();
+        L_NombreSuperviviente17 = new javax.swing.JLabel();
+        cbNumDadosArma = new javax.swing.JComboBox<>();
         cbValorExitoArma = new javax.swing.JComboBox<>();
+        L_NombreSuperviviente18 = new javax.swing.JLabel();
+        L_LogoURJC = new javax.swing.JLabel();
 
-        L_NombreSuperviviente12.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        L_NombreSuperviviente12.setForeground(new java.awt.Color(7, 33, 68));
-        L_NombreSuperviviente12.setText("Tipo:");
+        jTextField4.setText("jTextField4");
 
-        L_NombreSuperviviente4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        L_NombreSuperviviente4.setForeground(new java.awt.Color(7, 33, 68));
-        L_NombreSuperviviente4.setText("Superviviente");
+        setBackground(new java.awt.Color(253, 253, 253));
 
-        L_NombreSuperviviente5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        L_NombreSuperviviente5.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         L_NombreSuperviviente5.setForeground(new java.awt.Color(7, 33, 68));
         L_NombreSuperviviente5.setText("Elige los datos del zombi el superviviente y su arma");
 
-        L_NombreSuperviviente6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        L_NombreSuperviviente4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        L_NombreSuperviviente4.setForeground(new java.awt.Color(7, 33, 68));
+        L_NombreSuperviviente4.setText("Superviviente");
+
+        L_NombreSuperviviente6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         L_NombreSuperviviente6.setForeground(new java.awt.Color(7, 33, 68));
         L_NombreSuperviviente6.setText("X:");
 
-        L_NombreSuperviviente7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        L_NombreSuperviviente7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         L_NombreSuperviviente7.setForeground(new java.awt.Color(7, 33, 68));
         L_NombreSuperviviente7.setText("Y:");
 
-        L_NombreSuperviviente8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        L_NombreSuperviviente8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         L_NombreSuperviviente8.setForeground(new java.awt.Color(7, 33, 68));
         L_NombreSuperviviente8.setText("Zombi");
 
-        L_NombreSuperviviente9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        L_NombreSuperviviente9.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         L_NombreSuperviviente9.setForeground(new java.awt.Color(7, 33, 68));
         L_NombreSuperviviente9.setText("X:");
 
-        L_NombreSuperviviente10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        L_NombreSuperviviente10.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         L_NombreSuperviviente10.setForeground(new java.awt.Color(7, 33, 68));
         L_NombreSuperviviente10.setText("Y:");
 
-        L_NombreSuperviviente11.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        L_NombreSuperviviente11.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         L_NombreSuperviviente11.setForeground(new java.awt.Color(7, 33, 68));
         L_NombreSuperviviente11.setText("Tipo:");
 
-        L_NombreSuperviviente13.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        cbTipoZombi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbTipoZombiActionPerformed(evt);
+            }
+        });
+
+        tfSupX.setText("0");
+        tfSupX.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfSupXActionPerformed(evt);
+            }
+        });
+
+        tfSupY.setText("0");
+
+        tfZombiX.setText("0");
+
+        tfZombiY.setText("0");
+
+        L_NombreSuperviviente13.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         L_NombreSuperviviente13.setForeground(new java.awt.Color(7, 33, 68));
         L_NombreSuperviviente13.setText("Arma");
 
-        L_NombreSuperviviente14.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        L_NombreSuperviviente14.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         L_NombreSuperviviente14.setForeground(new java.awt.Color(7, 33, 68));
         L_NombreSuperviviente14.setText("Nombre:");
 
-        L_NombreSuperviviente15.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        L_NombreSuperviviente15.setForeground(new java.awt.Color(7, 33, 68));
-        L_NombreSuperviviente15.setText("Potencia:");
-
-        L_NombreSuperviviente16.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        L_NombreSuperviviente16.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         L_NombreSuperviviente16.setForeground(new java.awt.Color(7, 33, 68));
         L_NombreSuperviviente16.setText("Alcance:");
 
-        L_NombreSuperviviente17.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        L_NombreSuperviviente15.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        L_NombreSuperviviente15.setForeground(new java.awt.Color(7, 33, 68));
+        L_NombreSuperviviente15.setText("Potencia:");
+
+        L_NombreSuperviviente17.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         L_NombreSuperviviente17.setForeground(new java.awt.Color(7, 33, 68));
         L_NombreSuperviviente17.setText("Numero de dados:");
 
-        L_NombreSuperviviente18.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        L_NombreSuperviviente18.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         L_NombreSuperviviente18.setForeground(new java.awt.Color(7, 33, 68));
         L_NombreSuperviviente18.setText("Valor de exito:");
+
+        L_LogoURJC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/apoocalipsis/image/URJ_simbolo_POS_1.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(74, 74, 74)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(L_NombreSuperviviente4)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(L_NombreSuperviviente6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tfSupX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(L_NombreSuperviviente7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tfSupY, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(L_NombreSuperviviente8)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(L_NombreSuperviviente9)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tfZombiX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(L_NombreSuperviviente10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tfZombiY, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(64, 64, 64)
-                .addComponent(L_NombreSuperviviente11)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cbTipoZombi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(L_NombreSuperviviente5)
-                .addGap(50, 50, 50))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addComponent(L_NombreSuperviviente13))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(L_LogoURJC)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(64, 64, 64)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(L_NombreSuperviviente4)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(L_NombreSuperviviente6)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(tfSupX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(L_NombreSuperviviente7)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(tfSupY, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(133, 133, 133)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(L_NombreSuperviviente10)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(tfZombiY, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(L_NombreSuperviviente9)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(tfZombiX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(42, 42, 42)
+                                        .addComponent(L_NombreSuperviviente11)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(cbTipoZombi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(L_NombreSuperviviente8)))
+                            .addComponent(L_NombreSuperviviente5)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(72, 72, 72)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(L_NombreSuperviviente14)
@@ -244,44 +256,43 @@ public class J_DatosAtaqueAislado extends javax.swing.JPanel {
                                 .addComponent(L_NombreSuperviviente15)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(cbPotenciaArma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
-                                .addComponent(L_NombreSuperviviente18)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cbValorExitoArma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(L_NombreSuperviviente18)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cbValorExitoArma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(42, 42, 42))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(L_NombreSuperviviente13)
+                        .addGap(325, 325, 325)))
+                .addGap(79, 79, 79))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(34, 34, 34)
+                .addGap(23, 23, 23)
                 .addComponent(L_NombreSuperviviente5, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(L_NombreSuperviviente4, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(L_NombreSuperviviente8, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(L_NombreSuperviviente8, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(L_NombreSuperviviente9, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tfZombiX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cbTipoZombi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(L_NombreSuperviviente11, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(L_NombreSuperviviente10, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tfZombiY, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(L_NombreSuperviviente4, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(L_NombreSuperviviente6, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tfSupX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(L_NombreSuperviviente7, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tfSupY, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(L_NombreSuperviviente6, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(L_NombreSuperviviente9, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(L_NombreSuperviviente11, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbTipoZombi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfSupX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfZombiX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(L_NombreSuperviviente7, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(L_NombreSuperviviente10, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfSupY, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfZombiY, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(67, 67, 67)
                 .addComponent(L_NombreSuperviviente13, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(L_NombreSuperviviente14, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cbNombreArma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -295,15 +306,25 @@ public class J_DatosAtaqueAislado extends javax.swing.JPanel {
                     .addComponent(L_NombreSuperviviente17, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cbAlcanceArma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cbNumDadosArma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                .addComponent(L_LogoURJC)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void tfSupXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfSupXActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfSupXActionPerformed
+
+    private void cbTipoZombiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbTipoZombiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbTipoZombiActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel L_LogoURJC;
     private javax.swing.JLabel L_NombreSuperviviente10;
     private javax.swing.JLabel L_NombreSuperviviente11;
-    private javax.swing.JLabel L_NombreSuperviviente12;
     private javax.swing.JLabel L_NombreSuperviviente13;
     private javax.swing.JLabel L_NombreSuperviviente14;
     private javax.swing.JLabel L_NombreSuperviviente15;
@@ -322,6 +343,7 @@ public class J_DatosAtaqueAislado extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> cbPotenciaArma;
     private javax.swing.JComboBox<String> cbTipoZombi;
     private javax.swing.JComboBox<String> cbValorExitoArma;
+    private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField tfSupX;
     private javax.swing.JTextField tfSupY;
     private javax.swing.JTextField tfZombiX;

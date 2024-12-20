@@ -315,8 +315,8 @@ public class J_InterfazGrafica extends javax.swing.JFrame {
                                         reproductor.detenerMusica();
                                     } else {
                                         JOptionPane.showMessageDialog(this, "Vuelve a introducir los datos", 
-                                                                  "Has seleccionado volver a introducir los datos", JOptionPane.INFORMATION_MESSAGE);
-                                    auxb = false;
+                                                                  "Información", JOptionPane.INFORMATION_MESSAGE);
+                                        auxb = false;
                                     }
                                 } else {
                                     JOptionPane.showMessageDialog(this, "Vuelve a introducir los datos", 
@@ -346,52 +346,72 @@ public class J_InterfazGrafica extends javax.swing.JFrame {
                         boolean auxb = false;
                         do {
                             int opcion2 = JOptionPane.showConfirmDialog(this, ventana, "Eleccion coordenadas zombi prueba", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
-                            xZombi = ventana.getZombiX();
-                            yZombi = ventana.getZombiY();
-                            xSup = ventana.getSupX();
-                            ySup = ventana.getSupY();
-                            s = ventana.getTipoZombi();
-                            nombre = ventana.getNombreArma();
-                            alcance = ventana.getAlcanceArma();
-                            potencia = ventana.getPotenciaArma();
-                            numDados = ventana.getNumDadosArma();
-                            valorExito = ventana.getValorExitoArma();
-                            
-                            if (xZombi >= 0 && xZombi <= 9 && yZombi >= 0 && yZombi <= 9 && xSup >= 0 && xSup <= 9 && ySup >= 0 && ySup <= 9) {
-                                auxb = true;
+                            if(opcion2 == JOptionPane.OK_OPTION) {
+                                xZombi = ventana.getZombiX();
+                                yZombi = ventana.getZombiY();
+                                xSup = ventana.getSupX();
+                                ySup = ventana.getSupY();
+                                s = ventana.getTipoZombi();
+                                nombre = ventana.getNombreArma();
+                                alcance = ventana.getAlcanceArma();
+                                potencia = ventana.getPotenciaArma();
+                                numDados = ventana.getNumDadosArma();
+                                valorExito = ventana.getValorExitoArma();
+                                
+                                if (xZombi >= 0 && xZombi <= 9 && yZombi >= 0 && yZombi <= 9 && xSup >= 0 && xSup <= 9 && ySup >= 0 && ySup <= 9) {
+                                    auxb = true;
+                                    J_ConfirmacionSimulacionAtaque ventanaConfirmacionSimulacionAtaque = new J_ConfirmacionSimulacionAtaque();
+                                    ventanaConfirmacionSimulacionAtaque.escribirConfirmacion(xSup, ySup, xZombi, yZombi, s, nombre, potencia, valorExito, alcance, numDados);
+
+                                    boolean aux2 = false;
+                                    int opcion3 = JOptionPane.showConfirmDialog(this, ventanaConfirmacionSimulacionAtaque, 
+                                                                    "Introducir datos",
+                                                                    JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
+                                    if(opcion3 == JOptionPane.OK_OPTION) {
+                                        Zombi z = null;
+                                        if (s.equals(TIPOS_ZOMBI[0])) {
+                                            z = new Caminante();
+                                        } else if (s.equals(TIPOS_ZOMBI[1])) {
+                                            z = new CaminanteBerserker();
+                                        } else if (s.equals(TIPOS_ZOMBI[2])) {
+                                            z = new CaminanteToxico();
+                                        } else if (s.equals(TIPOS_ZOMBI[3])) {
+                                            z = new Corredor();
+                                        } else if (s.equals(TIPOS_ZOMBI[4])) {
+                                            z = new CorredorBerserker();
+                                        } else if (s.equals(TIPOS_ZOMBI[5])) {
+                                            z = new CorredorToxico();
+                                        } else if (s.equals(TIPOS_ZOMBI[6])) {
+                                            z = new Abominacion();
+                                        } else if (s.equals(TIPOS_ZOMBI[7])) {
+                                            z = new AbominacionBerserker();
+                                        } else if (s.equals(TIPOS_ZOMBI[8])) {
+                                            z = new AbominacionToxico();
+                                        }
+
+                                        Arma a = new Arma(nombre, alcance, potencia, numDados, valorExito);
+
+                                        J_Tablero ventanaTablero = new J_Tablero(nombresPrueba, xSup, ySup, z, xZombi, yZombi, a);
+                                        ventanaTablero.setVisible(true); // Mostrar ventana de tablero
+                                        this.setVisible(false);
+                                        reproductor.detenerMusica();
+                                    } else {
+                                        JOptionPane.showMessageDialog(this, "Vuelve a introducir los datos", 
+                                                              "Información", JOptionPane.INFORMATION_MESSAGE);
+                                        auxb = false;
+                                    }
+                                } else {
+                                    JOptionPane.showMessageDialog(this, "Vuelve a introducir los datos", 
+                                                              "Error al introducir los datos", JOptionPane.INFORMATION_MESSAGE);
+                                }
+
                             } else {
-                                JOptionPane.showMessageDialog(this, "Vuelve a introducir los datos", 
-                                                          "Error al introducir los datos", JOptionPane.INFORMATION_MESSAGE);
+                                JOptionPane.showMessageDialog(this,
+                                              "Creación de ataque aislado cancelado.",
+                                              "Información", JOptionPane.INFORMATION_MESSAGE);
+                                return;
                             }
                         } while (!auxb);
-                        
-                        Zombi z = null;
-                        if (s.equals(TIPOS_ZOMBI[0])) {
-                            z = new Caminante();
-                        } else if (s.equals(TIPOS_ZOMBI[1])) {
-                            z = new CaminanteBerserker();
-                        } else if (s.equals(TIPOS_ZOMBI[2])) {
-                            z = new CaminanteToxico();
-                        } else if (s.equals(TIPOS_ZOMBI[3])) {
-                            z = new Corredor();
-                        } else if (s.equals(TIPOS_ZOMBI[4])) {
-                            z = new CorredorBerserker();
-                        } else if (s.equals(TIPOS_ZOMBI[5])) {
-                            z = new CorredorToxico();
-                        } else if (s.equals(TIPOS_ZOMBI[6])) {
-                            z = new Abominacion();
-                        } else if (s.equals(TIPOS_ZOMBI[7])) {
-                            z = new AbominacionBerserker();
-                        } else if (s.equals(TIPOS_ZOMBI[8])) {
-                            z = new AbominacionToxico();
-                        }
-                        
-                        Arma a = new Arma(nombre, alcance, potencia, numDados, valorExito);
-                        
-                        J_Tablero ventanaTablero = new J_Tablero(nombresPrueba, xSup, ySup, z, xZombi, yZombi, a);
-                        ventanaTablero.setVisible(true); // Mostrar ventana de tablero
-                        this.setVisible(false);
-                        reproductor.detenerMusica();
                         aux = true; // Salir del ciclo y finalizar
 
                     } else {

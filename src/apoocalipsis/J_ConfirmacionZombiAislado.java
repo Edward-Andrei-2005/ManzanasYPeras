@@ -24,6 +24,7 @@ public class J_ConfirmacionZombiAislado extends javax.swing.JPanel {
         L_ConfirmacionY = new javax.swing.JLabel();
         L_ConfirmacionX = new javax.swing.JLabel();
         L_ConfirmacionZombi = new javax.swing.JLabel();
+        L_LogoURJC = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(253, 253, 253));
 
@@ -55,6 +56,8 @@ public class J_ConfirmacionZombiAislado extends javax.swing.JPanel {
         L_ConfirmacionZombi.setForeground(new java.awt.Color(7, 33, 68));
         L_ConfirmacionZombi.setText("jLabel1");
 
+        L_LogoURJC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/apoocalipsis/image/URJ_simbolo_POS_1.png"))); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -78,8 +81,13 @@ public class J_ConfirmacionZombiAislado extends javax.swing.JPanel {
                 .addContainerGap(79, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(L_DatosIntroducidos)
-                .addGap(259, 259, 259))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(L_DatosIntroducidos)
+                        .addGap(259, 259, 259))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(L_LogoURJC)
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -96,7 +104,9 @@ public class J_ConfirmacionZombiAislado extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(L_Zombi, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(L_ConfirmacionZombi))
-                .addContainerGap(77, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(L_LogoURJC)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -111,6 +121,7 @@ public class J_ConfirmacionZombiAislado extends javax.swing.JPanel {
     private javax.swing.JLabel L_ConfirmacionY;
     private javax.swing.JLabel L_ConfirmacionZombi;
     private javax.swing.JLabel L_DatosIntroducidos;
+    private javax.swing.JLabel L_LogoURJC;
     private javax.swing.JLabel L_X;
     private javax.swing.JLabel L_Y;
     private javax.swing.JLabel L_Zombi;

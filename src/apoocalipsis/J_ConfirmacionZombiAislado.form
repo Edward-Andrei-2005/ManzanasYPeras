@@ -44,8 +44,16 @@
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
-              <Component id="L_DatosIntroducidos" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="259" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="L_DatosIntroducidos" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="259" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="L_LogoURJC" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
           </Group>
       </Group>
     </DimensionLayout>
@@ -66,7 +74,9 @@
                   <Component id="L_Zombi" alignment="3" min="-2" pref="55" max="-2" attributes="0"/>
                   <Component id="L_ConfirmacionZombi" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="77" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="L_LogoURJC" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -147,6 +157,13 @@
           <Color blue="44" green="21" red="7" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jLabel1"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="L_LogoURJC">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/apoocalipsis/image/URJ_simbolo_POS_1.png"/>
+        </Property>
       </Properties>
     </Component>
   </SubComponents>
