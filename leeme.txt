@@ -1,0 +1,89 @@
+APOOCALIPSIS ZOMBI
+
+Trabajo realizado por el GRUPO 1:
+    
+- Edward Andrei
+- Manuel Alos de la Vega
+- Anass Chikou El Mahraoui
+
+=================================
+
+DESCRIPCIÓN
+
+El trabajo ha sido implementado en una interfaz gráfica. 
+La navegación por el trabajo se realiza desde un menú principal donde se pueden realizar todas las acciones especificadas en el enunciado de la práctica.
+
+=================================
+
+FUNCIONALIDADES
+
+1. Crear una partida
+   - El usuario introduce los nombres de los supervivientes.
+   - Todos los supervivientes se generan en la posición inicial (0,0).
+
+2. Retomar una partida ya empezada
+   - Se lee el fichero "APOOCalipsis.dat".
+   - Si el fichero está vacío o contiene una partida finalizada, no será posible retomarla.
+   - Solo se pueden retomar partidas no finalizadas previamente.
+
+3. Simular acciones aisladas
+   *Nota: Al presionar el botón SALIR, se mostrará un aviso indicando que los datos no se guardarán en el fichero.*
+
+   Tipos de acciones:
+
+   A. Ataque de un superviviente a un zombi:
+      - Se solicita al usuario la información del superviviente, de su arma, del zombi y de sus respectivas casillas.
+      - En el tablero, las entidades se posicionan según lo indicado por el usuario.
+      - Tras 3 segundos, el ataque se ejecuta automáticamente. Si es válido, el zombi desaparece; en caso contrario, permanece en el tablero.
+
+   B. Activación de un zombi:
+      - El usuario elige el tipo de zombi y su casilla.
+      - El superviviente se genera automáticamente en la casilla central (5,5).
+      - En el tablero, las entidades se posicionan y, tras 3 segundos, el zombi ataca automáticamente (o se mueve hacia el superviviente según la distancia).
+
+   C. Búsqueda de equipo por parte de un superviviente:
+      - De manera aleatoria, se genera un arma o una provisión, que se muestra al usuario.
+
+4. Consultar historial de ataques
+   - Se lee el fichero "APOOCalipsis.dat".
+   - Si el fichero no está vacío, se imprime el historial de ataques desde la primera ejecución del programa.
+   - *Nota: Las acciones aisladas no se incluyen en el historial.*
+
+=================================
+
+INFORMACIÓN RELEVANTE
+
+- Es importante salir siempre desde el botón SALIR, ya que si se cierra la ventana utilizando el botón de cierre proporcionado por Java en la interfaz, puede generar problemas en el funcionamiento del programa.
+
+- Si un zombi está en una casilla con varios supervivientes, priorizará atacar a los supervivientes heridos. Si no hay heridos, atacará a los supervivientes sanos.
+
+=================================
+
+IMPLEMENTACIONES ADICIONALES
+
+1. Interfaces con tiempo controlado:
+   - Se han utilizado las bibliotecas `import javax.swing.Timer;` y `import java.util.TimerTask;` para mostrar las interfaces en un orden secuencial.
+   - Estas interfaces se cierran automáticamente tras un tiempo determinado.
+
+2. Sonido dinámico:
+   - Se ha creado una clase para manejar efectos de sonido utilizando los métodos `import javax.sound.sampled.AudioInputStream;`, `import javax.sound.sampled.AudioSystem;`, `import javax.sound.sampled.Clip;` y `import javax.sound.sampled.FloatControl;`.
+   - El sonido cambia dependiendo de la interfaz mostrada, añadiendo inmersión al juego.
+
+3. Recomendaciones del sistema:
+   - Es recomendable ejecutar el programa en un sistema operativo Windows.
+   - Las rutas de acceso a los audios y las imágenes se han definido utilizando separadores que funcionan mejor en Windows (`/`).
+   - Si se produce algún error relacionado con las rutas, es probable que sea debido a esta configuración.
+
+=================================
+
+ADICIONAL
+
+- En el vídeo, explicaremos cómo funcionan las mecánicas del juego, incluyendo ataques, movimientos y otras funcionalidades clave.
+
+- El código fuente de este proyecto estará disponible públicamente en el siguiente repositorio de GitHub una vez cerrada la entrega: https://github.com/Edward-Andrei-2005/ManzanasYPeras
+
+- En el caso de que se genere un error, usar el método comentado en el main de vaciarFichero(); para vaciar el contenido de "APOOCalipsis.dat".
+
+=================================
+
+¡Felices Fiestas! 🎮🧟
