@@ -294,54 +294,139 @@ public class J_Tablero extends javax.swing.JFrame {
         jPanel1.add(b02);
 
         b03.setText("jButton2");
+        b03.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b03ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b03);
 
         b04.setText("jButton4");
+        b04.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b04ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b04);
 
         b05.setText("jButton10");
+        b05.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b05ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b05);
 
         b06.setText("jButton9");
+        b06.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b06ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b06);
 
         b07.setText("jButton13");
+        b07.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b07ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b07);
 
         b08.setText("jButton8");
+        b08.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b08ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b08);
 
         b09.setText("jButton1");
+        b09.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b09ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b09);
 
         b10.setText("jButton20");
+        b10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b10ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b10);
 
         b11.setText("jButton5");
+        b11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b11ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b11);
 
         b12.setText("jButton19");
+        b12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b12ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b12);
 
         b13.setText("jButton17");
+        b13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b13ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b13);
 
         b14.setText("jButton21");
+        b14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b14ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b14);
 
         b15.setText("jButton23");
+        b15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b15ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b15);
 
         b16.setText("jButton3");
+        b16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b16ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b16);
 
         b17.setText("jButton30");
+        b17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b17ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b17);
 
         b18.setText("jButton28");
+        b18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b18ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b18);
 
         b19.setText("jButton43");
+        b19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b19ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b19);
 
         b20.setText("jButton46");
