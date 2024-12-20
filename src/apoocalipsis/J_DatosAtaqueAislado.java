@@ -1,4 +1,8 @@
 package apoocalipsis;
+/**
+ *
+ * @author Anass Chikou El Mahraoui, Edward Andrei, Manuel Alos de la Vega
+ */
 public class J_DatosAtaqueAislado extends javax.swing.JPanel {
 
     /**
