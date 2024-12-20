@@ -1,5 +1,8 @@
 package apoocalipsis;
-
+/**
+ *
+ * @author Anass Chikou El Mahraoui, Edward Andrei, Manuel Alos de la Vega
+ */
 public class Provision extends Equipo {
     private String nombre;
     private int valorEnergetico;
