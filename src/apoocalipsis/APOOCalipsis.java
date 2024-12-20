@@ -1,11 +1,14 @@
 package apoocalipsis;
 
+import java.io.File;
+
 public class APOOCalipsis {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        System.out.print(System.getProperty("file.separator"));
         //ListaJuego.vaciarFichero();
         /*Juego miJuego = new Juego();
         ListaJuego ListaDeJuegos = new ListaJuego();

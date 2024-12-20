@@ -587,6 +587,22 @@ public class Juego implements Serializable {
         return true;
     }
     
+    public void asignarSupervivientesPosicion(String [] listaS, int x, int y) {
+        for (int i=0; i<listaS.length-1; i++) {
+            for (int j=i+1; j<listaS.length; j++) {
+                if (listaS[i].equals(listaS[j])) return;
+            }
+        }
+        
+        for (int i=0; i<listaS.length; i++) {
+            dimension[x][y].anadirEntidad(new Superviviente(listaS[i]));
+        }
+    }
+    
+    public void asignarZombiPosicion(Zombi z, int x, int y) {
+        dimension[x][y].anadirEntidad(z);
+    }
+    
     public boolean hayAlgunSupervivienteMuerto() {
         for (int i=0; i<TAM_X; i++) {
             for (int j=0; j<TAM_Y; j++) {

@@ -20,7 +20,7 @@ public class ReproductorMusica {
             FloatControl volumeControl = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
 
             // Ajustar el volumen (por ejemplo, -10.0f para reducir el volumen o 6.0f para aumentarlo)
-            volumeControl.setValue(-20.0f);  // Rango común: de -80.0f (silencio) a 6.0f (máximo volumen)
+            volumeControl.setValue(0.0f);  // Rango común: de -80.0f (silencio) a 6.0f (máximo volumen)
 
             // Agregar listener para detectar el final del clip y reiniciarlo
             clip.addLineListener(event -> {

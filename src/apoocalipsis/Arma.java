@@ -13,7 +13,7 @@ public class Arma extends Equipo {
     private static final int MAX_ALCANCE = 5;
     private static final int[] VALORES_DADO = {1, 2, 3, 4, 5, 6};
     private static final String[] NOMBRES_MELEE = {"Cuchillo", "Maza", "Espada", "Daga"};
-    private static final String[] NOMBRES_DISTANCIA = {"Arco", "Piedra"};
+    private static final String[] NOMBRES_DISTANCIA = {"Arco", "Bazooka", "AK-47"};
     private static final int NUM_DADOS = 3;
     
     public Arma() {
@@ -40,6 +40,21 @@ public class Arma extends Equipo {
     public int getNumeroDeDados() { return numeroDeDados; }
     public int getValorDeExito() { return valorDeExito; }
     public int getId() { return id; }
+    
+    public int [] getValoresPotencia() { return VALORES_POTENCIA; }
+    public int getMaxAlcance() { return MAX_ALCANCE; }
+    public int [] getValoresDado() { return VALORES_DADO; }
+    public String [] getNombresArma() {
+        String [] lista = new String [NOMBRES_MELEE.length + NOMBRES_DISTANCIA.length];
+        for (int i=0; i<NOMBRES_MELEE.length; i++) {
+            lista[i] = NOMBRES_MELEE[i];
+        }
+        for (int i=NOMBRES_MELEE.length; i<lista.length; i++) {
+            lista[i] = NOMBRES_DISTANCIA[i-NOMBRES_MELEE.length];
+        }
+        return lista;
+    }
+    public int getValoresExito() { return NUM_DADOS; }
     
     // Dada una distancia dice si un arma puede atacar a un objetivo que esté a esa distancia
     public boolean estaDentroDelRango(int distancia) {

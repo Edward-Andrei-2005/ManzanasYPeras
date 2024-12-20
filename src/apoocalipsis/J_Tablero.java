@@ -4,6 +4,7 @@
  */
 package apoocalipsis;
 
+import java.io.File;
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
 
@@ -28,13 +29,23 @@ public class J_Tablero extends javax.swing.JFrame {
     /**
      * Creates new form Tablero
      */
-    public J_Tablero(String [] nombres) {
+    public J_Tablero(String [] nombres, int xSup, int ySup, Zombi z, int xZombi, int yZombi) {
         initComponents();
         reproductor.reproducirMusica(PLANTSVSZOMBIS);
         juego = new Juego();
         juegoAnterior = new Juego();
         listaSup = new Superviviente[nombres.length];
         listaNombres = nombres;
+        juego.asignarSupervivientesPosicion(nombres, xSup, ySup);
+        juego.asignarZombiPosicion(z, xZombi, yZombi);
+        actualizarBotones();
+        
+        Timer timer = new Timer(1500, e -> {
+            juego.turnoZombis();
+            actualizarBotones();
+        });
+        timer.setRepeats(false); // Solo una ejecución
+        timer.start();
     }
     
     public J_Tablero(Juego juego) {
@@ -56,7 +67,12 @@ public class J_Tablero extends javax.swing.JFrame {
     }
     
     public J_Tablero(String [] nombres, ListaJuego arrayJuegos) {
-        this(nombres);
+        initComponents();
+        reproductor.reproducirMusica(PLANTSVSZOMBIS);
+        juego = new Juego();
+        juegoAnterior = new Juego();
+        listaSup = new Superviviente[nombres.length];
+        listaNombres = nombres;
         this.arrayJuegos = arrayJuegos;
     }
 
@@ -4339,9 +4355,9 @@ public class J_Tablero extends javax.swing.JFrame {
         String [] nombres = {"Edward", "Manu", "Anass", "ChatGPT"};
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                J_Tablero tablero = new J_Tablero(nombres);
+                /*J_Tablero tablero = new J_Tablero(nombres);
                 tablero.setVisible(true);
-                tablero.iniciarPartida();
+                tablero.iniciarPartida();*/
             }
         });
     }
