@@ -6,7 +6,7 @@ package apoocalipsis;
 
 /**
  *
- * @author manue
+ * @author Anass Chikou El Mahraoui, Edward Andrei, Manuel Alos de la Vega
  */
 public class J_PosicionZombiAislado extends javax.swing.JPanel {
 
