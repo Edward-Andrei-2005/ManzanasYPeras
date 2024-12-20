@@ -1,5 +1,8 @@
 package apoocalipsis;
-
+/**
+ *
+ * @author Anass Chikou El Mahraoui, Edward Andrei, Manuel Alos de la Vega
+ */
 public class Arma extends Equipo {
     private int id;
     private static int contador;
