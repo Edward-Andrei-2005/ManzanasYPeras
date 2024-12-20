@@ -98,7 +98,7 @@ public class J_InterfazGrafica extends javax.swing.JFrame {
             }
         });
 
-        L_LogoETSII.setIcon(new javax.swing.ImageIcon(getClass().getResource("/apoocalipsis/images/siglas_ETSII_negro_negro.png"))); // NOI18N
+        L_LogoETSII.setIcon(new javax.swing.ImageIcon(getClass().getResource("/apoocalipsis/image/siglas_ETSII_negro_negro.png"))); // NOI18N
 
         G_Inicio.add(O_Simular_Acciones);
         O_Simular_Acciones.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N

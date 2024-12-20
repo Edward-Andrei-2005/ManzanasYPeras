@@ -36,7 +36,7 @@ public class J_NombrarSupervivientes extends javax.swing.JPanel {
         L_NombresSupervivientes.setForeground(new java.awt.Color(7, 33, 68));
         L_NombresSupervivientes.setText("NOMBRES SUPERVIVIENTES");
 
-        L_LogoURJC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/apoocalipsis/images/URJ_simbolo_POS_1.png"))); // NOI18N
+        L_LogoURJC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/apoocalipsis/image/URJ_simbolo_POS_1.png"))); // NOI18N
 
         L_NombreSuperviviente2.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         L_NombreSuperviviente2.setForeground(new java.awt.Color(7, 33, 68));

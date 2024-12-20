@@ -30,7 +30,7 @@ public class J_FotoJuego extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        L_FotoJuego.setIcon(new javax.swing.ImageIcon(getClass().getResource("/apoocalipsis/images/APOCALIPSIS.png"))); // NOI18N
+        L_FotoJuego.setIcon(new javax.swing.ImageIcon(getClass().getResource("/apoocalipsis/image/APOCALIPSIS.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

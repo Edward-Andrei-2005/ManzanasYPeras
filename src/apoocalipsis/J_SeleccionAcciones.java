@@ -38,7 +38,7 @@ public class J_SeleccionAcciones extends javax.swing.JPanel {
 
         jPanel1.setBackground(new java.awt.Color(253, 253, 253));
 
-        L_LogoURJC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/apoocalipsis/images/URJ_simbolo_POS_1.png"))); // NOI18N
+        L_LogoURJC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/apoocalipsis/image/URJ_simbolo_POS_1.png"))); // NOI18N
 
         L_SeleccionAcciones.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         L_SeleccionAcciones.setForeground(new java.awt.Color(7, 33, 68));

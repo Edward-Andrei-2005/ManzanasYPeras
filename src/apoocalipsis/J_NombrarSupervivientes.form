@@ -109,7 +109,7 @@
     <Component class="javax.swing.JLabel" name="L_LogoURJC">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/apoocalipsis/images/URJ_simbolo_POS_1.png"/>
+          <Image iconType="3" name="/apoocalipsis/image/URJ_simbolo_POS_1.png"/>
         </Property>
       </Properties>
     </Component>
