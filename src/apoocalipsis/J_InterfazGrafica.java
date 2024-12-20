@@ -5,7 +5,10 @@ import javax.swing.JOptionPane;
 import javax.swing.Timer;
 import java.util.TimerTask;
 
-
+/**
+ *
+ * @author Anass Chikou El Mahraoui, Edward Andrei, Manuel Alos de la Vega
+ */
 public class J_InterfazGrafica extends javax.swing.JFrame {
     //Atributos
     private ReproductorMusica reproductor = new ReproductorMusica();
