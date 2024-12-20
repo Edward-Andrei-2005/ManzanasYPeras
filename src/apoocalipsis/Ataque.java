@@ -1,7 +1,10 @@
 package apoocalipsis;
 import java.io.Serializable;
 import java.util.ArrayList;
-
+/**
+ *
+ * @author Anass Chikou El Mahraoui, Edward Andrei, Manuel Alos de la Vega
+ */
 public class Ataque implements Serializable {
    
     private Superviviente superviviente;
