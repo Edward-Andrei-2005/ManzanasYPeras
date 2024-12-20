@@ -2,6 +2,10 @@ package apoocalipsis;
 
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+/**
+ *
+ * @author Anass Chikou El Mahraoui, Edward Andrei, Manuel Alos de la Vega
+ */
 public class J_PartidaFinalizada extends javax.swing.JFrame {
     //Atributos
     private ReproductorMusica reproductor = new ReproductorMusica();
