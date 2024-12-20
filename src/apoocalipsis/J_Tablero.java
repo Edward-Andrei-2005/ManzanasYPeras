@@ -48,6 +48,28 @@ public class J_Tablero extends javax.swing.JFrame {
         timer.start();
     }
     
+    public J_Tablero(String [] nombres, int xSup, int ySup, Zombi z, int xZombi, int yZombi, Arma a) {
+        initComponents();
+        reproductor.reproducirMusica(PLANTSVSZOMBIS);
+        juego = new Juego();
+        juegoAnterior = new Juego();
+        listaSup = new Superviviente[nombres.length];
+        listaNombres = nombres;
+        juego.asignarSupervivientesPosicion(nombres, xSup, ySup);
+        juego.asignarZombiPosicion(z, xZombi, yZombi);
+        actualizarBotones();
+        
+        Timer timer = new Timer(3000, e -> {
+            for (String nombre : nombres) {
+                juego.generarAtaque(juego.getSuperviviente(nombre), a, juego.getCasilla(xZombi, yZombi));
+                actualizarBotones();
+            }
+            
+        });
+        timer.setRepeats(false); // Solo una ejecución
+        timer.start();
+    }
+    
     public J_Tablero(Juego juego) {
         initComponents();
         this.juego = juego;

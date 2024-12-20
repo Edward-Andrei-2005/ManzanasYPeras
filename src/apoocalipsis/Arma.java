@@ -33,6 +33,15 @@ public class Arma extends Equipo {
         id = ++contador;
     }
     
+    public Arma(String nombre, int alcance, int potencia, int numeroDeDados, int valorDeExito) {
+        id = 0;
+        this.nombre = nombre;
+        this.alcance = alcance;
+        this.potencia = potencia;
+        this.numeroDeDados = numeroDeDados;
+        this.valorDeExito = valorDeExito;
+    }
+    
     
     public String getNombre() { return nombre; }
     public int getPotencia() { return potencia; }

@@ -51,18 +51,40 @@ public class J_DatosAtaqueAislado extends javax.swing.JPanel {
         return Integer.parseInt((String)cbValorExitoArma.getSelectedItem());
     }
     public int getSupX() {
-        return Integer.parseInt((String)tfSupX.getText());
+        try {
+            return Integer.parseInt((String)tfSupX.getText());
+        } catch(NumberFormatException e) {
+            return -1;
+        }
     }
     public int getSupY() {
-        return Integer.parseInt((String)tfSupY.getText());
+        try {
+            return Integer.parseInt((String)tfSupY.getText());
+        } catch(NumberFormatException e) {
+            return -1;
+        }
     }
     public int getZombiX() {
-        return Integer.parseInt((String)tfZombiX.getText());
+        try {
+            return Integer.parseInt((String)tfZombiX.getText());
+        } catch(NumberFormatException e) {
+            return -1;
+        }
     }
     public int getZombiY() {
-        return Integer.parseInt((String)tfZombiY.getText());
+        try {
+            return Integer.parseInt((String)tfZombiY.getText());
+        } catch(NumberFormatException e) {
+            return -1;
+        }
     }
     public String getTipoZombi() { return (String)cbTipoZombi.getSelectedItem(); }
+    
+    public void setTiposZombi(String [] tipos) {
+        for (String s : tipos) {
+            cbTipoZombi.addItem(s);
+        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
