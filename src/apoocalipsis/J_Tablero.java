@@ -5,6 +5,8 @@
 package apoocalipsis;
 
 import java.io.File;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
 
@@ -4096,7 +4098,7 @@ public class J_Tablero extends javax.swing.JFrame {
         JOptionPane.showConfirmDialog(this, panel, titulo, JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
     }
     
-    private String ponerTexto(Casilla c) {
+    /*private String ponerTexto(Casilla c) {
         if (c.hayAlgunSupervivienteVivo() && c.hayAlgunZombi()) {
             return "/";
         } else if (c.hayAlgunZombi()) {
@@ -4105,6 +4107,18 @@ public class J_Tablero extends javax.swing.JFrame {
             return "S";
         } else {
             return "";
+        }
+    }*/
+    
+    private ImageIcon ponerTexto(Casilla c) {
+        if (c.hayAlgunSupervivienteVivo() && c.hayAlgunZombi()) {
+            return new ImageIcon(getClass().getClassLoader().getResource("apoocalipsis/image/supervivienteyzombi.png"));
+        } else if (c.hayAlgunZombi()) {
+            return new ImageIcon(getClass().getClassLoader().getResource("apoocalipsis/image/zombi.png"));
+        } else if (c.hayAlgunSupervivienteVivo()) {
+            return new ImageIcon(getClass().getClassLoader().getResource("apoocalipsis/image/superviviente.png"));
+        } else {
+            return null;
         }
     }
     
@@ -4163,115 +4177,216 @@ public class J_Tablero extends javax.swing.JFrame {
     private void actualizarBotones() {
         estadoJuego.setText("Turno=" + turnoJuego + " Acciones=" + turnosRestantesSuperviviente);
         
-        b00.setText(ponerTexto(juego.getCasilla(0, 0)));
-        b01.setText(ponerTexto(juego.getCasilla(0, 1)));
-        b02.setText(ponerTexto(juego.getCasilla(0, 2)));
-        b03.setText(ponerTexto(juego.getCasilla(0, 3)));
-        b04.setText(ponerTexto(juego.getCasilla(0, 4)));
-        b05.setText(ponerTexto(juego.getCasilla(0, 5)));
-        b06.setText(ponerTexto(juego.getCasilla(0, 6)));
-        b07.setText(ponerTexto(juego.getCasilla(0, 7)));
-        b08.setText(ponerTexto(juego.getCasilla(0, 8)));
-        b09.setText(ponerTexto(juego.getCasilla(0, 9)));
+        b00.setIcon(ponerTexto(juego.getCasilla(0, 0)));
+        b00.setText("");
+        b01.setIcon(ponerTexto(juego.getCasilla(0, 1)));
+        b01.setText("");
+        b02.setIcon(ponerTexto(juego.getCasilla(0, 2)));
+        b02.setText("");
+        b03.setIcon(ponerTexto(juego.getCasilla(0, 3)));
+        b03.setText("");
+        b04.setIcon(ponerTexto(juego.getCasilla(0, 4)));
+        b04.setText("");
+        b05.setIcon(ponerTexto(juego.getCasilla(0, 5)));
+        b05.setText("");
+        b06.setIcon(ponerTexto(juego.getCasilla(0, 6)));
+        b06.setText("");
+        b07.setIcon(ponerTexto(juego.getCasilla(0, 7)));
+        b07.setText("");
+        b08.setIcon(ponerTexto(juego.getCasilla(0, 8)));
+        b08.setText("");
+        b09.setIcon(ponerTexto(juego.getCasilla(0, 9)));
+        b09.setText("");
 
-        b10.setText(ponerTexto(juego.getCasilla(1, 0)));
-        b11.setText(ponerTexto(juego.getCasilla(1, 1)));
-        b12.setText(ponerTexto(juego.getCasilla(1, 2)));
-        b13.setText(ponerTexto(juego.getCasilla(1, 3)));
-        b14.setText(ponerTexto(juego.getCasilla(1, 4)));
-        b15.setText(ponerTexto(juego.getCasilla(1, 5)));
-        b16.setText(ponerTexto(juego.getCasilla(1, 6)));
-        b17.setText(ponerTexto(juego.getCasilla(1, 7)));
-        b18.setText(ponerTexto(juego.getCasilla(1, 8)));
-        b19.setText(ponerTexto(juego.getCasilla(1, 9)));
+        b10.setIcon(ponerTexto(juego.getCasilla(1, 0)));
+        b10.setText("");
+        b11.setIcon(ponerTexto(juego.getCasilla(1, 1)));
+        b11.setText("");
+        b12.setIcon(ponerTexto(juego.getCasilla(1, 2)));
+        b12.setText("");
+        b13.setIcon(ponerTexto(juego.getCasilla(1, 3)));
+        b13.setText("");
+        b14.setIcon(ponerTexto(juego.getCasilla(1, 4)));
+        b14.setText("");
+        b15.setIcon(ponerTexto(juego.getCasilla(1, 5)));
+        b15.setText("");
+        b16.setIcon(ponerTexto(juego.getCasilla(1, 6)));
+        b16.setText("");
+        b17.setIcon(ponerTexto(juego.getCasilla(1, 7)));
+        b17.setText("");
+        b18.setIcon(ponerTexto(juego.getCasilla(1, 8)));
+        b18.setText("");
+        b19.setIcon(ponerTexto(juego.getCasilla(1, 9)));
+        b19.setText("");
 
-        b20.setText(ponerTexto(juego.getCasilla(2, 0)));
-        b21.setText(ponerTexto(juego.getCasilla(2, 1)));
-        b22.setText(ponerTexto(juego.getCasilla(2, 2)));
-        b23.setText(ponerTexto(juego.getCasilla(2, 3)));
-        b24.setText(ponerTexto(juego.getCasilla(2, 4)));
-        b25.setText(ponerTexto(juego.getCasilla(2, 5)));
-        b26.setText(ponerTexto(juego.getCasilla(2, 6)));
-        b27.setText(ponerTexto(juego.getCasilla(2, 7)));
-        b28.setText(ponerTexto(juego.getCasilla(2, 8)));
-        b29.setText(ponerTexto(juego.getCasilla(2, 9)));
+        b20.setIcon(ponerTexto(juego.getCasilla(2, 0)));
+        b20.setText("");
+        b21.setIcon(ponerTexto(juego.getCasilla(2, 1)));
+        b21.setText("");
+        b22.setIcon(ponerTexto(juego.getCasilla(2, 2)));
+        b22.setText("");
+        b23.setIcon(ponerTexto(juego.getCasilla(2, 3)));
+        b23.setText("");
+        b24.setIcon(ponerTexto(juego.getCasilla(2, 4)));
+        b24.setText("");
+        b25.setIcon(ponerTexto(juego.getCasilla(2, 5)));
+        b25.setText("");
+        b26.setIcon(ponerTexto(juego.getCasilla(2, 6)));
+        b26.setText("");
+        b27.setIcon(ponerTexto(juego.getCasilla(2, 7)));
+        b27.setText("");
+        b28.setIcon(ponerTexto(juego.getCasilla(2, 8)));
+        b28.setText("");
+        b29.setIcon(ponerTexto(juego.getCasilla(2, 9)));
+        b29.setText("");
 
-        b30.setText(ponerTexto(juego.getCasilla(3, 0)));
-        b31.setText(ponerTexto(juego.getCasilla(3, 1)));
-        b32.setText(ponerTexto(juego.getCasilla(3, 2)));
-        b33.setText(ponerTexto(juego.getCasilla(3, 3)));
-        b34.setText(ponerTexto(juego.getCasilla(3, 4)));
-        b35.setText(ponerTexto(juego.getCasilla(3, 5)));
-        b36.setText(ponerTexto(juego.getCasilla(3, 6)));
-        b37.setText(ponerTexto(juego.getCasilla(3, 7)));
-        b38.setText(ponerTexto(juego.getCasilla(3, 8)));
-        b39.setText(ponerTexto(juego.getCasilla(3, 9)));
+        b30.setIcon(ponerTexto(juego.getCasilla(3, 0)));
+        b30.setText("");
+        b31.setIcon(ponerTexto(juego.getCasilla(3, 1)));
+        b31.setText("");
+        b32.setIcon(ponerTexto(juego.getCasilla(3, 2)));
+        b32.setText("");
+        b33.setIcon(ponerTexto(juego.getCasilla(3, 3)));
+        b33.setText("");
+        b34.setIcon(ponerTexto(juego.getCasilla(3, 4)));
+        b34.setText("");
+        b35.setIcon(ponerTexto(juego.getCasilla(3, 5)));
+        b35.setText("");
+        b36.setIcon(ponerTexto(juego.getCasilla(3, 6)));
+        b36.setText("");
+        b37.setIcon(ponerTexto(juego.getCasilla(3, 7)));
+        b37.setText("");
+        b38.setIcon(ponerTexto(juego.getCasilla(3, 8)));
+        b38.setText("");
+        b39.setIcon(ponerTexto(juego.getCasilla(3, 9)));
+        b39.setText("");
 
-        b40.setText(ponerTexto(juego.getCasilla(4, 0)));
-        b41.setText(ponerTexto(juego.getCasilla(4, 1)));
-        b42.setText(ponerTexto(juego.getCasilla(4, 2)));
-        b43.setText(ponerTexto(juego.getCasilla(4, 3)));
-        b44.setText(ponerTexto(juego.getCasilla(4, 4)));
-        b45.setText(ponerTexto(juego.getCasilla(4, 5)));
-        b46.setText(ponerTexto(juego.getCasilla(4, 6)));
-        b47.setText(ponerTexto(juego.getCasilla(4, 7)));
-        b48.setText(ponerTexto(juego.getCasilla(4, 8)));
-        b49.setText(ponerTexto(juego.getCasilla(4, 9)));
+        b40.setIcon(ponerTexto(juego.getCasilla(4, 0)));
+        b40.setText("");
+        b41.setIcon(ponerTexto(juego.getCasilla(4, 1)));
+        b41.setText("");
+        b42.setIcon(ponerTexto(juego.getCasilla(4, 2)));
+        b42.setText("");
+        b43.setIcon(ponerTexto(juego.getCasilla(4, 3)));
+        b43.setText("");
+        b44.setIcon(ponerTexto(juego.getCasilla(4, 4)));
+        b44.setText("");
+        b45.setIcon(ponerTexto(juego.getCasilla(4, 5)));
+        b45.setText("");
+        b46.setIcon(ponerTexto(juego.getCasilla(4, 6)));
+        b46.setText("");
+        b47.setIcon(ponerTexto(juego.getCasilla(4, 7)));
+        b47.setText("");
+        b48.setIcon(ponerTexto(juego.getCasilla(4, 8)));
+        b48.setText("");
+        b49.setIcon(ponerTexto(juego.getCasilla(4, 9)));
+        b49.setText("");
 
-        b50.setText(ponerTexto(juego.getCasilla(5, 0)));
-        b51.setText(ponerTexto(juego.getCasilla(5, 1)));
-        b52.setText(ponerTexto(juego.getCasilla(5, 2)));
-        b53.setText(ponerTexto(juego.getCasilla(5, 3)));
-        b54.setText(ponerTexto(juego.getCasilla(5, 4)));
-        b55.setText(ponerTexto(juego.getCasilla(5, 5)));
-        b56.setText(ponerTexto(juego.getCasilla(5, 6)));
-        b57.setText(ponerTexto(juego.getCasilla(5, 7)));
-        b58.setText(ponerTexto(juego.getCasilla(5, 8)));
-        b59.setText(ponerTexto(juego.getCasilla(5, 9)));
+        b50.setIcon(ponerTexto(juego.getCasilla(5, 0)));
+        b50.setText("");
+        b51.setIcon(ponerTexto(juego.getCasilla(5, 1)));
+        b51.setText("");
+        b52.setIcon(ponerTexto(juego.getCasilla(5, 2)));
+        b52.setText("");
+        b53.setIcon(ponerTexto(juego.getCasilla(5, 3)));
+        b53.setText("");
+        b54.setIcon(ponerTexto(juego.getCasilla(5, 4)));
+        b54.setText("");
+        b55.setIcon(ponerTexto(juego.getCasilla(5, 5)));
+        b55.setText("");
+        b56.setIcon(ponerTexto(juego.getCasilla(5, 6)));
+        b56.setText("");
+        b57.setIcon(ponerTexto(juego.getCasilla(5, 7)));
+        b57.setText("");
+        b58.setIcon(ponerTexto(juego.getCasilla(5, 8)));
+        b58.setText("");
+        b59.setIcon(ponerTexto(juego.getCasilla(5, 9)));
+        b59.setText("");
 
-        b60.setText(ponerTexto(juego.getCasilla(6, 0)));
-        b61.setText(ponerTexto(juego.getCasilla(6, 1)));
-        b62.setText(ponerTexto(juego.getCasilla(6, 2)));
-        b63.setText(ponerTexto(juego.getCasilla(6, 3)));
-        b64.setText(ponerTexto(juego.getCasilla(6, 4)));
-        b65.setText(ponerTexto(juego.getCasilla(6, 5)));
-        b66.setText(ponerTexto(juego.getCasilla(6, 6)));
-        b67.setText(ponerTexto(juego.getCasilla(6, 7)));
-        b68.setText(ponerTexto(juego.getCasilla(6, 8)));
-        b69.setText(ponerTexto(juego.getCasilla(6, 9)));
+        b60.setIcon(ponerTexto(juego.getCasilla(6, 0)));
+        b60.setText("");
+        b61.setIcon(ponerTexto(juego.getCasilla(6, 1)));
+        b61.setText("");
+        b62.setIcon(ponerTexto(juego.getCasilla(6, 2)));
+        b62.setText("");
+        b63.setIcon(ponerTexto(juego.getCasilla(6, 3)));
+        b63.setText("");
+        b64.setIcon(ponerTexto(juego.getCasilla(6, 4)));
+        b64.setText("");
+        b65.setIcon(ponerTexto(juego.getCasilla(6, 5)));
+        b65.setText("");
+        b66.setIcon(ponerTexto(juego.getCasilla(6, 6)));
+        b66.setText("");
+        b67.setIcon(ponerTexto(juego.getCasilla(6, 7)));
+        b67.setText("");
+        b68.setIcon(ponerTexto(juego.getCasilla(6, 8)));
+        b68.setText("");
+        b69.setIcon(ponerTexto(juego.getCasilla(6, 9)));
+        b69.setText("");
 
-        b70.setText(ponerTexto(juego.getCasilla(7, 0)));
-        b71.setText(ponerTexto(juego.getCasilla(7, 1)));
-        b72.setText(ponerTexto(juego.getCasilla(7, 2)));
-        b73.setText(ponerTexto(juego.getCasilla(7, 3)));
-        b74.setText(ponerTexto(juego.getCasilla(7, 4)));
-        b75.setText(ponerTexto(juego.getCasilla(7, 5)));
-        b76.setText(ponerTexto(juego.getCasilla(7, 6)));
-        b77.setText(ponerTexto(juego.getCasilla(7, 7)));
-        b78.setText(ponerTexto(juego.getCasilla(7, 8)));
-        b79.setText(ponerTexto(juego.getCasilla(7, 9)));
+        b70.setIcon(ponerTexto(juego.getCasilla(7, 0)));
+        b70.setText("");
+        b71.setIcon(ponerTexto(juego.getCasilla(7, 1)));
+        b71.setText("");
+        b72.setIcon(ponerTexto(juego.getCasilla(7, 2)));
+        b72.setText("");
+        b73.setIcon(ponerTexto(juego.getCasilla(7, 3)));
+        b73.setText("");
+        b74.setIcon(ponerTexto(juego.getCasilla(7, 4)));
+        b74.setText("");
+        b75.setIcon(ponerTexto(juego.getCasilla(7, 5)));
+        b75.setText("");
+        b76.setIcon(ponerTexto(juego.getCasilla(7, 6)));
+        b76.setText("");
+        b77.setIcon(ponerTexto(juego.getCasilla(7, 7)));
+        b77.setText("");
+        b78.setIcon(ponerTexto(juego.getCasilla(7, 8)));
+        b78.setText("");
+        b79.setIcon(ponerTexto(juego.getCasilla(7, 9)));
+        b79.setText("");
 
-        b80.setText(ponerTexto(juego.getCasilla(8, 0)));
-        b81.setText(ponerTexto(juego.getCasilla(8, 1)));
-        b82.setText(ponerTexto(juego.getCasilla(8, 2)));
-        b83.setText(ponerTexto(juego.getCasilla(8, 3)));
-        b84.setText(ponerTexto(juego.getCasilla(8, 4)));
-        b85.setText(ponerTexto(juego.getCasilla(8, 5)));
-        b86.setText(ponerTexto(juego.getCasilla(8, 6)));
-        b87.setText(ponerTexto(juego.getCasilla(8, 7)));
-        b88.setText(ponerTexto(juego.getCasilla(8, 8)));
-        b89.setText(ponerTexto(juego.getCasilla(8, 9)));
+        b80.setIcon(ponerTexto(juego.getCasilla(8, 0)));
+        b80.setText("");
+        b81.setIcon(ponerTexto(juego.getCasilla(8, 1)));
+        b81.setText("");
+        b82.setIcon(ponerTexto(juego.getCasilla(8, 2)));
+        b82.setText("");
+        b83.setIcon(ponerTexto(juego.getCasilla(8, 3)));
+        b83.setText("");
+        b84.setIcon(ponerTexto(juego.getCasilla(8, 4)));
+        b84.setText("");
+        b85.setIcon(ponerTexto(juego.getCasilla(8, 5)));
+        b85.setText("");
+        b86.setIcon(ponerTexto(juego.getCasilla(8, 6)));
+        b86.setText("");
+        b87.setIcon(ponerTexto(juego.getCasilla(8, 7)));
+        b87.setText("");
+        b88.setIcon(ponerTexto(juego.getCasilla(8, 8)));
+        b88.setText("");
+        b89.setIcon(ponerTexto(juego.getCasilla(8, 9)));
+        b89.setText("");
 
-        b90.setText(ponerTexto(juego.getCasilla(9, 0)));
-        b91.setText(ponerTexto(juego.getCasilla(9, 1)));
-        b92.setText(ponerTexto(juego.getCasilla(9, 2)));
-        b93.setText(ponerTexto(juego.getCasilla(9, 3)));
-        b94.setText(ponerTexto(juego.getCasilla(9, 4)));
-        b95.setText(ponerTexto(juego.getCasilla(9, 5)));
-        b96.setText(ponerTexto(juego.getCasilla(9, 6)));
-        b97.setText(ponerTexto(juego.getCasilla(9, 7)));
-        b98.setText(ponerTexto(juego.getCasilla(9, 8)));
-        b99.setText(ponerTexto(juego.getCasilla(9, 9)));
+        b90.setIcon(ponerTexto(juego.getCasilla(9, 0)));
+        b90.setText("");
+        b91.setIcon(ponerTexto(juego.getCasilla(9, 1)));
+        b91.setText("");
+        b92.setIcon(ponerTexto(juego.getCasilla(9, 2)));
+        b92.setText("");
+        b93.setIcon(ponerTexto(juego.getCasilla(9, 3)));
+        b93.setText("");
+        b94.setIcon(ponerTexto(juego.getCasilla(9, 4)));
+        b94.setText("");
+        b95.setIcon(ponerTexto(juego.getCasilla(9, 5)));
+        b95.setText("");
+        b96.setIcon(ponerTexto(juego.getCasilla(9, 6)));
+        b96.setText("");
+        b97.setIcon(ponerTexto(juego.getCasilla(9, 7)));
+        b97.setText("");
+        b98.setIcon(ponerTexto(juego.getCasilla(9, 8)));
+        b98.setText("");
+        b99.setIcon(ponerTexto(juego.getCasilla(9, 9)));
+        b99.setText("");
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
