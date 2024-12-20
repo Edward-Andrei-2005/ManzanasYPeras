@@ -8,7 +8,10 @@ import java.io.File;
 import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 import javax.swing.Timer;
-
+/**
+ *
+ * @author Anass Chikou El Mahraoui, Edward Andrei, Manuel Alos de la Vega
+ */
 public class J_Tablero extends javax.swing.JFrame {
     private ReproductorMusica reproductor = new ReproductorMusica();
     private final String PLANTSVSZOMBIS = "/apoocalipsis/sounds/PlantsVSZombies.wav";
