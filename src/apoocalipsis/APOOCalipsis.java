@@ -8,25 +8,9 @@ public class APOOCalipsis {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.print(System.getProperty("file.separator"));
+        J_InterfazGrafica.main();
+        
+        // En caso de error al leer o escribir del fichero que impida ejecutar el programa, descomentar la linea de abajo y comentar la de arriba
         //ListaJuego.vaciarFichero();
-        /*Juego miJuego = new Juego();
-        ListaJuego ListaDeJuegos = new ListaJuego();
-        //String[] s = {"Edward", "Manu"};
-        //miJuego.asignarSupervivientesPosicionInicial(s);
-        //System.out.println(miJuego.getSuperviviente("Edward").getManoDer());
-        
-        String [] nombres = {"Edward", "Anass", "Manuel", "Robert"};
-        miJuego.asignarSupervivientesPosicionInicial(nombres);
-        miJuego.generarZombisInicio();
-        do {
-            miJuego.turnoSupervivientes(nombres);
-            miJuego.turnoZombis();
-            miJuego.generarNuevoZombi();
-            ListaDeJuegos.guardarJuego(miJuego);
-            
-        } while (!miJuego.hayAlgunSupervivienteMuerto() && !miJuego.hanGanadoSupervivientes(nombres));
-        //ListaDeJuegos.leerFichero(); //Para comprobar lo que se ha guardado en el fichero*/
-        
     }
 }

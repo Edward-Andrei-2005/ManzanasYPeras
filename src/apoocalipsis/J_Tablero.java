@@ -5,9 +5,8 @@
 package apoocalipsis;
 
 import java.io.File;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JOptionPane;
+import javax.swing.ImageIcon;
 import javax.swing.Timer;
 
 public class J_Tablero extends javax.swing.JFrame {
@@ -77,6 +76,7 @@ public class J_Tablero extends javax.swing.JFrame {
     
     public J_Tablero(Juego juego) {
         esAccionAislada = false;
+        reproductor.reproducirMusica(PLANTSVSZOMBIS);
         initComponents();
         this.juego = juego;
         listaSup = juego.getSupervivientesTodos();
@@ -91,6 +91,7 @@ public class J_Tablero extends javax.swing.JFrame {
     
     public J_Tablero(Juego juego, ListaJuego arrayJuegos) {
         this(juego);
+        juegoAnterior = juego;
         esAccionAislada = false;
         this.arrayJuegos = arrayJuegos;
     }
@@ -244,9 +245,6 @@ public class J_Tablero extends javax.swing.JFrame {
         bBuscarEquipo = new javax.swing.JButton();
         bCambiarArma = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        nombreSuperviviente1 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        estadoJuego = new javax.swing.JLabel();
         P_MostrarInformacionSuperviviente = new javax.swing.JPanel();
         L_NombreSuperviviente = new javax.swing.JLabel();
         L_ManoIzquierda = new javax.swing.JLabel();
@@ -260,6 +258,8 @@ public class J_Tablero extends javax.swing.JFrame {
         bInv4 = new javax.swing.JButton();
         bInv5 = new javax.swing.JButton();
         narradorJuego = new javax.swing.JLabel();
+        L_CasillaSup = new javax.swing.JLabel();
+        L_TurnosRestantes = new javax.swing.JLabel();
         bInfo = new javax.swing.JButton();
         B_Salir = new javax.swing.JButton();
 
@@ -432,243 +432,643 @@ public class J_Tablero extends javax.swing.JFrame {
         jPanel1.add(b19);
 
         b20.setText("jButton46");
+        b20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b20ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b20);
 
         b21.setText("jButton38");
+        b21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b21ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b21);
 
         b22.setText("jButton59");
+        b22.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b22ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b22);
 
         b23.setText("jButton60");
+        b23.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b23ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b23);
 
         b24.setText("jButton57");
+        b24.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b24ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b24);
 
         b25.setText("jButton69");
+        b25.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b25ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b25);
 
         b26.setText("jButton58");
+        b26.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b26ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b26);
 
         b27.setText("jButton68");
+        b27.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b27ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b27);
 
         b28.setText("jButton63");
+        b28.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b28ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b28);
 
         b29.setText("jButton67");
+        b29.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b29ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b29);
 
         b30.setText("jButton79");
+        b30.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b30ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b30);
 
         b31.setText("jButton73");
+        b31.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b31ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b31);
 
         b32.setText("jButton76");
+        b32.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b32ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b32);
 
         b33.setText("jButton72");
+        b33.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b33ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b33);
 
         b34.setText("jButton71");
+        b34.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b34ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b34);
 
         b35.setText("jButton81");
+        b35.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b35ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b35);
 
         b36.setText("jButton93");
+        b36.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b36ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b36);
 
         b37.setText("jButton66");
+        b37.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b37ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b37);
 
         b38.setText("jButton92");
+        b38.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b38ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b38);
 
         b39.setText("jButton64");
+        b39.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b39ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b39);
 
         b40.setText("jButton80");
+        b40.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b40ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b40);
 
         b41.setText("jButton37");
+        b41.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b41ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b41);
 
         b42.setText("jButton70");
+        b42.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b42ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b42);
 
         b43.setText("jButton74");
+        b43.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b43ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b43);
 
         b44.setText("jButton77");
+        b44.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b44ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b44);
 
         b45.setText("jButton89");
+        b45.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b45ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b45);
 
         b46.setText("jButton94");
+        b46.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b46ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b46);
 
         b47.setText("jButton100");
+        b47.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b47ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b47);
 
         b48.setText("jButton95");
+        b48.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b48ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b48);
 
         b49.setText("jButton99");
+        b49.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b49ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b49);
 
         b50.setText("jButton98");
+        b50.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b50ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b50);
 
         b51.setText("jButton75");
+        b51.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b51ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b51);
 
         b52.setText("jButton82");
+        b52.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b52ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b52);
 
         b53.setText("jButton61");
+        b53.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b53ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b53);
 
         b54.setText("jButton54");
+        b54.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b54ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b54);
 
         b55.setText("jButton56");
+        b55.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b55ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b55);
 
         b56.setText("jButton36");
+        b56.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b56ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b56);
 
         b57.setText("jButton50");
+        b57.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b57ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b57);
 
         b58.setText("jButton85");
+        b58.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b58ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b58);
 
         b59.setText("jButton78");
+        b59.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b59ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b59);
 
         b60.setText("jButton97");
+        b60.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b60ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b60);
 
         b61.setText("jButton90");
+        b61.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b61ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b61);
 
         b62.setText("jButton96");
+        b62.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b62ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b62);
 
         b63.setText("jButton86");
+        b63.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b63ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b63);
 
         b64.setText("jButton88");
+        b64.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b64ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b64);
 
         b65.setText("jButton65");
+        b65.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b65ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b65);
 
         b66.setText("jButton91");
+        b66.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b66ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b66);
 
         b67.setText("jButton84");
+        b67.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b67ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b67);
 
         b68.setText("jButton62");
+        b68.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b68ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b68);
 
         b69.setText("jButton48");
+        b69.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b69ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b69);
 
         b70.setText("jButton32");
+        b70.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b70ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b70);
 
         b71.setText("jButton45");
+        b71.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b71ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b71);
 
         b72.setText("jButton55");
+        b72.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b72ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b72);
 
         b73.setText("jButton87");
+        b73.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b73ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b73);
 
         b74.setText("jButton52");
+        b74.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b74ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b74);
 
         b75.setText("jButton53");
+        b75.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b75ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b75);
 
         b76.setText("jButton44");
+        b76.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b76ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b76);
 
         b77.setText("jButton51");
+        b77.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b77ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b77);
 
         b78.setText("jButton39");
+        b78.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b78ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b78);
 
         b79.setText("jButton83");
+        b79.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b79ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b79);
 
         b80.setText("jButton49");
+        b80.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b80ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b80);
 
         b81.setText("jButton12");
+        b81.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b81ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b81);
 
         b82.setText("jButton47");
+        b82.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b82ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b82);
 
         b83.setText("jButton25");
+        b83.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b83ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b83);
 
         b84.setText("jButton29");
+        b84.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b84ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b84);
 
         b85.setText("jButton24");
+        b85.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b85ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b85);
 
         b86.setText("jButton42");
+        b86.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b86ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b86);
 
         b87.setText("jButton40");
+        b87.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b87ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b87);
 
         b88.setText("jButton41");
+        b88.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b88ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b88);
 
         b89.setText("jButton27");
+        b89.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b89ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b89);
 
         b90.setText("jButton26");
+        b90.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b90ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b90);
 
         b91.setText("jButton16");
+        b91.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b91ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b91);
 
         b92.setText("jButton35");
+        b92.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b92ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b92);
 
         b93.setText("jButton33");
+        b93.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b93ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b93);
 
         b94.setText("jButton18");
+        b94.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b94ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b94);
 
         b95.setText("jButton14");
+        b95.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b95ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b95);
 
         b96.setText("jButton31");
+        b96.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b96ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b96);
 
         b97.setText("jButton34");
+        b97.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b97ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b97);
 
         b98.setText("jButton22");
+        b98.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b98ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b98);
 
         b99.setText("jButton11");
+        b99.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b99ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b99);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
@@ -821,52 +1221,30 @@ public class J_Tablero extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        nombreSuperviviente1.setForeground(new java.awt.Color(7, 33, 68));
-        nombreSuperviviente1.setText("jLabel11");
-
-        jLabel11.setForeground(new java.awt.Color(7, 33, 68));
-        jLabel11.setText("Inventario");
-
-        estadoJuego.setForeground(new java.awt.Color(7, 33, 68));
-        estadoJuego.setText("jLabel12");
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel11)
-                    .addComponent(estadoJuego)
-                    .addComponent(nombreSuperviviente1))
-                .addGap(626, 626, 626))
+            .addGap(0, 281, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(nombreSuperviviente1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel11)
-                .addGap(18, 18, 18)
-                .addComponent(estadoJuego)
-                .addContainerGap(84, Short.MAX_VALUE))
+            .addGap(0, 177, Short.MAX_VALUE)
         );
 
-        L_NombreSuperviviente.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        L_NombreSuperviviente.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         L_NombreSuperviviente.setForeground(new java.awt.Color(7, 33, 68));
         L_NombreSuperviviente.setText("NombreSuperviviente");
 
-        L_ManoIzquierda.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        L_ManoIzquierda.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         L_ManoIzquierda.setForeground(new java.awt.Color(7, 33, 68));
         L_ManoIzquierda.setText("Arma Mano Izq:");
 
-        L_ManoDerecha.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        L_ManoDerecha.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         L_ManoDerecha.setForeground(new java.awt.Color(7, 33, 68));
         L_ManoDerecha.setText("Arma Mano Dcha:");
 
-        L_Inventario.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        L_Inventario.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         L_Inventario.setForeground(new java.awt.Color(7, 33, 68));
         L_Inventario.setText("Inventario:");
 
@@ -920,21 +1298,26 @@ public class J_Tablero extends javax.swing.JFrame {
         });
 
         narradorJuego.setForeground(new java.awt.Color(7, 33, 68));
-        narradorJuego.setText("jLabel12");
+        narradorJuego.setText("Narrador");
+
+        L_CasillaSup.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        L_CasillaSup.setForeground(new java.awt.Color(7, 33, 68));
+        L_CasillaSup.setText("NombreSuperviviente");
+
+        L_TurnosRestantes.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        L_TurnosRestantes.setForeground(new java.awt.Color(7, 33, 68));
+        L_TurnosRestantes.setText("Turnos restantes:");
 
         javax.swing.GroupLayout P_MostrarInformacionSupervivienteLayout = new javax.swing.GroupLayout(P_MostrarInformacionSuperviviente);
         P_MostrarInformacionSuperviviente.setLayout(P_MostrarInformacionSupervivienteLayout);
         P_MostrarInformacionSupervivienteLayout.setHorizontalGroup(
             P_MostrarInformacionSupervivienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P_MostrarInformacionSupervivienteLayout.createSequentialGroup()
-                .addGap(0, 224, Short.MAX_VALUE)
-                .addComponent(L_NombreSuperviviente)
-                .addGap(140, 140, 140))
             .addGroup(P_MostrarInformacionSupervivienteLayout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addGroup(P_MostrarInformacionSupervivienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(narradorJuego, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(P_MostrarInformacionSupervivienteLayout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P_MostrarInformacionSupervivienteLayout.createSequentialGroup()
+                        .addGap(0, 80, Short.MAX_VALUE)
                         .addGroup(P_MostrarInformacionSupervivienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(P_MostrarInformacionSupervivienteLayout.createSequentialGroup()
                                 .addComponent(L_ManoIzquierda)
@@ -943,46 +1326,61 @@ public class J_Tablero extends javax.swing.JFrame {
                             .addGroup(P_MostrarInformacionSupervivienteLayout.createSequentialGroup()
                                 .addComponent(L_ManoDerecha)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(bManoDer))
+                                .addComponent(bManoDer)))
+                        .addGap(87, 87, 87)
+                        .addGroup(P_MostrarInformacionSupervivienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(bInv1)
                             .addComponent(L_Inventario)
                             .addComponent(bInv2)
                             .addComponent(bInv3)
                             .addComponent(bInv4)
                             .addComponent(bInv5))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(78, 78, 78)))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P_MostrarInformacionSupervivienteLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(P_MostrarInformacionSupervivienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(L_NombreSuperviviente)
+                    .addComponent(L_CasillaSup)
+                    .addComponent(L_TurnosRestantes))
+                .addGap(114, 114, 114))
         );
         P_MostrarInformacionSupervivienteLayout.setVerticalGroup(
             P_MostrarInformacionSupervivienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(P_MostrarInformacionSupervivienteLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
                 .addComponent(L_NombreSuperviviente, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(P_MostrarInformacionSupervivienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(P_MostrarInformacionSupervivienteLayout.createSequentialGroup()
-                        .addGap(58, 58, 58)
-                        .addComponent(L_ManoDerecha))
-                    .addGroup(P_MostrarInformacionSupervivienteLayout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addGroup(P_MostrarInformacionSupervivienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(L_ManoIzquierda)
-                            .addComponent(bManoIzq))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(bManoDer)))
-                .addGap(26, 26, 26)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(L_CasillaSup, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(L_TurnosRestantes, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
                 .addComponent(L_Inventario)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(bInv1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(bInv2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(bInv3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(bInv4)
+                .addGroup(P_MostrarInformacionSupervivienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(P_MostrarInformacionSupervivienteLayout.createSequentialGroup()
+                        .addComponent(bInv2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(bInv3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(bInv4))
+                    .addGroup(P_MostrarInformacionSupervivienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(P_MostrarInformacionSupervivienteLayout.createSequentialGroup()
+                            .addGap(46, 46, 46)
+                            .addComponent(L_ManoDerecha))
+                        .addGroup(P_MostrarInformacionSupervivienteLayout.createSequentialGroup()
+                            .addGroup(P_MostrarInformacionSupervivienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(L_ManoIzquierda)
+                                .addComponent(bManoIzq))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(bManoDer))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(bInv5)
-                .addGap(31, 31, 31)
+                .addGap(39, 39, 39)
                 .addComponent(narradorJuego, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(91, Short.MAX_VALUE))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         bInfo.setForeground(new java.awt.Color(7, 33, 68));
@@ -1002,7 +1400,7 @@ public class J_Tablero extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(bInfo)
                         .addGap(0, 0, Short.MAX_VALUE)))
@@ -4047,25 +4445,6 @@ public class J_Tablero extends javax.swing.JFrame {
             }
             ventanaPartidaFinalizada.setVisible(true);
             this.setVisible(false);
-            
-            /*Timer timer = new Timer(5000, e -> {
-                J_PartidaFinalizada ventanaPartidaFinalizada = null;
-                juegoAnterior = juego;
-                juegoAnterior.terminarJuego();
-                arrayJuegos.guardarJuego(juegoAnterior);
-                
-                // true = Ganan Supervivientes, false = Pierden Supervivientes
-            
-                if (juego.hayAlgunSupervivienteMuerto()) {
-                    ventanaPartidaFinalizada = new J_PartidaFinalizada(false);
-                } else if (juego.hanGanadoSupervivientes(listaNombres)) {
-                    ventanaPartidaFinalizada = new J_PartidaFinalizada(true);
-                }
-                ventanaPartidaFinalizada.setVisible(true);
-                this.setVisible(false);
-            });
-            timer.setRepeats(false); // Solo una ejecución
-            timer.start();*/
         }
     }
     
@@ -4098,18 +4477,6 @@ public class J_Tablero extends javax.swing.JFrame {
         JOptionPane.showConfirmDialog(this, panel, titulo, JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
     }
     
-    /*private String ponerTexto(Casilla c) {
-        if (c.hayAlgunSupervivienteVivo() && c.hayAlgunZombi()) {
-            return "/";
-        } else if (c.hayAlgunZombi()) {
-            return "Z";
-        } else if (c.hayAlgunSupervivienteVivo()) {
-            return "S";
-        } else {
-            return "";
-        }
-    }*/
-    
     private ImageIcon ponerTexto(Casilla c) {
         if (c.hayAlgunSupervivienteVivo() && c.hayAlgunZombi()) {
             return new ImageIcon(getClass().getClassLoader().getResource("apoocalipsis/image/supervivienteyzombi.png"));
@@ -4128,8 +4495,6 @@ public class J_Tablero extends javax.swing.JFrame {
         } else {  // Despues de un superviviente va el siguiente
             turnoJuego++;
         }
-
-        //imprimirInformacionSuperviviente();
     }
     
     private void imprimirInformacionSuperviviente() {
@@ -4160,22 +4525,13 @@ public class J_Tablero extends javax.swing.JFrame {
         if (listaSup[turnoJuego].getInvSig() >= 3)      bInv3.setText(listaSup[turnoJuego].getInventario()[2].toString());
         if (listaSup[turnoJuego].getInvSig() >= 4)      bInv4.setText(listaSup[turnoJuego].getInventario()[3].toString());
         if (listaSup[turnoJuego].getInvSig() >= 5)      bInv5.setText(listaSup[turnoJuego].getInventario()[4].toString());
-
-        /*if(listaSup[turnoJuego].getInventario() == null || listaSup[turnoJuego].getInventario().length == 0) {
-            L_ConfirmacionInventario.setText("No tiene");
-        } else {
-            for(int j=0; j<listaSup[turnoJuego].getInventario().length; j++) {
-                L_ConfirmacionInventario.setText("No tiene 2");
-                if(listaSup[turnoJuego].getInventario()[j] != null) {
-                    L_ConfirmacionInventario.setText(listaSup[turnoJuego].getInventario()[j].toString() + "\n");
-                }
-
-            }
-        }*/
+        
+        L_CasillaSup.setText("En " + juego.buscarCasillaOrigen(listaSup[turnoJuego]));
+        L_TurnosRestantes.setText("Turnos restantes: " + turnosRestantesSuperviviente);
     }
     
     private void actualizarBotones() {
-        estadoJuego.setText("Turno=" + turnoJuego + " Acciones=" + turnosRestantesSuperviviente);
+       
         
         b00.setIcon(ponerTexto(juego.getCasilla(0, 0)));
         b00.setText("");
@@ -4197,7 +4553,6 @@ public class J_Tablero extends javax.swing.JFrame {
         b08.setText("");
         b09.setIcon(ponerTexto(juego.getCasilla(0, 9)));
         b09.setText("");
-
         b10.setIcon(ponerTexto(juego.getCasilla(1, 0)));
         b10.setText("");
         b11.setIcon(ponerTexto(juego.getCasilla(1, 1)));
@@ -4218,7 +4573,6 @@ public class J_Tablero extends javax.swing.JFrame {
         b18.setText("");
         b19.setIcon(ponerTexto(juego.getCasilla(1, 9)));
         b19.setText("");
-
         b20.setIcon(ponerTexto(juego.getCasilla(2, 0)));
         b20.setText("");
         b21.setIcon(ponerTexto(juego.getCasilla(2, 1)));
@@ -4239,7 +4593,6 @@ public class J_Tablero extends javax.swing.JFrame {
         b28.setText("");
         b29.setIcon(ponerTexto(juego.getCasilla(2, 9)));
         b29.setText("");
-
         b30.setIcon(ponerTexto(juego.getCasilla(3, 0)));
         b30.setText("");
         b31.setIcon(ponerTexto(juego.getCasilla(3, 1)));
@@ -4260,7 +4613,6 @@ public class J_Tablero extends javax.swing.JFrame {
         b38.setText("");
         b39.setIcon(ponerTexto(juego.getCasilla(3, 9)));
         b39.setText("");
-
         b40.setIcon(ponerTexto(juego.getCasilla(4, 0)));
         b40.setText("");
         b41.setIcon(ponerTexto(juego.getCasilla(4, 1)));
@@ -4281,7 +4633,6 @@ public class J_Tablero extends javax.swing.JFrame {
         b48.setText("");
         b49.setIcon(ponerTexto(juego.getCasilla(4, 9)));
         b49.setText("");
-
         b50.setIcon(ponerTexto(juego.getCasilla(5, 0)));
         b50.setText("");
         b51.setIcon(ponerTexto(juego.getCasilla(5, 1)));
@@ -4302,7 +4653,6 @@ public class J_Tablero extends javax.swing.JFrame {
         b58.setText("");
         b59.setIcon(ponerTexto(juego.getCasilla(5, 9)));
         b59.setText("");
-
         b60.setIcon(ponerTexto(juego.getCasilla(6, 0)));
         b60.setText("");
         b61.setIcon(ponerTexto(juego.getCasilla(6, 1)));
@@ -4323,7 +4673,6 @@ public class J_Tablero extends javax.swing.JFrame {
         b68.setText("");
         b69.setIcon(ponerTexto(juego.getCasilla(6, 9)));
         b69.setText("");
-
         b70.setIcon(ponerTexto(juego.getCasilla(7, 0)));
         b70.setText("");
         b71.setIcon(ponerTexto(juego.getCasilla(7, 1)));
@@ -4344,7 +4693,6 @@ public class J_Tablero extends javax.swing.JFrame {
         b78.setText("");
         b79.setIcon(ponerTexto(juego.getCasilla(7, 9)));
         b79.setText("");
-
         b80.setIcon(ponerTexto(juego.getCasilla(8, 0)));
         b80.setText("");
         b81.setIcon(ponerTexto(juego.getCasilla(8, 1)));
@@ -4365,7 +4713,6 @@ public class J_Tablero extends javax.swing.JFrame {
         b88.setText("");
         b89.setIcon(ponerTexto(juego.getCasilla(8, 9)));
         b89.setText("");
-
         b90.setIcon(ponerTexto(juego.getCasilla(9, 0)));
         b90.setText("");
         b91.setIcon(ponerTexto(juego.getCasilla(9, 1)));
@@ -4386,16 +4733,17 @@ public class J_Tablero extends javax.swing.JFrame {
         b98.setText("");
         b99.setIcon(ponerTexto(juego.getCasilla(9, 9)));
         b99.setText("");
-
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton B_Salir;
+    private javax.swing.JLabel L_CasillaSup;
     private javax.swing.JLabel L_Inventario;
     private javax.swing.JLabel L_LogoURJC;
     private javax.swing.JLabel L_ManoDerecha;
     private javax.swing.JLabel L_ManoIzquierda;
     private javax.swing.JLabel L_NombreSuperviviente;
+    private javax.swing.JLabel L_TurnosRestantes;
     private javax.swing.JPanel P_MostrarInformacionSuperviviente;
     private javax.swing.JButton b00;
     private javax.swing.JButton b01;
@@ -4510,10 +4858,8 @@ public class J_Tablero extends javax.swing.JFrame {
     private javax.swing.JButton bManoIzq;
     private javax.swing.JButton bMoverse;
     private javax.swing.JButton bNada;
-    private javax.swing.JLabel estadoJuego;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
@@ -4537,6 +4883,5 @@ public class J_Tablero extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JLabel narradorJuego;
-    private javax.swing.JLabel nombreSuperviviente1;
     // End of variables declaration//GEN-END:variables
 }

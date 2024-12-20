@@ -193,10 +193,4 @@ public class Superviviente extends EntidadActivable {
         }
         return "Superviviente " + nombre + "\n\t" + salud + "\n\t" + armas + "\n\t" + provision;
     }
-    
-    /*@Override
-    public String toString() {
-        return nombre + "\n" +
-                
-    }*/
 }

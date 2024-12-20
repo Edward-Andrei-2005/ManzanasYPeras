@@ -94,7 +94,6 @@ public class Juego implements Serializable {
             array[i] = s;
             i++;
         }
-        //Superviviente [] array = (Superviviente[])lista.toArray();
         return array;
     }
     
@@ -243,25 +242,8 @@ public class Juego implements Serializable {
             }
             moverse(dimension[xActual][yActual], zombi);
             dibujarTableroConNumeros();
-
-            /*// Mientras el zombi tenga movimientos y no haya llegado al objetivo
-            while (activacionesZombi > 0 && (xActual != xObjetivo || yActual != yObjetivo)) {
-                // Decidir en qué dirección moverse en X
-                if (xActual < xObjetivo) {
-                    xActual++; // Bajar
-                } else if (xActual > xObjetivo) {
-                    xActual--; // Subir
-                } 
-                if (yActual < yObjetivo) {
-                    yActual++; // Mover Derecha
-                } else if (yActual > yObjetivo) {
-                    yActual--; // Mover Izquierda
-                }
-                activacionesZombi--;
-                moverse(dimension[xActual][yActual], zombi);
-                dibujarTableroConNumeros();
-            }*/
     }
+    
     public void dibujarTableroConNumeros() {
         // Imprimir los números de las columnas (parte superior)
         System.out.print("    "); // Espacio inicial para alinear los números de las filas
@@ -336,20 +318,6 @@ public class Juego implements Serializable {
                     }
                     
                     boolean esMovimientoValido;
-                    /*do {
-                        System.out.print("Introduce la coordenada X de la casilla destino (0-9): ");
-                        xDestino = scanner.nextInt();
-                        scanner.nextLine();
-                        System.out.print("Introduce la coordenada Y de la casilla destino (0-9): ");
-                        yDestino = scanner.nextInt();
-                        scanner.nextLine();
-                        
-                        //esMovimientoValido = moverse(dimension[xDestino][yDestino], s);
-
-                        if (xDestino < 0 || xDestino >= TAM_X || yDestino < 0 || yDestino >= TAM_Y) {
-                            System.out.println("Coordenadas fuera del rango permitido. Intenta de nuevo.");
-                        }
-                    } while (!esMovimientoValido);*/
                     
                     Casilla destino = buscarCasillaOrigen(s);
                     
@@ -465,7 +433,6 @@ public class Juego implements Serializable {
                         System.out.println("Índice no válido. Asegúrate de elegir un arma en el inventario.");
                     }
                     
-                    // QUITAR ESTE COMENTARIO turnos--;
                     System.out.println("Tienes " + turnos + " turnos\n\n");
                     break;
 
@@ -599,19 +566,6 @@ public class Juego implements Serializable {
         }
     }
     
-    /*public void asignarSupervivientesPosicion(String [] listaS, int x, int y, Arma a) {
-        for (int i=0; i<listaS.length-1; i++) {
-            for (int j=i+1; j<listaS.length; j++) {
-                if (listaS[i].equals(listaS[j])) return;
-            }
-        }
-        
-        for (int i=0; i<listaS.length; i++) {
-            dimension[x][y].anadirEntidad(new Superviviente(listaS[i]));
-            dimension[x][y].getSuperviviente(listaS[i]).elegirArma(a, true);
-        }
-    }*/
-    
     public void asignarZombiPosicion(Zombi z, int x, int y) {
         dimension[x][y].anadirEntidad(z);
     }
@@ -648,12 +602,6 @@ public class Juego implements Serializable {
             return true;
         }
         
-        /*for (int i=0; i<TAM_X; i++) {
-            for (int j=0; j<TAM_Y; j++) {
-                if (!dimension[i][j].equals(CASILLA_FIN) && dimension[i][j].hayAlgunSuperviviente()
-                        && dimension[i][j].noTieneProvisionSuperviviente()) return false;
-            }
-        }*/
         return false;
     }
 
@@ -691,10 +639,6 @@ public class Juego implements Serializable {
         return true;
     }
 
-    /*private boolean resolverAtaque(Arma a, Casilla destino, int exitos, Superviviente s) {
-        // Elimina los zombis en la casilla objetivo si el número de éxitos es suficiente
-        return eliminarZombis(a, exitos, s, destino);
-    }*/
     
     private Arma elegirArma(Superviviente s, boolean izq) {
         // Busca el arma en todas las casillas del tablero
@@ -739,25 +683,6 @@ public class Juego implements Serializable {
         }
         return contador; // Devuelve el número de éxitos
     }
-    
-    /*public boolean esMatable(Arma a, Zombi z, Superviviente s) {
-        // Verifica si el zombi es de tipo CaminanteBerserker, CorredorBerserker o AbominacionBerserker
-        Casilla casillaSuperviviente = buscarCasillaOrigen(s);
-        Casilla casillaZombi = buscarCasillaOrigen(z);
-        if((z instanceof CaminanteBerserker) || (z instanceof CorredorBerserker) || (z instanceof AbominacionBerserker)) {
-            /*Si es un zombi Berserker, debe cumplir dos condiciones:
-            1. El arma debe tener suficiente potencia para eliminar al zombi (potencia >= aguante)
-            2. El arma debe ser cuerpo a cuerpo (alcance == 0), ya que los zombis Berserker son inmunes a ataques a distancia.<
-           return (a.getPotencia() >= z.getAguante()) && casillaSuperviviente.distancia(casillaZombi) == 0;
-        } else {
-            // Si el zombi no es un Berserker, solo se verifica que el arma tenga suficiente potencia y que tenga suficiente alcance.
-            if(a.getAlcance() == 0) { // Armas de corto alcance
-                return (a.getPotencia() >= z.getAguante()) && casillaSuperviviente.distancia(casillaZombi) == 0;
-            } else {
-                return (a.getPotencia() >= z.getAguante()) && casillaSuperviviente.distancia(casillaZombi) <= a.getAlcance();
-            }
-        }
-    }*/
     
     public ArrayList eliminarZombis(Arma a, int exitos, Superviviente s, Casilla destino) {
         ArrayList<EntidadActivable> zombisAEliminar = new ArrayList<>(); // Lista para almacenar los zombis eliminables

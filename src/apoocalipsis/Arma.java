@@ -78,7 +78,6 @@ public class Arma extends Equipo {
         return nombre + " | Potencia: " + potencia + " | Alcance: " + alcance + " | Dados: " + numeroDeDados +" | Exito: " + valorDeExito;
     }
     
-    // HAY QUE AÑADIR UN ID
     @Override
     public boolean equals(Object o) {
         if (o == null) return false;

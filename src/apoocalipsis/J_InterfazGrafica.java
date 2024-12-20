@@ -223,6 +223,7 @@ public class J_InterfazGrafica extends javax.swing.JFrame {
                 // se retoma la ultima partida
                 J_Tablero ventanaTablero = new J_Tablero(aux, arrayDeJuegos);
                 ventanaTablero.setVisible(true); // Mostrar ventana de tablero
+                reproductor.detenerMusica();
                 this.setVisible(false);
                 return; // Salir del ciclo y finalizar
             }
@@ -544,7 +545,7 @@ public class J_InterfazGrafica extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main() {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.

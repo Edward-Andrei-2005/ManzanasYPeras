@@ -126,18 +126,20 @@
               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
               <Component id="L_NombreSuperviviente5" min="-2" pref="55" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="L_NombreSuperviviente4" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="L_NombreSuperviviente8" alignment="1" min="-2" pref="31" max="-2" attributes="0"/>
+                  <Component id="L_NombreSuperviviente4" min="-2" pref="31" max="-2" attributes="0"/>
               </Group>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="L_NombreSuperviviente6" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="L_NombreSuperviviente9" alignment="0" min="-2" pref="31" max="-2" attributes="0"/>
-                          <Component id="L_ConfirmacionSuperX" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="L_ConfirmacionZombiX" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="L_NombreSuperviviente6" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                              <Component id="L_ConfirmacionSuperX" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="L_ConfirmacionZombiX" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">

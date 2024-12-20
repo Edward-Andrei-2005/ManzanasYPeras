@@ -335,401 +335,641 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton46"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b20ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b21">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton38"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b21ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b22">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton59"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b22ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b23">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton60"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b23ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b24">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton57"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b24ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b25">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton69"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b25ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b26">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton58"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b26ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b27">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton68"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b27ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b28">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton63"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b28ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b29">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton67"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b29ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b30">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton79"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b30ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b31">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton73"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b31ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b32">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton76"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b32ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b33">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton72"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b33ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b34">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton71"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b34ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b35">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton81"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b35ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b36">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton93"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b36ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b37">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton66"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b37ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b38">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton92"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b38ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b39">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton64"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b39ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b40">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton80"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b40ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b41">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton37"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b41ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b42">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton70"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b42ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b43">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton74"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b43ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b44">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton77"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b44ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b45">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton89"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b45ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b46">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton94"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b46ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b47">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton100"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b47ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b48">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton95"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b48ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b49">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton99"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b49ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b50">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton98"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b50ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b51">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton75"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b51ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b52">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton82"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b52ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b53">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton61"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b53ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b54">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton54"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b54ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b55">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton56"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b55ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b56">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton36"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b56ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b57">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton50"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b57ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b58">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton85"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b58ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b59">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton78"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b59ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b60">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton97"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b60ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b61">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton90"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b61ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b62">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton96"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b62ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b63">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton86"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b63ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b64">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton88"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b64ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b65">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton65"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b65ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b66">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton91"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b66ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b67">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton84"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b67ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b68">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton62"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b68ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b69">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton48"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b69ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b70">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton32"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b70ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b71">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton45"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b71ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b72">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton55"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b72ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b73">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton87"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b73ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b74">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton52"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b74ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b75">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton53"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b75ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b76">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton44"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b76ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b77">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton51"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b77ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b78">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton39"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b78ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b79">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton83"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b79ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b80">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton49"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b80ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b81">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton12"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b81ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b82">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton47"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b82ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b83">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton25"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b83ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b84">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton29"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b84ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b85">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton24"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b85ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b86">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton42"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b86ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b87">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton40"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b87ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b88">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton41"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b88ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b89">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton27"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b89ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b90">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton26"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b90ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b91">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton16"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b91ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b92">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton35"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b92ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b93">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton33"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b93ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b94">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton18"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b94ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b95">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton14"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b95ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b96">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton31"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b96ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b97">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton34"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b97ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b98">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton22"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b98ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="b99">
           <Properties>
             <Property name="text" type="java.lang.String" value="jButton11"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="b99ActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -963,7 +1203,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jPanel4" alignment="0" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
-                          <Component id="jPanel2" min="-2" pref="281" max="-2" attributes="0"/>
+                          <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="bInfo" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -1099,73 +1339,27 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
-                          <Component id="estadoJuego" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="nombreSuperviviente1" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="626" max="-2" attributes="0"/>
-                  </Group>
+                  <EmptySpace min="0" pref="281" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                      <Component id="nombreSuperviviente1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="estadoJuego" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="84" max="32767" attributes="0"/>
-                  </Group>
+                  <EmptySpace min="0" pref="177" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
           </Layout>
-          <SubComponents>
-            <Component class="javax.swing.JLabel" name="nombreSuperviviente1">
-              <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="44" green="21" red="7" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="jLabel11"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel11">
-              <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="44" green="21" red="7" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Inventario"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="estadoJuego">
-              <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="44" green="21" red="7" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="jLabel12"/>
-              </Properties>
-            </Component>
-          </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="P_MostrarInformacionSuperviviente">
 
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="0" pref="224" max="32767" attributes="0"/>
-                      <Component id="L_NombreSuperviviente" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="140" max="-2" attributes="0"/>
-                  </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="narradorJuego" max="32767" attributes="0"/>
-                          <Group type="102" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace min="0" pref="80" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="L_ManoIzquierda" min="-2" max="-2" attributes="0"/>
@@ -1177,6 +1371,9 @@
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="bManoDer" min="-2" max="-2" attributes="0"/>
                                   </Group>
+                              </Group>
+                              <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="bInv1" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="L_Inventario" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="bInv2" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -1184,47 +1381,64 @@
                                   <Component id="bInv4" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="bInv5" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="L_NombreSuperviviente" min="-2" max="-2" attributes="0"/>
+                          <Component id="L_CasillaSup" min="-2" max="-2" attributes="0"/>
+                          <Component id="L_TurnosRestantes" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="114" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                       <Component id="L_NombreSuperviviente" min="-2" pref="37" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
-                              <Component id="L_ManoDerecha" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="L_ManoIzquierda" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="bManoIzq" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="bManoDer" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="L_CasillaSup" min="-2" pref="37" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="L_TurnosRestantes" min="-2" pref="37" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                       <Component id="L_Inventario" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="bInv1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="bInv2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="bInv3" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="bInv4" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="bInv2" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="bInv3" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="bInv4" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                                  <Component id="L_ManoDerecha" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="L_ManoIzquierda" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="bManoIzq" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="bManoDer" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="bInv5" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                       <Component id="narradorJuego" min="-2" pref="75" max="-2" attributes="0"/>
-                      <EmptySpace pref="91" max="32767" attributes="0"/>
+                      <EmptySpace pref="48" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1233,7 +1447,7 @@
             <Component class="javax.swing.JLabel" name="L_NombreSuperviviente">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="18" style="1"/>
+                  <Font name="Segoe UI" size="24" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="44" green="21" red="7" type="rgb"/>
@@ -1244,7 +1458,7 @@
             <Component class="javax.swing.JLabel" name="L_ManoIzquierda">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="14" style="0"/>
+                  <Font name="Segoe UI" size="14" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="44" green="21" red="7" type="rgb"/>
@@ -1255,7 +1469,7 @@
             <Component class="javax.swing.JLabel" name="L_ManoDerecha">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="14" style="0"/>
+                  <Font name="Segoe UI" size="14" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="44" green="21" red="7" type="rgb"/>
@@ -1266,7 +1480,7 @@
             <Component class="javax.swing.JLabel" name="L_Inventario">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="14" style="0"/>
+                  <Font name="Segoe UI" size="14" style="1"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="44" green="21" red="7" type="rgb"/>
@@ -1335,7 +1549,29 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="44" green="21" red="7" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="jLabel12"/>
+                <Property name="text" type="java.lang.String" value="Narrador"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="L_CasillaSup">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="18" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="44" green="21" red="7" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="NombreSuperviviente"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="L_TurnosRestantes">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="18" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="44" green="21" red="7" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Turnos restantes:"/>
               </Properties>
             </Component>
           </SubComponents>
