@@ -4,7 +4,10 @@ import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.sound.sampled.FloatControl;
-
+/**
+ *
+ * @author Anass Chikou El Mahraoui, Edward Andrei, Manuel Alos de la Vega
+ */
 public class ReproductorMusica {
     //Atributos
     private Clip clip;
