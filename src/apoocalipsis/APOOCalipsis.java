@@ -1,7 +1,10 @@
 package apoocalipsis;
 
 import java.io.File;
-
+/**
+ *
+ * @author Anass Chikou El Mahraoui, Edward Andrei, Manuel Alos de la Vega
+ */
 public class APOOCalipsis {
 
     /**
