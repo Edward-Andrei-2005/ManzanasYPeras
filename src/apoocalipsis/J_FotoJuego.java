@@ -6,7 +6,7 @@ package apoocalipsis;
 
 /**
  *
- * @author Edward
+ * @author Anass Chikou El Mahraoui, Edward Andrei, Manuel Alos de la Vega
  */
 public class J_FotoJuego extends javax.swing.JFrame {
 
