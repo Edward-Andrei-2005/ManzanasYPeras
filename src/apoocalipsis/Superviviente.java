@@ -2,7 +2,10 @@ package apoocalipsis;
 
 import java.util.Arrays;
 import java.util.Objects;
-
+/**
+ *
+ * @author Anass Chikou El Mahraoui, Edward Andrei, Manuel Alos de la Vega
+ */
 public class Superviviente extends EntidadActivable {
     // Atributos
     private String nombre;
