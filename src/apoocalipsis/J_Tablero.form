@@ -87,7 +87,7 @@
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jPanel3" pref="0" max="32767" attributes="0"/>
+                              <Component id="jPanel3" max="32767" attributes="0"/>
                               <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -136,7 +136,7 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace min="0" pref="13" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="7" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <Component id="B_Salir" min="-2" max="-2" attributes="0"/>
@@ -913,6 +913,8 @@
                       <Component id="jPanel4" alignment="0" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
                           <Component id="jPanel2" min="-2" pref="281" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="bInfo" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -929,11 +931,19 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="P_MostrarInformacionSuperviviente" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                  <Component id="jPanel2" min="-2" pref="177" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="bInfo" min="-2" pref="79" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="11" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -944,36 +954,33 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace pref="86" max="32767" attributes="0"/>
                       <Component id="bNada" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="bMoverse" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
+                      <Component id="bMoverse" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                       <Component id="bAtaque" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="bBuscarEquipo" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="bCambiarArma" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="bInfo" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="22" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="bNada" alignment="3" min="-2" pref="79" max="-2" attributes="0"/>
-                          <Component id="bMoverse" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="bAtaque" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="bBuscarEquipo" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="bCambiarArma" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="bInfo" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="bAtaque" alignment="3" min="-2" pref="79" max="-2" attributes="0"/>
+                          <Component id="bBuscarEquipo" alignment="3" min="-2" pref="79" max="-2" attributes="0"/>
+                          <Component id="bCambiarArma" alignment="3" min="-2" pref="79" max="-2" attributes="0"/>
+                          <Component id="bMoverse" alignment="3" min="-2" pref="79" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="50" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -981,6 +988,9 @@
           <SubComponents>
             <Component class="javax.swing.JButton" name="bNada">
               <Properties>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="44" green="21" red="7" type="rgb"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="No hacer nada"/>
               </Properties>
               <Events>
@@ -989,6 +999,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="bMoverse">
               <Properties>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="44" green="21" red="7" type="rgb"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Moverse"/>
               </Properties>
               <Events>
@@ -997,6 +1010,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="bAtaque">
               <Properties>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="44" green="21" red="7" type="rgb"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Atacar"/>
               </Properties>
               <Events>
@@ -1005,6 +1021,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="bBuscarEquipo">
               <Properties>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="44" green="21" red="7" type="rgb"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Buscar equipo"/>
               </Properties>
               <Events>
@@ -1013,18 +1032,13 @@
             </Component>
             <Component class="javax.swing.JButton" name="bCambiarArma">
               <Properties>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="44" green="21" red="7" type="rgb"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Cambiar Arma"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bCambiarArmaActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JButton" name="bInfo">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Info en..."/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bInfoActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
@@ -1038,10 +1052,10 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
-                          <Component id="narradorJuego" alignment="0" min="-2" pref="679" max="-2" attributes="0"/>
                           <Component id="estadoJuego" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="nombreSuperviviente1" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace min="-2" pref="626" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1050,13 +1064,11 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                       <Component id="nombreSuperviviente1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="narradorJuego" min="-2" pref="75" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="estadoJuego" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="134" max="-2" attributes="0"/>
+                      <EmptySpace pref="84" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1064,21 +1076,25 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="nombreSuperviviente1">
               <Properties>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="44" green="21" red="7" type="rgb"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="jLabel11"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel11">
               <Properties>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="44" green="21" red="7" type="rgb"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Inventario"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="estadoJuego">
               <Properties>
-                <Property name="text" type="java.lang.String" value="jLabel12"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="narradorJuego">
-              <Properties>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="44" green="21" red="7" type="rgb"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="jLabel12"/>
               </Properties>
             </Component>
@@ -1090,15 +1106,16 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="0" pref="154" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="224" max="32767" attributes="0"/>
                       <Component id="L_NombreSuperviviente" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="140" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="narradorJuego" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="L_ManoIzquierda" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -1109,21 +1126,17 @@
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="bManoDer" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="bInv1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="L_Inventario" min="-2" max="-2" attributes="0"/>
+                                  <Component id="bInv1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="L_Inventario" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="bInv2" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="bInv3" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="bInv4" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="bInv5" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1146,7 +1159,7 @@
                               <Component id="bManoDer" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="144" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                       <Component id="L_Inventario" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="bInv1" min="-2" max="-2" attributes="0"/>
@@ -1158,7 +1171,9 @@
                       <Component id="bInv4" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="bInv5" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="79" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                      <Component id="narradorJuego" min="-2" pref="75" max="-2" attributes="0"/>
+                      <EmptySpace pref="91" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1264,8 +1279,27 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bInv5ActionPerformed"/>
               </Events>
             </Component>
+            <Component class="javax.swing.JLabel" name="narradorJuego">
+              <Properties>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="44" green="21" red="7" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="jLabel12"/>
+              </Properties>
+            </Component>
           </SubComponents>
         </Container>
+        <Component class="javax.swing.JButton" name="bInfo">
+          <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="44" green="21" red="7" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Info en..."/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bInfoActionPerformed"/>
+          </Events>
+        </Component>
       </SubComponents>
     </Container>
     <Component class="javax.swing.JButton" name="B_Salir">

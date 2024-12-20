@@ -245,7 +245,7 @@ public class J_InterfazGrafica extends javax.swing.JFrame {
             timer.setRepeats(false); // Solo una ejecución
             timer.start();
         } else if (O_Simular_Acciones.isSelected()) {
-            J_ConfirmacionAcciones ventanaConfirmacion = new J_ConfirmacionAcciones();
+            J_SeleccionAcciones ventanaConfirmacion = new J_SeleccionAcciones();
             boolean aux = false;
             String [] nombresPrueba = {"Prueba"};
             do {
@@ -263,58 +263,77 @@ public class J_InterfazGrafica extends javax.swing.JFrame {
                                                           "Simulacion de buscar equipo", JOptionPane.INFORMATION_MESSAGE);
                         aux = true; // Salir del ciclo y finalizar
 
-                    } else if(ventanaConfirmacion.obtenerSeleccionado().equals("Activación Zombi")) {
+                    } else if (ventanaConfirmacion.obtenerSeleccionado().equals("Activación Zombi")) {
                         J_PosicionZombiAislado ventana = new J_PosicionZombiAislado();
                         ventana.setTiposZombi(TIPOS_ZOMBI);
                         int xZombi = 0;  // Coordenadas donde se recoge la posicion del zombi dada por el usuario
                         int yZombi = 0;
                         String s = "";  // string donde se recoge el tipo de zombi seleccionado
                         boolean auxb = false;
+                        
                         do {
                             int opcion2 = JOptionPane.showConfirmDialog(this, ventana, "Eleccion coordenadas zombi prueba", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
-                            xZombi = ventana.getCoordX();
-                            yZombi = ventana.getCoordY();
-                            s = ventana.getTipoZombi();
-                            
-                            if (xZombi >= 0 && xZombi <= 9 && yZombi >= 0 && yZombi <= 9) {
-                                auxb = true;
+                            if(opcion2 == JOptionPane.OK_OPTION){
+                                xZombi = ventana.getCoordX();
+                                yZombi = ventana.getCoordY();
+                                s = ventana.getTipoZombi();
+
+                                if (xZombi >= 0 && xZombi <= 9 && yZombi >= 0 && yZombi <= 9) {
+                                    auxb = true;
+                                    J_ConfirmacionZombiAislado ventanaCOnfirmacionZombiAislado = new J_ConfirmacionZombiAislado();
+                                    ventanaCOnfirmacionZombiAislado.escribirConfirmacion(xZombi, yZombi, s);
+
+                                    int opcion3 = JOptionPane.showConfirmDialog(this, ventanaCOnfirmacionZombiAislado, "Confirmación Datos", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
+                                    if(opcion3 == JOptionPane.OK_OPTION) {
+                                        Zombi z = null;
+                                        if (s.equals(TIPOS_ZOMBI[0])) {
+                                            z = new Caminante();
+                                        } else if (s.equals(TIPOS_ZOMBI[1])) {
+                                            z = new CaminanteBerserker();
+                                        } else if (s.equals(TIPOS_ZOMBI[2])) {
+                                            z = new CaminanteToxico();
+                                        } else if (s.equals(TIPOS_ZOMBI[3])) {
+                                            z = new Corredor();
+                                        } else if (s.equals(TIPOS_ZOMBI[4])) {
+                                            z = new CorredorBerserker();
+                                        } else if (s.equals(TIPOS_ZOMBI[5])) {
+                                            z = new CorredorToxico();
+                                        } else if (s.equals(TIPOS_ZOMBI[6])) {
+                                            z = new Abominacion();
+                                        } else if (s.equals(TIPOS_ZOMBI[7])) {
+                                            z = new AbominacionBerserker();
+                                        } else if (s.equals(TIPOS_ZOMBI[8])) {
+                                            z = new AbominacionToxico();
+                                        }
+
+                                        int xSup = 5;
+                                        int ySup = 5;
+
+                                        J_Tablero ventanaTablero = new J_Tablero(nombresPrueba, xSup, ySup, z, xZombi, yZombi);
+                                        ventanaTablero.setVisible(true); // Mostrar ventana de tablero
+                                        this.setVisible(false);
+                                        reproductor.detenerMusica();
+                                    } else {
+                                        JOptionPane.showMessageDialog(this, "Vuelve a introducir los datos", 
+                                                                  "Has seleccionado volver a introducir los datos", JOptionPane.INFORMATION_MESSAGE);
+                                    auxb = false;
+                                    }
+                                } else {
+                                    JOptionPane.showMessageDialog(this, "Vuelve a introducir los datos", 
+                                                              "Error al introducir los datos", JOptionPane.INFORMATION_MESSAGE);
+                                }
                             } else {
-                                JOptionPane.showMessageDialog(this, "Vuelve a introducir los datos", 
-                                                          "Error al introducir los datos", JOptionPane.INFORMATION_MESSAGE);
+                                JOptionPane.showMessageDialog(this,
+                                              "Creación de accion aislada cancelada.",
+                                              "Información", JOptionPane.INFORMATION_MESSAGE);
+                                return;
                             }
                         } while (!auxb);
                         
-                        Zombi z = null;
-                        if (s.equals(TIPOS_ZOMBI[0])) {
-                            z = new Caminante();
-                        } else if (s.equals(TIPOS_ZOMBI[1])) {
-                            z = new CaminanteBerserker();
-                        } else if (s.equals(TIPOS_ZOMBI[2])) {
-                            z = new CaminanteToxico();
-                        } else if (s.equals(TIPOS_ZOMBI[3])) {
-                            z = new Corredor();
-                        } else if (s.equals(TIPOS_ZOMBI[4])) {
-                            z = new CorredorBerserker();
-                        } else if (s.equals(TIPOS_ZOMBI[5])) {
-                            z = new CorredorToxico();
-                        } else if (s.equals(TIPOS_ZOMBI[6])) {
-                            z = new Abominacion();
-                        } else if (s.equals(TIPOS_ZOMBI[7])) {
-                            z = new AbominacionBerserker();
-                        } else if (s.equals(TIPOS_ZOMBI[8])) {
-                            z = new AbominacionToxico();
-                        }
-                        
-                        int xSup = 5;
-                        int ySup = 5;
-                        
-                        J_Tablero ventanaTablero = new J_Tablero(nombresPrueba, xSup, ySup, z, xZombi, yZombi);
-                        ventanaTablero.setVisible(true); // Mostrar ventana de tablero
-                        this.setVisible(false);
-                        reproductor.detenerMusica();
+
                         aux = true; // Salir del ciclo y finalizar
 
-                    } else if(ventanaConfirmacion.obtenerSeleccionado().equals("Ataque Superviviente a Zombi")) {
+                    } else if (ventanaConfirmacion.obtenerSeleccionado().equals("Ataque Superviviente a Zombi")) {
                         J_DatosAtaqueAislado ventana = new J_DatosAtaqueAislado();
                         ventana.setTiposZombi(TIPOS_ZOMBI);
                         int xZombi = 0;  // Coordenadas donde se recoge la posicion del zombi dada por el usuario

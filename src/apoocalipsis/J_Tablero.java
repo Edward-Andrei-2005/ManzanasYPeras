@@ -25,12 +25,14 @@ public class J_Tablero extends javax.swing.JFrame {
     
     private String [] listaNombres; // = {"Edward", "Manu", "Anass", "ChatGPT"};
     private Superviviente [] listaSup;
+    private boolean esAccionAislada;
     
     /**
      * Creates new form Tablero
      */
     public J_Tablero(String [] nombres, int xSup, int ySup, Zombi z, int xZombi, int yZombi) {
         initComponents();
+        esAccionAislada = true;
         reproductor.reproducirMusica(PLANTSVSZOMBIS);
         juego = new Juego();
         juegoAnterior = new Juego();
@@ -50,6 +52,7 @@ public class J_Tablero extends javax.swing.JFrame {
     
     public J_Tablero(String [] nombres, int xSup, int ySup, Zombi z, int xZombi, int yZombi, Arma a) {
         initComponents();
+        esAccionAislada = true;
         reproductor.reproducirMusica(PLANTSVSZOMBIS);
         juego = new Juego();
         juegoAnterior = new Juego();
@@ -71,6 +74,7 @@ public class J_Tablero extends javax.swing.JFrame {
     }
     
     public J_Tablero(Juego juego) {
+        esAccionAislada = false;
         initComponents();
         this.juego = juego;
         listaSup = juego.getSupervivientesTodos();
@@ -85,6 +89,7 @@ public class J_Tablero extends javax.swing.JFrame {
     
     public J_Tablero(Juego juego, ListaJuego arrayJuegos) {
         this(juego);
+        esAccionAislada = false;
         this.arrayJuegos = arrayJuegos;
     }
     
@@ -236,12 +241,10 @@ public class J_Tablero extends javax.swing.JFrame {
         bAtaque = new javax.swing.JButton();
         bBuscarEquipo = new javax.swing.JButton();
         bCambiarArma = new javax.swing.JButton();
-        bInfo = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         nombreSuperviviente1 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         estadoJuego = new javax.swing.JLabel();
-        narradorJuego = new javax.swing.JLabel();
         P_MostrarInformacionSuperviviente = new javax.swing.JPanel();
         L_NombreSuperviviente = new javax.swing.JLabel();
         L_ManoIzquierda = new javax.swing.JLabel();
@@ -254,6 +257,8 @@ public class J_Tablero extends javax.swing.JFrame {
         bInv3 = new javax.swing.JButton();
         bInv4 = new javax.swing.JButton();
         bInv5 = new javax.swing.JButton();
+        narradorJuego = new javax.swing.JLabel();
+        bInfo = new javax.swing.JButton();
         B_Salir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -289,779 +294,294 @@ public class J_Tablero extends javax.swing.JFrame {
         jPanel1.add(b02);
 
         b03.setText("jButton2");
-        b03.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b03ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b03);
 
         b04.setText("jButton4");
-        b04.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b04ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b04);
 
         b05.setText("jButton10");
-        b05.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b05ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b05);
 
         b06.setText("jButton9");
-        b06.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b06ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b06);
 
         b07.setText("jButton13");
-        b07.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b07ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b07);
 
         b08.setText("jButton8");
-        b08.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b08ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b08);
 
         b09.setText("jButton1");
-        b09.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b09ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b09);
 
         b10.setText("jButton20");
-        b10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b10ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b10);
 
         b11.setText("jButton5");
-        b11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b11ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b11);
 
         b12.setText("jButton19");
-        b12.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b12ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b12);
 
         b13.setText("jButton17");
-        b13.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b13ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b13);
 
         b14.setText("jButton21");
-        b14.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b14ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b14);
 
         b15.setText("jButton23");
-        b15.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b15ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b15);
 
         b16.setText("jButton3");
-        b16.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b16ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b16);
 
         b17.setText("jButton30");
-        b17.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b17ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b17);
 
         b18.setText("jButton28");
-        b18.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b18ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b18);
 
         b19.setText("jButton43");
-        b19.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b19ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b19);
 
         b20.setText("jButton46");
-        b20.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b20ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b20);
 
         b21.setText("jButton38");
-        b21.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b21ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b21);
 
         b22.setText("jButton59");
-        b22.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b22ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b22);
 
         b23.setText("jButton60");
-        b23.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b23ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b23);
 
         b24.setText("jButton57");
-        b24.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b24ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b24);
 
         b25.setText("jButton69");
-        b25.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b25ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b25);
 
         b26.setText("jButton58");
-        b26.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b26ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b26);
 
         b27.setText("jButton68");
-        b27.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b27ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b27);
 
         b28.setText("jButton63");
-        b28.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b28ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b28);
 
         b29.setText("jButton67");
-        b29.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b29ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b29);
 
         b30.setText("jButton79");
-        b30.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b30ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b30);
 
         b31.setText("jButton73");
-        b31.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b31ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b31);
 
         b32.setText("jButton76");
-        b32.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b32ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b32);
 
         b33.setText("jButton72");
-        b33.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b33ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b33);
 
         b34.setText("jButton71");
-        b34.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b34ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b34);
 
         b35.setText("jButton81");
-        b35.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b35ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b35);
 
         b36.setText("jButton93");
-        b36.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b36ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b36);
 
         b37.setText("jButton66");
-        b37.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b37ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b37);
 
         b38.setText("jButton92");
-        b38.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b38ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b38);
 
         b39.setText("jButton64");
-        b39.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b39ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b39);
 
         b40.setText("jButton80");
-        b40.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b40ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b40);
 
         b41.setText("jButton37");
-        b41.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b41ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b41);
 
         b42.setText("jButton70");
-        b42.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b42ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b42);
 
         b43.setText("jButton74");
-        b43.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b43ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b43);
 
         b44.setText("jButton77");
-        b44.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b44ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b44);
 
         b45.setText("jButton89");
-        b45.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b45ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b45);
 
         b46.setText("jButton94");
-        b46.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b46ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b46);
 
         b47.setText("jButton100");
-        b47.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b47ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b47);
 
         b48.setText("jButton95");
-        b48.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b48ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b48);
 
         b49.setText("jButton99");
-        b49.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b49ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b49);
 
         b50.setText("jButton98");
-        b50.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b50ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b50);
 
         b51.setText("jButton75");
-        b51.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b51ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b51);
 
         b52.setText("jButton82");
-        b52.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b52ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b52);
 
         b53.setText("jButton61");
-        b53.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b53ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b53);
 
         b54.setText("jButton54");
-        b54.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b54ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b54);
 
         b55.setText("jButton56");
-        b55.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b55ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b55);
 
         b56.setText("jButton36");
-        b56.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b56ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b56);
 
         b57.setText("jButton50");
-        b57.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b57ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b57);
 
         b58.setText("jButton85");
-        b58.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b58ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b58);
 
         b59.setText("jButton78");
-        b59.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b59ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b59);
 
         b60.setText("jButton97");
-        b60.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b60ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b60);
 
         b61.setText("jButton90");
-        b61.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b61ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b61);
 
         b62.setText("jButton96");
-        b62.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b62ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b62);
 
         b63.setText("jButton86");
-        b63.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b63ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b63);
 
         b64.setText("jButton88");
-        b64.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b64ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b64);
 
         b65.setText("jButton65");
-        b65.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b65ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b65);
 
         b66.setText("jButton91");
-        b66.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b66ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b66);
 
         b67.setText("jButton84");
-        b67.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b67ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b67);
 
         b68.setText("jButton62");
-        b68.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b68ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b68);
 
         b69.setText("jButton48");
-        b69.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b69ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b69);
 
         b70.setText("jButton32");
-        b70.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b70ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b70);
 
         b71.setText("jButton45");
-        b71.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b71ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b71);
 
         b72.setText("jButton55");
-        b72.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b72ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b72);
 
         b73.setText("jButton87");
-        b73.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b73ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b73);
 
         b74.setText("jButton52");
-        b74.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b74ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b74);
 
         b75.setText("jButton53");
-        b75.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b75ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b75);
 
         b76.setText("jButton44");
-        b76.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b76ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b76);
 
         b77.setText("jButton51");
-        b77.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b77ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b77);
 
         b78.setText("jButton39");
-        b78.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b78ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b78);
 
         b79.setText("jButton83");
-        b79.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b79ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b79);
 
         b80.setText("jButton49");
-        b80.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b80ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b80);
 
         b81.setText("jButton12");
-        b81.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b81ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b81);
 
         b82.setText("jButton47");
-        b82.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b82ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b82);
 
         b83.setText("jButton25");
-        b83.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b83ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b83);
 
         b84.setText("jButton29");
-        b84.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b84ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b84);
 
         b85.setText("jButton24");
-        b85.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b85ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b85);
 
         b86.setText("jButton42");
-        b86.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b86ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b86);
 
         b87.setText("jButton40");
-        b87.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b87ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b87);
 
         b88.setText("jButton41");
-        b88.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b88ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b88);
 
         b89.setText("jButton27");
-        b89.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b89ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b89);
 
         b90.setText("jButton26");
-        b90.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b90ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b90);
 
         b91.setText("jButton16");
-        b91.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b91ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b91);
 
         b92.setText("jButton35");
-        b92.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b92ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b92);
 
         b93.setText("jButton33");
-        b93.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b93ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b93);
 
         b94.setText("jButton18");
-        b94.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b94ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b94);
 
         b95.setText("jButton14");
-        b95.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b95ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b95);
 
         b96.setText("jButton31");
-        b96.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b96ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b96);
 
         b97.setText("jButton34");
-        b97.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b97ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b97);
 
         b98.setText("jButton22");
-        b98.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b98ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b98);
 
         b99.setText("jButton11");
-        b99.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b99ActionPerformed(evt);
-            }
-        });
         jPanel1.add(b99);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
@@ -1144,6 +664,7 @@ public class J_Tablero extends javax.swing.JFrame {
         jLabel30.setForeground(new java.awt.Color(7, 33, 68));
         jLabel30.setText("9");
 
+        bNada.setForeground(new java.awt.Color(7, 33, 68));
         bNada.setText("No hacer nada");
         bNada.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1151,6 +672,7 @@ public class J_Tablero extends javax.swing.JFrame {
             }
         });
 
+        bMoverse.setForeground(new java.awt.Color(7, 33, 68));
         bMoverse.setText("Moverse");
         bMoverse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1158,6 +680,7 @@ public class J_Tablero extends javax.swing.JFrame {
             }
         });
 
+        bAtaque.setForeground(new java.awt.Color(7, 33, 68));
         bAtaque.setText("Atacar");
         bAtaque.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1165,6 +688,7 @@ public class J_Tablero extends javax.swing.JFrame {
             }
         });
 
+        bBuscarEquipo.setForeground(new java.awt.Color(7, 33, 68));
         bBuscarEquipo.setText("Buscar equipo");
         bBuscarEquipo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1172,6 +696,7 @@ public class J_Tablero extends javax.swing.JFrame {
             }
         });
 
+        bCambiarArma.setForeground(new java.awt.Color(7, 33, 68));
         bCambiarArma.setText("Cambiar Arma");
         bCambiarArma.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1179,53 +704,44 @@ public class J_Tablero extends javax.swing.JFrame {
             }
         });
 
-        bInfo.setText("Info en...");
-        bInfo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bInfoActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(86, Short.MAX_VALUE)
                 .addComponent(bNada)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(bMoverse)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(bMoverse)
+                .addGap(12, 12, 12)
                 .addComponent(bAtaque)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(bBuscarEquipo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(bCambiarArma)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(bInfo)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addGap(64, 64, 64))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
+                .addGap(22, 22, 22)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bNada, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bMoverse)
-                    .addComponent(bAtaque)
-                    .addComponent(bBuscarEquipo)
-                    .addComponent(bCambiarArma)
-                    .addComponent(bInfo))
-                .addContainerGap(50, Short.MAX_VALUE))
+                    .addComponent(bAtaque, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bBuscarEquipo, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bCambiarArma, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bMoverse, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        nombreSuperviviente1.setForeground(new java.awt.Color(7, 33, 68));
         nombreSuperviviente1.setText("jLabel11");
 
+        jLabel11.setForeground(new java.awt.Color(7, 33, 68));
         jLabel11.setText("Inventario");
 
+        estadoJuego.setForeground(new java.awt.Color(7, 33, 68));
         estadoJuego.setText("jLabel12");
-
-        narradorJuego.setText("jLabel12");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -1235,22 +751,20 @@ public class J_Tablero extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel11)
-                    .addComponent(narradorJuego, javax.swing.GroupLayout.PREFERRED_SIZE, 679, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(estadoJuego)
-                    .addComponent(nombreSuperviviente1)))
+                    .addComponent(nombreSuperviviente1))
+                .addGap(626, 626, 626))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addComponent(nombreSuperviviente1)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel11)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(narradorJuego, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(estadoJuego)
-                .addGap(134, 134, 134))
+                .addContainerGap(84, Short.MAX_VALUE))
         );
 
         L_NombreSuperviviente.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -1318,37 +832,39 @@ public class J_Tablero extends javax.swing.JFrame {
             }
         });
 
+        narradorJuego.setForeground(new java.awt.Color(7, 33, 68));
+        narradorJuego.setText("jLabel12");
+
         javax.swing.GroupLayout P_MostrarInformacionSupervivienteLayout = new javax.swing.GroupLayout(P_MostrarInformacionSuperviviente);
         P_MostrarInformacionSuperviviente.setLayout(P_MostrarInformacionSupervivienteLayout);
         P_MostrarInformacionSupervivienteLayout.setHorizontalGroup(
             P_MostrarInformacionSupervivienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P_MostrarInformacionSupervivienteLayout.createSequentialGroup()
-                .addGap(0, 154, Short.MAX_VALUE)
+                .addGap(0, 224, Short.MAX_VALUE)
                 .addComponent(L_NombreSuperviviente)
                 .addGap(140, 140, 140))
             .addGroup(P_MostrarInformacionSupervivienteLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
                 .addGroup(P_MostrarInformacionSupervivienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(narradorJuego, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(P_MostrarInformacionSupervivienteLayout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addGroup(P_MostrarInformacionSupervivienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, P_MostrarInformacionSupervivienteLayout.createSequentialGroup()
+                        .addGroup(P_MostrarInformacionSupervivienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(P_MostrarInformacionSupervivienteLayout.createSequentialGroup()
                                 .addComponent(L_ManoIzquierda)
                                 .addGap(18, 18, 18)
                                 .addComponent(bManoIzq))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, P_MostrarInformacionSupervivienteLayout.createSequentialGroup()
+                            .addGroup(P_MostrarInformacionSupervivienteLayout.createSequentialGroup()
                                 .addComponent(L_ManoDerecha)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(bManoDer))))
-                    .addGroup(P_MostrarInformacionSupervivienteLayout.createSequentialGroup()
-                        .addGap(13, 13, 13)
-                        .addGroup(P_MostrarInformacionSupervivienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(bManoDer))
                             .addComponent(bInv1)
                             .addComponent(L_Inventario)
                             .addComponent(bInv2)
                             .addComponent(bInv3)
                             .addComponent(bInv4)
-                            .addComponent(bInv5))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(bInv5))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         P_MostrarInformacionSupervivienteLayout.setVerticalGroup(
             P_MostrarInformacionSupervivienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1365,7 +881,7 @@ public class J_Tablero extends javax.swing.JFrame {
                             .addComponent(bManoIzq))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(bManoDer)))
-                .addGap(144, 144, 144)
+                .addGap(26, 26, 26)
                 .addComponent(L_Inventario)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(bInv1)
@@ -1377,8 +893,18 @@ public class J_Tablero extends javax.swing.JFrame {
                 .addComponent(bInv4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(bInv5)
-                .addContainerGap(79, Short.MAX_VALUE))
+                .addGap(31, 31, 31)
+                .addComponent(narradorJuego, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(91, Short.MAX_VALUE))
         );
+
+        bInfo.setForeground(new java.awt.Color(7, 33, 68));
+        bInfo.setText("Info en...");
+        bInfo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bInfoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -1390,6 +916,8 @@ public class J_Tablero extends javax.swing.JFrame {
                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(bInfo)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(jPanel3Layout.createSequentialGroup()
@@ -1401,11 +929,16 @@ public class J_Tablero extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(P_MostrarInformacionSuperviviente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(bInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(11, Short.MAX_VALUE))
         );
 
         B_Salir.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
@@ -1475,7 +1008,7 @@ public class J_Tablero extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(29, 29, 29))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addGap(38, 38, 38)
@@ -1516,7 +1049,7 @@ public class J_Tablero extends javax.swing.JFrame {
                                         .addComponent(jLabel29)
                                         .addGap(30, 30, 30)
                                         .addComponent(jLabel30)))))
-                        .addGap(0, 13, Short.MAX_VALUE))
+                        .addGap(0, 7, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(B_Salir)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1563,7 +1096,13 @@ public class J_Tablero extends javax.swing.JFrame {
 
         // Si el usuario elige "Sí", cerrar el programa
         if (opcion == JOptionPane.YES_OPTION) {
-            arrayJuegos.guardarJuego(juegoAnterior);
+            if(esAccionAislada) {
+                JOptionPane.showMessageDialog(this,
+                                              "¡Atención!\nEsto es una partida simulada, no se va a guardar",
+                                              "Información", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                arrayJuegos.guardarJuego(juegoAnterior);
+            }
             System.exit(0);
         }
     }//GEN-LAST:event_B_SalirActionPerformed
